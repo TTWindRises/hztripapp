@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/id_map_common"
+    android:title="普通地图"
+    app:showAsAction="never"/>
+    <item
+        android:id="@+id/id_map_traffic"
+        android:title="实况地图"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/id_map_site"
+        android:title="卫星地图"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/id_map_location"
+        android:title="我的位置"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/id_map_overlays"
+        android:title="添加覆盖物"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/into_databases"
+        android:title="进入数据库"
+        app:showAsAction="never"/>
+
+</menu>

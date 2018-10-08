@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <Button
+        android:id="@+id/create_databases"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="create data"
+        />
+
+    <Button
+        android:id="@+id/add_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add data"
+        />
+
+    <Button
+        android:id="@+id/delete_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="delete data"
+        />
+
+    <Button
+        android:id="@+id/update_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="update data"
+        />
+
+    <Button
+        android:id="@+id/query_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="query data"
+        />
+
+    <Button
+        android:id="@+id/into_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        />
+
+    <Button
+        android:id="@+id/test_overlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="testOverlay"
+        />
+
+    <Button
+        android:id="@+id/bus_plan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="bus"/>
+
+    <Button
+        android:id="@+id/routeplan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="routeplan"/>
+
+</LinearLayout>

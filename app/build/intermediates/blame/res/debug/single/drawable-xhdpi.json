@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_label_pink_200_18dp.png",
+        "source": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\src\\main\\res\\drawable-xhdpi\\ic_label_pink_200_18dp.png"
+    },
+    {
+        "merged": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_local_taxi.png",
+        "source": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\src\\main\\res\\drawable-xhdpi\\ic_local_taxi.png"
+    },
+    {
+        "merged": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_directions_bus_indigo_200_18dp.png",
+        "source": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\src\\main\\res\\drawable-xhdpi\\ic_directions_bus_indigo_200_18dp.png"
+    },
+    {
+        "merged": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_directions_bike_indigo_200_18dp.png",
+        "source": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\src\\main\\res\\drawable-xhdpi\\ic_directions_bike_indigo_200_18dp.png"
+    },
+    {
+        "merged": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_room_red_300_18dp.png",
+        "source": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\src\\main\\res\\drawable-xhdpi\\ic_room_red_300_18dp.png"
+    },
+    {
+        "merged": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_cate_red.png",
+        "source": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\src\\main\\res\\drawable-xhdpi\\ic_cate_red.png"
+    },
+    {
+        "merged": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_favorite.png",
+        "source": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\src\\main\\res\\drawable-xhdpi\\ic_favorite.png"
+    },
+    {
+        "merged": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_motorcycle.png",
+        "source": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\src\\main\\res\\drawable-xhdpi\\ic_motorcycle.png"
+    },
+    {
+        "merged": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_near_me_indigo_200_18dp.png",
+        "source": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\src\\main\\res\\drawable-xhdpi\\ic_near_me_indigo_200_18dp.png"
+    },
+    {
+        "merged": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_favorite_red.png",
+        "source": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\src\\main\\res\\drawable-xhdpi\\ic_favorite_red.png"
+    }
+]

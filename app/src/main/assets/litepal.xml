@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+
+    <dbname value="FoodStore"/>
+
+
+    <version value="4"/>
+
+    <list>
+        <mapping class="com.baidu.bikenavi_demo.bean.scenic.SpotBean"></mapping>
+        <mapping class="com.baidu.bikenavi_demo.bean.food.FoodStoreBean"></mapping>
+        <mapping class="com.baidu.bikenavi_demo.bean.scenic.ScenicBean"></mapping>
+    </list>
+
+
+</litepal>
