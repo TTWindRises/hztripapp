@@ -5,12 +5,12 @@
     <dbname value="FoodStore"/>
 
 
-    <version value="4"/>
+    <version value="5"/>
 
     <list>
-        <mapping class="com.baidu.bikenavi_demo.bean.scenic.SpotBean"></mapping>
-        <mapping class="com.baidu.bikenavi_demo.bean.food.FoodStoreBean"></mapping>
-        <mapping class="com.baidu.bikenavi_demo.bean.scenic.ScenicBean"></mapping>
+        <mapping class="com.baidu.myapp.bean.scenic.SpotBean"></mapping>
+        <mapping class="com.baidu.myapp.bean.food.FoodStoreBean"></mapping>
+        <mapping class="com.baidu.myapp.bean.scenic.ScenicBean"></mapping>
     </list>
 
 

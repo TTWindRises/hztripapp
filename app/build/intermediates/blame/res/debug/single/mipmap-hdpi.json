@@ -1,10 +1,10 @@
 [
     {
-        "merged": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\arrow.png",
-        "source": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\src\\main\\res\\mipmap-hdpi\\arrow.png"
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
-        "source": "E:\\hzapp\\BaiduMapSDK_BikeNavi_AS_Demo\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\arrow.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\mipmap-hdpi\\arrow.png"
     }
 ]

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.baidu.bikenavi_demo.test">
+    package="com.baidu.myapp.test">
 
     <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="23" />
 
@@ -9,8 +9,8 @@
     </application>
 
     <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="com.baidu.bikenavi_demo"
+                     android:targetPackage="com.baidu.myapp"
                      android:handleProfiling="false"
                      android:functionalTest="false"
-                     android:label="Tests for com.baidu.bikenavi_demo"/>
+                     android:label="Tests for com.baidu.myapp"/>
 </manifest>

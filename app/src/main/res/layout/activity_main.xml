@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.baidu.bikenavi_demo.MainActivity">
+    tools:context="com.baidu.myapp.MainActivity">
 
 
     <com.baidu.mapapi.map.MapView
@@ -15,7 +14,9 @@
 
     </com.baidu.mapapi.map.MapView>
 
-    <TextView
+
+
+   <!-- <TextView
         android:id="@+id/distance_km"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
@@ -23,11 +24,10 @@
         android:layout_marginRight="2dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/km_03"
-        android:textColor="#FFFFFF"
         android:gravity="center"
         android:text="300 公里               "
-        android:textSize="10sp"
-        />
+        android:textColor="#FFFFFF"
+        android:textSize="10sp" />
 
     <TextView
         android:id="@+id/spand_s"
@@ -37,12 +37,11 @@
         android:layout_marginRight="2dp"
         android:layout_marginTop="55dp"
         android:background="@drawable/km_03"
-        android:textColor="#FFFFFF"
         android:gravity="center"
         android:text="270 元                   "
-        android:textSize="10sp"
-        />
-    <!-- <TextView
+        android:textColor="#FFFFFF"
+        android:textSize="10sp" />
+    &lt;!&ndash; <TextView
          android:id="@+id/tour_guide"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
@@ -54,14 +53,15 @@
          android:background="@drawable/gl_03"
          android:layout_marginLeft="20dp"
          android:textSize="10sp"
-         />-->
+         />&ndash;&gt;
     <ImageView
         android:id="@+id/head_portrait"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
-        android:clickable="true"/>
+        android:clickable="true" />-->
+    <include layout="@layout/head" />
 
     <LinearLayout
         android:id="@+id/type_of_traffc"
@@ -72,8 +72,7 @@
         android:layout_marginBottom="22dp"
         android:layout_marginLeft="23dp"
         android:orientation="horizontal"
-        android:visibility="gone"
-        >
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/img_click_walk"
@@ -83,7 +82,7 @@
             android:layout_marginTop="20dp"
             android:clickable="true"
             android:src="@drawable/walk"
-            android:text="步行"/>
+            android:text="步行" />
 
         <ImageView
             android:id="@+id/img_click_bike"
@@ -93,7 +92,7 @@
             android:layout_marginTop="20dp"
             android:clickable="true"
             android:src="@drawable/bike0"
-            android:text="骑行"/>
+            android:text="骑行" />
 
 
     </LinearLayout>
@@ -109,8 +108,7 @@
         android:gravity="center"
         android:text="更多"
         android:textSize="10dp"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
 
     <LinearLayout
@@ -136,33 +134,33 @@
             android:paddingRight="10dp"
             android:text="酒店"
             android:textColor="#000000"
-            android:textSize="14dp"/>
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/cate_click"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_label_pink_200_18dp"
-            android:paddingBottom="10dp"
-            android:paddingRight="10dp"
             android:clickable="true"
             android:onClick="cateClick"
+            android:paddingBottom="10dp"
+            android:paddingRight="10dp"
             android:text="美食"
             android:textColor="#000000"
-            android:textSize="14dp"/>
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/spot_click"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/ic_label_pink_200_18dp"
             android:clickable="true"
             android:onClick="spotClick"
-            android:background="@drawable/ic_label_pink_200_18dp"
-            android:paddingRight="10dp"
             android:paddingBottom="10dp"
+            android:paddingRight="10dp"
             android:text="景点"
             android:textColor="#000000"
-            android:textSize="14dp"/>
+            android:textSize="14dp" />
     </LinearLayout>
 
     <TextView
@@ -178,7 +176,7 @@
         android:text="攻略"
 
         android:textColor="#000000"
-        android:textSize="12dp"/>
+        android:textSize="12dp" />
 
     <LinearLayout
         android:id="@+id/left_click_ly"
@@ -196,12 +194,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_label_pink_200_18dp"
-            android:paddingBottom="10dp"
             android:clickable="true"
             android:onClick="hotClick"
+            android:paddingBottom="10dp"
             android:text="热门"
             android:textColor="#000000"
-            android:textSize="14dp"/>
+            android:textSize="14dp" />
 
 
         <TextView
@@ -209,31 +207,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_label_pink_200_18dp"
-            android:paddingBottom="10dp"
             android:clickable="true"
             android:onClick="downClick"
+            android:paddingBottom="10dp"
             android:text="穷游"
             android:textColor="#000000"
-            android:textSize="14dp"
-            />
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/zidingyi_click"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_label_pink_200_18dp"
+            android:paddingBottom="10dp"
             android:text="自制"
             android:textColor="#000000"
-            android:paddingBottom="10dp"
-            android:textSize="14dp"/>
+            android:textSize="14dp" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginBottom="40dp"
-        android:layout_centerInParent="true"
-        android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="40dp">
+
         <Button
             android:id="@+id/pre"
             android:layout_width="40dp"
@@ -241,8 +239,7 @@
             android:layout_marginLeft="2dip"
             android:layout_marginRight="2dip"
             android:background="@drawable/pre_"
-            android:onClick="nodeClick"
-            />
+            android:onClick="nodeClick" />
 
         <Button
             android:id="@+id/next"
@@ -252,8 +249,7 @@
             android:layout_marginRight="2dip"
 
             android:background="@drawable/next_"
-            android:onClick="nodeClick"
-            />
+            android:onClick="nodeClick" />
     </LinearLayout>
 
     <Button
@@ -266,13 +262,28 @@
         android:background="@drawable/go"
         android:gravity="center"
         android:onClick="searchProcess"
-        android:textSize="10dp"
         android:text="Go"
         android:textColor="#FFFFFF"
-        />
+        android:textSize="10dp" />
+
+    <Button
+        android:id="@+id/btn_intomap"
+        android:layout_width="50dp"
+        android:layout_marginLeft="100dp"
+
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/go"
+        android:gravity="center"
+        android:onClick="searchProcess"
+        android:text="FNinto"
+        android:textColor="#FFFFFF"
+        android:textSize="10dp" />
 
 
-    <include layout="@layout/maker_info"/>
+    <include layout="@layout/maker_info" />
 
 
 </RelativeLayout>

@@ -3,57 +3,30 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
-        <dex dex="E:\hzapp\BaiduMapSDK_BikeNavi_AS_Demo\build\intermediates\pre-dexed\debug\glide-3.7.0_1f3ddf859a86296da03fddcf50d19f29d652df81.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrator\.android\build-cache\190357f181e835777ec32383248cd8db2162a83e\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="E:\hzapp\BaiduMapSDK_BikeNavi_AS_Demo\build\intermediates\pre-dexed\debug\classes_b1cdadaecf85a9a66b596307fc1c21932439b7da.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\hzapp\BaiduMapSDK_BikeNavi_AS_Demo\libs\litepal-1.6.1-src.jar"
+        jar="E:\myProgramma\hztripapp\app\libs\litepal-1.6.1-src.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="e4fa90d8efd80e556e5fbbaf30bd4ae39ef14e94">
-        <dex dex="E:\hzapp\BaiduMapSDK_BikeNavi_AS_Demo\build\intermediates\pre-dexed\debug\litepal-1.6.1-src_490ec2fdeec0d998f6a31959454e364cab83cdcf.jar" />
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\litepal-1.6.1-src_ca036685caa12a81e6ddbdcdc106e2a0227ffca2.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="E:\hzapp\BaiduMapSDK_BikeNavi_AS_Demo\libs\BaiduLBS_Android.jar"
+        jar="E:\myProgramma\hztripapp\app\libs\fengmap-2.1.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0734a5df36eda06fb7f00b0417beb0c0238acdc9">
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\fengmap-2.1.3_50e8449087f0ff0c0a1fdfb22ff718ae4253bc29.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\myProgramma\hztripapp\app\libs\BaiduLBS_Android.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="a7640cb2c8274cbc91009511000613856928bf22">
-        <dex dex="E:\hzapp\BaiduMapSDK_BikeNavi_AS_Demo\build\intermediates\pre-dexed\debug\BaiduLBS_Android_0bded4cf34a721037dd37fba43b85bd1e56faddb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrator\.android\build-cache\057342bd89b7ba84011a6ffd263cd9ee592b9e1f\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="E:\hzapp\BaiduMapSDK_BikeNavi_AS_Demo\build\intermediates\pre-dexed\debug\classes_f017c099bdee1662e8bbfca647782afb4892b112.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrator\.android\build-cache\205987e332a3f6c90c474d521ab0c132b592d186\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="E:\hzapp\BaiduMapSDK_BikeNavi_AS_Demo\build\intermediates\pre-dexed\debug\classes_612aee15b1be3ada3216bb1d22f274006d938beb.jar" />
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\BaiduLBS_Android_a89020464aa84b1371c91216b3393483f0e7dfcd.jar" />
     </item>
 
 </items>
