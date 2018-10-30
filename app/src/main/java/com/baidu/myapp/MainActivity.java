@@ -30,9 +30,11 @@ import com.baidu.myapp.activity.BNaviGuideActivity;
 import com.baidu.myapp.activity.BaseActivity;
 import com.baidu.myapp.activity.FNmapActivity;
 import com.baidu.myapp.activity.WNaviGuideActivity;
+import com.baidu.myapp.bean.food.FoodBean;
 import com.baidu.myapp.bean.food.FoodStoreBean;
 import com.baidu.myapp.bean.scenic.ScenicBean;
 import com.baidu.myapp.bean.scenic.SpotBean;
+import com.baidu.myapp.impl.FoodBeanImpl;
 import com.baidu.myapp.impl.MainAgent;
 import com.baidu.myapp.overlay.util.DrivingRouteOverlay;
 import com.baidu.myapp.overlay.util.OverlayManager;
@@ -90,6 +92,7 @@ import com.baidu.mapapi.walknavi.adapter.IWEngineInitListener;
 import com.baidu.mapapi.walknavi.adapter.IWRoutePlanListener;
 import com.baidu.mapapi.walknavi.model.WalkRoutePlanError;
 import com.baidu.mapapi.walknavi.params.WalkNaviLaunchParam;
+import com.baidu.myapp.view.HeadView;
 import com.bumptech.glide.Glide;
 import com.fengmap.android.map.FMMap;
 import com.fengmap.android.map.FMMapUpgradeInfo;
@@ -103,6 +106,10 @@ import java.util.List;
 
 import static android.content.ContentValues.TAG;
 import static com.baidu.location.g.j.D;
+import static com.baidu.location.g.j.G;
+import static com.baidu.location.g.j.H;
+import static com.baidu.location.g.j.I;
+import static com.baidu.location.g.j.t;
 
 public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickListener,
         OnGetRoutePlanResultListener, OnFMMapInitListener {
@@ -212,9 +219,9 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         initSpotData();
         MyLocation();
         //导航按钮
-        mainAgent.Init();
+        mainAgent.init();
         NavGuideButtonClick();
-        mainAgent.Login();
+        mainAgent.ExitPresses();
         InitNav();
         InitFSView();
 
@@ -284,7 +291,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                 BtnIntoMap.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(MainActivity.this,FNmapActivity.class);
+                        Intent intent = new Intent(MainActivity.this, FNmapActivity.class);
                         startActivity(intent);
 
                     }
@@ -847,15 +854,12 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         LatLng latLng = null;
 
         Marker marker = null;
-
         OverlayOptions options;
         List<ScenicBean> scenicBeans = DataSupport.findAll(ScenicBean.class);
         List<FoodStoreBean> foodStoreBeans = DataSupport.findAll(FoodStoreBean.class);
-
-
         for (FoodStoreBean foodstores : foodStoreBeans) {
             //经纬度
-            latLng = new LatLng(foodstores.getLatitude(), foodstores.getLongtitude());
+//            latLng = new LatLng(foodstores.getLatitude(), foodstores.getLongtitude());
             //图标
             options = new MarkerOptions().position(latLng).icon(mDeliciousMarker).zIndex(5);
             marker = (Marker) mBaiduMap.addOverlay(options);
@@ -929,7 +933,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                 Toast.makeText(MainActivity.this, foodStore.getStoreName(), Toast.LENGTH_SHORT).show();
 */
 
-                ImageView iv = (ImageView) mMarkerLy.findViewById(R.id.img_ht01);
+                ImageView iv = (ImageView) mMarkerLy.findViewById(R.id.img_shape);
                 TextView name = (TextView) mMarkerLy.findViewById(R.id.id_info_name);
                 TextView distance = (TextView) mMarkerLy.findViewById(R.id.id_info_distance);
                 TextView zan = (TextView) mMarkerLy.findViewById(R.id.id_info_zan);
@@ -1254,8 +1258,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         mBaiduMap.setMapStatus(msu);
         //实现地图和卫星地图的切换
         //添加图片
-        Img_htl01 = (ImageView) findViewById(R.id.img_ht01);
-        hp = (ImageView) findViewById(R.id.head_portrait);
+
+        hp = (ImageView) findViewById(R.id.head_portrait); //给头像替换图片
         hp.setOnCreateContextMenuListener(this);
         hp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1263,7 +1267,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                 view.showContextMenu();
             }
         });
-        Glide.with(this).load(R.drawable.htl01).into(Img_htl01);
+        HeadView headView = new HeadView(this);
+        headView.init(this);
         Glide.with(this).load(R.drawable.hp_01).transform(new CircleCrop(this)).into(hp);
         //
 

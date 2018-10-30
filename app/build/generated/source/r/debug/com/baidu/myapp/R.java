@@ -1763,7 +1763,7 @@ containing a value of this type.
         public static final int image=0x7f0d0026;
         public static final int img_click_bike=0x7f0d0068;
         public static final int img_click_walk=0x7f0d0067;
-        public static final int img_ht01=0x7f0d008e;
+        public static final int img_shape=0x7f0d008e;
         public static final int info=0x7f0d009e;
         public static final int into_databases=0x7f0d00ae;
         public static final int into_test=0x7f0d00a5;

@@ -2,18 +2,19 @@ package com.baidu.myapp.bean.food;
 
 import com.baidu.myapp.R;
 
+import org.litepal.crud.DataSupport;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class FoodBean {
-
-
-
-    private String storeId;
+public class FoodBean extends DataSupport {
+    private String foodID;
     private String foodName;
     private int foodPrice;
     private String foodDescribe;
-    private int imgFood;
+    private String foodImg;
+    private String foodCategoryID; //食品类别号，归属于哪一个类别,考虑要加一个类目表，方便查询
+    private int foodSales;//单个食品的销量,初始为零，然后不能低于零，每个月要重新计算一次,因为显示的是上一个月的销量
     //食物与商店之间的多对多关系
     private List<FoodStoreBean> foodStore;
 
@@ -34,25 +35,19 @@ public class FoodBean {
     }
 
     public static List<FoodBean> mDeliciousFoodBeans = new ArrayList<FoodBean>();
-
-    public FoodBean(String foodName, int foodPrice, String foodDescribe, int imgFood){
-        this.foodName=foodName;
-        this.foodPrice=foodPrice;
-        this.foodDescribe=foodDescribe;
-        this.imgFood=imgFood;
-    }
-    static {
-        mDeliciousFoodBeans.add(new FoodBean("西瓜奶茶",15,"美味可口夏日必备", R.drawable.ic_favorite_red));
-        mDeliciousFoodBeans.add(new FoodBean("青苹果奶茶",10,"美味可口夏日必备", R.drawable.ic_favorite));
-
-    }
-    public String getStoreId() {
-        return storeId;
+    //食品构造初始化
+    public FoodBean() {
     }
 
-    public void setStoreId(String storeId) {
-        this.storeId = storeId;
+    public FoodBean(String foodID, String foodName, int foodPrice, String foodDescribe, String foodImg) {
+        this.foodID = foodID;
+        this.foodName = foodName;
+        this.foodPrice = foodPrice;
+        this.foodDescribe = foodDescribe;
+        this.foodImg = foodImg;
     }
+
+
     public String getFoodName() {
         return foodName;
     }
@@ -77,12 +72,20 @@ public class FoodBean {
         this.foodDescribe = foodDescribe;
     }
 
-    public int getImgFood() {
-        return imgFood;
+    public String getFoodID() {
+        return foodID;
     }
 
-    public void setImgFood(int imgFood) {
-        this.imgFood = imgFood;
+    public void setFoodID(String foodID) {
+        this.foodID = foodID;
+    }
+
+    public String getFoodImg() {
+        return foodImg;
+    }
+
+    public void setFoodImg(String foodImg) {
+        this.foodImg = foodImg;
     }
 
     public List<FoodBean> getDeliciousFoodBeans() {

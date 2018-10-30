@@ -10,7 +10,7 @@
     >
 
     <ImageView
-        android:id="@+id/img_ht01"
+        android:id="@+id/img_shape"
         android:layout_width="fill_parent"
         android:layout_height="150dp"
         android:layout_marginBottom="10dp"
