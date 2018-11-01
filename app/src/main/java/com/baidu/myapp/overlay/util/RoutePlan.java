@@ -11,7 +11,7 @@ import java.util.List;
 import static android.content.ContentValues.TAG;
 
 public class RoutePlan {
-
+/*
     //就把选择的点都添加到一个数组内，然后放到这里进行规划整理
     public void PlanSenic(List<ScenicBean> scenics, LatLng mylocation) {
         //根据距离
@@ -42,13 +42,13 @@ public class RoutePlan {
             Log.i(TAG, "DDDD i: "+d[k]);
         }
         //根据总距离最短来计算.?
-        /**
+        *//**
          * 总距离包括我的位置 、 当天游玩景区、返回酒店、 吃美食
-         */
+         *//*
         //根据金钱最少来计算?
         //根据时间最短来算？？？
         //给用户进行选择就好了。
 
 
-    }
+    }*/
 }

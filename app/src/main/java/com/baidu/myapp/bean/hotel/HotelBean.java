@@ -14,4 +14,99 @@ public class HotelBean {
     private String hotelSecurityCode;//一串可以确定这个酒店是真实存在的识别码
     private String hotelDistance;//距离酒店的距离   ps：好复杂好复杂这个数据，暂时写死,不然得給这个数据单独设计一个算法出来
 
+    @Override
+    public String toString() {
+        return "HotelBean{" +
+                "hotelID=" + hotelID +
+                ", hotelName='" + hotelName + '\'' +
+                ", hotelLatitude=" + hotelLatitude +
+                ", hotelLongtitude=" + hotelLongtitude +
+                ", hotelShowImg='" + hotelShowImg + '\'' +
+                ", hotelDescribe='" + hotelDescribe + '\'' +
+                ", hotelFloorList=" + hotelFloorList +
+                ", hotelLevel=" + hotelLevel +
+                ", hotelSecurityCode='" + hotelSecurityCode + '\'' +
+                ", hotelDistance='" + hotelDistance + '\'' +
+                '}';
+    }
+
+    public int getHotelID() {
+        return hotelID;
+    }
+
+    public void setHotelID(int hotelID) {
+        this.hotelID = hotelID;
+    }
+
+    public String getHotelName() {
+        return hotelName;
+    }
+
+    public void setHotelName(String hotelName) {
+        this.hotelName = hotelName;
+    }
+
+    public double getHotelLatitude() {
+        return hotelLatitude;
+    }
+
+    public void setHotelLatitude(double hotelLatitude) {
+        this.hotelLatitude = hotelLatitude;
+    }
+
+    public double getHotelLongtitude() {
+        return hotelLongtitude;
+    }
+
+    public void setHotelLongtitude(double hotelLongtitude) {
+        this.hotelLongtitude = hotelLongtitude;
+    }
+
+    public String getHotelShowImg() {
+        return hotelShowImg;
+    }
+
+    public void setHotelShowImg(String hotelShowImg) {
+        this.hotelShowImg = hotelShowImg;
+    }
+
+    public String getHotelDescribe() {
+        return hotelDescribe;
+    }
+
+    public void setHotelDescribe(String hotelDescribe) {
+        this.hotelDescribe = hotelDescribe;
+    }
+
+    public List<HotelFloor> getHotelFloorList() {
+        return hotelFloorList;
+    }
+
+    public void setHotelFloorList(List<HotelFloor> hotelFloorList) {
+        this.hotelFloorList = hotelFloorList;
+    }
+
+    public int getHotelLevel() {
+        return hotelLevel;
+    }
+
+    public void setHotelLevel(int hotelLevel) {
+        this.hotelLevel = hotelLevel;
+    }
+
+    public String getHotelSecurityCode() {
+        return hotelSecurityCode;
+    }
+
+    public void setHotelSecurityCode(String hotelSecurityCode) {
+        this.hotelSecurityCode = hotelSecurityCode;
+    }
+
+    public String getHotelDistance() {
+        return hotelDistance;
+    }
+
+    public void setHotelDistance(String hotelDistance) {
+        this.hotelDistance = hotelDistance;
+    }
 }

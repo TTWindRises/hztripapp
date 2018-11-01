@@ -57,7 +57,6 @@
         </activity>
         <activity android:name="com.baidu.myapp.activity.WNaviGuideActivity" >
         </activity>
-        <activity android:name="com.baidu.myapp.Helper.FoodStoreDataHelper" />
         <activity android:name="com.baidu.myapp.test.Markein" />
         <activity android:name="com.baidu.myapp.test.OverlayDemo" />
         <activity android:name="com.baidu.myapp.search.BusLineSearchDemo" />

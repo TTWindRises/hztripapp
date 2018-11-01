@@ -1,23 +1,14 @@
 package com.baidu.myapp.activity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
 
 import com.baidu.myapp.R;
-import com.baidu.myapp.impl.HeadViewImpl;
-import com.baidu.myapp.interfaces.IHeadView;
-import com.baidu.myapp.util.CircleCrop;
 import com.baidu.myapp.util.Debbuger;
 import com.baidu.myapp.util.FileUtils;
-import com.baidu.myapp.view.HeadView;
-import com.bumptech.glide.Glide;
 import com.fengmap.android.map.FMMap;
 import com.fengmap.android.map.FMMapUpgradeInfo;
 import com.fengmap.android.map.FMMapView;
 import com.fengmap.android.map.event.OnFMMapInitListener;
-
-import static android.view.KeyCharacterMap.load;
 
 /**
  * Created by Administrator on 2018/10/23.

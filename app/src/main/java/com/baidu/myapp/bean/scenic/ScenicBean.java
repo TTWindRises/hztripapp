@@ -1,85 +1,153 @@
 package com.baidu.myapp.bean.scenic;
-
 import org.litepal.crud.DataSupport;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by 曾志荣年 on 2018/5/17.
  */
 
-public class ScenicBean extends DataSupport implements Serializable {
-    private double latitude;
-    private double longtitude;
-    private int ImgId;
-    private int overlayImgId;
-    private String spname;
-   /* private int doorPrice;
+public class ScenicBean extends DataSupport implements Serializable{
+    private double scenicLatitude;//景区位置的经度
+    private double scenicLongtitude;//景区位置的纬度
+    private String scenicImg;//封面+介绍六宫格图片
+    private int scenicOverlayImg;//景区覆盖物图标
+    private String scenicName;//景区名
+    private String scenicDistance;//到景区的距离
+    private int scenicPraise;//景区的点赞数
+    private double scenicPrice;//景区的门票价
+    private String scenicDescribe;//景区的文字描述
+    private String voiceSrc;//景点介绍的音频路径---可以用路径来区分于那个~比如说景区+景点的名称缩写字母排列等
+    private String videoSrc;//景点介绍的视屏路径---不必要单独去列多一个表去区别这些信息了
+    private List<SpotBean> spotBeanList;//景区里面的所有景点
+    private String scenicLine;//景区的景点线路区阵——存放所有导游游览的线路
+    private static final long serialVersionUID = -1010711755;
 
-    private int visits;*/
 
 
-    private String distance;
-    private int zan;
-    private static final long serialVersionUID=-1010711755;
-
-
-    public int getOverlayImgId() {
-        return overlayImgId;
+    public double getScenicLatitude() {
+        return scenicLatitude;
     }
 
-    public void setOverlayImgId(int overlayImgId) {
-        this.overlayImgId = overlayImgId;
-    }
-    public int getImgId() {
-        return ImgId;
+    public void setScenicLatitude(double scenicLatitude) {
+        this.scenicLatitude = scenicLatitude;
     }
 
-    public void setImgId(int imgId) {
-        ImgId = imgId;
+    public double getScenicLongtitude() {
+        return scenicLongtitude;
     }
 
-    public double getLatitude() {
-        return latitude;
+    public void setScenicLongtitude(double scenicLongtitude) {
+        this.scenicLongtitude = scenicLongtitude;
     }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
+    public String getScenicImg() {
+        return scenicImg;
     }
 
-    public double getLongtitude() {
-        return longtitude;
+    public void setScenicImg(String scenicImg) {
+        this.scenicImg = scenicImg;
     }
 
-    public void setLongtitude(double longtitude) {
-        this.longtitude = longtitude;
+    public int getScenicOverlayImg() {
+        return scenicOverlayImg;
     }
 
-    public String getSpname() {
-        return spname;
+    public void setScenicOverlayImg(int scenicOverlayImg) {
+        this.scenicOverlayImg = scenicOverlayImg;
     }
 
-    public void setSpname(String spname) {
-        this.spname = spname;
+    public String getScenicName() {
+        return scenicName;
     }
 
-
-
-    public String getDistance() {
-        return distance;
+    public void setScenicName(String scenicName) {
+        this.scenicName = scenicName;
     }
 
-    public void setDistance(String distance) {
-        this.distance = distance;
+    public String getScenicDistance() {
+        return scenicDistance;
     }
 
-    public int getZan() {
-        return zan;
+    public void setScenicDistance(String scenicDistance) {
+        this.scenicDistance = scenicDistance;
     }
 
-    public void setZan(int zan) {
-        this.zan = zan;
+    public int getScenicPraise() {
+        return scenicPraise;
     }
 
+    public void setScenicPraise(int scenicPraise) {
+        this.scenicPraise = scenicPraise;
+    }
 
+    public double getScenicPrice() {
+        return scenicPrice;
+    }
+
+    public void setScenicPrice(double scenicPrice) {
+        this.scenicPrice = scenicPrice;
+    }
+
+    public String getScenicDescribe() {
+        return scenicDescribe;
+    }
+
+    public void setScenicDescribe(String scenicDescribe) {
+        this.scenicDescribe = scenicDescribe;
+    }
+
+    public String getVoiceSrc() {
+        return voiceSrc;
+    }
+
+    public void setVoiceSrc(String voiceSrc) {
+        this.voiceSrc = voiceSrc;
+    }
+
+    public String getVideoSrc() {
+        return videoSrc;
+    }
+
+    public void setVideoSrc(String videoSrc) {
+        this.videoSrc = videoSrc;
+    }
+
+    public List<SpotBean> getSpotBeanList() {
+        return spotBeanList;
+    }
+
+    public void setSpotBeanList(List<SpotBean> spotBeanList) {
+        this.spotBeanList = spotBeanList;
+    }
+
+    public String getScenicLine() {
+        return scenicLine;
+    }
+
+    public void setScenicLine(String scenicLine) {
+        this.scenicLine = scenicLine;
+    }
+    @Override
+    public String toString() {
+        return "ScenicBean{" +
+                "scenicLatitude=" + scenicLatitude +
+                ", scenicLongtitude=" + scenicLongtitude +
+                ", scenicImg='" + scenicImg + '\'' +
+                ", scenicOverlayImg=" + scenicOverlayImg +
+                ", scenicName='" + scenicName + '\'' +
+                ", scenicDistance='" + scenicDistance + '\'' +
+                ", scenicPraise=" + scenicPraise +
+                ", scenicPrice=" + scenicPrice +
+                ", scenicDescribe='" + scenicDescribe + '\'' +
+                ", voiceSrc='" + voiceSrc + '\'' +
+                ", videoSrc='" + videoSrc + '\'' +
+                ", spotBeanList=" + spotBeanList +
+                ", scenicLine='" + scenicLine + '\'' +
+                '}';
+    }
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 }

@@ -9,16 +9,16 @@ import java.util.List;
 //只有一些个人资料可以放在sqlite上
 
 public class FoodStoreBean extends DataSupport implements Serializable {
-    private String StoreName;//店铺名称
-    private double StoreLatitude;//店铺的坐标
-    private double StoreLongtitude;
-    private String StoreDistance;//距离要经过两点的直线距离计算，还是路程计算，还是线路路程的平均路程计算，这个数据要显示暂时写死.
-    private String StoreCategory;//销售食品的类别
-    private String StoreAddress;//商家地址
-    private String StorePhone; //商家电话
-    private String StoreHours; //营业时间
-    private String StoreImg;//商家的图片
-    private String StoreDescribe;//商家信息描述
+    private String storeName;//店铺名称
+    private double storeLatitude;//店铺的坐标
+    private double storeLongtitude;
+    private String storeDistance;//距离要经过两点的直线距离计算，还是路程计算，还是线路路程的平均路程计算，这个数据要显示暂时写死.
+    private String storeCategory;//销售食品的类别
+    private String storeAddress;//商家地址
+    private String storePhone; //商家电话
+    private String storeHours; //营业时间
+    private String storeImg;//商家的图片
+    private String storeDescribe;//商家信息描述
     private int TotalSales;//食品的总销售量
     private static final long serialVersionUID = 1L;
     private List<FoodBean> foodBeanList;
@@ -35,84 +35,87 @@ public class FoodStoreBean extends DataSupport implements Serializable {
         this.foodBeanList = foodBeanList;
     }
 
+    public FoodStoreBean() {
+    }
+
     public String getStoreName() {
-        return StoreName;
+        return storeName;
     }
 
     public void setStoreName(String storeName) {
-        StoreName = storeName;
+        this.storeName = storeName;
     }
 
     public double getStoreLatitude() {
-        return StoreLatitude;
+        return storeLatitude;
     }
 
     public void setStoreLatitude(double storeLatitude) {
-        StoreLatitude = storeLatitude;
+        this.storeLatitude = storeLatitude;
     }
 
     public double getStoreLongtitude() {
-        return StoreLongtitude;
+        return storeLongtitude;
     }
 
     public void setStoreLongtitude(double storeLongtitude) {
-        StoreLongtitude = storeLongtitude;
+        this.storeLongtitude = storeLongtitude;
     }
 
     public String getStoreDistance() {
-        return StoreDistance;
+        return storeDistance;
     }
 
     public void setStoreDistance(String storeDistance) {
-        StoreDistance = storeDistance;
+        this.storeDistance = storeDistance;
     }
 
     public String getStoreCategory() {
-        return StoreCategory;
+        return storeCategory;
     }
 
     public void setStoreCategory(String storeCategory) {
-        StoreCategory = storeCategory;
+        this.storeCategory = storeCategory;
     }
 
     public String getStoreAddress() {
-        return StoreAddress;
+        return storeAddress;
     }
 
     public void setStoreAddress(String storeAddress) {
-        StoreAddress = storeAddress;
+        this.storeAddress = storeAddress;
     }
 
     public String getStorePhone() {
-        return StorePhone;
+        return storePhone;
     }
 
     public void setStorePhone(String storePhone) {
-        StorePhone = storePhone;
+        this.storePhone = storePhone;
     }
 
     public String getStoreHours() {
-        return StoreHours;
+        return storeHours;
     }
 
     public void setStoreHours(String storeHours) {
-        StoreHours = storeHours;
+        this.storeHours = storeHours;
     }
 
     public String getStoreImg() {
-        return StoreImg;
+        return storeImg;
     }
 
     public void setStoreImg(String storeImg) {
-        StoreImg = storeImg;
+        this.storeImg = storeImg;
     }
 
     public String getStoreDescribe() {
-        return StoreDescribe;
+        return storeDescribe;
     }
 
     public void setStoreDescribe(String storeDescribe) {
-        StoreDescribe = storeDescribe;
+        this.storeDescribe = storeDescribe;
     }
 
     public int getTotalSales() {
@@ -121,5 +124,23 @@ public class FoodStoreBean extends DataSupport implements Serializable {
 
     public void setTotalSales(int totalSales) {
         TotalSales = totalSales;
+    }
+
+    @Override
+    public String toString() {
+        return "FoodStoreBean{" +
+                "storeName='" + storeName + '\'' +
+                ", storeLatitude=" + storeLatitude +
+                ", storeLongtitude=" + storeLongtitude +
+                ", storeDistance='" + storeDistance + '\'' +
+                ", storeCategory='" + storeCategory + '\'' +
+                ", storeAddress='" + storeAddress + '\'' +
+                ", storePhone='" + storePhone + '\'' +
+                ", storeHours='" + storeHours + '\'' +
+                ", storeImg='" + storeImg + '\'' +
+                ", storeDescribe='" + storeDescribe + '\'' +
+                ", TotalSales=" + TotalSales +
+                ", foodBeanList=" + foodBeanList +
+                '}';
     }
 }

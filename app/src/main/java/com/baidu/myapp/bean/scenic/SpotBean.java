@@ -6,25 +6,35 @@ import java.io.Serializable;
 
 public class SpotBean extends DataSupport implements Serializable{
     private static final long serialVersionUID=1L;
-    double latitude;
-    double longtitude;
-    String spotName;
-    String spotDescribe;
+    private double spotLatitude;//景点的纬度
+    private double spotLongtitude;//景点的经度
+    private String spotName;//景点的名称
+    private String spotDescribe;//景点的文字描述
+    private String spotImg;//景点的介绍图片：封面+6宫格
+    private String spotDistance;//景点的路程
+    private String voiceSrc;//景点介绍的音频路径---可以用路径来区分于那个~比如说景区+景点的名称缩写字母排列等
+    private String videoSrc;//景点介绍的视屏路径---不必要单独去列多一个表去区别这些信息了
 
-    public double getLatitude() {
-        return latitude;
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
+
+
+    public double getSpotLatitude() {
+        return spotLatitude;
     }
 
-    public double getLongtitude() {
-        return longtitude;
+    public void setSpotLatitude(double spotLatitude) {
+        this.spotLatitude = spotLatitude;
     }
 
-    public void setLongtitude(double longtitude) {
-        this.longtitude = longtitude;
+    public double getSpotLongtitude() {
+        return spotLongtitude;
+    }
+
+    public void setSpotLongtitude(double spotLongtitude) {
+        this.spotLongtitude = spotLongtitude;
     }
 
     public String getSpotName() {
@@ -42,4 +52,50 @@ public class SpotBean extends DataSupport implements Serializable{
     public void setSpotDescribe(String spotDescribe) {
         this.spotDescribe = spotDescribe;
     }
+
+    public String getSpotImg() {
+        return spotImg;
+    }
+
+    public void setSpotImg(String spotImg) {
+        this.spotImg = spotImg;
+    }
+
+    public String getSpotDistance() {
+        return spotDistance;
+    }
+
+    public void setSpotDistance(String spotDistance) {
+        this.spotDistance = spotDistance;
+    }
+
+    public String getVoiceSrc() {
+        return voiceSrc;
+    }
+
+    public void setVoiceSrc(String voiceSrc) {
+        this.voiceSrc = voiceSrc;
+    }
+
+    public String getVideoSrc() {
+        return videoSrc;
+    }
+
+    public void setVideoSrc(String videoSrc) {
+        this.videoSrc = videoSrc;
+    }
+    @Override
+    public String toString() {
+        return "SpotBean{" +
+                "spotLatitude=" + spotLatitude +
+                ", spotLongtitude=" + spotLongtitude +
+                ", spotName='" + spotName + '\'' +
+                ", spotDescribe='" + spotDescribe + '\'' +
+                ", spotImg='" + spotImg + '\'' +
+                ", spotDistance='" + spotDistance + '\'' +
+                ", voiceSrc='" + voiceSrc + '\'' +
+                ", videoSrc='" + videoSrc + '\'' +
+                '}';
+    }
+
 }

@@ -95,4 +95,18 @@ public class FoodBean extends DataSupport {
     public void setDeliciousFoodBeans(List<FoodBean> deliciousFoodBeans) {
         mDeliciousFoodBeans = deliciousFoodBeans;
     }
+
+    @Override
+    public String toString() {
+        return "FoodBean{" +
+                "foodID='" + foodID + '\'' +
+                ", foodName='" + foodName + '\'' +
+                ", foodPrice=" + foodPrice +
+                ", foodDescribe='" + foodDescribe + '\'' +
+                ", foodImg='" + foodImg + '\'' +
+                ", foodCategoryID='" + foodCategoryID + '\'' +
+                ", foodSales=" + foodSales +
+                ", foodStore=" + foodStore +
+                '}';
+    }
 }

@@ -25,17 +25,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.baidu.myapp.Helper.FoodStoreDataHelper;
 import com.baidu.myapp.activity.BNaviGuideActivity;
 import com.baidu.myapp.activity.BaseActivity;
 import com.baidu.myapp.activity.FNmapActivity;
 import com.baidu.myapp.activity.WNaviGuideActivity;
-import com.baidu.myapp.bean.food.FoodBean;
 import com.baidu.myapp.bean.food.FoodStoreBean;
 import com.baidu.myapp.bean.scenic.ScenicBean;
 import com.baidu.myapp.bean.scenic.SpotBean;
-import com.baidu.myapp.impl.FoodBeanImpl;
-import com.baidu.myapp.impl.MainAgent;
 import com.baidu.myapp.overlay.util.DrivingRouteOverlay;
 import com.baidu.myapp.overlay.util.OverlayManager;
 import com.baidu.myapp.overlay.util.WalkingRouteOverlay;
@@ -105,11 +101,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
-import static com.baidu.location.g.j.D;
-import static com.baidu.location.g.j.G;
-import static com.baidu.location.g.j.H;
-import static com.baidu.location.g.j.I;
-import static com.baidu.location.g.j.t;
 
 public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickListener,
         OnGetRoutePlanResultListener, OnFMMapInitListener {
@@ -133,7 +124,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     private ImageView Img_htl01;
     //线路规划相关
 // 浏览路线节点相关
-    MainAgent mainAgent = new MainAgent();
+
 
     Button mBtnPre = null; // 上一个节点
     Button mBtnNext = null; // 下一个节
@@ -209,6 +200,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //TEST
+
         requestPermission();
         this.mContext = this;
         //数据初始化
@@ -219,9 +212,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         initSpotData();
         MyLocation();
         //导航按钮
-        mainAgent.init();
         NavGuideButtonClick();
-        mainAgent.ExitPresses();
         InitNav();
         InitFSView();
 
@@ -323,7 +314,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     public void initSpotData() {
         for (int i = 0; i < spotBeans.size(); i++) {
 
-            spotLatLngs.add(new LatLng(spotBeans.get(i).getLatitude(), spotBeans.get(i).getLongtitude()));
+//            spotLatLngs.add(new LatLng(spotBeans.get(i).getLatitude(), spotBeans.get(i).getLongtitude()));
         }
     }
 
@@ -810,7 +801,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         for (SpotBean spotBean : spotBeans) {
             //经纬度
 
-            latLng = new LatLng(spotBean.getLatitude(), spotBean.getLongtitude());
+//            latLng = new LatLng(spotBean.getLatitude(), spotBean.getLongtitude());
 
             //计算两点之间的距离
             ++i;
@@ -885,12 +876,12 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
         for (ScenicBean ScenicBean : scenicBeans) {
             //经纬度
-            latLng = new LatLng(ScenicBean.getLatitude(), ScenicBean.getLongtitude());
+           /* latLng = new LatLng(ScenicBean.getLatitude(), ScenicBean.getLongtitude());*/
             //图标
             options = new MarkerOptions().position(latLng).icon(mMarker).zIndex(5);
             marker = (Marker) mBaiduMap.addOverlay(options);
             Bundle arg0 = new Bundle();
-            arg0.putSerializable("ScenicBean", ScenicBean);
+//            arg0.putSerializable("ScenicBean", ScenicBean);
             marker.setExtraInfo(arg0);
         }
 
@@ -921,13 +912,13 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
                 final ScenicBean info = (ScenicBean) extraInfo.getSerializable("ScenicBean");
                 if (info != null) {
-                    Toast.makeText(MainActivity.this, info.getSpname(), Toast.LENGTH_SHORT).show();
+                    /*Toast.makeText(MainActivity.this, info.getSpname(), Toast.LENGTH_SHORT).show();*/
                 } else if ((FoodStoreBean) extraInfo.getSerializable("foodstore") != null) {
                     final FoodStoreBean foodStoreBean = (FoodStoreBean) extraInfo.getSerializable("foodstore");
                     Toast.makeText(MainActivity.this, foodStoreBean.getStoreName(), Toast.LENGTH_SHORT).show();
                 } else {
                     final SpotBean spotBean = (SpotBean) extraInfo.getSerializable("spotbeans");
-                    Toast.makeText(MainActivity.this, spotBean.getSpotName() + "", Toast.LENGTH_SHORT).show();
+//                  Toast.makeText(MainActivity.this, spotBean.getSpotName() + "", Toast.LENGTH_SHORT).show();
                 }
           /*     final FoodStoreBean foodStore = (FoodStoreBean) extraInfo.getSerializable("foodstore");
                 Toast.makeText(MainActivity.this, foodStore.getStoreName(), Toast.LENGTH_SHORT).show();
@@ -1331,8 +1322,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                 break;
             case R.id.into_databases:
 
-                Intent intent = new Intent(MainActivity.this, FoodStoreDataHelper.class);
-                startActivity(intent);
 
                 break;
             default:

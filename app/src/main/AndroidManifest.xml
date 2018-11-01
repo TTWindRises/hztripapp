@@ -52,7 +52,6 @@
         <activity android:name="com.baidu.myapp.activity.WNaviGuideActivity">
 
         </activity>
-        <activity android:name=".Helper.FoodStoreDataHelper"></activity>
         <activity android:name=".test.Markein"></activity>
         <activity android:name=".test.OverlayDemo"></activity>
         <activity android:name=".search.BusLineSearchDemo"></activity>
