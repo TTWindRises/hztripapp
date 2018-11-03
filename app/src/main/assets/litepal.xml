@@ -2,14 +2,17 @@
 <litepal>
 
 
-    <dbname value="FoodStore"/>
+    <dbname value="myapp"/>
 
 
-    <version value="5"/>
+    <version value="8"/>
 
     <list>
         <mapping class="com.baidu.myapp.bean.scenic.SpotBean"></mapping>
-        <mapping class="com.baidu.myapp.bean.food.FoodStoreBean"></mapping>
+        <mapping class="com.baidu.myapp.bean.food.FoodStore"></mapping>
+        <mapping class="com.baidu.myapp.bean.food.FoodBean"></mapping>
+        <mapping class="com.baidu.myapp.bean.food.FoodOrder"></mapping>
+        <mapping class="com.baidu.myapp.bean.food.FoodCategory"></mapping>
         <mapping class="com.baidu.myapp.bean.scenic.ScenicBean"></mapping>
     </list>
 

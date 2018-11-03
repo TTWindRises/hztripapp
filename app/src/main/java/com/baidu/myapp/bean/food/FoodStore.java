@@ -1,14 +1,22 @@
 package com.baidu.myapp.bean.food;
 
+import com.baidu.myapp.util.Debbuger;
+
+import org.litepal.annotation.Column;
 import org.litepal.crud.DataSupport;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+
+import static android.R.attr.id;
 
 //像这种数据需要放在服务器上面吧
 //只有一些个人资料可以放在sqlite上
 
-public class FoodStoreBean extends DataSupport implements Serializable {
+public class FoodStore extends DataSupport implements Serializable {
+    @Column(unique = true)
+    private String storeID;
     private String storeName;//店铺名称
     private double storeLatitude;//店铺的坐标
     private double storeLongtitude;
@@ -21,7 +29,15 @@ public class FoodStoreBean extends DataSupport implements Serializable {
     private String storeDescribe;//商家信息描述
     private int TotalSales;//食品的总销售量
     private static final long serialVersionUID = 1L;
-    private List<FoodBean> foodBeanList;
+    private List<FoodBean> foodBeanList = new ArrayList<FoodBean>();
+
+    public String getStoreID() {
+        return storeID;
+    }
+
+    public void setStoreID(String storeID) {
+        this.storeID = storeID;
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -31,11 +47,16 @@ public class FoodStoreBean extends DataSupport implements Serializable {
         return foodBeanList;
     }
 
+    public List<FoodBean> getFoodBeanAll() {
+        Debbuger.LogE("data:"+DataSupport.where("store_id=?",storeID).find(FoodBean.class).toString());
+        return DataSupport.where("store_id=?",storeID).find(FoodBean.class);
+    }
+
     public void setFoodBeanList(List<FoodBean> foodBeanList) {
         this.foodBeanList = foodBeanList;
     }
 
-    public FoodStoreBean() {
+    public FoodStore() {
     }
 
     public String getStoreName() {
@@ -128,7 +149,7 @@ public class FoodStoreBean extends DataSupport implements Serializable {
 
     @Override
     public String toString() {
-        return "FoodStoreBean{" +
+        return "FoodStore{" +
                 "storeName='" + storeName + '\'' +
                 ", storeLatitude=" + storeLatitude +
                 ", storeLongtitude=" + storeLongtitude +

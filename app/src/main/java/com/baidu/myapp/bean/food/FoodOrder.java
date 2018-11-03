@@ -2,6 +2,7 @@ package com.baidu.myapp.bean.food;
 
 import com.baidu.myapp.bean.userinfo.UserBean;
 
+import org.litepal.annotation.Column;
 import org.litepal.crud.DataSupport;
 
 import java.security.Timestamp;
@@ -12,18 +13,13 @@ import java.util.List;
  */
 
 public class FoodOrder extends DataSupport {
-    private String orderID;
+    @Column(unique = true)
+    private int orderID;
     private List<FoodBean> foodBeans;
     private Timestamp orderTime;
     private int orderNumber;
     private List<UserBean> userBeanList;
-    public String getOrderID() {
-        return orderID;
-    }
 
-    public void setOrderID(String orderID) {
-        this.orderID = orderID;
-    }
 
     public List<FoodBean> getFoodBeans() {
         return foodBeans;

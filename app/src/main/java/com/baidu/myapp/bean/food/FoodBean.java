@@ -1,45 +1,48 @@
 package com.baidu.myapp.bean.food;
 
-import com.baidu.myapp.R;
-
+import org.litepal.annotation.Column;
 import org.litepal.crud.DataSupport;
 
-import java.util.ArrayList;
-import java.util.List;
+import static android.R.attr.id;
 
 public class FoodBean extends DataSupport {
-    private String foodID;
-    private String foodName;
-    private int foodPrice;
-    private String foodDescribe;
-    private String foodImg;
+
+    @Column(unique = true)
+    private int foodID;//食品的编号
+
+
+
+    private String foodName;//食品的名称
+    private int foodNum;//食品的数量
+    private int foodPrice;//食品的价格
+    private String foodDescribe;//食品的介绍描述信息
+    private String foodImg;//食品的展示图片
     private String foodCategoryID; //食品类别号，归属于哪一个类别,考虑要加一个类目表，方便查询
     private int foodSales;//单个食品的销量,初始为零，然后不能低于零，每个月要重新计算一次,因为显示的是上一个月的销量
     //食物与商店之间的多对多关系
-    private List<FoodStoreBean> foodStore;
+    private String store_id;//属于哪家商店，利用这个id可以查寻到商家的信息
 
-    public List<FoodStoreBean> getFoodStore() {
-        return foodStore;
+    public String getFoodCategoryID() {
+        return foodCategoryID;
     }
 
-    public void setFoodStore(List<FoodStoreBean> foodStore) {
-        this.foodStore = foodStore;
+    public void setFoodCategoryID(String foodCategoryID) {
+        this.foodCategoryID = foodCategoryID;
     }
 
-    public static List<FoodBean> getmDeliciousFoodBeans() {
-        return mDeliciousFoodBeans;
+    public int getFoodSales() {
+        return foodSales;
     }
 
-    public static void setmDeliciousFoodBeans(List<FoodBean> mDeliciousFoodBeans) {
-        FoodBean.mDeliciousFoodBeans = mDeliciousFoodBeans;
+    public void setFoodSales(int foodSales) {
+        this.foodSales = foodSales;
     }
 
-    public static List<FoodBean> mDeliciousFoodBeans = new ArrayList<FoodBean>();
     //食品构造初始化
     public FoodBean() {
     }
 
-    public FoodBean(String foodID, String foodName, int foodPrice, String foodDescribe, String foodImg) {
+    public FoodBean(int foodID, String foodName, int foodPrice, String foodDescribe, String foodImg) {
         this.foodID = foodID;
         this.foodName = foodName;
         this.foodPrice = foodPrice;
@@ -72,11 +75,20 @@ public class FoodBean extends DataSupport {
         this.foodDescribe = foodDescribe;
     }
 
-    public String getFoodID() {
+    public int getFoodNum() {
+        return foodNum;
+    }
+
+    public void setFoodNum(int foodNum) {
+        this.foodNum = foodNum;
+    }
+
+    public int getFoodID() {
+
         return foodID;
     }
 
-    public void setFoodID(String foodID) {
+    public void setFoodID(int foodID) {
         this.foodID = foodID;
     }
 
@@ -88,25 +100,25 @@ public class FoodBean extends DataSupport {
         this.foodImg = foodImg;
     }
 
-    public List<FoodBean> getDeliciousFoodBeans() {
-        return mDeliciousFoodBeans;
+    public String getStore_id() {
+        return store_id;
     }
 
-    public void setDeliciousFoodBeans(List<FoodBean> deliciousFoodBeans) {
-        mDeliciousFoodBeans = deliciousFoodBeans;
+    public void setStore_id(String store_id) {
+        this.store_id = store_id;
     }
-
     @Override
     public String toString() {
         return "FoodBean{" +
-                "foodID='" + foodID + '\'' +
+                "foodID=" + foodID +
                 ", foodName='" + foodName + '\'' +
+                ", foodNum=" + foodNum +
                 ", foodPrice=" + foodPrice +
                 ", foodDescribe='" + foodDescribe + '\'' +
                 ", foodImg='" + foodImg + '\'' +
                 ", foodCategoryID='" + foodCategoryID + '\'' +
                 ", foodSales=" + foodSales +
-                ", foodStore=" + foodStore +
+                ", store_id='" + store_id + '\'' +
                 '}';
     }
 }

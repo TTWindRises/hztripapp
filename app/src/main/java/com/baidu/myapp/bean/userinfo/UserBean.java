@@ -4,6 +4,8 @@ import com.baidu.myapp.bean.food.FoodOrder;
 import com.baidu.myapp.bean.hotel.HotelOrder;
 import com.baidu.myapp.bean.scenic.ScenicOrder;
 
+import org.litepal.annotation.Column;
+
 import java.util.List;
 
 /**
@@ -11,8 +13,9 @@ import java.util.List;
  */
 
 public class UserBean {
-    private String userName;//用户名
+    @Column(unique = true)
     private int userID;//用户唯一标识符
+    private String userName;//用户名
     private String password;//用户密码
     private String headImg;//头像地址
     private String token;//登录验证信息
@@ -24,6 +27,9 @@ public class UserBean {
     private String userIDCARD;//用户的身份证号码——如果没有实名认证将关闭一些功能
     private double spendMoney;//花费了多少钱
     private double Distance;//走过了多少距离
+    private int food_orderid;
+    private int hotel_orderid;
+    private int scenic_orderid;
     private List<FoodOrder> foodOrderList;//用户需要获取自己本身对应的所有食品订单资料
     private List<HotelOrder> hotelOrderList;//用户需要获取自己本身对应的所有酒店订单资料
     private List<ScenicOrder> scenicOrderList;//用户需要获取自己本身对应的所有景区订单资料

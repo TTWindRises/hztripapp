@@ -29,9 +29,11 @@ import com.baidu.myapp.activity.BNaviGuideActivity;
 import com.baidu.myapp.activity.BaseActivity;
 import com.baidu.myapp.activity.FNmapActivity;
 import com.baidu.myapp.activity.WNaviGuideActivity;
-import com.baidu.myapp.bean.food.FoodStoreBean;
+import com.baidu.myapp.bean.food.FoodBean;
+import com.baidu.myapp.bean.food.FoodStore;
 import com.baidu.myapp.bean.scenic.ScenicBean;
 import com.baidu.myapp.bean.scenic.SpotBean;
+import com.baidu.myapp.impl.foodimpl.FoodCategoryIMPL;
 import com.baidu.myapp.overlay.util.DrivingRouteOverlay;
 import com.baidu.myapp.overlay.util.OverlayManager;
 import com.baidu.myapp.overlay.util.WalkingRouteOverlay;
@@ -101,6 +103,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
+import static com.baidu.location.g.j.L;
 
 public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickListener,
         OnGetRoutePlanResultListener, OnFMMapInitListener {
@@ -159,7 +162,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     private FMMap mMap;
     //覆盖相关物
 /*    private List<ScenicBean> infos;
-    private List<FoodStoreBean> fs;*/
+    private List<FoodStore> fs;*/
     private BitmapDescriptor mDeliciousMarker;
     private BitmapDescriptor mMarker;
     private RelativeLayout mMarkerLy;
@@ -201,6 +204,27 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //TEST
+
+        FoodStore foodStore = new FoodStore();
+        foodStore.setStoreName("星巴克");
+        foodStore.setStoreID("1");
+        foodStore.save();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         requestPermission();
         this.mContext = this;
@@ -847,8 +871,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         Marker marker = null;
         OverlayOptions options;
         List<ScenicBean> scenicBeans = DataSupport.findAll(ScenicBean.class);
-        List<FoodStoreBean> foodStoreBeans = DataSupport.findAll(FoodStoreBean.class);
-        for (FoodStoreBean foodstores : foodStoreBeans) {
+        List<FoodStore> foodStoreBeans = DataSupport.findAll(FoodStore.class);
+        for (FoodStore foodstores : foodStoreBeans) {
             //经纬度
 //            latLng = new LatLng(foodstores.getLatitude(), foodstores.getLongtitude());
             //图标
@@ -913,14 +937,14 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                 final ScenicBean info = (ScenicBean) extraInfo.getSerializable("ScenicBean");
                 if (info != null) {
                     /*Toast.makeText(MainActivity.this, info.getSpname(), Toast.LENGTH_SHORT).show();*/
-                } else if ((FoodStoreBean) extraInfo.getSerializable("foodstore") != null) {
-                    final FoodStoreBean foodStoreBean = (FoodStoreBean) extraInfo.getSerializable("foodstore");
+                } else if ((FoodStore) extraInfo.getSerializable("foodstore") != null) {
+                    final FoodStore foodStoreBean = (FoodStore) extraInfo.getSerializable("foodstore");
                     Toast.makeText(MainActivity.this, foodStoreBean.getStoreName(), Toast.LENGTH_SHORT).show();
                 } else {
                     final SpotBean spotBean = (SpotBean) extraInfo.getSerializable("spotbeans");
 //                  Toast.makeText(MainActivity.this, spotBean.getSpotName() + "", Toast.LENGTH_SHORT).show();
                 }
-          /*     final FoodStoreBean foodStore = (FoodStoreBean) extraInfo.getSerializable("foodstore");
+          /*     final FoodStore foodStore = (FoodStore) extraInfo.getSerializable("foodstore");
                 Toast.makeText(MainActivity.this, foodStore.getStoreName(), Toast.LENGTH_SHORT).show();
 */
 
