@@ -57,6 +57,7 @@
         <activity android:name=".search.BusLineSearchDemo"></activity>
         <activity android:name=".activity.FNmapActivity" />
         <activity android:name=".search.RoutePlanDemo"/>
+        <activity android:name="com.baidu.myapp.activity.FoodStoreActivity" />
         <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
         </service>
 

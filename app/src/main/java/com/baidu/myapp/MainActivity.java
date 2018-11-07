@@ -33,7 +33,8 @@ import com.baidu.myapp.bean.food.FoodBean;
 import com.baidu.myapp.bean.food.FoodStore;
 import com.baidu.myapp.bean.scenic.ScenicBean;
 import com.baidu.myapp.bean.scenic.SpotBean;
-import com.baidu.myapp.impl.foodimpl.FoodCategoryIMPL;
+import com.baidu.myapp.impl.foodimpl.FoodStoreIMPL;
+import com.baidu.myapp.map.OverlayUtil;
 import com.baidu.myapp.overlay.util.DrivingRouteOverlay;
 import com.baidu.myapp.overlay.util.OverlayManager;
 import com.baidu.myapp.overlay.util.WalkingRouteOverlay;
@@ -104,6 +105,8 @@ import java.util.List;
 
 import static android.content.ContentValues.TAG;
 import static com.baidu.location.g.j.L;
+import static com.baidu.location.g.j.O;
+import static com.baidu.location.g.j.o;
 
 public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickListener,
         OnGetRoutePlanResultListener, OnFMMapInitListener {
@@ -888,8 +891,18 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     }
 
     private void addOverlays() {
+        OverlayUtil overlayUtil = new OverlayUtil();
+        FoodStoreIMPL storeDAO = new FoodStoreIMPL();
 
-        mBaiduMap.clear();
+
+
+
+
+
+
+
+
+       /* mBaiduMap.clear();
         LatLng latLng = null;
 
         Marker marker = null;
@@ -900,7 +913,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
         for (ScenicBean ScenicBean : scenicBeans) {
             //经纬度
-           /* latLng = new LatLng(ScenicBean.getLatitude(), ScenicBean.getLongtitude());*/
+           *//* latLng = new LatLng(ScenicBean.getLatitude(), ScenicBean.getLongtitude());*//*
             //图标
             options = new MarkerOptions().position(latLng).icon(mMarker).zIndex(5);
             marker = (Marker) mBaiduMap.addOverlay(options);
@@ -909,7 +922,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
             marker.setExtraInfo(arg0);
         }
 
-
+*/
         //扩展按钮
         final TextView textView = (TextView) findViewById(R.id.sp_more);
         textView.setVisibility(View.VISIBLE);

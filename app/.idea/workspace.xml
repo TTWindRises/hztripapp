@@ -49,35 +49,34 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="210" column="25" selection-start-line="210" selection-start-column="25" selection-end-line="210" selection-end-column="25" />
+            <state relative-caret-position="-455">
+              <caret line="34" column="44" selection-start-line="33" selection-start-column="46" selection-end-line="34" selection-end-column="44" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5402#5410#0" expanded="false" />
-                <element signature="e#5835#5887#0" expanded="false" />
+                <element signature="e#5519#5527#0" expanded="false" />
+                <element signature="e#5952#6004#0" expanded="false" />
                 <element signature="docComment;field#spotLatLngs#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#8516#8522#0" expanded="false" />
+                <element signature="e#8633#8639#0" expanded="false" />
                 <element signature="method#InitFSView#0;class#MainActivity#0" expanded="false" />
                 <element signature="docComment;method#openMapByPath#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#openMapByPath#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#10738#10788#0" expanded="false" />
+                <element signature="e#10855#10905#0" expanded="false" />
                 <element signature="docComment;method#initSpotData#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#initSpotData#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#nodeClick#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#12526#12539#0" expanded="false" />
+                <element signature="e#12643#12656#0" expanded="false" />
                 <element signature="docComment;method#searchProcess#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#searchProcess#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#15984#15995#0" expanded="false" />
+                <element signature="e#16101#16112#0" expanded="false" />
                 <element signature="docComment;method#MyLocation#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#MyLocation#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#18599#18631#0" expanded="false" />
+                <element signature="e#18716#18748#0" expanded="false" />
                 <element signature="method#onGetWalkingRouteResult#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#19173#19203#0" expanded="false" />
+                <element signature="e#19290#19320#0" expanded="false" />
                 <element signature="method#onGetTransitRouteResult#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onGetMassTransitRouteResult#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onGetDrivingRouteResult#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#22849#22879#0" expanded="false" />
+                <element signature="e#22966#22996#0" expanded="false" />
                 <element signature="method#onGetIndoorRouteResult#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onGetBikingRouteResult#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onMapClick#0;class#MainActivity#0" expanded="false" />
@@ -89,14 +88,14 @@
                 <element signature="method#getTerminalMarker#0;class#MyDrivingRouteOverlay#0;class#MainActivity#0" expanded="false" />
                 <element signature="docComment;method#addSpotOverly#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#addSpotOverly#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#27395#27404#0" expanded="false" />
-                <element signature="e#27725#27730#0" expanded="false" />
+                <element signature="e#27512#27521#0" expanded="false" />
+                <element signature="e#27842#27847#0" expanded="false" />
                 <element signature="docComment;method#addDeOverlays#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#addDeOverlays#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#29096#29101#0" expanded="false" />
+                <element signature="e#29213#29218#0" expanded="false" />
                 <element signature="docComment;method#CoverClick#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#CoverClick#0;class#MainActivity#0" expanded="false" />
-                <element signature="class#32906:33206" expanded="false" />
+                <element signature="class#33146:33446" expanded="false" />
                 <element signature="method#InitNav#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#NavGuideButtonClick#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#spotClick#0;class#MainActivity#0" expanded="false" />
@@ -104,19 +103,19 @@
                 <element signature="method#hotClick#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#downClick#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#startBikeNavi#0;class#MainActivity#0" expanded="false" />
-                <element signature="class#36798:37173" expanded="false" />
-                <element signature="method#engineInitSuccess#0;class#36798:37173" expanded="false" />
+                <element signature="class#37038:37413" expanded="false" />
+                <element signature="method#engineInitSuccess#0;class#37038:37413" expanded="false" />
                 <element signature="method#startWalkNavi#0;class#MainActivity#0" expanded="false" />
-                <element signature="class#37446:37825" expanded="false" />
-                <element signature="method#engineInitSuccess#0;class#37446:37825" expanded="false" />
+                <element signature="class#37686:38065" expanded="false" />
+                <element signature="method#engineInitSuccess#0;class#37686:38065" expanded="false" />
                 <element signature="method#routePlanWithParam#0;class#MainActivity#0" expanded="false" />
-                <element signature="class#38050:38671" expanded="false" />
-                <element signature="method#onRoutePlanSuccess#0;class#38050:38671" expanded="false" />
-                <element signature="method#onRoutePlanFail#0;class#38050:38671" expanded="false" />
+                <element signature="class#38290:38911" expanded="false" />
+                <element signature="method#onRoutePlanSuccess#0;class#38290:38911" expanded="false" />
+                <element signature="method#onRoutePlanFail#0;class#38290:38911" expanded="false" />
                 <element signature="method#routePlanWithWalkParam#0;class#MainActivity#0" expanded="false" />
-                <element signature="class#38781:39402" expanded="false" />
-                <element signature="method#onRoutePlanSuccess#0;class#38781:39402" expanded="false" />
-                <element signature="method#onRoutePlanFail#0;class#38781:39402" expanded="false" />
+                <element signature="class#39021:39642" expanded="false" />
+                <element signature="method#onRoutePlanSuccess#0;class#39021:39642" expanded="false" />
+                <element signature="method#onRoutePlanFail#0;class#39021:39642" expanded="false" />
                 <element signature="method#requestPermission#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
@@ -125,10 +124,9 @@
                 <element signature="method#onDestroy#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#addDestInfoOverlay#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#MapStatusSize#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#initMaker#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#initLocation#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#initView#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#43133#43147#0" expanded="false" />
+                <element signature="e#43373#43387#0" expanded="false" />
                 <element signature="method#onContextItemSelected#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onCreateContextMenu#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
@@ -138,14 +136,94 @@
                 <element signature="method#centerMylocation#0;class#MainActivity#0" expanded="false" />
                 <element signature="class#MyLocationListener#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onReceiveLocation#0;class#MyLocationListener#0;class#MainActivity#0" expanded="false" />
-                <element signature="class#OnItemInDlgClickListener#0;class#MainActivity#0" expanded="false" />
-                <element signature="class#MyTransitDlg#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#MyTransitDlg#1;class#MyTransitDlg#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#setOnDismissListener#0;class#MyTransitDlg#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onCreate#0;class#MyTransitDlg#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#setOnItemInDlgClickLinster#0;class#MyTransitDlg#0;class#MainActivity#0" expanded="false" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FoodStoreIMPL.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/foodimpl/FoodStoreIMPL.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dsad.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/dao/dsad.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FoodStoreDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/dao/food/FoodStoreDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/dao/food/IDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IFoodStore.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/IFoodStore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FoodStoreActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/activity/FoodStoreActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ic_launcher-web.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/ic_launcher-web.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="549">
+              <caret line="59" column="78" selection-start-line="59" selection-start-column="78" selection-end-line="59" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest">
+            <state />
           </provider>
         </entry>
       </file>
@@ -156,6 +234,7 @@
       <list>
         <option value="layoutResourceFile_vertical" />
         <option value="Interface" />
+        <option value="Kotlin File" />
         <option value="Class" />
       </list>
     </option>
@@ -867,7 +946,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="E:\myProgramma\hztripapp\app" value="1539938250830" />
+        <entry key="E:\myProgramma\hztripapp\app" value="1541491800121" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1125,15 +1204,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/res/layout/head.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/IHeadView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/HeadViewImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/maker_info.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/view/HeadView.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_fnmap.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/activity/FNmapActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/Abstract/Assesor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/MainAgent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/IFoodBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/FoodBeanImpl.java" />
@@ -1170,11 +1240,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/DAOimpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/foodimpl/hotelimpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/foodimpl/FoodBeanimpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/IDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/foodimpl/FoodCategoryIMPL.java" />
         <option value="$PROJECT_DIR$/src/main/assets/litepal.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/bean/food/FoodBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/bean/food/FoodStore.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_foodstore.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/activity/FoodStoreActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/map/OverlayUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/foodimpl/foodStoreIMPL.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/dao/food/FoodStoreDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/dao/food/IDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/IDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/IFoodStore.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/foodimpl/FoodStoreIMPL.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/MainActivity.java" />
       </list>
     </option>
@@ -1210,7 +1289,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="AndroidView">
+        <subPane />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1242,78 +1323,82 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1390,87 +1475,13 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bean" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bean" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="food" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
         <option name="show-excluded-files" value="false" />
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane">
-        <subPane />
-      </pane>
-      <pane id="AndroidView">
         <subPane />
       </pane>
     </panes>
@@ -1485,19 +1496,23 @@
     <property name="device.picker.selection" value="bae5d497" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\myProgramma\hztripapp\app\src\main" />
+      <recent name="E:\myProgramma\hztripapp\app\src\main\java" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.baidu.myapp.interfaces" />
+      <recent name="com.baidu.myapp.dao.food" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.baidu.myapp.interfaces.ifood" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\myProgramma\hztripapp\app\src\main\java\com\baidu\myapp\widget" />
       <recent name="E:\myProgramma\hztripapp\app\src\main\res\drawable" />
       <recent name="E:\myProgramma\hztripapp\app\src\main\java\com\baidu\myapp\util" />
       <recent name="E:\myProgramma\hztripapp\app\src\main\assets" />
       <recent name="E:\myProgramma\hztripapp\app\libs" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.baidu.myapp.interfaces.ifood" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\myProgramma\hztripapp\app\src\main" />
-      <recent name="E:\myProgramma\hztripapp\app\src\main\java" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -1865,7 +1880,6 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38084632" sideWeight="0.304371" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18123667" sideWeight="0.49233717" order="0" side_tool="true" content_ui="combo" x="2710" y="184" width="340" height="712" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272921" sideWeight="0.4936034" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18763326" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1880,6 +1894,7 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="94" y="139" width="1736" height="856" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272921" sideWeight="0.4936034" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1900,29 +1915,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/ihotel.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/ILoginVerify.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/IHeadView.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/Abstract/Assesor.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/payinfo/foodPayInfo.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/overlay/util/package.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/ifood/IFOOD.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/bean/Goods.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/test/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/helper/FoodStoreDataHelper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/overlay/util/RoutePlan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-130">
-          <caret line="23" column="36" selection-start-line="13" selection-start-column="0" selection-end-line="52" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/test/OverlayDemo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -1933,13 +1925,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/test/DAOimpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/test/ScenicDAOimpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/IDAO.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/test/BaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/test/BaseDao.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/bean/scenic/SpotBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2268">
@@ -2023,31 +2009,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/ifood/IFoodBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="19" column="30" selection-start-line="11" selection-start-column="4" selection-end-line="19" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/ifood/IFoodStoreBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/ifood/IFoodBean.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/ifood/IFoodStoreBean.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/bean/food/FoodOrder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="16" column="23" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2055,49 +2025,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2134">
           <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/DAOimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/foodimpl/hotelimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/sada.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/DAOimpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/foodimpl/hotelimpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/sada.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/bean/hotel/RoomBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-639">
           <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-          <folding>
-            <element signature="e#708#709#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/foodimpl/FoodStoreIMPL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2105,7 +2042,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2113,15 +2049,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
           <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/IDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2129,7 +2056,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
           <caret line="356" column="43" selection-start-line="356" selection-start-column="43" selection-end-line="356" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2137,14 +2063,76 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/bean/food/FoodBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="687">
+          <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/bean/food/FoodStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
+          <folding>
+            <element signature="e#1009#1019#0" expanded="false" />
+            <element signature="e#1055#1056#0" expanded="false" />
+            <element signature="e#1085#1086#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/litepal-1.6.1-src.jar!/org/litepal/crud/ClusterQuery.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_foodstore.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/foodimpl/FoodCategoryIMPL.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/activity/FoodStoreActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="363">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ic_launcher-web.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="59" column="78" selection-start-line="59" selection-start-column="78" selection-end-line="59" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/map/OverlayUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2167,82 +2155,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/bean/food/FoodBean.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/foodimpl/FoodCategoryIMPL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1839#1840#0" expanded="true" />
-            <element signature="e#1869#1870#0" expanded="true" />
-            <element signature="e#1912#1913#0" expanded="true" />
-            <element signature="e#1950#1951#0" expanded="true" />
-            <element signature="e#2051#2052#0" expanded="true" />
-            <element signature="e#2087#2088#0" expanded="true" />
-            <element signature="e#2197#2198#0" expanded="true" />
-            <element signature="e#2235#2236#0" expanded="true" />
-            <element signature="e#2270#2271#0" expanded="true" />
-            <element signature="e#2301#2302#0" expanded="true" />
-            <element signature="e#2349#2350#0" expanded="true" />
-            <element signature="e#2389#2390#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="216">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/bean/food/FoodStore.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/sdasd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
-          <folding>
-            <element signature="e#1009#1019#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1085#1086#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="162">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/litepal-1.6.1-src.jar!/org/litepal/crud/ClusterQuery.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/dao/dsad.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
-          <folding>
-            <element signature="e#1350#1351#0" expanded="true" />
-            <element signature="e#1401#1402#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="162">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/dao/food/FoodStoreDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/dao/food/IDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/interface/sdasd.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/IDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/interfaces/IFoodStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/impl/foodimpl/FoodStoreIMPL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="210" column="25" selection-start-line="210" selection-start-column="25" selection-end-line="210" selection-end-column="25" />
+        <state relative-caret-position="-455">
+          <caret line="34" column="44" selection-start-line="33" selection-start-column="46" selection-end-line="34" selection-end-column="44" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5402#5410#0" expanded="false" />
-            <element signature="e#5835#5887#0" expanded="false" />
+            <element signature="e#5519#5527#0" expanded="false" />
+            <element signature="e#5952#6004#0" expanded="false" />
             <element signature="docComment;field#spotLatLngs#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#8516#8522#0" expanded="false" />
+            <element signature="e#8633#8639#0" expanded="false" />
             <element signature="method#InitFSView#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;method#openMapByPath#0;class#MainActivity#0" expanded="false" />
             <element signature="method#openMapByPath#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#10738#10788#0" expanded="false" />
+            <element signature="e#10855#10905#0" expanded="false" />
             <element signature="docComment;method#initSpotData#0;class#MainActivity#0" expanded="false" />
             <element signature="method#initSpotData#0;class#MainActivity#0" expanded="false" />
             <element signature="method#nodeClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#12526#12539#0" expanded="false" />
+            <element signature="e#12643#12656#0" expanded="false" />
             <element signature="docComment;method#searchProcess#0;class#MainActivity#0" expanded="false" />
             <element signature="method#searchProcess#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#15984#15995#0" expanded="false" />
+            <element signature="e#16101#16112#0" expanded="false" />
             <element signature="docComment;method#MyLocation#0;class#MainActivity#0" expanded="false" />
             <element signature="method#MyLocation#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#18599#18631#0" expanded="false" />
+            <element signature="e#18716#18748#0" expanded="false" />
             <element signature="method#onGetWalkingRouteResult#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#19173#19203#0" expanded="false" />
+            <element signature="e#19290#19320#0" expanded="false" />
             <element signature="method#onGetTransitRouteResult#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onGetMassTransitRouteResult#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onGetDrivingRouteResult#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#22849#22879#0" expanded="false" />
+            <element signature="e#22966#22996#0" expanded="false" />
             <element signature="method#onGetIndoorRouteResult#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onGetBikingRouteResult#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onMapClick#0;class#MainActivity#0" expanded="false" />
@@ -2254,14 +2268,14 @@
             <element signature="method#getTerminalMarker#0;class#MyDrivingRouteOverlay#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;method#addSpotOverly#0;class#MainActivity#0" expanded="false" />
             <element signature="method#addSpotOverly#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#27395#27404#0" expanded="false" />
-            <element signature="e#27725#27730#0" expanded="false" />
+            <element signature="e#27512#27521#0" expanded="false" />
+            <element signature="e#27842#27847#0" expanded="false" />
             <element signature="docComment;method#addDeOverlays#0;class#MainActivity#0" expanded="false" />
             <element signature="method#addDeOverlays#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#29096#29101#0" expanded="false" />
+            <element signature="e#29213#29218#0" expanded="false" />
             <element signature="docComment;method#CoverClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#CoverClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#32906:33206" expanded="false" />
+            <element signature="class#33146:33446" expanded="false" />
             <element signature="method#InitNav#0;class#MainActivity#0" expanded="false" />
             <element signature="method#NavGuideButtonClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#spotClick#0;class#MainActivity#0" expanded="false" />
@@ -2269,19 +2283,19 @@
             <element signature="method#hotClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#downClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#startBikeNavi#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#36798:37173" expanded="false" />
-            <element signature="method#engineInitSuccess#0;class#36798:37173" expanded="false" />
+            <element signature="class#37038:37413" expanded="false" />
+            <element signature="method#engineInitSuccess#0;class#37038:37413" expanded="false" />
             <element signature="method#startWalkNavi#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#37446:37825" expanded="false" />
-            <element signature="method#engineInitSuccess#0;class#37446:37825" expanded="false" />
+            <element signature="class#37686:38065" expanded="false" />
+            <element signature="method#engineInitSuccess#0;class#37686:38065" expanded="false" />
             <element signature="method#routePlanWithParam#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#38050:38671" expanded="false" />
-            <element signature="method#onRoutePlanSuccess#0;class#38050:38671" expanded="false" />
-            <element signature="method#onRoutePlanFail#0;class#38050:38671" expanded="false" />
+            <element signature="class#38290:38911" expanded="false" />
+            <element signature="method#onRoutePlanSuccess#0;class#38290:38911" expanded="false" />
+            <element signature="method#onRoutePlanFail#0;class#38290:38911" expanded="false" />
             <element signature="method#routePlanWithWalkParam#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#38781:39402" expanded="false" />
-            <element signature="method#onRoutePlanSuccess#0;class#38781:39402" expanded="false" />
-            <element signature="method#onRoutePlanFail#0;class#38781:39402" expanded="false" />
+            <element signature="class#39021:39642" expanded="false" />
+            <element signature="method#onRoutePlanSuccess#0;class#39021:39642" expanded="false" />
+            <element signature="method#onRoutePlanFail#0;class#39021:39642" expanded="false" />
             <element signature="method#requestPermission#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
@@ -2290,10 +2304,9 @@
             <element signature="method#onDestroy#0;class#MainActivity#0" expanded="false" />
             <element signature="method#addDestInfoOverlay#0;class#MainActivity#0" expanded="false" />
             <element signature="method#MapStatusSize#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#initMaker#0;class#MainActivity#0" expanded="false" />
             <element signature="method#initLocation#0;class#MainActivity#0" expanded="false" />
             <element signature="method#initView#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#43133#43147#0" expanded="false" />
+            <element signature="e#43373#43387#0" expanded="false" />
             <element signature="method#onContextItemSelected#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onCreateContextMenu#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
@@ -2303,8 +2316,6 @@
             <element signature="method#centerMylocation#0;class#MainActivity#0" expanded="false" />
             <element signature="class#MyLocationListener#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onReceiveLocation#0;class#MyLocationListener#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#OnItemInDlgClickListener#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#MyTransitDlg#0;class#MainActivity#0" expanded="false" />
             <element signature="method#MyTransitDlg#1;class#MyTransitDlg#0;class#MainActivity#0" expanded="false" />
             <element signature="method#setOnDismissListener#0;class#MyTransitDlg#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onCreate#0;class#MyTransitDlg#0;class#MainActivity#0" expanded="false" />
