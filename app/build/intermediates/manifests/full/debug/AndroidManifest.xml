@@ -62,6 +62,7 @@
         <activity android:name="com.baidu.myapp.search.BusLineSearchDemo" />
         <activity android:name="com.baidu.myapp.activity.FNmapActivity" />
         <activity android:name="com.baidu.myapp.search.RoutePlanDemo" />
+        <activity android:name="com.baidu.myapp.activity.FoodStoreActivity" />
 
         <service
             android:name="com.baidu.location.f"

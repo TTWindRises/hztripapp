@@ -201,6 +201,9 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
      * @param savedInstanceState
      */
     List<LatLng> spotLatLngs = new ArrayList<LatLng>();
+    //工具类
+    OverlayUtil overlayUtil = new OverlayUtil();
+    FoodStoreIMPL storeDAO = new FoodStoreIMPL();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -891,8 +894,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     }
 
     private void addOverlays() {
-        OverlayUtil overlayUtil = new OverlayUtil();
-        FoodStoreIMPL storeDAO = new FoodStoreIMPL();
+
 
 
 

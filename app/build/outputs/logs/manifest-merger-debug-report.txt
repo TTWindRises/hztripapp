@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:2:1-66:12
+ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:2:1-67:12
 	package
 		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:2:11-36
 	android:versionName
@@ -62,7 +62,7 @@ ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:26:5-78
 	android:required
 		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:26:52-75
 application
-ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:28:5-63:19
+ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:28:5-64:19
 MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Administrator\.android\build-cache\374051c27948aa5e1c515ccbce397f1110971261\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Administrator\.android\build-cache\475e130e445ad4ff229ecc6c598b7fd6fa4fb670\output\AndroidManifest.xml:7:5-20
 MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Administrator\.android\build-cache\4c44f6a9cbb57626b6739a8fd4628a94f02a16ad\output\AndroidManifest.xml:7:5-20
@@ -131,14 +131,18 @@ activity#com.baidu.myapp.search.RoutePlanDemo
 ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:59:9-57
 	android:name
 		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:59:19-55
-service#com.baidu.location.f
-ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:60:9-61:19
-	android:enabled
-		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:60:54-76
-	android:process
-		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:60:77-102
+activity#com.baidu.myapp.activity.FoodStoreActivity
+ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:60:9-79
 	android:name
-		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:60:18-53
+		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:60:19-76
+service#com.baidu.location.f
+ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:61:9-62:19
+	android:enabled
+		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:61:54-76
+	android:process
+		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:61:77-102
+	android:name
+		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:61:18-53
 uses-sdk
 INJECTED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Administrator\.android\build-cache\374051c27948aa5e1c515ccbce397f1110971261\output\AndroidManifest.xml:21:5-23:78
