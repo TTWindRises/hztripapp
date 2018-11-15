@@ -15,7 +15,7 @@ import static android.R.attr.id;
 //只有一些个人资料可以放在sqlite上
 
 public class FoodStore extends DataSupport implements Serializable {
-    @Column(unique = true)
+    //@Column(unique = true)
     private String storeID;
     private String storeName;//店铺名称
     private double storeLatitude;//店铺的坐标
@@ -25,6 +25,7 @@ public class FoodStore extends DataSupport implements Serializable {
     private String storeAddress;//商家地址
     private String storePhone; //商家电话
     private String storeHours; //营业时间
+    private String store_heard_img;
     private String storeImg;//商家的图片
     private String storeDescribe;//商家信息描述
     private int TotalSales;//食品的总销售量
@@ -57,6 +58,14 @@ public class FoodStore extends DataSupport implements Serializable {
     }
 
     public FoodStore() {
+    }
+
+    public String getStore_heard_img() {
+        return store_heard_img;
+    }
+
+    public void setStore_heard_img(String store_heard_img) {
+        this.store_heard_img = store_heard_img;
     }
 
     public String getStoreName() {

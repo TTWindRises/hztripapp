@@ -1,11 +1,11 @@
 [
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\374051c27948aa5e1c515ccbce397f1110971261\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
-    },
-    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pre_.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\pre_.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\374051c27948aa5e1c515ccbce397f1110971261\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_marke.png",
@@ -88,6 +88,10 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\icon_markd.png"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\store_head_bg.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\store_head_bg.png"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_marka.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\icon_marka.png"
     },
@@ -124,6 +128,10 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\icon_marki.png"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\store_zan.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\store_zan.png"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\arrow.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\arrow.png"
     },
@@ -146,6 +154,10 @@
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_geo.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\icon_geo.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\back.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\back.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\km_03.png",

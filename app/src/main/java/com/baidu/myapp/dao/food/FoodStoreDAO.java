@@ -8,19 +8,29 @@ import org.litepal.crud.DataSupport;
 
 import java.util.List;
 
+import static org.litepal.crud.DataSupport.where;
+
 /**
  * Created by Administrator on 2018/11/7.
  */
 
 public class FoodStoreDAO implements IFoodStore{
     @Override
-    public boolean add(FoodStore foodStore) {
-        if (DataSupport.where("storeid=？", foodStore.getStoreID())==null) {
+   public boolean add(FoodStore foodStore) {
+        if (foodStore.save()) {
+            Debbuger.LogE("存储数据成功");
+        } else {
+            Debbuger.LogE("存储数据失败");
+        }
+     /*  List<FoodStore> list= DataSupport.where("storeid=?", foodStore.getStoreID()).find(FoodStore.class);
+
+        if (list==null) {
             foodStore.save();
             return true;
         }else {
-            Debbuger.LogE("已存在商品编号："+foodStore.getStoreID());
-        }
+            foodStore.save();
+            Debbuger.LogE("已存在商品编号："+foodStore.getStoreID()+"\n数据信息为:"+list.toString());
+        }*/
         return false;
     }
 
@@ -53,7 +63,7 @@ public class FoodStoreDAO implements IFoodStore{
 
     @Override
     public List<FoodStore> queryByID(String storeid) {
-        List<FoodStore> foodStores = DataSupport.where("storeid=?", storeid).find(FoodStore.class);
+        List<FoodStore> foodStores = where("storeid=?", storeid).find(FoodStore.class);
         if (foodStores != null) {
             Debbuger.LogE("查询成功："+foodStores.toString());
             return foodStores;

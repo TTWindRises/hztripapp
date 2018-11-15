@@ -10,4 +10,7 @@ import com.baidu.myapp.dao.food.FoodStoreDAO;
 public class FoodStoreIMPL {
     FoodStoreDAO dao = new FoodStoreDAO();
 
+    public void addFoodStore(FoodStore foodStore) {
+        dao.add(foodStore);
+    }
 }

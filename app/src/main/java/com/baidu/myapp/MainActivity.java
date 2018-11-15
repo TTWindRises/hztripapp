@@ -28,6 +28,7 @@ import android.widget.Toast;
 import com.baidu.myapp.activity.BNaviGuideActivity;
 import com.baidu.myapp.activity.BaseActivity;
 import com.baidu.myapp.activity.FNmapActivity;
+import com.baidu.myapp.activity.FoodStoreActivity;
 import com.baidu.myapp.activity.WNaviGuideActivity;
 import com.baidu.myapp.bean.food.FoodBean;
 import com.baidu.myapp.bean.food.FoodStore;
@@ -104,6 +105,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
+import static com.baidu.location.g.j.D;
 import static com.baidu.location.g.j.L;
 import static com.baidu.location.g.j.O;
 import static com.baidu.location.g.j.o;
@@ -146,6 +148,9 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     // 地图相关，使用继承MapView的MyRouteMapView目的是重写touch事件实现泡泡处理
     // 如果不处理touch事件，则无需继承，直接使用MapView即可
     // 地图View
+
+    //工具类
+
 
     // 搜索相关
     RoutePlanSearch mSearch = null;    // 搜索模块，也可去掉地图模块独立使用
@@ -210,27 +215,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //TEST
-
-        FoodStore foodStore = new FoodStore();
-        foodStore.setStoreName("星巴克");
-        foodStore.setStoreID("1");
-        foodStore.save();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         requestPermission();
         this.mContext = this;
@@ -865,32 +849,36 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     }
 
 
-    /**
-     * 添加覆盖物
-     */
 
 
+    //添加食品商店的覆盖物
     private void addDeOverlays() {
-        mBaiduMap.clear();
-        LatLng latLng = null;
+        //longtitude 1开头的
+        //latitude 2开头的
+        //饺子皇饺子店 111.543813,24.416317
+        //学院食府 111.520595,24.415512
+        List<FoodStore> foodStores = new ArrayList<FoodStore>();
+        FoodStore foodStore = new FoodStore();
+        foodStore.setStoreID("7");
+        foodStore.setStoreName("学院食府");
+        foodStore.setStoreImg(""+R.drawable.store_head_bg);
+        foodStore.setStore_heard_img(""+R.drawable.store_head_img);
+        foodStore.setStoreLatitude(24.415512);
+        foodStore.setStoreLongtitude(111.520595);
+        FoodStore foodStore2 = new FoodStore();
+        foodStore2.setStoreID("8");
+        foodStore2.setStoreName("大黄饺子店");
+        foodStore2.setStoreLatitude(24.416317);
+        foodStore2.setStoreLongtitude(111.543813);
+        foodStore2.setStoreImg(""+R.drawable.store_head_bg);
+        foodStore2.setStore_heard_img(""+R.drawable.food_store_head_img3);
+        foodStores.add(foodStore);
+        foodStores.add(foodStore2);
+        storeDAO.addFoodStore(foodStore);
+        storeDAO.addFoodStore(foodStore2);
+        overlayUtil.addFoodStoreAllOverly(mBaiduMap, foodStores);
 
-        Marker marker = null;
-        OverlayOptions options;
-        List<ScenicBean> scenicBeans = DataSupport.findAll(ScenicBean.class);
-        List<FoodStore> foodStoreBeans = DataSupport.findAll(FoodStore.class);
-        for (FoodStore foodstores : foodStoreBeans) {
-            //经纬度
-//            latLng = new LatLng(foodstores.getLatitude(), foodstores.getLongtitude());
-            //图标
-            options = new MarkerOptions().position(latLng).icon(mDeliciousMarker).zIndex(5);
-            marker = (Marker) mBaiduMap.addOverlay(options);
-            Bundle arg0 = new Bundle();
-            arg0.putSerializable("foodstore", foodstores);
-            marker.setExtraInfo(arg0);
-        }
-        LatLng spcenter = latLng;//城市景区中心点
-        MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(spcenter);
-        mBaiduMap.setMapStatus(msu);
+
     }
 
     private void addOverlays() {
@@ -946,28 +934,29 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
             @Override
             public boolean onMarkerClick(Marker marker) {
 
-
+                Debbuger.LogE("点击了Marker");
                 Bundle extraInfo = marker.getExtraInfo();
-
-                final ScenicBean info = (ScenicBean) extraInfo.getSerializable("ScenicBean");
-                if (info != null) {
-                    /*Toast.makeText(MainActivity.this, info.getSpname(), Toast.LENGTH_SHORT).show();*/
-                } else if ((FoodStore) extraInfo.getSerializable("foodstore") != null) {
-                    final FoodStore foodStoreBean = (FoodStore) extraInfo.getSerializable("foodstore");
+                final FoodStore info = (FoodStore) extraInfo.getSerializable("FoodStore");
+                if ((FoodStore) extraInfo.getSerializable("FoodStore") != null) {
+                    final FoodStore foodStoreBean = (FoodStore) extraInfo.getSerializable("FoodStore");
                     Toast.makeText(MainActivity.this, foodStoreBean.getStoreName(), Toast.LENGTH_SHORT).show();
                 } else {
-                    final SpotBean spotBean = (SpotBean) extraInfo.getSerializable("spotbeans");
+                    Debbuger.LogE("获取商店信息失败");
 //                  Toast.makeText(MainActivity.this, spotBean.getSpotName() + "", Toast.LENGTH_SHORT).show();
                 }
+                Intent intent = new Intent(MainActivity.this, FoodStoreActivity.class);
+                intent.putExtra("FoodStore", info);
+                startActivity(intent);
+
           /*     final FoodStore foodStore = (FoodStore) extraInfo.getSerializable("foodstore");
                 Toast.makeText(MainActivity.this, foodStore.getStoreName(), Toast.LENGTH_SHORT).show();
 */
 
-                ImageView iv = (ImageView) mMarkerLy.findViewById(R.id.img_shape);
+  /*              ImageView iv = (ImageView) mMarkerLy.findViewById(R.id.img_shape);
                 TextView name = (TextView) mMarkerLy.findViewById(R.id.id_info_name);
                 TextView distance = (TextView) mMarkerLy.findViewById(R.id.id_info_distance);
                 TextView zan = (TextView) mMarkerLy.findViewById(R.id.id_info_zan);
-
+*/
 
 /*
                         Toast.makeText(MainActivity.this, "success", Toast.LENGTH_SHORT).show();

@@ -28,6 +28,14 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\374051c27948aa5e1c515ccbce397f1110971261\\output\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\food_item.xml",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\food_item.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\food_store.xml",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\food_store.xml"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\sql_data.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\sql_data.xml"
     },
@@ -134,10 +142,6 @@
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\374051c27948aa5e1c515ccbce397f1110971261\\output\\res\\layout\\select_dialog_multichoice_material.xml"
-    },
-    {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_foodstore.xml",
-        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\activity_foodstore.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
