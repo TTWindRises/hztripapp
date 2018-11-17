@@ -1,6 +1,7 @@
 package com.baidu.myapp.activity;
 
 import android.os.Bundle;
+import android.provider.Telephony;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,14 +38,24 @@ public class FoodStoreActivity extends BaseActivity {
         TextView distance = (TextView) findViewById(R.id.food_store_distance);
         TextView K1 = (TextView) findViewById(R.id.food_store_1);
         TextView K2 = (TextView) findViewById(R.id.food_store_2);
+        //优惠券
+        TextView price = (TextView) findViewById(R.id.food_store_coupon_price);
+        TextView full = (TextView) findViewById(R.id.food_store_coupon_full);
+        TextView get = (TextView) findViewById(R.id.food_store_coupon_get);
+        price.setText("￥6");
+        full.setText("满20可用");
+        get.setText("领取");
         Bundle extras = getIntent().getExtras();
         FoodStore foodStore = (FoodStore) extras.get("FoodStore");
+        //公告
+        TextView notice = (TextView) findViewById(R.id.food_store_notice);
+        notice.setText("公告: 单点不配送！高峰期没时间联系，不热爱学习禁止点击购买，不热爱学习禁止购买，不热爱学习禁止购买！重要的事情说三遍，谢谢理解！");
         //设置商店名称
         textView.setText(foodStore.getStoreName());
         //设置评价、销售量、距离
         score.setText("评价4.6");
         K1.setText("  |  ");
-        sell.setText("月销1110");
+        sell.setText("月销1100");
         K2.setText("  |  ");
         distance.setText("距离1000m");
         //返回键

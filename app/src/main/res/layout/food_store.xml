@@ -91,26 +91,73 @@
         android:textColor="#696969"
         />
 </LinearLayout>
+    <!--优惠券-->
     <LinearLayout
         android:id="@+id/food_store_Coupon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="160dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:background="#ef7a82"
         >
         <TextView
             android:id="@+id/food_store_coupon_price"
+            android:ems="3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="19dp"
+            android:textSize="12dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:typeface="monospace"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            />
         <TextView
-            android:id="@+id/food_store_coupon_"
+            android:id="@+id/food_store_coupon_full"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="19dp"
+            android:ems="4"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="10dp"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif"
+            android:textColor="#FFFFFF"
+
+            />
         <TextView
-            android:id="@+id/food_store_coupon_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:id="@+id/food_store_coupon_get"
+            android:ems="3"
+            android:layout_width="35dp"
+            android:layout_height="19dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="10dp"
+            android:textAlignment="center"
+            android:clickable="true"
+            android:fontFamily="sans-serif"
+            android:textColor="#FFFFFF"
+            />
     </LinearLayout>
+    <!--公告-->
+
+        <TextView
+            android:id="@+id/food_store_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:maxEms="24"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:ellipsize="end"
+            android:textSize="10dp"
+            android:textColor="#999999"
+            android:layout_marginTop="210dp"
+            />
+
+
+
 
 </RelativeLayout>
