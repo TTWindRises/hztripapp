@@ -36,6 +36,10 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\food_store.xml"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\food_horizontal_item.xml",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\food_horizontal_item.xml"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\sql_data.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\sql_data.xml"
     },
@@ -96,8 +100,16 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\374051c27948aa5e1c515ccbce397f1110971261\\output\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\food_vertical_item.xml",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\food_vertical_item.xml"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\374051c27948aa5e1c515ccbce397f1110971261\\output\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\test_absort_top.xml",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\test_absort_top.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_transit_item.xml",

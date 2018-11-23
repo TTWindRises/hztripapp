@@ -42,14 +42,18 @@
 
         </activity>
         <activity android:name=".MainActivity">
+
+        </activity>
+
+        <activity android:name="com.baidu.myapp.activity.WNaviGuideActivity">
+
+        </activity>
+        <activity android:name=".activity.food.testActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-
-        <activity android:name="com.baidu.myapp.activity.WNaviGuideActivity">
 
         </activity>
         <activity android:name=".test.Markein"></activity>

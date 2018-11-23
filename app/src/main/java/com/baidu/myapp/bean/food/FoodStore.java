@@ -25,8 +25,9 @@ public class FoodStore extends DataSupport implements Serializable {
     private String storeAddress;//商家地址
     private String storePhone; //商家电话
     private String storeHours; //营业时间
-    private String store_heard_img;
-    private String storeImg;//商家的图片
+    private String storeNotice;//商家的公告
+    private String store_heard_img;//商家的头像
+    private String storeImg;//商家的头部的背景图片
     private String storeDescribe;//商家信息描述
     private int TotalSales;//食品的总销售量
     private static final long serialVersionUID = 1L;
@@ -66,6 +67,14 @@ public class FoodStore extends DataSupport implements Serializable {
 
     public void setStore_heard_img(String store_heard_img) {
         this.store_heard_img = store_heard_img;
+    }
+
+    public String getStoreNotice() {
+        return storeNotice;
+    }
+
+    public void setStoreNotice(String storeNotice) {
+        this.storeNotice = storeNotice;
     }
 
     public String getStoreName() {

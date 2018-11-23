@@ -49,13 +49,15 @@
         <activity android:name="com.baidu.myapp.activity.BNaviGuideActivity" >
         </activity>
         <activity android:name="com.baidu.myapp.MainActivity" >
+        </activity>
+        <activity android:name="com.baidu.myapp.activity.WNaviGuideActivity" >
+        </activity>
+        <activity android:name="com.baidu.myapp.activity.food.testActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name="com.baidu.myapp.activity.WNaviGuideActivity" >
         </activity>
         <activity android:name="com.baidu.myapp.test.Markein" />
         <activity android:name="com.baidu.myapp.test.OverlayDemo" />

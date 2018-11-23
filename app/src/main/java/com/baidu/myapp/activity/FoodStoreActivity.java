@@ -2,6 +2,7 @@ package com.baidu.myapp.activity;
 
 import android.os.Bundle;
 import android.provider.Telephony;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide;
 
 import static com.baidu.location.g.j.C;
 import static com.baidu.location.g.j.T;
+import static com.baidu.location.g.j.V;
 
 /**
  * Created by Administrator on 2018/11/7.
@@ -24,6 +26,7 @@ public class FoodStoreActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.food_store);
         init();
+
     }
 
     private void  init() {
@@ -38,6 +41,9 @@ public class FoodStoreActivity extends BaseActivity {
         TextView distance = (TextView) findViewById(R.id.food_store_distance);
         TextView K1 = (TextView) findViewById(R.id.food_store_1);
         TextView K2 = (TextView) findViewById(R.id.food_store_2);
+        //推荐标题
+        TextView recommend_title = (TextView) findViewById(R.id.food_store_recommend_title);
+        recommend_title.setText("商家推荐");
         //优惠券
         TextView price = (TextView) findViewById(R.id.food_store_coupon_price);
         TextView full = (TextView) findViewById(R.id.food_store_coupon_full);
