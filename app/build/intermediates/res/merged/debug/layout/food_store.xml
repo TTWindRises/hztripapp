@@ -1,181 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.baidu.myapp.util.StickyScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:orientation="vertical">
-
-    <ImageView
-        android:id="@+id/food_store_head_bg"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY" />
-
-    <ImageView
-        android:id="@+id/food_store_back_img"
-        android:layout_width="40dp"
-        android:layout_height="40dp" />
-
-    <ImageView
-        android:id="@+id/food_store_head_img"
-        android:layout_width="70dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
-        android:adjustViewBounds="true" />
-
-
-    <ImageView
-        android:id="@+id/food_store_prise"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="85dp" />
-
-    <TextView
-        android:id="@+id/food_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="125dp"
-        android:textColor="#000000"
-        android:textSize="22dp" />
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_marginTop="155dp"
-        android:adjustViewBounds="true"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:scaleType="fitXY"
-
-        >
-
-        <TextView
-            android:id="@+id/food_store_score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#696969"
-            android:textSize="10dp" />
-
-        <TextView
-            android:id="@+id/food_store_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#D3D3D3"
-            android:textSize="6dp" />
-
-        <TextView
-            android:id="@+id/food_store_sell"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#696969"
-            android:textSize="10dp" />
-
-        <TextView
-            android:id="@+id/food_store_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#D3D3D3"
-            android:textSize="6dp" />
-
-        <TextView
-            android:id="@+id/food_store_distance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#696969"
-            android:textSize="10dp" />
-    </LinearLayout>
-    <!--优惠券-->
-    <LinearLayout
-        android:id="@+id/food_store_Coupon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="180dp"
-        android:background="#ef7a82"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/food_store_coupon_price"
-            android:layout_width="wrap_content"
-            android:layout_height="19dp"
-            android:layout_gravity="center"
-            android:ems="3"
-            android:gravity="center"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="12dp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
-
-        <TextView
-            android:id="@+id/food_store_coupon_full"
-            android:layout_width="wrap_content"
-            android:layout_height="19dp"
-            android:layout_gravity="center"
-            android:ems="4"
-            android:fontFamily="sans-serif"
-            android:gravity="center"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="10dp"
-
-            />
-
-        <TextView
-            android:id="@+id/food_store_coupon_get"
-            android:layout_width="35dp"
-            android:layout_height="19dp"
-            android:layout_gravity="center"
-            android:clickable="true"
-            android:ems="3"
-            android:fontFamily="sans-serif"
-            android:gravity="center"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="10dp" />
-    </LinearLayout>
-    <!--公告-->
-
-    <TextView
-        android:id="@+id/food_store_notice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="210dp"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:maxEms="24"
-        android:maxLines="1"
-        android:textColor="#999999"
-        android:textSize="10dp" />
-
-    <LinearLayout
-        android:id="@+id/food_store_recommend"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="match_parent"
         android:orientation="vertical">
+        <!--商家头像背景图片-->
 
+        <!--布局头部-->
+        <RelativeLayout
+            android:id="@+id/food_store_head"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/food_store_head_bg"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY" />
+            <!--返回键-->
+            <ImageView
+                android:id="@+id/food_store_back_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+                <!--商家头像-->
+                <ImageView
+                    android:id="@+id/food_store_head_img"
+                    android:layout_width="70dp"
+                    android:layout_height="75dp"
+                    android:adjustViewBounds="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="42dp"
+                    />
+                <!--点赞-->
+                <ImageView
+                    android:id="@+id/food_store_prise"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="86dp"
+                    />
+        </RelativeLayout>
+
+        <!--商家名称-->
         <TextView
-            android:id="@+id/food_store_recommend_title"
+            android:id="@+id/food_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
             android:textColor="#000000"
-            android:background="#fd2311"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            android:layout_marginTop="220dp"
-            android:layout_marginLeft="10dp"
-            />
-        <ListView
+            android:textSize="22dp" />
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"></ListView>
+            android:layout_height="20dp"
+            android:adjustViewBounds="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:scaleType="fitXY">
+
+            <TextView
+                android:id="@+id/food_store_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#696969"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/food_store_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#D3D3D3"
+                android:textSize="6dp" />
+
+            <TextView
+                android:id="@+id/food_store_sell"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#696969"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/food_store_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#D3D3D3"
+                android:textSize="6dp" />
+
+            <TextView
+                android:id="@+id/food_store_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#696969"
+                android:textSize="10dp" />
+        </LinearLayout>
+        <!--优惠券-->
+        <LinearLayout
+            android:id="@+id/food_store_Coupon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="#ef7a82"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/food_store_coupon_price"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_gravity="center"
+                android:ems="3"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:typeface="monospace" />
+
+            <TextView
+                android:id="@+id/food_store_coupon_full"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_gravity="center"
+                android:ems="4"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp"
+
+                />
+
+            <TextView
+                android:id="@+id/food_store_coupon_get"
+                android:layout_width="35dp"
+                android:layout_height="19dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:ems="3"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp" />
+        </LinearLayout>
+        <!--公告-->
+
+        <TextView
+            android:id="@+id/food_store_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxEms="24"
+            android:maxLines="1"
+            android:textColor="#999999"
+            android:textSize="10dp" />
+
+        <LinearLayout
+            android:id="@+id/food_store_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_marginTop="8dp"
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="280dp"
+        android:layout_height="200dp"
+        android:background="@drawable/store_head_bg"
+        android:layout_gravity="center"
+        />
+
+</LinearLayout>
+            <TextView
+                android:id="@+id/food_store_recommend_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="12dp"
+                android:tag="sticky"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"></ListView>
+        </LinearLayout>
     </LinearLayout>
-
-
-</RelativeLayout>
+</com.baidu.myapp.util.StickyScrollView>

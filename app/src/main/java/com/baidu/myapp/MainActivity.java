@@ -25,14 +25,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baidu.mapapi.SDKInitializer;
+import com.baidu.mapapi.map.TextureMapView;
 import com.baidu.myapp.activity.BNaviGuideActivity;
 import com.baidu.myapp.activity.BaseActivity;
 import com.baidu.myapp.activity.FNmapActivity;
 import com.baidu.myapp.activity.FoodStoreActivity;
 import com.baidu.myapp.activity.WNaviGuideActivity;
-import com.baidu.myapp.bean.food.FoodBean;
 import com.baidu.myapp.bean.food.FoodStore;
-import com.baidu.myapp.bean.scenic.ScenicBean;
 import com.baidu.myapp.bean.scenic.SpotBean;
 import com.baidu.myapp.impl.foodimpl.FoodStoreIMPL;
 import com.baidu.myapp.map.OverlayUtil;
@@ -101,14 +101,14 @@ import com.fengmap.android.map.event.OnFMMapInitListener;
 
 import org.litepal.crud.DataSupport;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
-import static com.baidu.location.g.j.D;
-import static com.baidu.location.g.j.L;
-import static com.baidu.location.g.j.O;
-import static com.baidu.location.g.j.o;
 
 public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickListener,
         OnGetRoutePlanResultListener, OnFMMapInitListener {
@@ -208,18 +208,20 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     List<LatLng> spotLatLngs = new ArrayList<LatLng>();
     //工具类
     OverlayUtil overlayUtil = new OverlayUtil();
-    FoodStoreIMPL storeDAO = new FoodStoreIMPL();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //TEST
 
+        setContentView(R.layout.activity_main);
+        mMapView = (MapView) findViewById(R.id.mmap);
+        mBaiduMap = mMapView.getMap();
+        //TEST
         requestPermission();
         this.mContext = this;
         //数据初始化
-        mMapView = (MapView) findViewById(R.id.mmap);
+
+
         initView();
         initLocation();
         initMaker();
@@ -229,6 +231,10 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         NavGuideButtonClick();
         InitNav();
         InitFSView();
+
+
+
+
 
         //导航点击事件处理
         mBaiduMap.setOnMapLongClickListener(new BaiduMap.OnMapLongClickListener() {
@@ -874,8 +880,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodStore2.setStore_heard_img(""+R.drawable.food_store_head_img3);
         foodStores.add(foodStore);
         foodStores.add(foodStore2);
-        storeDAO.addFoodStore(foodStore);
-        storeDAO.addFoodStore(foodStore2);
+        FoodStoreIMPL.Get().addFoodStore(foodStores);
         overlayUtil.addFoodStoreAllOverly(mBaiduMap, foodStores);
 
 

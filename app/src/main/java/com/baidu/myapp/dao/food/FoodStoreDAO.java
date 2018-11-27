@@ -15,6 +15,10 @@ import static org.litepal.crud.DataSupport.where;
  */
 
 public class FoodStoreDAO implements IFoodStore{
+    public FoodStoreDAO() {
+        Debbuger.LogE("创建了FoodStoreDao对象");
+    }
+
     @Override
    public boolean add(FoodStore foodStore) {
         if (foodStore.save()) {
