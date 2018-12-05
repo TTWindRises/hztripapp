@@ -16,7 +16,7 @@ public class FoodStoreIMPL {
     }
 
     private static FoodStoreIMPL foodStoreIMPL= new FoodStoreIMPL();
-    public static synchronized FoodStoreIMPL Get() {
+    public static  FoodStoreIMPL Get() {
 
   /*      if (foodStoreIMPL == null) {
             synchronized (FoodStoreIMPL.class){

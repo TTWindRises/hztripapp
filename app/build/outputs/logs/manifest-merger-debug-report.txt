@@ -63,10 +63,17 @@ ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:26:5-78
 		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:26:52-75
 application
 ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:28:5-67:19
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Administrator\.android\build-cache\374051c27948aa5e1c515ccbce397f1110971261\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Administrator\.android\build-cache\475e130e445ad4ff229ecc6c598b7fd6fa4fb670\output\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Administrator\.android\build-cache\4c44f6a9cbb57626b6739a8fd4628a94f02a16ad\output\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Administrator\.android\build-cache\a0113439ac62cdb3c5ab520bd12d9eaa32cece9e\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\1d4f5febe29b3c86d03906875e0d86fbdc91356d\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\220ca4e58c90bd1d9284be9d4ce98bbb7f554116\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\88bacd0dc62d2c6e90ed348ebf47c50a55589537\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\37a70b6fd63c7b456a495cf4d1410f62c68ef2c0\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\ff224fff8333484b9141de1febb68752f910f4a9\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\5841d91cbfb68e1c1c8139a1f900408250234fff\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\a029da8d28448e88e0591369f7735dac1d256df2\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\09ecc84a37ce9dbae6b4378ad7dafd75eab5f664\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\3769064eda4abf9e7a24c57b60b41bc3b1520520\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\c82aa63cde0b0538ddb283b9c9be85e94ce74d23\output\AndroidManifest.xml:29:5-20
 	android:label
 		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:32:9-41
 	android:supportsRtl
@@ -149,15 +156,40 @@ ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:64:9-65:19
 		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:64:18-53
 uses-sdk
 INJECTED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Administrator\.android\build-cache\374051c27948aa5e1c515ccbce397f1110971261\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Administrator\.android\build-cache\475e130e445ad4ff229ecc6c598b7fd6fa4fb670\output\AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Administrator\.android\build-cache\4c44f6a9cbb57626b6739a8fd4628a94f02a16ad\output\AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Administrator\.android\build-cache\a0113439ac62cdb3c5ab520bd12d9eaa32cece9e\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\1d4f5febe29b3c86d03906875e0d86fbdc91356d\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\220ca4e58c90bd1d9284be9d4ce98bbb7f554116\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\88bacd0dc62d2c6e90ed348ebf47c50a55589537\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\c42673a58b6e19709bd2de25d8ff22b4e552edb6\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\37a70b6fd63c7b456a495cf4d1410f62c68ef2c0\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\ff224fff8333484b9141de1febb68752f910f4a9\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\5841d91cbfb68e1c1c8139a1f900408250234fff\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\a029da8d28448e88e0591369f7735dac1d256df2\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\09ecc84a37ce9dbae6b4378ad7dafd75eab5f664\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\3769064eda4abf9e7a24c57b60b41bc3b1520520\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\c82aa63cde0b0538ddb283b9c9be85e94ce74d23\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Administrator\.android\build-cache\374051c27948aa5e1c515ccbce397f1110971261\output\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\1d4f5febe29b3c86d03906875e0d86fbdc91356d\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
 		INJECTED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml
 		INJECTED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml
 		INJECTED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\1d4f5febe29b3c86d03906875e0d86fbdc91356d\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\220ca4e58c90bd1d9284be9d4ce98bbb7f554116\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\88bacd0dc62d2c6e90ed348ebf47c50a55589537\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\c42673a58b6e19709bd2de25d8ff22b4e552edb6\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\37a70b6fd63c7b456a495cf4d1410f62c68ef2c0\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\ff224fff8333484b9141de1febb68752f910f4a9\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\5841d91cbfb68e1c1c8139a1f900408250234fff\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\a029da8d28448e88e0591369f7735dac1d256df2\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\09ecc84a37ce9dbae6b4378ad7dafd75eab5f664\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\3769064eda4abf9e7a24c57b60b41bc3b1520520\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\c82aa63cde0b0538ddb283b9c9be85e94ce74d23\output\AndroidManifest.xml:25:5-27:41
+	android:value
+		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\1d4f5febe29b3c86d03906875e0d86fbdc91356d\output\AndroidManifest.xml:27:9-38
+	android:name
+		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\1d4f5febe29b3c86d03906875e0d86fbdc91356d\output\AndroidManifest.xml:26:9-47

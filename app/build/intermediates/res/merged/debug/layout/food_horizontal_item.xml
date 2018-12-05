@@ -1,57 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_width="wrap_content"
+    android:layout_height="190dp"
+    android:orientation="vertical"
+    android:background="@drawable/food_horizontal_item_backgroud"
+    >
     <!--食品展示图-->
     <ImageView
         android:id="@+id/food_horizontal_item_img"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="#fd2324" />
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        />
     <!--食品单项标题-->
     <TextView
         android:id="@+id/food_horizontal_item_title"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:text="清蒸鱼"
-        android:textColor="#000000"
         android:layout_marginTop="5dp"
-        />
+        android:ellipsize="end"
+        android:maxEms="6"
+        android:maxLines="1"
+        android:textColor="#000000" />
     <!--销售量-->
     <TextView
-        android:id="@+id/food_horizontal_item_sell"
+        android:id="@+id/food_horizontal_item_sales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#cccccc"
-        android:text="月销256"
-        android:layout_marginTop="2dp"
-        android:textSize="10dp"
-        />
+        android:layout_marginTop="5dp"
+        android:textColor="#424c50"
+        android:textSize="10dp" />
     <!--价格组-->
     <LinearLayout
         android:id="@+id/food_price_item"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginTop="5dp"
         >
         <!--现价-->
         <TextView
             android:id="@+id/food_present_price"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-         <!--原价-->
+            android:layout_height="wrap_content"
+            android:textColor="#CC3333" />
+        <!--原价-->
         <TextView
             android:id="@+id/food_original_price"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <!--添加按钮-->
-        <ImageView
-            android:id="@+id/food_horizontal_item_add"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#dddd"
-            />
+            android:layout_marginLeft="5dp"
+            android:textColor="#424c50"
+            android:textSize="10dp" />
+        <!--添加按钮-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            >
+            <ImageView
+                android:id="@+id/food_horizontal_item_add"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginRight="2dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/food_item_add"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+
     </LinearLayout>
 
 

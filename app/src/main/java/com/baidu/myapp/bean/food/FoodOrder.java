@@ -17,7 +17,10 @@ public class FoodOrder extends DataSupport {
     private int orderID;
     private List<FoodBean> foodBeans;
     private Timestamp orderTime;
+    private int foodNumber;
     private int orderNumber;
+    private int user_id;
+    private int store_id;
     private List<UserBean> userBeanList;
 
 

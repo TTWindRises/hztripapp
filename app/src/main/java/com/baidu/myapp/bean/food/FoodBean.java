@@ -3,21 +3,20 @@ package com.baidu.myapp.bean.food;
 import org.litepal.annotation.Column;
 import org.litepal.crud.DataSupport;
 
+import java.math.BigDecimal;
+
 import static android.R.attr.id;
 
 public class FoodBean extends DataSupport {
-
-    @Column(unique = true)
     private int foodID;//食品的编号
-
-
-
     private String foodName;//食品的名称
     private int foodNum;//食品的数量
-    private int foodPrice;//食品的价格
+    private String foodPresentPrice;//食品的实际价格
+    private String foodOriginalPrice; //食品的原价
     private String foodDescribe;//食品的介绍描述信息
     private String foodImg;//食品的展示图片
     private String foodCategoryID; //食品类别号，归属于哪一个类别,考虑要加一个类目表，方便查询
+    private int food_order_id;
     private int foodSales;//单个食品的销量,初始为零，然后不能低于零，每个月要重新计算一次,因为显示的是上一个月的销量
     //食物与商店之间的多对多关系
     private String store_id;//属于哪家商店，利用这个id可以查寻到商家的信息
@@ -42,14 +41,58 @@ public class FoodBean extends DataSupport {
     public FoodBean() {
     }
 
-    public FoodBean(int foodID, String foodName, int foodPrice, String foodDescribe, String foodImg) {
-        this.foodID = foodID;
-        this.foodName = foodName;
-        this.foodPrice = foodPrice;
-        this.foodDescribe = foodDescribe;
-        this.foodImg = foodImg;
+    public int getFood_order_id() {
+        return food_order_id;
     }
 
+    public void setFood_order_id(int food_order_id) {
+        this.food_order_id = food_order_id;
+    }
+
+    public FoodBean(int foodID, String foodName, int foodNum, String foodPresentPrice, String foodOriginalPrice, String foodDescribe, String foodImg, String foodCategoryID, int foodSales, String store_id) {
+        this.foodID = foodID;
+        this.foodName = foodName;
+        this.foodNum = foodNum;
+        this.foodPresentPrice = foodPresentPrice;
+        this.foodOriginalPrice = foodOriginalPrice;
+        this.foodDescribe = foodDescribe;
+        this.foodImg = foodImg;
+        this.foodCategoryID = foodCategoryID;
+        this.foodSales = foodSales;
+        this.store_id = store_id;
+    }
+
+    @Override
+    public String toString() {
+        return "FoodBean{" +
+                "foodID=" + foodID +
+                ", foodName='" + foodName + '\'' +
+                ", foodNum=" + foodNum +
+                ", foodPresentPrice=" + foodPresentPrice +
+                ", foodOriginalPrice=" + foodOriginalPrice +
+                ", foodDescribe='" + foodDescribe + '\'' +
+                ", foodImg='" + foodImg + '\'' +
+                ", foodCategoryID='" + foodCategoryID + '\'' +
+                ", foodSales=" + foodSales +
+                ", store_id='" + store_id + '\'' +
+                '}';
+    }
+
+    public String getFoodPresentPrice() {
+        return foodPresentPrice;
+    }
+
+    public void setFoodPresentPrice(String foodPresentPrice) {
+        this.foodPresentPrice = foodPresentPrice;
+    }
+
+    public String getFoodOriginalPrice() {
+        return foodOriginalPrice;
+    }
+
+    public void setFoodOriginalPrice(String foodOriginalPrice) {
+        this.foodOriginalPrice = foodOriginalPrice;
+    }
 
     public String getFoodName() {
         return foodName;
@@ -59,13 +102,6 @@ public class FoodBean extends DataSupport {
         this.foodName = foodName;
     }
 
-    public int getFoodPrice() {
-        return foodPrice;
-    }
-
-    public void setFoodPrice(int foodPrice) {
-        this.foodPrice = foodPrice;
-    }
 
     public String getFoodDescribe() {
         return foodDescribe;
@@ -107,18 +143,5 @@ public class FoodBean extends DataSupport {
     public void setStore_id(String store_id) {
         this.store_id = store_id;
     }
-    @Override
-    public String toString() {
-        return "FoodBean{" +
-                "foodID=" + foodID +
-                ", foodName='" + foodName + '\'' +
-                ", foodNum=" + foodNum +
-                ", foodPrice=" + foodPrice +
-                ", foodDescribe='" + foodDescribe + '\'' +
-                ", foodImg='" + foodImg + '\'' +
-                ", foodCategoryID='" + foodCategoryID + '\'' +
-                ", foodSales=" + foodSales +
-                ", store_id='" + store_id + '\'' +
-                '}';
-    }
+
 }

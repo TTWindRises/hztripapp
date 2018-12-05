@@ -21,11 +21,17 @@ public class FoodStoreDAO implements IFoodStore{
 
     @Override
    public boolean add(FoodStore foodStore) {
-        if (foodStore.save()) {
-            Debbuger.LogE("存储数据成功");
+        if (DataSupport.where("storeid=?", foodStore.getStoreID()).find(FoodStore.class) == null) {
+
+            if (foodStore.save()) {
+                Debbuger.LogE("存储数据成功");
+            } else {
+                Debbuger.LogE("存储数据失败");
+            }
         } else {
-            Debbuger.LogE("存储数据失败");
+            Debbuger.LogE("已存在商家编号"+foodStore.getStoreID()+"的商店信息");
         }
+
      /*  List<FoodStore> list= DataSupport.where("storeid=?", foodStore.getStoreID()).find(FoodStore.class);
 
         if (list==null) {
