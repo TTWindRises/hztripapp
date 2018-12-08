@@ -15,18 +15,18 @@ public class FoodBean extends DataSupport {
     private String foodOriginalPrice; //食品的原价
     private String foodDescribe;//食品的介绍描述信息
     private String foodImg;//食品的展示图片
-    private String foodCategoryID; //食品类别号，归属于哪一个类别,考虑要加一个类目表，方便查询
+    private String category_id; //食品类别号，归属于哪一个类别,考虑要加一个类目表，方便查询
     private int food_order_id;
     private int foodSales;//单个食品的销量,初始为零，然后不能低于零，每个月要重新计算一次,因为显示的是上一个月的销量
     //食物与商店之间的多对多关系
     private String store_id;//属于哪家商店，利用这个id可以查寻到商家的信息
 
-    public String getFoodCategoryID() {
-        return foodCategoryID;
+    public String getCategory_id() {
+        return category_id;
     }
 
-    public void setFoodCategoryID(String foodCategoryID) {
-        this.foodCategoryID = foodCategoryID;
+    public void setCategory_id(String category_id) {
+        this.category_id = category_id;
     }
 
     public int getFoodSales() {
@@ -57,7 +57,7 @@ public class FoodBean extends DataSupport {
         this.foodOriginalPrice = foodOriginalPrice;
         this.foodDescribe = foodDescribe;
         this.foodImg = foodImg;
-        this.foodCategoryID = foodCategoryID;
+        this.category_id = foodCategoryID;
         this.foodSales = foodSales;
         this.store_id = store_id;
     }
@@ -72,7 +72,7 @@ public class FoodBean extends DataSupport {
                 ", foodOriginalPrice=" + foodOriginalPrice +
                 ", foodDescribe='" + foodDescribe + '\'' +
                 ", foodImg='" + foodImg + '\'' +
-                ", foodCategoryID='" + foodCategoryID + '\'' +
+                ", category_id='" + category_id + '\'' +
                 ", foodSales=" + foodSales +
                 ", store_id='" + store_id + '\'' +
                 '}';

@@ -84,9 +84,9 @@
                 android:layout_height="wrap_content"
                 android:textColor="#D3D3D3"
                 android:textSize="6dp" />
-
+            <!--店铺的总销售量-->
             <TextView
-                android:id="@+id/food_store_sell"
+                android:id="@+id/food_store_sale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#696969"
@@ -178,20 +178,27 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp">
+                <TextView
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content" />
                 <!--轮播图-->
                 <ImageView
                     android:id="@+id/food_store_shuffling"
-                    android:layout_width="280dp"
-                    android:layout_height="80dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
+                    android:layout_weight="1"
                     android:background="@drawable/food_horizontal_item_backgroud"
                     android:scaleType="fitXY" />
-
+                <TextView
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
             <!--商家推荐-->
             <TextView
@@ -210,21 +217,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="160dp"></com.baidu.myapp.view.HorizontalRecycleView>
         </LinearLayout>
+
+        <!--纵向食品展示栏-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            >
+           
             <!-- 左边文字分类栏-->
             <LinearLayout
                 android:id="@+id/food_store_vertical_left"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:background="@drawable/food_store_left_catrgory_bg"
+                android:orientation="vertical"
+
+                >
 
                 <com.baidu.myapp.view.HorizontalRecycleView
                     android:id="@+id/food_vertical_left_category_list"
                     android:layout_width="100dp"
-                    android:layout_height="match_parent"></com.baidu.myapp.view.HorizontalRecycleView>
+                    android:layout_height="match_parent">
+
+                </com.baidu.myapp.view.HorizontalRecycleView>
             </LinearLayout>
             <!--右边食品纵向展示栏-->
             <LinearLayout
@@ -241,12 +258,21 @@
             </LinearLayout>
 
         </LinearLayout>
+        <!--占位 防止最后的item滑不出底部的结算栏-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
+
+
+
+        </LinearLayout>
         <!--scollerView只能包含一个子控件-->
-    </LinearLayout>
+
 
 
 </com.baidu.myapp.util.StickyScrollView>
 
+    <!--底部结算栏-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"

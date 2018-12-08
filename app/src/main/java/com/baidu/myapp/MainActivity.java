@@ -78,9 +78,11 @@ import com.baidu.myapp.activity.FNmapActivity;
 import com.baidu.myapp.activity.FoodStoreActivity;
 import com.baidu.myapp.activity.WNaviGuideActivity;
 import com.baidu.myapp.bean.food.FoodBean;
+import com.baidu.myapp.bean.food.FoodCategory;
 import com.baidu.myapp.bean.food.FoodStore;
 import com.baidu.myapp.bean.scenic.SpotBean;
 import com.baidu.myapp.impl.foodimpl.FoodBeanIMPL;
+import com.baidu.myapp.impl.foodimpl.FoodCategoryIMPL;
 import com.baidu.myapp.impl.foodimpl.FoodStoreIMPL;
 import com.baidu.myapp.map.OverlayUtil;
 import com.baidu.myapp.overlay.util.DrivingRouteOverlay;
@@ -888,10 +890,12 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodBean.setFoodDescribe("令人怀念的味道");
         foodBean.setFoodOriginalPrice("21");
         foodBean.setFoodPresentPrice("15");
+        foodBean.setCategory_id("1");
         foodBean.setStore_id(7+"");
         FoodBean foodBean2 = new FoodBean();
         foodBean2.setFoodName("香芋面包");
         foodBean2.setFoodID(2);
+        foodBean2.setCategory_id("2");
         foodBean2.setFoodSales(200);
         foodBean2.setFoodImg(""+R.drawable.food_horizontal_item_mianbao);
         foodBean2.setFoodDescribe("令人怀念的味道");
@@ -900,6 +904,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodBean2.setStore_id(7+"");
         FoodBean foodBean3 = new FoodBean();
         foodBean3.setFoodName("油条");
+        foodBean3.setCategory_id("3");
         foodBean3.setFoodID(3);
         foodBean3.setFoodSales(200);
         foodBean3.setFoodImg(""+R.drawable.food_horizontal_item_youtiao_img);
@@ -911,6 +916,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodBean4.setFoodName("油条");
         foodBean4.setFoodID(3);
         foodBean4.setFoodSales(157);
+        foodBean4.setCategory_id("4");
         foodBean4.setFoodImg(""+R.drawable.food_horizontal_item_youtiao_img);
         foodBean4.setFoodDescribe("令人怀念的味道");
         foodBean4.setFoodOriginalPrice("2");
@@ -920,6 +926,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodBean5.setFoodName("大良家的金牌烧鸡");
         foodBean5.setFoodID(4);
         foodBean5.setFoodSales(67);
+        foodBean5.setCategory_id("5");
         foodBean5.setFoodImg(""+R.drawable.food_horizontal_item_shaoji);
         foodBean5.setFoodDescribe("令人怀念的味道");
         foodBean5.setFoodOriginalPrice("39");
@@ -931,7 +938,38 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodBeanList.add(foodBean4);
         foodBeanList.add(foodBean5);
         FoodBeanIMPL.GetFood().addAll(foodBeanList);
+        FoodCategory foodCategory = new FoodCategory();
+        foodCategory.setCategoryID(1);
+        foodCategory.setCategoryName("热销");
+        foodCategory.setStore_id("7");
 
+        FoodCategory foodCategory2 = new FoodCategory();
+        foodCategory2.setCategoryID(2);
+        foodCategory2.setCategoryName("推荐");
+        foodCategory2.setStore_id("7");
+
+        FoodCategory foodCategory3 = new FoodCategory();
+        foodCategory3.setCategoryID(3);
+        foodCategory3.setCategoryName("早餐");
+        foodCategory3.setStore_id("7");
+
+        FoodCategory foodCategory4 = new FoodCategory();
+        foodCategory4.setCategoryID(4);
+        foodCategory4.setCategoryName("午餐");
+        foodCategory4.setStore_id("7");
+
+        FoodCategory foodCategory5 = new FoodCategory();
+        foodCategory5.setCategoryID(5);
+        foodCategory5.setCategoryName("晚餐");
+        foodCategory5.setStore_id("7");
+
+        List<FoodCategory> categoryList = new ArrayList<FoodCategory>();
+        categoryList.add(foodCategory);
+        categoryList.add(foodCategory2);
+        categoryList.add(foodCategory3);
+        categoryList.add(foodCategory4);
+        categoryList.add(foodCategory5);
+        FoodCategoryIMPL.getInstance().addAllCategory(categoryList);
 
     }
 

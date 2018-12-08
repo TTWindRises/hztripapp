@@ -38,10 +38,10 @@ public class SpaceItemDecoration extends RecyclerView.ItemDecoration {
         outRect.right = mSpace;
         outRect.bottom = mSpace;
         outRect.top = mSpace;
-     /*   if (parent.getChildAdapterPosition(view) == 0) {
+    /*    if (parent.getChildAdapterPosition(view) == 0) {
             outRect.top = mSpace;
-        }*/
-
+        }
+*/
     }
 
     public SpaceItemDecoration(int space) {

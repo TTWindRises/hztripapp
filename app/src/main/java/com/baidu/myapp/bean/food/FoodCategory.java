@@ -1,5 +1,6 @@
 package com.baidu.myapp.bean.food;
 
+import org.litepal.annotation.Column;
 import org.litepal.crud.DataSupport;
 
 /**
@@ -7,30 +8,41 @@ import org.litepal.crud.DataSupport;
  */
 
 public class FoodCategory extends DataSupport {
-    private String CategoryID;
-    private String CategoryName;
-
-    public String getCategoryID() {
-        return CategoryID;
-    }
-
-    public void setCategoryID(String categoryID) {
-        CategoryID = categoryID;
-    }
-
-    public String getCategoryName() {
-        return CategoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        CategoryName = categoryName;
-    }
+    @Column(unique = true)
+    private int categoryID;
+    private String categoryName;
+    private String store_id;
 
     @Override
     public String toString() {
         return "FoodCategory{" +
-                "CategoryID='" + CategoryID + '\'' +
-                ", CategoryName='" + CategoryName + '\'' +
+                "categoryID='" + categoryID + '\'' +
+                ", categoryName='" + categoryName + '\'' +
+                ", stroe_id='" + store_id + '\'' +
                 '}';
+    }
+
+    public int getCategoryID() {
+        return categoryID;
+    }
+
+    public void setCategoryID(int categoryID) {
+        this.categoryID = categoryID;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
+    public String getStore_id() {
+        return store_id;
+    }
+
+    public void setStore_id(String store_id) {
+        this.store_id = store_id;
     }
 }

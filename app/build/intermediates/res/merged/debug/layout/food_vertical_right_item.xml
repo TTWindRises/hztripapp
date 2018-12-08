@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/food_store_vertical_right_img"
+        android:layout_width="120dp"
+        android:layout_height="120dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/food_store_vertical_right_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="24dp"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <!--纵向单个商品的月售-->
+            <TextView
+                android:id="@+id/food_store_vertical_right_sale"
+                android:textColor="#696969"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/food_store_vertical_right_praise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/food_store_vertical_right_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!--价格组-->
+        <LinearLayout
+            android:id="@+id/food_vertical_right_price_item"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <!--现价-->
+            <TextView
+                android:id="@+id/food_vertical_right_present_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#CC3333" />
+            <!--原价-->
+            <TextView
+                android:id="@+id/food_vertical_right_original_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="#424c50"
+                android:textSize="10dp" />
+            <!--添加按钮-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <ImageView
+                    android:id="@+id/food_vertical_righ_item_sub"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/food_store_item_sub2"
+                    android:visibility="invisible"
+                    />
+                <TextView
+                    android:id="@+id/food_vertical_right_item_number"
+                    android:layout_width="18dp"
+                    android:layout_height="24dp"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:visibility="invisible"
+                    />
+
+                <ImageView
+                    android:id="@+id/food_vertical_right_item_add"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="2dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/food_item_add"
+                    android:scaleType="fitXY" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

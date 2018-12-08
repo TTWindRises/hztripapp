@@ -1,21 +1,17 @@
 package com.baidu.myapp.activity;
 
 import android.os.Bundle;
-import android.provider.Telephony;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.baidu.myapp.R;
-import com.baidu.myapp.adapter.FoodBeanAdapter;
 import com.baidu.myapp.adapter.FoodBeanRecyclerAdapter;
+import com.baidu.myapp.adapter.food.FoodLeftRecyclerAdapter;
 import com.baidu.myapp.bean.food.FoodBean;
+import com.baidu.myapp.bean.food.FoodCategory;
 import com.baidu.myapp.bean.food.FoodStore;
-import com.baidu.myapp.interfaces.ifood.IFoodBuy;
 import com.baidu.myapp.util.CircleCrop;
 import com.baidu.myapp.util.Debbuger;
 import com.baidu.myapp.util.GlideRoundTransform;
@@ -27,17 +23,15 @@ import org.litepal.crud.DataSupport;
 
 import java.util.List;
 
-import static com.baidu.location.g.j.C;
-import static com.baidu.location.g.j.T;
-import static com.baidu.location.g.j.V;
-
 /**
  * Created by Administrator on 2018/11/7.
  */
 
-public class FoodStoreActivity extends BaseActivity{
+public class FoodStoreActivity extends BaseActivity {
     HorizontalRecycleView mListView;
+    //HorizontalRecycleView leftListView;
     FoodStore foodStore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,13 +39,15 @@ public class FoodStoreActivity extends BaseActivity{
         init();
         loadHorizontalFoodView();
         loadBottomView();
+        loadVerticalLeftView();
+
     }
 
     private void loadHorizontalFoodView() {
         List<FoodBean> foodBeanList;
         foodBeanList = DataSupport.where("store_id=?", foodStore.getStoreID()).find(FoodBean.class);
         if (foodBeanList != null) {
-            Debbuger.LogE("存在food信息:"+foodBeanList.toString());
+            Debbuger.LogE("存在food信息:" + foodBeanList.toString());
         }
         FoodBeanRecyclerAdapter adapter = new FoodBeanRecyclerAdapter(FoodStoreActivity.this, foodBeanList);
 
@@ -62,16 +58,36 @@ public class FoodStoreActivity extends BaseActivity{
         mListView.setItemAnimator(new DefaultItemAnimator());
         mListView.setLayoutManager(linearLayoutManager);
         mListView.setAdapter(adapter);
-       // mListView.setAdapter(new FoodBeanAdapter(FoodStoreActivity.this,foodBeanList));
+        // mListView.setAdapter(new FoodBeanAdapter(FoodStoreActivity.this,foodBeanList));
+    }
+
+    //纵向左边列表
+    private void loadVerticalLeftView() {
+        List<FoodCategory> foodCategoryList;
+        foodCategoryList = DataSupport.where("store_id=?", foodStore.getStoreID()).find(FoodCategory.class);
+        if (foodCategoryList != null) {
+            Debbuger.LogE("存在category信息:" + foodCategoryList.toString());
+        }
+        FoodLeftRecyclerAdapter adapter = new FoodLeftRecyclerAdapter(FoodStoreActivity.this, foodCategoryList);
+
+        mListView = (HorizontalRecycleView) findViewById(R.id.food_vertical_left_category_list);
+        mListView.addItemDecoration(new SpaceItemDecoration(0));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        mListView.setItemAnimator(new DefaultItemAnimator());
+        mListView.setLayoutManager(linearLayoutManager);
+        mListView.setAdapter(adapter);
     }
 
     private void loadBottomView() {
+
         ImageView bottom_icon = findViewById(R.id.food_store_bottom_icon);
-        bottom_icon.setImageResource(R.drawable.food_store_bottom_icon_pick3);
+        bottom_icon.setImageResource(R.drawable.food_store_bottom_icon_default3);
         TextView food_number = findViewById(R.id.food_store_bottom_number);
         food_number.setText("");
 
     }
+
     private void init() {
         //轮播图
         ImageView shuffling = findViewById(R.id.food_store_shuffling);
@@ -84,7 +100,7 @@ public class FoodStoreActivity extends BaseActivity{
         ImageView zan = (ImageView) findViewById(R.id.food_store_prise);
         //
         TextView score = (TextView) findViewById(R.id.food_store_score);
-        TextView sell = (TextView) findViewById(R.id.food_store_sell);
+        TextView sell = (TextView) findViewById(R.id.food_store_sale);
         TextView distance = (TextView) findViewById(R.id.food_store_distance);
         TextView K1 = (TextView) findViewById(R.id.food_store_1);
         TextView K2 = (TextView) findViewById(R.id.food_store_2);
