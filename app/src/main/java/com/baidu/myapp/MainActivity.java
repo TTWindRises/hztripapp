@@ -886,6 +886,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodBean.setFoodName("单人汉堡套餐");
         foodBean.setFoodID(1);
         foodBean.setFoodSales(20);
+        foodBean.setFoodPraise("好评率100%");
         foodBean.setFoodImg(""+R.drawable.food_horizontal_item_img);
         foodBean.setFoodDescribe("令人怀念的味道");
         foodBean.setFoodOriginalPrice("21");

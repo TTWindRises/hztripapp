@@ -72,6 +72,10 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\activity_marker_animation.xml"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\food_store_bottom_fragment.xml",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\food_store_bottom_fragment.xml"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\food_vertical_right_item.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\food_vertical_right_item.xml"
     },
@@ -270,6 +274,10 @@
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\food_store_bottom_fragment_item.xml",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\food_store_bottom_fragment_item.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",

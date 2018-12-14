@@ -1,50 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
 
+
+    >
+<!--食品的展示图片-->
     <ImageView
         android:id="@+id/food_store_vertical_right_img"
         android:layout_width="120dp"
-        android:layout_height="120dp" />
+        android:layout_height="110dp"
+        android:scaleType="fitXY"
+        android:layout_marginLeft="8dp"
+        android:adjustViewBounds="true"
+        />
+    <!--描述栏-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:orientation="horizontal"
+        android:layout_height="110dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
         >
+        <!--食品的名称-->
         <TextView
             android:id="@+id/food_store_vertical_right_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#000000"
-            android:textSize="24dp"
+            android:textSize="18dp"
             />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginTop="2dp"
             >
             <!--纵向单个商品的月售-->
             <TextView
                 android:id="@+id/food_store_vertical_right_sale"
-                android:textColor="#696969"
+
+                android:textColor="#424c50"
+                android:textSize="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+            <!--好评率-->
             <TextView
                 android:id="@+id/food_store_vertical_right_praise"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textColor="#424c50"
+                android:textSize="10dp"
+                />
         </LinearLayout>
+        <!--折扣-->
         <TextView
             android:id="@+id/food_store_vertical_right_discount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
+            android:layout_width="32dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="4dp"
+            android:textSize="10dp"
+            android:textColor="#ef7a82"
+            android:gravity="center"
+            android:background="@drawable/discount"
+            />
+    <LinearLayout
+        android:gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <!--价格组-->
         <LinearLayout
             android:id="@+id/food_vertical_right_price_item"
-            android:layout_width="112dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:gravity="center"
@@ -62,13 +90,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:textColor="#424c50"
-                android:textSize="10dp" />
-            <!--添加按钮-->
+                android:textSize="10dp"
+                android:gravity="center"
+                />
+            <!--按钮组-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right">
-
+                android:gravity="right"
+                >
+                <!--减按钮-->
                 <ImageView
                     android:id="@+id/food_vertical_righ_item_sub"
                     android:layout_width="24dp"
@@ -78,6 +109,7 @@
                     android:background="@drawable/food_store_item_sub2"
                     android:visibility="invisible"
                     />
+                <!--商品的数量-->
                 <TextView
                     android:id="@+id/food_vertical_right_item_number"
                     android:layout_width="18dp"
@@ -86,7 +118,7 @@
                     android:textColor="#000000"
                     android:visibility="invisible"
                     />
-
+                <!--添加按钮-->
                 <ImageView
                     android:id="@+id/food_vertical_right_item_add"
                     android:layout_width="24dp"
@@ -96,7 +128,7 @@
                     android:background="@drawable/food_item_add"
                     android:scaleType="fitXY" />
             </LinearLayout>
-
+        </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

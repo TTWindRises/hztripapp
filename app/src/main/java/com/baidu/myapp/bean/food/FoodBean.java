@@ -14,6 +14,7 @@ public class FoodBean extends DataSupport {
     private String foodPresentPrice;//食品的实际价格
     private String foodOriginalPrice; //食品的原价
     private String foodDescribe;//食品的介绍描述信息
+    private String foodPraise;
     private String foodImg;//食品的展示图片
     private String category_id; //食品类别号，归属于哪一个类别,考虑要加一个类目表，方便查询
     private int food_order_id;
@@ -41,6 +42,32 @@ public class FoodBean extends DataSupport {
     public FoodBean() {
     }
 
+    @Override
+    public String toString() {
+        return "FoodBean{" +
+                "foodID=" + foodID +
+                ", foodName='" + foodName + '\'' +
+                ", foodNum=" + foodNum +
+                ", foodPresentPrice='" + foodPresentPrice + '\'' +
+                ", foodOriginalPrice='" + foodOriginalPrice + '\'' +
+                ", foodDescribe='" + foodDescribe + '\'' +
+                ", foodPraise='" + foodPraise + '\'' +
+                ", foodImg='" + foodImg + '\'' +
+                ", category_id='" + category_id + '\'' +
+                ", food_order_id=" + food_order_id +
+                ", foodSales=" + foodSales +
+                ", store_id='" + store_id + '\'' +
+                '}';
+    }
+
+    public String getFoodPraise() {
+        return foodPraise;
+    }
+
+    public void setFoodPraise(String foodPraise) {
+        this.foodPraise = foodPraise;
+    }
+
     public int getFood_order_id() {
         return food_order_id;
     }
@@ -60,22 +87,6 @@ public class FoodBean extends DataSupport {
         this.category_id = foodCategoryID;
         this.foodSales = foodSales;
         this.store_id = store_id;
-    }
-
-    @Override
-    public String toString() {
-        return "FoodBean{" +
-                "foodID=" + foodID +
-                ", foodName='" + foodName + '\'' +
-                ", foodNum=" + foodNum +
-                ", foodPresentPrice=" + foodPresentPrice +
-                ", foodOriginalPrice=" + foodOriginalPrice +
-                ", foodDescribe='" + foodDescribe + '\'' +
-                ", foodImg='" + foodImg + '\'' +
-                ", category_id='" + category_id + '\'' +
-                ", foodSales=" + foodSales +
-                ", store_id='" + store_id + '\'' +
-                '}';
     }
 
     public String getFoodPresentPrice() {

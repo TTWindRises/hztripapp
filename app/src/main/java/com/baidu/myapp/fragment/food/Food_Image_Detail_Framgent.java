@@ -11,7 +11,7 @@ import com.baidu.myapp.R;
  * Created by Administrator on 2018/11/12.
  */
 
-public class Food_Detail_Framgent extends FragmentActivity {
+public class Food_Image_Detail_Framgent extends FragmentActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

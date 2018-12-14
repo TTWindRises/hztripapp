@@ -5,7 +5,7 @@
     <dbname value="myapp"/>
 
 
-    <version value="17"/>
+    <version value="18"/>
 
     <list>
         <mapping class="com.baidu.myapp.bean.scenic.SpotBean"></mapping>
