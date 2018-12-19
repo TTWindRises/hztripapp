@@ -12,12 +12,12 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-hdpi\\ic_local_taxi.png"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_motorcycle.png",
-        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-hdpi\\ic_motorcycle.png"
-    },
-    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_near_me_indigo_200_18dp.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-hdpi\\ic_near_me_indigo_200_18dp.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_motorcycle.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-hdpi\\ic_motorcycle.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\nav_settings_multiline_middle_pressed.9.png",
@@ -28,16 +28,16 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-hdpi\\ic_label_pink_200_18dp.png"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon_gcoding.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-hdpi\\icon_gcoding.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bottom_tab_bg.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-hdpi\\bottom_tab_bg.png"
-    },
-    {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
-        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_cate_red.png",

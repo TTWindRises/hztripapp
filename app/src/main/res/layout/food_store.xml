@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.baidu.myapp.activity.FoodStoreActivity"
-    android:id="@+id/food_store">
-
-    <com.baidu.myapp.util.StickyScrollView
-        android:id="@+id/scrollView"
+    android:fitsSystemWindows="true">
+    <android.support.design.widget.AppBarLayout
+        android:fitsSystemWindows="true"
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <android.support.design.widget.CollapsingToolbarLayout
+        android:id="@+id/collapsing"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF">
+        android:fitsSystemWindows="true"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -206,139 +210,46 @@
                         android:layout_width="5dp"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
-                <!--商家推荐-->
-                <TextView
-                    android:id="@+id/food_store_recommend_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#000000"
-
-                    android:textSize="18dp" />
-                <!--横向食品展示栏-->
-                <com.baidu.myapp.view.HorizontalRecycleView
-                    android:id="@+id/food_horizontal_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="160dp"></com.baidu.myapp.view.HorizontalRecycleView>
             </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/top_divider"
-                android:tag="sticky" />
-            <!--纵向食品展示栏-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <!-- 左边文字分类栏-->
-                <LinearLayout
-                    android:id="@+id/food_store_vertical_left"
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-
-                    <com.baidu.myapp.view.HorizontalRecycleView
-                        android:id="@+id/food_vertical_left_category_list"
-                        android:layout_width="80dp"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/food_store_left_catrgory_bg">
-
-                    </com.baidu.myapp.view.HorizontalRecycleView>
-                </LinearLayout>
-                <!--右边食品纵向展示栏-->
-                <LinearLayout
-                    android:id="@+id/food_store_vertical_right"
-                    android:layout_width="match_parent"
-
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <com.baidu.myapp.view.HorizontalRecycleView
-                        android:id="@+id/food_store_vertical_right_list"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"></com.baidu.myapp.view.HorizontalRecycleView>
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <!--占位 防止最后的item滑不出底部的结算栏-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp" />
-
 
         </LinearLayout>
-        <!--scollerView只能包含一个子控件-->
+    </android.support.design.widget.CollapsingToolbarLayout>
 
+    <android.support.design.widget.TabLayout
+        android:id="@+id/slidinglayout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        app:tabIndicatorColor="@color/pink"
+        app:tabIndicatorHeight="2dp"
+        app:tabSelectedTextColor="@color/tabTextColor"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
 
-    </com.baidu.myapp.util.StickyScrollView>
+        app:tabTextColor="@color/tabTextColor" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/top_divider" />
+    </android.support.design.widget.AppBarLayout>
+
+    <!--占位 防止最后的item滑不出底部的结算栏-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp" />
+
     <!--底部弹出的界面-->
 
 
+    <!--scollerView只能包含一个子控件-->
 
-    <!--底部结算栏-->
-    <LinearLayout
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/food_store_view_pager"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_alignParentBottom="true"
-        android:alpha="0.98"
-        android:background="#585452"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-        <TextView
-            android:id="@+id/food_store_bottom_sum"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="未选购商品"
-            android:textColor="#b8b8b8"
-            android:textSize="13dp"
-            />
-        <TextView
-            android:id="@+id/food_store_bottom_origin_sum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/food_store_bottom_settlement"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginRight="8dp"
-            android:layout_weight="2.5"
-            android:background="#68676b"
-            android:gravity="center"
-            android:textColor="#b8b8b8"
-            android:text="结算"
-            android:textSize="15dp" />
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/food_store_bottom_icon"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="22dp" />
-
-    <TextView
-        android:id="@+id/food_store_bottom_number"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="60dp"
-        android:layout_marginLeft="75dp"
-        android:background="@drawable/food_red_ball"
-        android:gravity="center"
-        android:text="10"
-        android:textSize="8dp"
-
-        android:visibility="invisible" />
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

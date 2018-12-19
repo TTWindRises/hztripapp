@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/food_goods_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--商家推荐-->
+        <TextView
+            android:id="@+id/food_store_recommend_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="商家推荐"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+        <!--横向食品展示栏-->
+        <com.baidu.myapp.view.HorizontalRecycleView
+            android:id="@+id/food_horizontal_list"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"></com.baidu.myapp.view.HorizontalRecycleView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.baidu.myapp.view.HorizontalRecycleView
+                android:id="@+id/food_vertical_left_category_list"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/food_store_left_catrgory_bg"
+                android:dividerHeight="0dp"
+                android:visibility="visible"></com.baidu.myapp.view.HorizontalRecycleView>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/food_store_vertical_right_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/food_shop_cart"></include>
+</RelativeLayout>
