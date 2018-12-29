@@ -9,6 +9,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.RotateAnimation;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,6 +31,7 @@ import java.util.List;
 
 import static com.baidu.location.g.j.D;
 import static com.baidu.location.g.j.F;
+import static com.baidu.location.g.j.t;
 
 /**
  * Created by Administrator on 2018/11/29.
@@ -39,6 +45,7 @@ public class FoodRightRecyclerAdapter extends RecyclerView.Adapter<FoodRightRecy
     public FoodRightRecyclerAdapter(Context context, List<FoodBean> data) {
         this.context = context;
         this.data = data;
+        setHasStableIds(true);
     }
 
     @Override
@@ -73,6 +80,7 @@ public class FoodRightRecyclerAdapter extends RecyclerView.Adapter<FoodRightRecy
                     holder.number.setVisibility(View.VISIBLE);
                     holder.origin_price.setVisibility(View.GONE);
                     holder.sub.setVisibility(View.VISIBLE);
+                    holder.sub.setAnimation(getShowAnimation());
                 }
                 number++;
                 if (number == 1) {
@@ -97,6 +105,7 @@ public class FoodRightRecyclerAdapter extends RecyclerView.Adapter<FoodRightRecy
                     Debbuger.LogE("去除减按钮");
                     holder.origin_price.setVisibility(View.VISIBLE);
                     holder.sub.setVisibility(View.INVISIBLE);
+                    holder.sub.setAnimation(getHiddenAnimation());
                     holder.number.setVisibility(View.INVISIBLE);
                 }
                 //控制美食视图界面底部的背景色变化
@@ -111,7 +120,52 @@ public class FoodRightRecyclerAdapter extends RecyclerView.Adapter<FoodRightRecy
         });
 
     }
+    /**
+     * 显示减号的动画
+     * @return
+     */
+    private Animation getShowAnimation(){
+        AnimationSet set = new AnimationSet(true);
+        RotateAnimation rotate = new RotateAnimation(0,720,RotateAnimation.RELATIVE_TO_SELF,0.5f,RotateAnimation.RELATIVE_TO_SELF,0.5f);
+        set.addAnimation(rotate);
+        TranslateAnimation translate = new TranslateAnimation(
+                TranslateAnimation.RELATIVE_TO_SELF,2f
+                ,TranslateAnimation.RELATIVE_TO_SELF,0
+                ,TranslateAnimation.RELATIVE_TO_SELF,0
+                ,TranslateAnimation.RELATIVE_TO_SELF,0);
+        set.addAnimation(translate);
+        AlphaAnimation alpha = new AlphaAnimation(0,1);
+        set.addAnimation(alpha);
+        set.setDuration(500);
+        return set;
+    }
 
+
+    /**
+     * 隐藏减号的动画
+     * @return
+     */
+    private Animation getHiddenAnimation(){
+        AnimationSet set = new AnimationSet(true);
+        RotateAnimation rotate = new RotateAnimation(0,720,RotateAnimation.RELATIVE_TO_SELF,0.5f,RotateAnimation.RELATIVE_TO_SELF,0.5f);
+        set.addAnimation(rotate);
+        TranslateAnimation translate = new TranslateAnimation(
+                TranslateAnimation.RELATIVE_TO_SELF,0
+                ,TranslateAnimation.RELATIVE_TO_SELF,2f
+                ,TranslateAnimation.RELATIVE_TO_SELF,0
+                ,TranslateAnimation.RELATIVE_TO_SELF,0);
+        set.addAnimation(translate);
+        AlphaAnimation alpha = new AlphaAnimation(1,0);
+        set.addAnimation(alpha);
+        set.setDuration(500);
+        return set;
+    }
+
+    //必须重写  不然item会错乱
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
     @Override
     public int getItemCount() {
         return data.size();

@@ -7,8 +7,8 @@
     <!--食品展示图-->
     <ImageView
         android:id="@+id/food_horizontal_item_img"
-        android:layout_width="112dp"
-        android:layout_height="112dp"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY" />
     <!--食品单项标题-->
@@ -17,6 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginTop="8dp"
+        android:layout_marginLeft="1dp"
         android:ellipsize="end"
         android:maxEms="6"
         android:maxLines="1"
@@ -27,6 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
+        android:layout_marginLeft="1dp"
         android:textColor="#424c50"
         android:textSize="10dp" />
     <!--价格组-->
@@ -36,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:gravity="center"
+        android:layout_marginLeft="1dp"
         android:orientation="horizontal">
         <!--现价-->
         <TextView

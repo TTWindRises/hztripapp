@@ -15,7 +15,7 @@
     <dimen name="item_dish_hight">55dp</dimen>
     <dimen name="item_dish_account_width">30dp</dimen>
     <dimen name="item_dish_circle_size">25dp</dimen>
-
+    <dimen name="sectioned_top">32dp</dimen>
     <dimen name="shopping_cart_height">50dp</dimen>
     <dimen name="shopping_cart_image_height">35dp</dimen>
     <dimen name="shopping_cart_circle_size">60dp</dimen>

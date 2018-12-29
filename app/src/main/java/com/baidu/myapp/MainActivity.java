@@ -194,7 +194,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
             .fromResource(R.drawable.icon_marka);
     BitmapDescriptor bdB = BitmapDescriptorFactory
             .fromResource(R.drawable.icon_markb);
-
+    int iii = 5;
     //导游相关
     int k = 0;
     int l = 0;
@@ -219,8 +219,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         requestPermission();
         this.mContext = this;
         //数据初始化
-
-
         initView();
         initLocation();
         initMaker();
@@ -230,9 +228,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         NavGuideButtonClick();
         InitNav();
         InitFSView();
-
-
-
 
 
         //导航点击事件处理
@@ -854,8 +849,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     }
 
 
-
-
     //添加食品商店的覆盖物
     private void addDeOverlays() {
         //longtitude 1开头的
@@ -866,8 +859,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         FoodStore foodStore = new FoodStore();
         foodStore.setStoreID("7");
         foodStore.setStoreName("学院食府");
-        foodStore.setStoreImg(""+R.drawable.store_head_bg);
-        foodStore.setStore_heard_img(""+R.drawable.store_head_img);
+        foodStore.setStoreImg("" + R.drawable.store_head_bg);
+        foodStore.setStore_heard_img("" + R.drawable.store_head_img);
         foodStore.setStoreLatitude(24.415512);
         foodStore.setStoreLongtitude(111.520595);
         FoodStore foodStore2 = new FoodStore();
@@ -875,8 +868,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodStore2.setStoreName("大黄饺子店");
         foodStore2.setStoreLatitude(24.416317);
         foodStore2.setStoreLongtitude(111.543813);
-        foodStore2.setStoreImg(""+R.drawable.store_head_bg);
-        foodStore2.setStore_heard_img(""+R.drawable.food_store_head_img3);
+        foodStore2.setStoreImg("" + R.drawable.store_head_bg);
+        foodStore2.setStore_heard_img("" + R.drawable.food_store_head_img3);
         foodStores.add(foodStore);
         foodStores.add(foodStore2);
         FoodStoreIMPL.Get().addFoodStore(foodStores);
@@ -887,52 +880,52 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodBean.setFoodID(1);
         foodBean.setFoodSales(20);
         foodBean.setFoodPraise("好评率100%");
-        foodBean.setFoodImg(""+R.drawable.food_horizontal_item_img);
+        foodBean.setFoodImg("" + R.drawable.food_horizontal_item_img);
         foodBean.setFoodDescribe("令人怀念的味道");
         foodBean.setFoodOriginalPrice("21");
         foodBean.setFoodPresentPrice("15");
-        foodBean.setCategory_id("1");
-        foodBean.setStore_id(7+"");
+        foodBean.setCategory_id("2");
+        foodBean.setStore_id(7 + "");
         FoodBean foodBean2 = new FoodBean();
         foodBean2.setFoodName("香芋面包");
         foodBean2.setFoodID(2);
-        foodBean2.setCategory_id("2");
+        foodBean2.setCategory_id("0");
         foodBean2.setFoodSales(200);
-        foodBean2.setFoodImg(""+R.drawable.food_horizontal_item_mianbao);
+        foodBean2.setFoodImg("" + R.drawable.food_horizontal_item_mianbao);
         foodBean2.setFoodDescribe("令人怀念的味道");
         foodBean2.setFoodOriginalPrice("1");
         foodBean2.setFoodPresentPrice("0.5");
-        foodBean2.setStore_id(7+"");
+        foodBean2.setStore_id(7 + "");
         FoodBean foodBean3 = new FoodBean();
         foodBean3.setFoodName("油条");
-        foodBean3.setCategory_id("3");
+        foodBean3.setCategory_id("0");
         foodBean3.setFoodID(3);
         foodBean3.setFoodSales(200);
-        foodBean3.setFoodImg(""+R.drawable.food_horizontal_item_youtiao_img);
+        foodBean3.setFoodImg("" + R.drawable.food_horizontal_item_youtiao_img);
         foodBean3.setFoodDescribe("令人怀念的味道");
         foodBean3.setFoodOriginalPrice("1");
         foodBean3.setFoodPresentPrice("0.5");
-        foodBean3.setStore_id(8+"");
+        foodBean3.setStore_id(8 + "");
         FoodBean foodBean4 = new FoodBean();
         foodBean4.setFoodName("油条");
         foodBean4.setFoodID(3);
         foodBean4.setFoodSales(157);
-        foodBean4.setCategory_id("4");
-        foodBean4.setFoodImg(""+R.drawable.food_horizontal_item_youtiao_img);
+        foodBean4.setCategory_id("1");
+        foodBean4.setFoodImg("" + R.drawable.food_horizontal_item_youtiao_img);
         foodBean4.setFoodDescribe("令人怀念的味道");
-        foodBean4.setFoodOriginalPrice("2");
+        foodBean4.setFoodOriginalPrice("1");
         foodBean4.setFoodPresentPrice("1.5");
-        foodBean4.setStore_id(7+"");
+        foodBean4.setStore_id(7 + "");
         FoodBean foodBean5 = new FoodBean();
         foodBean5.setFoodName("大良家的金牌烧鸡");
         foodBean5.setFoodID(4);
         foodBean5.setFoodSales(67);
-        foodBean5.setCategory_id("5");
-        foodBean5.setFoodImg(""+R.drawable.food_horizontal_item_shaoji);
+        foodBean5.setCategory_id("1");
+        foodBean5.setFoodImg("" + R.drawable.food_horizontal_item_shaoji);
         foodBean5.setFoodDescribe("令人怀念的味道");
         foodBean5.setFoodOriginalPrice("39");
         foodBean5.setFoodPresentPrice("20.9");
-        foodBean5.setStore_id(7+"");
+        foodBean5.setStore_id(7 + "");
         foodBeanList.add(foodBean);
         foodBeanList.add(foodBean2);
         foodBeanList.add(foodBean3);
@@ -940,20 +933,20 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodBeanList.add(foodBean5);
         FoodBeanIMPL.GetFood().addAll(foodBeanList);
         FoodCategory foodCategory = new FoodCategory();
-        foodCategory.setCategoryID(1);
+        foodCategory.setCategoryID(0);
         foodCategory.setCategoryName("热销");
         foodCategory.setStore_id("7");
 
         FoodCategory foodCategory2 = new FoodCategory();
-        foodCategory2.setCategoryID(2);
+        foodCategory2.setCategoryID(1);
         foodCategory2.setCategoryName("推荐");
         foodCategory2.setStore_id("7");
 
         FoodCategory foodCategory3 = new FoodCategory();
-        foodCategory3.setCategoryID(3);
+        foodCategory3.setCategoryID(2);
         foodCategory3.setCategoryName("早餐");
         foodCategory3.setStore_id("7");
-
+/*
         FoodCategory foodCategory4 = new FoodCategory();
         foodCategory4.setCategoryID(4);
         foodCategory4.setCategoryName("午餐");
@@ -962,14 +955,14 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         FoodCategory foodCategory5 = new FoodCategory();
         foodCategory5.setCategoryID(5);
         foodCategory5.setCategoryName("晚餐");
-        foodCategory5.setStore_id("7");
+        foodCategory5.setStore_id("7");*/
 
         List<FoodCategory> categoryList = new ArrayList<FoodCategory>();
         categoryList.add(foodCategory);
         categoryList.add(foodCategory2);
         categoryList.add(foodCategory3);
-        categoryList.add(foodCategory4);
-        categoryList.add(foodCategory5);
+//        categoryList.add(foodCategory4);
+//        categoryList.add(foodCategory5);
         FoodCategoryIMPL.getInstance().addAllCategory(categoryList);
 
     }

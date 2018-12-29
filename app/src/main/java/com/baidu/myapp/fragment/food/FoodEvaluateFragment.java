@@ -37,7 +37,7 @@ public class FoodEvaluateFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.food_evaluate_fragment, null);
 
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycleView);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.food_evaluate_recyclerview);
 
         init(recyclerView);
 
@@ -46,9 +46,7 @@ public class FoodEvaluateFragment extends Fragment {
 
 
     private void init(RecyclerView recyclerView) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        }
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new MyAapter());
     }
 
@@ -75,7 +73,7 @@ public class FoodEvaluateFragment extends Fragment {
 
         @Override
         public int getItemCount() {
-            return 20;
+            return 15;
         }
 
 

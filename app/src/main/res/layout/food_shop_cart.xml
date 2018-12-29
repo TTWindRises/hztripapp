@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="wrap_content"
     android:id="@+id/food_store_shop_cart_main"
     android:clipChildren="false"
+    android:visibility="gone"
     android:layout_height="match_parent">
 
     <!--底部结算栏-->

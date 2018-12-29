@@ -21,6 +21,7 @@ import com.baidu.myapp.animate.ShopCartAnimate;
 import com.baidu.myapp.bean.food.FoodBean;
 import com.baidu.myapp.interfaces.ifood.IFoodBuy;
 import com.baidu.myapp.util.Debbuger;
+import com.baidu.myapp.util.foodutil.FoodGlideUtil;
 import com.bumptech.glide.Glide;
 
 import java.math.BigDecimal;
@@ -68,7 +69,7 @@ public class FoodBeanRecyclerAdapter extends RecyclerView.Adapter<FoodBeanRecycl
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-        holder.imageView.setImageResource(Integer.parseInt(data.get(position).getFoodImg()));
+        FoodGlideUtil.getInstance().setSquareGlide(context, Integer.valueOf(data.get(position).getFoodImg()), holder.imageView);
         holder.title.setText(data.get(position).getFoodName());
         holder.sales.setText("月销" + data.get(position).getFoodSales());
         holder.original_price.setText("￥" + (CharSequence) data.get(position).getFoodOriginalPrice());

@@ -136,6 +136,10 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\activity_geometry.xml"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\food_header_list.xml",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\food_header_list.xml"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\abc_action_bar_up_container.xml"
     },

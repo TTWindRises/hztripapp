@@ -23,6 +23,9 @@ import static com.baidu.location.g.j.D;
  */
 
 public class FoodLeftRecyclerAdapter extends RecyclerView.Adapter<FoodLeftRecyclerAdapter.ViewHolder> {
+    //当前选中的位置
+    private int selectPosition;
+    private List<FoodCategory> categoryList;
     private Context context;
     private List<FoodCategory> data;
     private int number = 0;
@@ -31,7 +34,10 @@ public class FoodLeftRecyclerAdapter extends RecyclerView.Adapter<FoodLeftRecycl
         this.context = context;
         this.data = data;
     }
-
+    public  void  changeData(List<FoodCategory> categoryList){
+        this.categoryList=categoryList;
+        notifyDataSetChanged();
+    }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.food_vertical_left_item, parent, false);
@@ -49,6 +55,14 @@ public class FoodLeftRecyclerAdapter extends RecyclerView.Adapter<FoodLeftRecycl
         holder.category.setText(data.get(position).getCategoryName());
 
 
+    }
+    /**
+     * 设置选中index
+     * @param position
+     */
+    public void setCheckPosition(int position) {
+        this.selectPosition = position;
+        notifyDataSetChanged();
     }
 
     @Override

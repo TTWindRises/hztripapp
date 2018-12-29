@@ -562,6 +562,7 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="sectioned_top">32dp</dimen>
     <dimen name="shopping_cart_bottom_margin">5dp</dimen>
     <dimen name="shopping_cart_bottom_recycle_height">250dp</dimen>
     <dimen name="shopping_cart_circle_size">60dp</dimen>
@@ -653,7 +654,7 @@
         <item name="android:windowExitAnimation">@anim/design_bottom_sheet_slide_out</item>
     </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
