@@ -884,12 +884,12 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodBean.setFoodDescribe("令人怀念的味道");
         foodBean.setFoodOriginalPrice("21");
         foodBean.setFoodPresentPrice("15");
-        foodBean.setCategory_id("2");
+        foodBean.setCategory_id(2);
         foodBean.setStore_id(7 + "");
         FoodBean foodBean2 = new FoodBean();
         foodBean2.setFoodName("香芋面包");
         foodBean2.setFoodID(2);
-        foodBean2.setCategory_id("0");
+        foodBean2.setCategory_id(0);
         foodBean2.setFoodSales(200);
         foodBean2.setFoodImg("" + R.drawable.food_horizontal_item_mianbao);
         foodBean2.setFoodDescribe("令人怀念的味道");
@@ -898,7 +898,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodBean2.setStore_id(7 + "");
         FoodBean foodBean3 = new FoodBean();
         foodBean3.setFoodName("油条");
-        foodBean3.setCategory_id("0");
+        foodBean3.setCategory_id(0);
         foodBean3.setFoodID(3);
         foodBean3.setFoodSales(200);
         foodBean3.setFoodImg("" + R.drawable.food_horizontal_item_youtiao_img);
@@ -910,7 +910,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodBean4.setFoodName("油条");
         foodBean4.setFoodID(3);
         foodBean4.setFoodSales(157);
-        foodBean4.setCategory_id("1");
+        foodBean4.setCategory_id(1);
         foodBean4.setFoodImg("" + R.drawable.food_horizontal_item_youtiao_img);
         foodBean4.setFoodDescribe("令人怀念的味道");
         foodBean4.setFoodOriginalPrice("1");
@@ -920,7 +920,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodBean5.setFoodName("大良家的金牌烧鸡");
         foodBean5.setFoodID(4);
         foodBean5.setFoodSales(67);
-        foodBean5.setCategory_id("1");
+        foodBean5.setCategory_id(1);
         foodBean5.setFoodImg("" + R.drawable.food_horizontal_item_shaoji);
         foodBean5.setFoodDescribe("令人怀念的味道");
         foodBean5.setFoodOriginalPrice("39");

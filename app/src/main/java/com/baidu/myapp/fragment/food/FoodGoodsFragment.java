@@ -22,16 +22,13 @@ import android.widget.TextView;
 
 import com.baidu.myapp.R;
 import com.baidu.myapp.adapter.FoodBeanRecyclerAdapter;
-import com.baidu.myapp.adapter.food.BigramHeaderAdapter;
 import com.baidu.myapp.adapter.food.FoodLeftRecyclerAdapter;
 import com.baidu.myapp.adapter.food.FoodRightRecyclerAdapter;
 import com.baidu.myapp.bean.food.FoodBean;
 import com.baidu.myapp.bean.food.FoodCategory;
 import com.baidu.myapp.overlay.util.BezierTypeEvaluator;
-import com.baidu.myapp.sticky.OnHeaderClickListener;
-import com.baidu.myapp.sticky.StickyHeadersBuilder;
-import com.baidu.myapp.sticky.StickyHeadersItemDecoration;
-import com.baidu.myapp.sticky.itemDecoration.PinneSectionDecoration;
+import com.baidu.myapp.sticky.itemDecoration.GroupInfo;
+import com.baidu.myapp.sticky.itemDecoration.StickySectionDecoration;
 import com.baidu.myapp.util.Debbuger;
 import com.baidu.myapp.util.foodutil.SpaceItemDecoration;
 import com.baidu.myapp.view.HorizontalRecycleView;
@@ -43,12 +40,10 @@ import org.litepal.crud.DataSupport;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.baidu.location.g.j.P;
-
 /**
  * Created by Administrator on 2018/12/15.
  */
-public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerAdapter.ShopOnClickListtener, OnHeaderClickListener {
+public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerAdapter.ShopOnClickListtener{
     //实体类数据
     List<FoodBean> foodBeenList;
     List<FoodCategory> foodCategoryList;
@@ -75,8 +70,6 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
     private List<Integer> titlePois = new ArrayList<>();
     //上一个标题的小标
     private int lastTitlePoi;
-    private StickyHeadersItemDecoration top;
-    private BigramHeaderAdapter headerAdapter;
     private LinearLayoutManager mLinearLayoutManager;
 
     public FoodGoodsFragment() {
@@ -103,14 +96,22 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
         boolean isFirst;
 
         mLinearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        headerAdapter = new BigramHeaderAdapter(getActivity(), foodBeenList, foodCategoryList);
-        top = new StickyHeadersBuilder()
-                .setAdapter(rightadapter)
-                .setRecyclerView(right_recyclerView)
-                .setStickyHeadersAdapter(headerAdapter)
-                .setOnHeaderClickListener(this)
-                .build();
-        right_recyclerView.addItemDecoration(top);
+        StickySectionDecoration.GroupInfoCallback callback = new StickySectionDecoration.GroupInfoCallback() {
+            @Override
+            public GroupInfo getGroupInfo(int position) {
+                /**
+                 * 分组逻辑，这里为了测试每5个数据为一组。大家可以在实际开发中
+                 * 替换为真正的需求逻辑
+                 */
+                int groupId = position / 8;
+                int index = position % 8;
+                GroupInfo groupInfo = new GroupInfo(groupId,groupId+"");
+                groupInfo.setGroupLength(8);
+                groupInfo.setPosition(index);
+                return groupInfo;
+            }
+        };
+        right_recyclerView.addItemDecoration(new StickySectionDecoration(getActivity(),callback));
         right_recyclerView.setAdapter(rightadapter);
         right_recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -185,7 +186,7 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
             Debbuger.LogE("存在foodBean信息:" + foodBeenList.toString());
         }
         rightadapter = new FoodRightRecyclerAdapter(getActivity(), foodBeenList);
-        right_recyclerView.addItemDecoration(new SpaceItemDecoration(15));
+        //right_recyclerView.addItemDecoration(new SpaceItemDecoration(15));
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         right_recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -291,9 +292,6 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
 
     }
 
-    @Override
-    public void onHeaderClick(View header, long headerId) {
 
-    }
 }
 
