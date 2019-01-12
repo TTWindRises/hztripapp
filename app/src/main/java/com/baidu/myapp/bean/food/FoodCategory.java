@@ -3,6 +3,8 @@ package com.baidu.myapp.bean.food;
 import org.litepal.annotation.Column;
 import org.litepal.crud.DataSupport;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2018/10/29.
  */
@@ -12,14 +14,18 @@ public class FoodCategory extends DataSupport {
     private int categoryID;
     private String categoryName;
     private String store_id;
+    private List<FoodBean> foodBeanList;
 
-    @Override
-    public String toString() {
-        return "FoodCategory{" +
-                "categoryID='" + categoryID + '\'' +
-                ", categoryName='" + categoryName + '\'' +
-                ", stroe_id='" + store_id + '\'' +
-                '}';
+    public List<FoodBean> getFoodBeanList() {
+        return foodBeanList;
+    }
+
+    public void setFoodBeanList(List<FoodBean> foodBeanList) {
+        this.foodBeanList = foodBeanList;
+    }
+
+    public List<FoodBean> getFoodBeanByCategoryId() {
+        return DataSupport.where("category_id=?", String.valueOf(categoryID)).find(FoodBean.class);
     }
 
     public int getCategoryID() {
@@ -44,5 +50,15 @@ public class FoodCategory extends DataSupport {
 
     public void setStore_id(String store_id) {
         this.store_id = store_id;
+    }
+
+    @Override
+    public String toString() {
+        return "FoodCategory{" +
+                "categoryID=" + categoryID +
+                ", categoryName='" + categoryName + '\'' +
+                ", store_id='" + store_id + '\'' +
+                ", foodBeanList=" + foodBeanList +
+                '}';
     }
 }

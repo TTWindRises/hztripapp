@@ -56,7 +56,6 @@ public class FoodBeanRecyclerAdapter extends RecyclerView.Adapter<FoodBeanRecycl
 
     public FoodBeanRecyclerAdapter(Context context, List<FoodBean> data) {
         this.context = context;
-        this.animate= new ShopCartAnimate((Activity) context);
         this.data = data;
     }
 
@@ -105,10 +104,7 @@ public class FoodBeanRecyclerAdapter extends RecyclerView.Adapter<FoodBeanRecycl
         holder.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mShopOnClickListtener != null) {
-                    mShopOnClickListtener.add(v, position);
-                }
-                startLocation = new int[2];
+
                 //减按钮的显示逻辑
                 Debbuger.LogE("点击了" + data.get(position).getFoodName() + "添加按钮");
                 int i = data.get(position).getFoodNum() + 1;
@@ -192,6 +188,11 @@ public class FoodBeanRecyclerAdapter extends RecyclerView.Adapter<FoodBeanRecycl
 
         });
 
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
     @Override

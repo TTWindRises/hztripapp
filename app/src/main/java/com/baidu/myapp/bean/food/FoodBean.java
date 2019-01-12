@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import static android.R.attr.id;
 
 public class FoodBean extends DataSupport {
+    @Column(unique = true)
     private int foodID;//食品的编号
     private String foodName;//食品的名称
     private int foodNum;//食品的数量
@@ -47,15 +48,8 @@ public class FoodBean extends DataSupport {
         return "FoodBean{" +
                 "foodID=" + foodID +
                 ", foodName='" + foodName + '\'' +
-                ", foodNum=" + foodNum +
-                ", foodPresentPrice='" + foodPresentPrice + '\'' +
-                ", foodOriginalPrice='" + foodOriginalPrice + '\'' +
-                ", foodDescribe='" + foodDescribe + '\'' +
-                ", foodPraise='" + foodPraise + '\'' +
-                ", foodImg='" + foodImg + '\'' +
                 ", category_id='" + category_id + '\'' +
                 ", food_order_id=" + food_order_id +
-                ", foodSales=" + foodSales +
                 ", store_id='" + store_id + '\'' +
                 '}';
     }

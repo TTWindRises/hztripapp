@@ -1,64 +1,72 @@
 package com.baidu.myapp.sticky.itemDecoration;
 
+import com.baidu.myapp.bean.food.FoodCategory;
+import com.baidu.myapp.util.Debbuger;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.baidu.location.g.j.G;
+import static com.baidu.location.g.j.e;
+import static com.baidu.location.g.j.f;
+
 /**
  * Created by frank on 2017/4/14.
  */
 
 public class GroupInfo {
-    //组号
-    private int mGroupID;
-    // Header 的 title
-    private String mTitle;
-    //ItemView 在组内的位置
     private int position;
-    // 组的成员个数
-    private int mGroupLength;
+    private List<Integer> pois = new ArrayList<>();
 
-
-    public GroupInfo(int groupId, String title) {
-        this.mGroupID = groupId;
-        this.mTitle = title;
+    public GroupInfo() {
     }
 
-    public int getGroupID() {
-        return mGroupID;
+    public boolean isFirstViewInGroup() {
+    for (int i=0;i<pois.size()-1;i++) {
+        if (position == pois.get(i)) {
+            return true;
+        }
+    }
+        return false;
+
     }
 
-    public void setGroupID(int groupID) {
-        this.mGroupID = groupID;
-    }
-
-    public String getTitle() {
-        return mTitle;
-    }
-
-    public void setTitle(String title) {
-        this.mTitle = title;
-    }
-
-    public boolean isFirstViewInGroup () {
-        return position == 0;
-    }
-
-    public boolean isLastViewInGroup () {
-        return position == mGroupLength - 1 && position >= 0;
+    public boolean isLastViewInGroup() {
+        for (int i=1;i<pois.size();i++) {
+            if (position == pois.get(i)-1) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void setPosition(int position) {
         this.position = position;
     }
 
-    public void setGroupLength(int groupLength) {
-        this.mGroupLength = groupLength;
+    public String getPoisTitle() {
+        if (position >= 0 && position < 2) {
+            return "热销";
+        } else if (position >= 2 && position < 8) {
+            return "推荐";
+        } else if (position >= 8 && position < 10) {
+            return "甜品";
+        } else
+            return "";
     }
 
-    @Override
-    public String toString() {
-        return "GroupInfo{" +
-                "mGroupID=" + mGroupID +
-                ", mTitle='" + mTitle + '\'' +
-                ", position=" + position +
-                ", mGroupLength=" + mGroupLength +
-                '}';
+    public String getPoisDecriation() {
+        if (position >= 0 && position < 2) {
+            return "又香又脆又美味";
+        } else if (position >= 2 && position < 8) {
+            return "秀色可餐";
+        } else if (position >= 8 && position < 10) {
+            return "清凉可口夏日必备";
+        } else
+            return "";
     }
+    public void setPois(List<Integer> pois) {
+        this.pois = pois;
+    }
+
 }

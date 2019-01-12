@@ -1,10 +1,7 @@
 package com.baidu.myapp.adapter.food;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,22 +13,15 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.baidu.myapp.R;
-import com.baidu.myapp.activity.FoodStoreActivity;
 import com.baidu.myapp.bean.food.FoodBean;
-import com.baidu.myapp.bean.food.FoodCategory;
-import com.baidu.myapp.interfaces.ifood.IFoodBuy;
 import com.baidu.myapp.util.Debbuger;
 import com.baidu.myapp.util.foodutil.Computational;
 import com.baidu.myapp.util.foodutil.FoodGlideUtil;
-import com.bumptech.glide.Glide;
+import com.baidu.myapp.R;
 
 import java.util.List;
 
-import static com.baidu.location.g.j.D;
-import static com.baidu.location.g.j.F;
-import static com.baidu.location.g.j.t;
+
 
 /**
  * Created by Administrator on 2018/11/29.
@@ -56,6 +46,11 @@ public class FoodRightRecyclerAdapter extends RecyclerView.Adapter<FoodRightRecy
     }
 
     @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+
+    @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         FoodGlideUtil.getInstance().setSquareGlide(context, Integer.valueOf(data.get(position).getFoodImg()), holder.foodimg);
         holder.title.setText(data.get(position).getFoodName());
@@ -77,10 +72,11 @@ public class FoodRightRecyclerAdapter extends RecyclerView.Adapter<FoodRightRecy
                 holder.number.setText("" + data.get(position).getFoodNum());
                 if (data.get(position).getFoodNum() == 1) {
                     Debbuger.LogE("显示减按钮");
+                    holder.sub.setAnimation(getShowAnimation());
                     holder.number.setVisibility(View.VISIBLE);
                     holder.origin_price.setVisibility(View.GONE);
                     holder.sub.setVisibility(View.VISIBLE);
-                    holder.sub.setAnimation(getShowAnimation());
+
                 }
                 number++;
                 if (number == 1) {
@@ -125,6 +121,7 @@ public class FoodRightRecyclerAdapter extends RecyclerView.Adapter<FoodRightRecy
      * @return
      */
     private Animation getShowAnimation(){
+        Debbuger.LogE("显示了多少次");
         AnimationSet set = new AnimationSet(true);
         RotateAnimation rotate = new RotateAnimation(0,720,RotateAnimation.RELATIVE_TO_SELF,0.5f,RotateAnimation.RELATIVE_TO_SELF,0.5f);
         set.addAnimation(rotate);

@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
+import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -40,10 +41,14 @@ import org.litepal.crud.DataSupport;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.baidu.location.g.j.D;
+import static com.baidu.location.g.j.I;
+import static com.baidu.location.g.j.n;
+
 /**
  * Created by Administrator on 2018/12/15.
  */
-public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerAdapter.ShopOnClickListtener{
+public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerAdapter.ShopOnClickListtener {
     //实体类数据
     List<FoodBean> foodBeenList;
     List<FoodCategory> foodCategoryList;
@@ -72,6 +77,8 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
     private int lastTitlePoi;
     private LinearLayoutManager mLinearLayoutManager;
 
+    private List<FoodBean> foodlist;
+
     public FoodGoodsFragment() {
 
     }
@@ -81,6 +88,7 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.food_goods_fragment, container, false);
         initView(view);
+        initList();
         loadHorizontalFoodView();
         loadVerticalLeftView();
         loadVerticalRightView();
@@ -89,13 +97,17 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
         return view;
     }
 
+    private void initList() {
+        foodlist = new ArrayList<>();
+    }
+
     //TODO add category data
     private void initData() {
-        int i = 0;
-        int j = 0;
-        boolean isFirst;
-
         mLinearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+        rightadapter = new FoodRightRecyclerAdapter(getActivity(), foodlist);
+        //right_recyclerView.addItemDecoration(new SpaceItemDecoration(15));
+        right_recyclerView.setItemAnimator(new DefaultItemAnimator());
+        right_recyclerView.setLayoutManager(mLinearLayoutManager);
         StickySectionDecoration.GroupInfoCallback callback = new StickySectionDecoration.GroupInfoCallback() {
             @Override
             public GroupInfo getGroupInfo(int position) {
@@ -103,15 +115,23 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
                  * 分组逻辑，这里为了测试每5个数据为一组。大家可以在实际开发中
                  * 替换为真正的需求逻辑
                  */
-                int groupId = position / 8;
-                int index = position % 8;
-                GroupInfo groupInfo = new GroupInfo(groupId,groupId+"");
-                groupInfo.setGroupLength(8);
-                groupInfo.setPosition(index);
+                GroupInfo groupInfo = new GroupInfo();
+                groupInfo.setPosition(position);
+                groupInfo.setPois(titlePois);
                 return groupInfo;
+
             }
         };
-        right_recyclerView.addItemDecoration(new StickySectionDecoration(getActivity(),callback));
+        categoryAdapter.setOnItemClickListener(new FoodLeftRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Debbuger.LogE("类别的Category:"+position);
+                right_recyclerView.scrollToPosition(titlePois.get(position));
+                categoryAdapter.setCheckPosition(position);
+                categoryAdapter.notifyDataSetChanged();
+            }
+        });
+        right_recyclerView.addItemDecoration(new StickySectionDecoration(getActivity(), callback));
         right_recyclerView.setAdapter(rightadapter);
         right_recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -122,7 +142,8 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                for (int i = 0; i < titlePois.size(); i++) {//这一段之前是没有执行的
+                Debbuger.LogE("findFirstVisibleItemPosition:"+mLinearLayoutManager.findFirstVisibleItemPosition());
+                for (int i = 0; i < titlePois.size() - 1; i++) {//这一段之前是没有执行的
                     if (mLinearLayoutManager.findFirstVisibleItemPosition() >= titlePois.get(i)) {
                         categoryAdapter.setCheckPosition(i);
                     }
@@ -132,14 +153,30 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
         });
     }
 
+    /**
+     * 处理滑动 是两个ListView联动 反过来点击类目刷新item页面
+     */
+    private class MyOnGoodsScrollListener implements AbsListView.OnScrollListener {
+
+        @Override
+        public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+        }
+
+        @Override
+        public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+            if (!(lastTitlePoi == firstVisibleItem)) {
+                lastTitlePoi = firstVisibleItem;
+                categoryAdapter.setCheckPosition(lastTitlePoi);
+                categoryAdapter.notifyDataSetChanged();
+            }
+        }
+    }
+
+
     //横向列表
     private void loadHorizontalFoodView() {
-        List<FoodBean> foodBeanList;
-        foodBeanList = DataSupport.where("store_id=?", storeid).find(FoodBean.class);
-        if (foodBeanList != null) {
-            Debbuger.LogE("存在food信息:" + foodBeanList.toString());
-        }
-        FoodBeanRecyclerAdapter adapter = new FoodBeanRecyclerAdapter(getActivity(), foodBeanList);
+        FoodBeanRecyclerAdapter adapter = new FoodBeanRecyclerAdapter(getActivity(), foodlist);
         horizontalRecycleView.addItemDecoration(new SpaceItemDecoration(8));
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -147,7 +184,6 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
         horizontalRecycleView.setLayoutManager(linearLayoutManager);
         adapter.InitRedBall(red_ball, bottom_icon, money, end);
         //底部弹出界面
-
         money.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,13 +198,23 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
 
     //纵向左边列表
     private void loadVerticalLeftView() {
+
         foodCategoryList = DataSupport.where("store_id=?", storeid).find(FoodCategory.class);
         if (foodCategoryList != null) {
-            Debbuger.LogE("存在category信息:" + foodCategoryList.toString());
+//            Debbuger.LogE("存在category信息:" + foodCategoryList.toString());
         }
+        int i = 0;
+        titlePois.add(0);
+        for (FoodCategory foodCategory : foodCategoryList) {
+            if (foodCategory.getFoodBeanByCategoryId() != null) {
+                foodlist.addAll(foodCategory.getFoodBeanByCategoryId());
+                i += foodCategory.getFoodBeanByCategoryId().size();
+                titlePois.add(i);
+            }
+        }
+//        titlePois.remove(foodCategoryList.size());
+
         categoryAdapter = new FoodLeftRecyclerAdapter(getActivity(), foodCategoryList);
-
-
         left_recyclerView.addItemDecoration(new SpaceItemDecoration(0));
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -181,17 +227,6 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
     //纵向右边列表
     private void loadVerticalRightView() {
 
-        foodBeenList = DataSupport.where("store_id=?", storeid).find(FoodBean.class);
-        if (foodBeenList != null) {
-            Debbuger.LogE("存在foodBean信息:" + foodBeenList.toString());
-        }
-        rightadapter = new FoodRightRecyclerAdapter(getActivity(), foodBeenList);
-        //right_recyclerView.addItemDecoration(new SpaceItemDecoration(15));
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        right_recyclerView.setItemAnimator(new DefaultItemAnimator());
-        right_recyclerView.setLayoutManager(linearLayoutManager);
-        right_recyclerView.setAdapter(rightadapter);
     }
 
     private void initView(View view) {

@@ -12,6 +12,8 @@ import android.view.View;
 import com.baidu.myapp.R;
 import com.baidu.myapp.util.Debbuger;
 
+import static com.baidu.location.g.j.D;
+
 /**
  * Created by frank on 2017/4/11.
  */
@@ -21,8 +23,6 @@ public class StickySectionDecoration extends RecyclerView.ItemDecoration {
     private GroupInfoCallback mCallback;
     private int mHeaderHeight;
     private int mDividerHeight;
-
-
     //用来绘制Header上的文字
     private TextPaint mTextPaint;
     private Paint mPaint;
@@ -56,12 +56,13 @@ public class StickySectionDecoration extends RecyclerView.ItemDecoration {
         super.getItemOffsets(outRect, view, parent, state);
 
         int position = parent.getChildAdapterPosition(view);
-
+        Debbuger.LogE("得到了多少个Position："+position);
         if (mCallback != null) {
             GroupInfo groupInfo = mCallback.getGroupInfo(position);
 
             //如果是组内的第一个则将间距撑开为一个Header的高度，或者就是普通的分割线高度
             if (groupInfo != null && groupInfo.isFirstViewInGroup()) {
+                Debbuger.LogE("撑开了多少次");
                 outRect.top = mHeaderHeight;
             } else {
                 outRect.top = mDividerHeight;
@@ -114,8 +115,6 @@ public class StickySectionDecoration extends RecyclerView.ItemDecoration {
 
                     if (groupinfo.isLastViewInGroup()) {
                         int suggestTop = view.getBottom() - mHeaderHeight;
-                        Debbuger.LogE("view.getBottom:" + view
-                                .getBottom());
                         // 当 ItemView 与 Header 底部平齐的时候，判断 Header 的顶部是否小于
                         // parent 顶部内容开始的位置，如果小于则对 Header.top 进行位置更新，
                         //否则将继续保持吸附在 parent 的顶部
@@ -136,16 +135,16 @@ public class StickySectionDecoration extends RecyclerView.ItemDecoration {
     private void drawHeaderRect(Canvas c, GroupInfo groupinfo, int left, int top, int right, int bottom) {
         //绘制Header
         c.drawRect(left, top, right, bottom, mPaint);
-        float titleX = left + mTextOffsetX+28;
+        float titleX = left + mTextOffsetX+36;
         float titleY = (top + bottom - mFontMetrics.top - mFontMetrics.bottom)/2;
         //绘制Title
-        c.drawText(groupinfo.getTitle(), titleX, titleY, mTextPaint);
+        c.drawText(groupinfo.getPoisTitle(), titleX, titleY, mTextPaint);
 
        TextPaint kk = new TextPaint();
         kk.setColor(Color.parseColor("#999999"));
         kk.setTextSize(16);
         kk.setAntiAlias(true);
-        c.drawText("又香又脆又美味",titleX+36,titleY,kk);
+        c.drawText(groupinfo.getPoisDecriation(),titleX+50,titleY,kk);
     }
 
     public GroupInfoCallback getCallback() {
