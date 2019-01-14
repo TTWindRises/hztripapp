@@ -53,7 +53,10 @@
 
         <activity android:name="com.baidu.myapp.activity.BNaviGuideActivity" >
         </activity>
-        <activity android:name="com.baidu.myapp.MainActivity" >
+        <activity
+            android:name="com.baidu.myapp.MainActivity"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
+            android:screenOrientation="sensorPortrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -69,7 +72,10 @@
         <activity android:name="com.baidu.myapp.search.BusLineSearchDemo" />
         <activity android:name="com.baidu.myapp.activity.FNmapActivity" />
         <activity android:name="com.baidu.myapp.search.RoutePlanDemo" />
-        <activity android:name="com.baidu.myapp.activity.FoodStoreActivity" />
+        <activity
+            android:name="com.baidu.myapp.activity.FoodStoreActivity"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
+            android:screenOrientation="sensorPortrait" />
 
         <service
             android:name="com.baidu.location.f"

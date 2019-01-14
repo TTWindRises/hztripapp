@@ -1,4 +1,4 @@
-#Sat Jan 12 16:38:02 CST 2019
+#Mon Jan 14 14:44:28 CST 2019
 base.0=E\:\\myProgramma\\hztripapp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=E\:\\myProgramma\\hztripapp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

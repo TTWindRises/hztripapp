@@ -977,7 +977,36 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodBean10.setFoodOriginalPrice("23");
         foodBean10.setFoodPresentPrice("16");
         foodBean10.setStore_id(7 + "");
-
+        FoodBean foodBean11 = new FoodBean();
+        foodBean11.setFoodName("冬瓜青苹果冰");
+        foodBean11.setFoodID(10);
+        foodBean11.setFoodSales(244);
+        foodBean11.setCategory_id(2);
+        foodBean11.setFoodImg("" + R.drawable.food_horizontal_icecreen3_img);
+        foodBean11.setFoodDescribe("美味冰淇淋");
+        foodBean11.setFoodOriginalPrice("5");
+        foodBean11.setFoodPresentPrice("3");
+        foodBean11.setStore_id(7 + "");
+        FoodBean foodBean12 = new FoodBean();
+        foodBean12.setFoodName("咖啡米朵冰");
+        foodBean12.setFoodID(11);
+        foodBean12.setFoodSales(342);
+        foodBean12.setCategory_id(2);
+        foodBean12.setFoodImg("" + R.drawable.food_horizontal_icecreen4_img);
+        foodBean12.setFoodDescribe("美味冰淇淋");
+        foodBean12.setFoodOriginalPrice("10");
+        foodBean12.setFoodPresentPrice("8");
+        foodBean12.setStore_id(7 + "");
+        FoodBean foodBean13 = new FoodBean();
+        foodBean13.setFoodName("核桃牛奶冰");
+        foodBean13.setFoodID(12);
+        foodBean13.setFoodSales(213);
+        foodBean13.setCategory_id(2);
+        foodBean13.setFoodImg("" + R.drawable.food_horizontal_icecreen5_img);
+        foodBean13.setFoodDescribe("美味冰淇淋");
+        foodBean13.setFoodOriginalPrice("12");
+        foodBean13.setFoodPresentPrice("5");
+        foodBean13.setStore_id(7 + "");
 
 
 
@@ -991,6 +1020,9 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodBeanList.add(foodBean8);
         foodBeanList.add(foodBean9);
         foodBeanList.add(foodBean10);
+        foodBeanList.add(foodBean11);
+        foodBeanList.add(foodBean12);
+        foodBeanList.add(foodBean13);
         FoodBeanIMPL.GetFood().addAll(foodBeanList);
         FoodCategory foodCategory = new FoodCategory();
         foodCategory.setCategoryID(0);

@@ -6,8 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="cate" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
@@ -54,15 +53,84 @@
       <file leaf-file-name="FoodGoodsFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/fragment/food/FoodGoodsFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="127" column="42" selection-start-line="127" selection-start-column="31" selection-end-line="127" selection-end-column="42" />
+            <state relative-caret-position="188">
+              <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
               <folding>
-                <element signature="e#3349#3350#0" expanded="true" />
-                <element signature="e#3917#4375#0" expanded="true" />
-                <element signature="e#4374#4375#0" expanded="true" />
-                <element signature="e#4424#4834#0" expanded="true" />
-                <element signature="e#4833#4834#0" expanded="true" />
+                <element signature="e#7185#7336#0" expanded="true" />
+                <element signature="e#7335#7336#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FoodStoreActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/activity/FoodStoreActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="616">
+              <caret line="195" column="5" selection-start-line="195" selection-start-column="5" selection-end-line="195" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="food_header_list.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/res/layout/food_header_list.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="food_goods_fragment.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/res/layout/food_goods_fragment.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="654">
+              <caret line="40" column="47" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="food_store.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/res/layout/food_store.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="654">
+              <caret line="254" column="0" selection-start-line="254" selection-start-column="0" selection-end-line="255" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="564">
+              <caret line="67" column="54" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="1024" column="35" selection-start-line="1024" selection-start-column="35" selection-end-line="1024" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,19 +142,8 @@
               <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FoodLeftRecyclerAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/adapter/food/FoodLeftRecyclerAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="80" column="52" selection-start-line="80" selection-start-column="52" selection-end-line="80" selection-end-column="52" />
-              <folding>
-                <element signature="e#2156#2410#0" expanded="true" />
-                <element signature="e#2409#2410#0" expanded="true" />
+                <element signature="e#930#931#0" expanded="true" />
+                <element signature="e#970#971#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1127,14 +1184,10 @@
         <option value="$PROJECT_DIR$/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/viewpager.xml" />
-        <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/activity/ViewPagerTest.java" />
         <option value="$USER_HOME$/.android/build-cache/1d4f5febe29b3c86d03906875e0d86fbdc91356d/output/res/values/values.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/activity/FoodStoreActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/view/HorizontalRecycleView.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/util/foodutil/FoodGlideUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/food_goods_fragment.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/food_store.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/sticky/HeaderStore.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/sticky/StickyHeadersTouchListener.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/food_evaluate_fragment.xml" />
@@ -1144,7 +1197,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/sticky/itemDecoration/DecorationCallback.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/sticky/itemDecoration/PinneSectionDecoration.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/food_horizontal_item.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/food_shop_cart.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/food_header_list.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/sticky/itemDecoration/SectionDecoration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/adapter/food/BigramHeaderAdapter.java" />
@@ -1157,10 +1209,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/adapter/food/FoodRightRecyclerAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/sticky/itemDecoration/StickySectionDecoration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/food_vertical_left_item.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/sticky/itemDecoration/GroupInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/adapter/food/FoodLeftRecyclerAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/food_shop_cart.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/activity/FoodStoreActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/food_goods_fragment.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/food_store.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/myapp/fragment/food/FoodGoodsFragment.java" />
       </list>
     </option>
@@ -1196,9 +1253,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
+      <pane id="AndroidView">
         <subPane />
       </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1349,169 +1407,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sticky" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sticky" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itemDecoration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="food" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adapter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adapter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="food" />
+              <option name="myItemId" value="activity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1541,10 +1437,9 @@
         <option name="show-excluded-files" value="false" />
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView">
+      <pane id="PackagesPane">
         <subPane />
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1558,9 +1453,11 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/myProgramma/hztripapp/app/src/main/res/layout/activity_guide_main.xml" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.baidu.myapp.interfaces" />
-      <recent name="com.baidu.myapp.dao.food" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\myProgramma\hztripapp\app\src\main\res\drawable" />
+      <recent name="E:\myProgramma\hztripapp\app\src\main\assets" />
+      <recent name="E:\myProgramma\hztripapp\app\src\main" />
+      <recent name="E:\myProgramma\hztripapp\app\src\main\java" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\myProgramma\hztripapp\app\src\main\res\drawable" />
@@ -1576,11 +1473,9 @@
       <recent name="com.baidu.myapp.adapter.food" />
       <recent name="com.baidu.myapp.fragment.food" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\myProgramma\hztripapp\app\src\main\res\drawable" />
-      <recent name="E:\myProgramma\hztripapp\app\src\main\assets" />
-      <recent name="E:\myProgramma\hztripapp\app\src\main" />
-      <recent name="E:\myProgramma\hztripapp\app\src\main\java" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.baidu.myapp.interfaces" />
+      <recent name="com.baidu.myapp.dao.food" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -1941,7 +1836,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29211086" sideWeight="0.48933902" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5607676" order="8" side_tool="false" content_ui="tabs" />
@@ -1949,7 +1844,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20895523" sideWeight="0.5314499" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29530916" sideWeight="0.6663113" order="6" side_tool="false" content_ui="tabs" x="23" y="622" width="1876" height="376" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942432" sideWeight="0.6663113" order="6" side_tool="false" content_ui="tabs" x="23" y="622" width="1876" height="376" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07782516" sideWeight="0.52025586" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.4936034" order="9" side_tool="false" content_ui="tabs" />
@@ -1957,9 +1852,9 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.4392324" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19722815" sideWeight="0.86535555" order="0" side_tool="true" content_ui="combo" x="2710" y="184" width="340" height="712" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19722815" sideWeight="0.8807631" order="0" side_tool="true" content_ui="combo" x="2710" y="184" width="340" height="712" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18763326" sideWeight="0.4944356" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19722815" sideWeight="0.13464448" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19722815" sideWeight="0.11923689" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18763326" sideWeight="0.5055644" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35746104" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1992,68 +1887,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/food_goods_fragment.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/food_horizontal_item.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/sticky/StickyHeadersBuilder.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/food_shop_cart.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/head.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/maker_info.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/food_header_list.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/util/Debbuger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -2078,16 +1911,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/food_store.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-837">
-          <caret line="92" column="46" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -2188,13 +2011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/activity/FoodStoreActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3105">
-          <caret line="171" column="62" selection-start-line="171" selection-start-column="62" selection-end-line="171" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/assets/litepal.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -2242,242 +2058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92178">
           <caret line="3645" column="0" selection-start-line="3645" selection-start-column="0" selection-end-line="3645" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#458088#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#18526#18527#0" expanded="false" />
-            <element signature="e#18606#18607#0" expanded="false" />
-            <element signature="e#33252#33253#0" expanded="false" />
-            <element signature="e#33287#33288#0" expanded="false" />
-            <element signature="e#79907#79908#0" expanded="false" />
-            <element signature="e#79947#79948#0" expanded="false" />
-            <element signature="e#80236#80237#0" expanded="false" />
-            <element signature="e#80299#80300#0" expanded="false" />
-            <element signature="e#80766#80767#0" expanded="false" />
-            <element signature="e#80825#80826#0" expanded="false" />
-            <element signature="e#81293#81294#0" expanded="false" />
-            <element signature="e#81352#81353#0" expanded="false" />
-            <element signature="e#81645#81646#0" expanded="false" />
-            <element signature="e#81690#81691#0" expanded="false" />
-            <element signature="e#93172#93173#0" expanded="false" />
-            <element signature="e#93200#93201#0" expanded="false" />
-            <element signature="e#93345#93346#0" expanded="false" />
-            <element signature="e#93372#93373#0" expanded="false" />
-            <element signature="e#94097#94098#0" expanded="false" />
-            <element signature="e#94125#94126#0" expanded="false" />
-            <element signature="e#94324#94325#0" expanded="false" />
-            <element signature="e#94361#94362#0" expanded="false" />
-            <element signature="e#95415#95416#0" expanded="false" />
-            <element signature="e#95445#95446#0" expanded="false" />
-            <element signature="e#95624#95625#0" expanded="false" />
-            <element signature="e#95658#95659#0" expanded="false" />
-            <element signature="e#96284#96285#0" expanded="false" />
-            <element signature="e#96314#96315#0" expanded="false" />
-            <element signature="e#101086#101087#0" expanded="false" />
-            <element signature="e#101118#101119#0" expanded="false" />
-            <element signature="e#103026#103027#0" expanded="false" />
-            <element signature="e#103064#103065#0" expanded="false" />
-            <element signature="e#109527#109528#0" expanded="false" />
-            <element signature="e#109574#109575#0" expanded="false" />
-            <element signature="e#109727#109728#0" expanded="false" />
-            <element signature="e#109775#109776#0" expanded="false" />
-            <element signature="e#109928#109929#0" expanded="false" />
-            <element signature="e#109976#109977#0" expanded="false" />
-            <element signature="e#110123#110124#0" expanded="false" />
-            <element signature="e#110169#110170#0" expanded="false" />
-            <element signature="e#110425#110426#0" expanded="false" />
-            <element signature="e#110497#110498#0" expanded="false" />
-            <element signature="e#135306#135307#0" expanded="false" />
-            <element signature="e#135342#135343#0" expanded="false" />
-            <element signature="e#135977#135978#0" expanded="false" />
-            <element signature="e#136027#136028#0" expanded="false" />
-            <element signature="e#139791#139792#0" expanded="false" />
-            <element signature="e#139840#139841#0" expanded="false" />
-            <element signature="e#140074#140075#0" expanded="false" />
-            <element signature="e#140124#140125#0" expanded="false" />
-            <element signature="e#143838#143839#0" expanded="false" />
-            <element signature="e#143885#143886#0" expanded="false" />
-            <element signature="e#144091#144092#0" expanded="false" />
-            <element signature="e#144159#144160#0" expanded="false" />
-            <element signature="e#145219#145220#0" expanded="false" />
-            <element signature="e#145280#145281#0" expanded="false" />
-            <element signature="e#146943#146944#0" expanded="false" />
-            <element signature="e#146992#146993#0" expanded="false" />
-            <element signature="e#148881#148882#0" expanded="false" />
-            <element signature="e#148928#148929#0" expanded="false" />
-            <element signature="e#149986#149987#0" expanded="false" />
-            <element signature="e#150038#150039#0" expanded="false" />
-            <element signature="e#151338#151339#0" expanded="false" />
-            <element signature="e#151396#151397#0" expanded="false" />
-            <element signature="e#151777#151778#0" expanded="false" />
-            <element signature="e#151837#151838#0" expanded="false" />
-            <element signature="e#152820#152821#0" expanded="false" />
-            <element signature="e#152857#152858#0" expanded="false" />
-            <element signature="e#154042#154043#0" expanded="false" />
-            <element signature="e#154086#154087#0" expanded="false" />
-            <element signature="e#154890#154891#0" expanded="false" />
-            <element signature="e#154931#154932#0" expanded="false" />
-            <element signature="e#159769#159770#0" expanded="false" />
-            <element signature="e#159802#159803#0" expanded="false" />
-            <element signature="e#159990#159991#0" expanded="false" />
-            <element signature="e#160026#160027#0" expanded="false" />
-            <element signature="e#160640#160641#0" expanded="false" />
-            <element signature="e#160678#160679#0" expanded="false" />
-            <element signature="e#162794#162795#0" expanded="false" />
-            <element signature="e#162830#162831#0" expanded="false" />
-            <element signature="e#163060#163061#0" expanded="false" />
-            <element signature="e#163092#163093#0" expanded="false" />
-            <element signature="e#163374#163375#0" expanded="false" />
-            <element signature="e#163406#163407#0" expanded="false" />
-            <element signature="e#163685#163686#0" expanded="false" />
-            <element signature="e#163720#163721#0" expanded="false" />
-            <element signature="e#163952#163953#0" expanded="false" />
-            <element signature="e#163985#163986#0" expanded="false" />
-            <element signature="e#164295#164296#0" expanded="false" />
-            <element signature="e#164331#164332#0" expanded="false" />
-            <element signature="e#164747#164748#0" expanded="false" />
-            <element signature="e#164788#164789#0" expanded="false" />
-            <element signature="e#165157#165158#0" expanded="false" />
-            <element signature="e#165195#165196#0" expanded="false" />
-            <element signature="e#167114#167115#0" expanded="false" />
-            <element signature="e#167151#167152#0" expanded="false" />
-            <element signature="e#168615#168616#0" expanded="false" />
-            <element signature="e#168652#168653#0" expanded="false" />
-            <element signature="e#170187#170188#0" expanded="false" />
-            <element signature="e#170218#170219#0" expanded="false" />
-            <element signature="e#170432#170433#0" expanded="false" />
-            <element signature="e#170476#170477#0" expanded="false" />
-            <element signature="e#171814#171815#0" expanded="false" />
-            <element signature="e#171859#171860#0" expanded="false" />
-            <element signature="e#173190#173191#0" expanded="false" />
-            <element signature="e#173246#173247#0" expanded="false" />
-            <element signature="e#174730#174731#0" expanded="false" />
-            <element signature="e#174787#174788#0" expanded="false" />
-            <element signature="e#176051#176052#0" expanded="false" />
-            <element signature="e#176107#176108#0" expanded="false" />
-            <element signature="e#177356#177357#0" expanded="false" />
-            <element signature="e#177413#177414#0" expanded="false" />
-            <element signature="e#180169#180170#0" expanded="false" />
-            <element signature="e#180229#180230#0" expanded="false" />
-            <element signature="e#181690#181691#0" expanded="false" />
-            <element signature="e#181753#181754#0" expanded="false" />
-            <element signature="e#182948#182949#0" expanded="false" />
-            <element signature="e#183008#183009#0" expanded="false" />
-            <element signature="e#184236#184237#0" expanded="false" />
-            <element signature="e#184299#184300#0" expanded="false" />
-            <element signature="e#186784#186785#0" expanded="false" />
-            <element signature="e#186819#186820#0" expanded="false" />
-            <element signature="e#187175#187176#0" expanded="false" />
-            <element signature="e#187209#187210#0" expanded="false" />
-            <element signature="e#187555#187556#0" expanded="false" />
-            <element signature="e#187601#187602#0" expanded="false" />
-            <element signature="e#195731#195732#0" expanded="false" />
-            <element signature="e#195773#195774#0" expanded="false" />
-            <element signature="e#196099#196100#0" expanded="false" />
-            <element signature="e#196134#196135#0" expanded="false" />
-            <element signature="e#198076#198077#0" expanded="false" />
-            <element signature="e#198118#198119#0" expanded="false" />
-            <element signature="e#198808#198809#0" expanded="false" />
-            <element signature="e#198859#198860#0" expanded="false" />
-            <element signature="e#211730#211731#0" expanded="false" />
-            <element signature="e#211758#211759#0" expanded="false" />
-            <element signature="e#211788#211789#0" expanded="false" />
-            <element signature="e#211822#211823#0" expanded="false" />
-            <element signature="e#233437#233438#0" expanded="false" />
-            <element signature="e#233499#233500#0" expanded="false" />
-            <element signature="e#237340#237341#0" expanded="false" />
-            <element signature="e#237371#237372#0" expanded="false" />
-            <element signature="e#247414#247415#0" expanded="false" />
-            <element signature="e#247477#247478#0" expanded="false" />
-            <element signature="e#247717#247718#0" expanded="false" />
-            <element signature="e#247784#247785#0" expanded="false" />
-            <element signature="e#247844#247845#0" expanded="false" />
-            <element signature="e#247911#247912#0" expanded="false" />
-            <element signature="e#258405#258406#0" expanded="false" />
-            <element signature="e#258429#258430#0" expanded="false" />
-            <element signature="e#267852#267853#0" expanded="false" />
-            <element signature="e#267919#267920#0" expanded="false" />
-            <element signature="e#297367#297368#0" expanded="false" />
-            <element signature="e#297428#297429#0" expanded="false" />
-            <element signature="e#297462#297463#0" expanded="false" />
-            <element signature="e#297521#297522#0" expanded="false" />
-            <element signature="e#298501#298502#0" expanded="false" />
-            <element signature="e#298529#298530#0" expanded="false" />
-            <element signature="e#312239#312240#0" expanded="false" />
-            <element signature="e#312302#312303#0" expanded="false" />
-            <element signature="e#313927#313928#0" expanded="false" />
-            <element signature="e#313961#313962#0" expanded="false" />
-            <element signature="e#343422#343423#0" expanded="false" />
-            <element signature="e#343480#343481#0" expanded="false" />
-            <element signature="e#344557#344558#0" expanded="false" />
-            <element signature="e#344618#344619#0" expanded="false" />
-            <element signature="e#344779#344780#0" expanded="false" />
-            <element signature="e#344838#344839#0" expanded="false" />
-            <element signature="e#345712#345713#0" expanded="false" />
-            <element signature="e#345747#345748#0" expanded="false" />
-            <element signature="e#349911#349912#0" expanded="false" />
-            <element signature="e#349961#349962#0" expanded="false" />
-            <element signature="e#350390#350391#0" expanded="false" />
-            <element signature="e#350432#350433#0" expanded="false" />
-            <element signature="e#350638#350639#0" expanded="false" />
-            <element signature="e#350671#350672#0" expanded="false" />
-            <element signature="e#374267#374268#0" expanded="false" />
-            <element signature="e#374336#374337#0" expanded="false" />
-            <element signature="e#374998#374999#0" expanded="false" />
-            <element signature="e#375027#375028#0" expanded="false" />
-            <element signature="e#385543#385544#0" expanded="false" />
-            <element signature="e#385571#385572#0" expanded="false" />
-            <element signature="e#386015#386016#0" expanded="false" />
-            <element signature="e#386042#386043#0" expanded="false" />
-            <element signature="e#387000#387001#0" expanded="false" />
-            <element signature="e#387064#387065#0" expanded="false" />
-            <element signature="e#387644#387645#0" expanded="false" />
-            <element signature="e#387685#387686#0" expanded="false" />
-            <element signature="e#388441#388442#0" expanded="false" />
-            <element signature="e#388488#388489#0" expanded="false" />
-            <element signature="e#412602#412603#0" expanded="false" />
-            <element signature="e#412668#412669#0" expanded="false" />
-            <element signature="e#426201#426202#0" expanded="false" />
-            <element signature="e#426260#426261#0" expanded="false" />
-            <element signature="e#426285#426286#0" expanded="false" />
-            <element signature="e#426344#426345#0" expanded="false" />
-            <element signature="e#440687#440688#0" expanded="false" />
-            <element signature="e#440715#440716#0" expanded="false" />
-            <element signature="e#442248#442249#0" expanded="false" />
-            <element signature="e#442290#442291#0" expanded="false" />
-            <element signature="e#442378#442379#0" expanded="false" />
-            <element signature="e#442405#442406#0" expanded="false" />
-            <element signature="e#442497#442498#0" expanded="false" />
-            <element signature="e#442537#442538#0" expanded="false" />
-            <element signature="e#444706#444707#0" expanded="false" />
-            <element signature="e#444747#444748#0" expanded="false" />
-            <element signature="e#446040#446041#0" expanded="false" />
-            <element signature="e#446113#446114#0" expanded="false" />
-            <element signature="e#446175#446176#0" expanded="false" />
-            <element signature="e#446250#446251#0" expanded="false" />
-            <element signature="e#447315#447316#0" expanded="false" />
-            <element signature="e#447353#447354#0" expanded="false" />
-            <element signature="e#447392#447393#0" expanded="false" />
-            <element signature="e#447443#447444#0" expanded="false" />
-            <element signature="e#447497#447498#0" expanded="false" />
-            <element signature="e#447563#447564#0" expanded="false" />
-            <element signature="e#451372#451373#0" expanded="false" />
-            <element signature="e#451410#451411#0" expanded="false" />
-            <element signature="e#454691#454692#0" expanded="false" />
-            <element signature="e#454734#454735#0" expanded="false" />
-            <element signature="e#454763#454764#0" expanded="false" />
-            <element signature="e#454801#454802#0" expanded="false" />
-            <element signature="e#454837#454838#0" expanded="false" />
-            <element signature="e#454882#454883#0" expanded="false" />
-            <element signature="e#454922#454923#0" expanded="false" />
-            <element signature="e#454973#454974#0" expanded="false" />
-            <element signature="e#455010#455011#0" expanded="false" />
-            <element signature="e#455092#455093#0" expanded="false" />
-            <element signature="e#455123#455124#0" expanded="false" />
-            <element signature="e#455180#455181#0" expanded="false" />
-            <element signature="e#455211#455212#0" expanded="false" />
-            <element signature="e#455268#455269#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2516,60 +2096,6 @@
         <state relative-caret-position="297">
           <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23733">
-          <caret line="1006" column="41" selection-start-line="1006" selection-start-column="41" selection-end-line="1006" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#18700#18701#0" expanded="false" />
-            <element signature="e#18739#18740#0" expanded="false" />
-            <element signature="e#19781#19782#0" expanded="false" />
-            <element signature="e#19837#19838#0" expanded="false" />
-            <element signature="e#20676#20677#0" expanded="false" />
-            <element signature="e#20756#20757#0" expanded="false" />
-            <element signature="e#23727#23728#0" expanded="false" />
-            <element signature="e#23807#23808#0" expanded="false" />
-            <element signature="e#25621#25622#0" expanded="false" />
-            <element signature="e#25649#25650#0" expanded="false" />
-            <element signature="e#25709#25710#0" expanded="false" />
-            <element signature="e#25749#25750#0" expanded="false" />
-            <element signature="e#25816#25817#0" expanded="false" />
-            <element signature="e#25856#25857#0" expanded="false" />
-            <element signature="e#25937#25938#0" expanded="false" />
-            <element signature="e#25965#25966#0" expanded="false" />
-            <element signature="e#26095#26096#0" expanded="false" />
-            <element signature="e#26134#26135#0" expanded="false" />
-            <element signature="e#26762#26763#0" expanded="false" />
-            <element signature="e#26801#26802#0" expanded="false" />
-            <element signature="e#39597#39598#0" expanded="false" />
-            <element signature="e#39663#39664#0" expanded="false" />
-            <element signature="e#39741#39742#0" expanded="false" />
-            <element signature="e#39785#39786#0" expanded="false" />
-            <element signature="e#40502#40503#0" expanded="false" />
-            <element signature="e#40549#40550#0" expanded="false" />
-            <element signature="e#40769#40770#0" expanded="false" />
-            <element signature="e#40816#40817#0" expanded="false" />
-            <element signature="e#41408#41409#0" expanded="false" />
-            <element signature="e#41476#41477#0" expanded="false" />
-            <element signature="e#43677#43678#0" expanded="false" />
-            <element signature="e#43748#43749#0" expanded="false" />
-            <element signature="e#44329#44330#0" expanded="false" />
-            <element signature="e#44400#44401#0" expanded="false" />
-            <element signature="e#44729#44730#0" expanded="false" />
-            <element signature="e#44794#44795#0" expanded="false" />
-            <element signature="e#45460#45461#0" expanded="false" />
-            <element signature="e#45525#45526#0" expanded="false" />
-            <element signature="e#49405#49406#0" expanded="false" />
-            <element signature="e#49450#49451#0" expanded="false" />
-            <element signature="e#49996#49997#0" expanded="false" />
-            <element signature="e#50050#50051#0" expanded="false" />
-            <element signature="e#54002#54003#0" expanded="false" />
-            <element signature="e#54047#54048#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2629,27 +2155,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/sticky/itemDecoration/GroupInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/adapter/food/FoodLeftRecyclerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="80" column="52" selection-start-line="80" selection-start-column="52" selection-end-line="80" selection-end-column="52" />
-          <folding>
-            <element signature="e#2156#2410#0" expanded="true" />
-            <element signature="e#2409#2410#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/26.0.0-alpha1/recyclerview-v7-26.0.0-alpha1-sources.jar!/android/support/v7/widget/LinearLayoutManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -2666,16 +2171,119 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/adapter/food/FoodLeftRecyclerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="78" column="16" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/sticky/itemDecoration/GroupInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#930#931#0" expanded="true" />
+            <element signature="e#970#971#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable/food_horizontal_icecreen3_img.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable/food_horizontal_icecreen4_img.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable/food_horizontal_icecreen5_img.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="1024" column="35" selection-start-line="1024" selection-start-column="35" selection-end-line="1024" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/food_header_list.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="67" column="54" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/food_shop_cart.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-156">
+          <caret line="32" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/activity/FoodStoreActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="195" column="5" selection-start-line="195" selection-start-column="5" selection-end-line="195" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/food_goods_fragment.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="40" column="47" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/food_store.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="254" column="0" selection-start-line="254" selection-start-column="0" selection-end-line="255" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baidu/myapp/fragment/food/FoodGoodsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="127" column="42" selection-start-line="127" selection-start-column="31" selection-end-line="127" selection-end-column="42" />
+        <state relative-caret-position="188">
+          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
           <folding>
-            <element signature="e#3349#3350#0" expanded="true" />
-            <element signature="e#3917#4375#0" expanded="true" />
-            <element signature="e#4374#4375#0" expanded="true" />
-            <element signature="e#4424#4834#0" expanded="true" />
-            <element signature="e#4833#4834#0" expanded="true" />
+            <element signature="e#7185#7336#0" expanded="true" />
+            <element signature="e#7335#7336#0" expanded="true" />
           </folding>
         </state>
       </provider>

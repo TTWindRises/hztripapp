@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.AbsListView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -41,6 +42,7 @@ import org.litepal.crud.DataSupport;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.baidu.location.g.a.i;
 import static com.baidu.location.g.j.D;
 import static com.baidu.location.g.j.I;
 import static com.baidu.location.g.j.n;
@@ -67,7 +69,7 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
     private RelativeLayout shopCartMain;
     //碎片的主页面
     private HorizontalRecycleView horizontalRecycleView;
-    private RelativeLayout main_layout;
+    private LinearLayout main_layout;
     //适配器
     FoodLeftRecyclerAdapter categoryAdapter;
     FoodRightRecyclerAdapter rightadapter;
@@ -125,10 +127,10 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
         categoryAdapter.setOnItemClickListener(new FoodLeftRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Debbuger.LogE("类别的Category:"+position);
-                right_recyclerView.scrollToPosition(titlePois.get(position));
+                Debbuger.LogE("类别的Category:" + position);
+                mLinearLayoutManager.scrollToPositionWithOffset(titlePois.get(position), 0);
+                mLinearLayoutManager.setStackFromEnd(false);
                 categoryAdapter.setCheckPosition(position);
-                categoryAdapter.notifyDataSetChanged();
             }
         });
         right_recyclerView.addItemDecoration(new StickySectionDecoration(getActivity(), callback));
@@ -142,7 +144,7 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                Debbuger.LogE("findFirstVisibleItemPosition:"+mLinearLayoutManager.findFirstVisibleItemPosition());
+                Debbuger.LogE("findFirstVisibleItemPosition:" + mLinearLayoutManager.findFirstVisibleItemPosition());
                 for (int i = 0; i < titlePois.size() - 1; i++) {//这一段之前是没有执行的
                     if (mLinearLayoutManager.findFirstVisibleItemPosition() >= titlePois.get(i)) {
                         categoryAdapter.setCheckPosition(i);
@@ -168,7 +170,6 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
             if (!(lastTitlePoi == firstVisibleItem)) {
                 lastTitlePoi = firstVisibleItem;
                 categoryAdapter.setCheckPosition(lastTitlePoi);
-                categoryAdapter.notifyDataSetChanged();
             }
         }
     }
