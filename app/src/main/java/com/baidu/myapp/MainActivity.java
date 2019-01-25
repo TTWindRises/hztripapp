@@ -10,6 +10,10 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomSheetBehavior;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -76,7 +80,9 @@ import com.baidu.myapp.activity.BNaviGuideActivity;
 import com.baidu.myapp.activity.BaseActivity;
 import com.baidu.myapp.activity.FNmapActivity;
 import com.baidu.myapp.activity.FoodStoreActivity;
+import com.baidu.myapp.activity.ShopCarView;
 import com.baidu.myapp.activity.WNaviGuideActivity;
+import com.baidu.myapp.adapter.CarAdapter;
 import com.baidu.myapp.bean.food.FoodBean;
 import com.baidu.myapp.bean.food.FoodCategory;
 import com.baidu.myapp.bean.food.FoodStore;
@@ -95,6 +101,7 @@ import com.baidu.myapp.util.FileUtils;
 import com.baidu.myapp.util.Guideutil;
 import com.baidu.myapp.util.MyOrientationListener;
 import com.baidu.myapp.view.HeadView;
+import com.baidu.myapp.view.foodview.AddWidget;
 import com.bumptech.glide.Glide;
 import com.fengmap.android.map.FMMap;
 import com.fengmap.android.map.FMMapUpgradeInfo;
@@ -110,7 +117,7 @@ import java.util.List;
 import static android.content.ContentValues.TAG;
 
 public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickListener,
-        OnGetRoutePlanResultListener, OnFMMapInitListener {
+        OnGetRoutePlanResultListener, OnFMMapInitListener, AddWidget.OnAddClick {
     //
     private List<SpotBean> spotBeans = DataSupport.findAll(SpotBean.class);
     private MapView mMapView;
@@ -208,6 +215,11 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     //工具类
     OverlayUtil overlayUtil = new OverlayUtil();
 
+
+    //购物车适配器
+    public static CarAdapter carAdapter;
+    public BottomSheetBehavior behavior;
+    private ShopCarView shopCarView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -286,7 +298,19 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
 
     }
-
+//购物车视图初始化
+private void initShopCar() {
+    behavior = BottomSheetBehavior.from(findViewById(R.id.car_container));
+    shopCarView = (ShopCarView) findViewById(R.id.car_mainfl);
+    View blackView = findViewById(R.id.blackview);
+    shopCarView.setBehavior(behavior, blackView);
+    RecyclerView carRecView = (RecyclerView) findViewById(R.id.car_recyclerview);
+//		carRecView.setNestedScrollingEnabled(false);
+    carRecView.setLayoutManager(new LinearLayoutManager(mContext));
+    ((DefaultItemAnimator) carRecView.getItemAnimator()).setSupportsChangeAnimations(false);
+    carAdapter = new CarAdapter(new ArrayList<FoodBean>(), this);
+    carAdapter.bindToRecyclerView(carRecView);
+}
     //蜂鸟地图控件初始化
     private void InitFSView() {
         BtnIntoMap = (Button) findViewById(R.id.btn_intomap);
@@ -737,6 +761,16 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     @Override
     public boolean onUpgrade(FMMapUpgradeInfo fmMapUpgradeInfo) {
         return false;
+    }
+
+    @Override
+    public void onAddClick(View view, FoodBean fb) {
+
+    }
+
+    @Override
+    public void onSubClick(FoodBean fb) {
+
     }
 
     private class MyWalkingRouteOverlay extends WalkingRouteOverlay {

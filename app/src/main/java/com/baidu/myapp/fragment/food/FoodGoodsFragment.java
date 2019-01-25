@@ -50,7 +50,7 @@ import static com.baidu.location.g.j.n;
 /**
  * Created by Administrator on 2018/12/15.
  */
-public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerAdapter.ShopOnClickListtener {
+public class FoodGoodsFragment extends BaseFragment {
     //实体类数据
     List<FoodBean> foodBeenList;
     List<FoodCategory> foodCategoryList;
@@ -59,13 +59,6 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
     private RecyclerView right_recyclerView;
     private RecyclerView left_recyclerView;
     private String storeid;
-    private String title;
-    //动画控件
-    private TextView red_ball;
-    private ImageView bottom_icon;
-    private TextView money;
-    private TextView end;
-    private TextView food_number;
     private RelativeLayout shopCartMain;
     //碎片的主页面
     private HorizontalRecycleView horizontalRecycleView;
@@ -94,7 +87,6 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
         loadHorizontalFoodView();
         loadVerticalLeftView();
         loadVerticalRightView();
-        loadBottomView();
         initData();
         return view;
     }
@@ -183,16 +175,6 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         horizontalRecycleView.setItemAnimator(new DefaultItemAnimator());
         horizontalRecycleView.setLayoutManager(linearLayoutManager);
-        adapter.InitRedBall(red_ball, bottom_icon, money, end);
-        //底部弹出界面
-        money.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                /*sheetDialog();*/
-            }
-        });
-        //设置添加按钮的监听
-        adapter.setShopOnClickListtener(this);
         horizontalRecycleView.setAdapter(adapter);
         // mListView.setAdapter(new FoodBeanAdapter(FoodStoreActivity.this,foodBeanList));
     }
@@ -232,21 +214,12 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
 
     private void initView(View view) {
         main_layout = view.findViewById(R.id.food_goods_main_layout);
-        red_ball = view.findViewById(R.id.food_store_bottom_number);
-        bottom_icon = view.findViewById(R.id.food_store_bottom_icon);
-        food_number = view.findViewById(R.id.food_store_bottom_number);
-        money = view.findViewById(R.id.food_store_bottom_sum);
-        end = view.findViewById(R.id.food_store_bottom_settlement);
         horizontalRecycleView = view.findViewById(R.id.food_horizontal_list);
         left_recyclerView = view.findViewById(R.id.food_vertical_left_category_list);
         right_recyclerView = view.findViewById(R.id.food_store_vertical_right_list);
 //        shopCartMain = view.findViewById(R.id.food_store_shop_cart_main);
     }
 
-    private void loadBottomView() {
-        bottom_icon.setImageResource(R.drawable.food_store_bottom_icon_default3);
-        food_number.setText("");
-    }
 
     public void setStoreID(String storeid) {
         this.storeid = storeid;
@@ -257,6 +230,7 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
 
 
     }
+/*
 
     @Override
     public void add(final View view, int position) {
@@ -322,11 +296,7 @@ public class FoodGoodsFragment extends BaseFragment implements FoodBeanRecyclerA
         set.setDuration(800);
         set.start();
     }
-
-    @Override
-    public void remove(View view, int position) {
-
-    }
+*/
 
 
 }

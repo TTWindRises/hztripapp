@@ -3,12 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="E:\myProgramma\hztripapp\app\libs\litepal-1.6.1-src.jar"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="e4fa90d8efd80e556e5fbbaf30bd4ae39ef14e94">
-        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\litepal-1.6.1-src_ca036685caa12a81e6ddbdcdc106e2a0227ffca2.jar" />
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_c64325f78a24c085b700c554244dc03fa6bc6a89.jar" />
     </item>
     <item
         is-multidex="false"
@@ -21,12 +21,111 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\dfa911edb382e3d11c4afb0fa915895d30d04f81\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bb23dc2f6ee78bd8a7f8cdfba600bb52fcbba590">
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\classes_2780a8b737c7fb01fe56ce963ab1d13767a1eccc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\44a32feba14f7f23c91bf838cb24e62b19d6c72f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bd6e69c3e0dfba6f7a60ea5487f7351a8fd383ba">
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\classes_fa5e2e2488facac00747f85e675865edb5b3b452.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\403ddd8f25d5fd7ae7a3d667677239f5a1e83226\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ff3978e3687b9cb920bb5cdedadd656801366473">
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\classes_ba5e3ac9f6f59676feaf627607e105d84adfe049.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\myProgramma\hztripapp\app\libs\litepal-1.6.1-src.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e4fa90d8efd80e556e5fbbaf30bd4ae39ef14e94">
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\litepal-1.6.1-src_ca036685caa12a81e6ddbdcdc106e2a0227ffca2.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.greenrobot\eventbus\3.0.0\ddd99896e9569eaababbe81b35d80e1b91c4ad85\eventbus-3.0.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
         <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\eventbus-3.0.0_338198e230e883acd6c9c82ca46ba5fc3096755c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\0d21762ba25f5fa7a9173fbfeeba25a57fd6dbfc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cf836a435a496eb22ff2aa69aa1e619462549f81">
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\classes_8e43ad31c2efea1407b431e93419f305360d6881.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_3c9f5880fec0a880f40ecbbebb3a60ccb1f35afa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\c570018339269e81102dcab8e28de6b432b53782\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\classes_580b83bc929dbf1a578cf8a78c3cd134f61b7622.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\a97ded5a1593875aa7e6f35366c6ca6e64412756\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="63a8fde397bbe55178688290a36a9451dade6d14">
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\classes_0963d8fcaf1bea488a3ebddacfc68133233cc7e6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\a5ab9dd692dc754145db525daa0bbf57e03de6f9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="691163c366515ad6ef976a0dccee75f8fbb281e1">
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\classes_d04e5781c00580123fb9d99923077a294c1d2721.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\f743c9dfa12a22327843e607ddb55f34d3d50157\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="683ac3c4bea1c502b27ede58061a9e2cca684ca3">
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\classes_2348bb95b540f5216361f310a5e55c047d5b6f7d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\ba86feeeeda4f0cf03e5876349bdafc92adcf03b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="08f335a837fd5116fe9c5b03c2508c83cab45095">
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\classes_d6958db68269378ab541fdbd873aa1d069e4ccb8.jar" />
     </item>
     <item
         is-multidex="false"

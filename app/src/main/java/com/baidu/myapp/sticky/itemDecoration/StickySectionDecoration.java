@@ -12,6 +12,7 @@ import android.view.View;
 import com.baidu.myapp.R;
 import com.baidu.myapp.util.Debbuger;
 
+import static android.R.attr.width;
 import static com.baidu.location.g.j.D;
 
 /**
@@ -23,6 +24,7 @@ public class StickySectionDecoration extends RecyclerView.ItemDecoration {
     private GroupInfoCallback mCallback;
     private int mHeaderHeight;
     private int mDividerHeight;
+    private int mBottomHeight;
     //用来绘制Header上的文字
     private TextPaint mTextPaint;
     private Paint mPaint;
@@ -38,7 +40,7 @@ public class StickySectionDecoration extends RecyclerView.ItemDecoration {
         mTextSize = context.getResources().getDimensionPixelOffset(R.dimen.header_textsize);
 
         mHeaderHeight = (int) Math.max(mHeaderHeight, mTextSize);
-
+        mBottomHeight = context.getResources().getDimensionPixelOffset(R.dimen.bottom_shop_height);
         mTextPaint = new TextPaint();
         mTextPaint.setColor(Color.BLACK);
         mTextPaint.setTextSize(mTextSize);
@@ -56,14 +58,17 @@ public class StickySectionDecoration extends RecyclerView.ItemDecoration {
         super.getItemOffsets(outRect, view, parent, state);
 
         int position = parent.getChildAdapterPosition(view);
-        Debbuger.LogE("得到了多少个Position："+position);
+//        Debbuger.LogE("得到了多少个Position："+position);
         if (mCallback != null) {
             GroupInfo groupInfo = mCallback.getGroupInfo(position);
 
             //如果是组内的第一个则将间距撑开为一个Header的高度，或者就是普通的分割线高度
             if (groupInfo != null && groupInfo.isFirstViewInGroup()) {
-                Debbuger.LogE("撑开了多少次");
+//                Debbuger.LogE("撑开了多少次");
                 outRect.top = mHeaderHeight;
+
+            } else if (groupInfo.onMaxLastItem()) {//让recyclerViewz最后一个item的底部撑开一个购物车控件的高度说
+                outRect.bottom = mBottomHeight;
             } else {
                 outRect.top = mDividerHeight;
             }
@@ -144,7 +149,14 @@ public class StickySectionDecoration extends RecyclerView.ItemDecoration {
         kk.setColor(Color.parseColor("#999999"));
         kk.setTextSize(16);
         kk.setAntiAlias(true);
-        c.drawText(groupinfo.getPoisDecriation(),titleX+50,titleY,kk);
+        int defualt= 20;
+        float width = kk.measureText(groupinfo.getPoisTitle());
+        if (width > 38) {
+            defualt = 28;
+        } else {
+            defualt=20;
+        }
+        c.drawText(groupinfo.getPoisDecriation(),titleX+defualt+width,titleY,kk);
     }
 
     public GroupInfoCallback getCallback() {

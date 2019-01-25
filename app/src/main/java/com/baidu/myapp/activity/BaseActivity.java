@@ -23,4 +23,10 @@ public class BaseActivity extends AppCompatActivity{
         super.onDestroy();
         ActivityCollector.removeActivity(this);
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+    }
 }

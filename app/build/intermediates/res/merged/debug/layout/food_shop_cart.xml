@@ -55,7 +55,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="60dp"
         android:layout_marginLeft="75dp"
-        android:background="@drawable/food_red_ball"
+        style="@style/badge_style"
         android:gravity="center"
         android:text="10"
         android:textSize="8dp"

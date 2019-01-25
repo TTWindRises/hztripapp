@@ -9,6 +9,7 @@ import android.graphics.PointF;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -29,6 +30,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.baidu.myapp.R;
+import com.baidu.myapp.adapter.CarAdapter;
 import com.baidu.myapp.adapter.FoodBeanRecyclerAdapter;
 import com.baidu.myapp.adapter.food.BottomSheetAdapter;
 import com.baidu.myapp.adapter.food.FoodLeftRecyclerAdapter;
@@ -76,8 +78,13 @@ public class FoodStoreActivity extends BaseActivity{
     //列表标题
     private List<String> mTitles = new ArrayList<>();
     private TabFragmentAdapter adapter;
-
     TabLayout slidingTabLayout;
+
+    //购物车
+    public BottomSheetBehavior behavior;
+    public static CarAdapter carAdapter;
+    private ShopCarView shopCarView;
+    private CoordinatorLayout rootview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,19 +96,6 @@ public class FoodStoreActivity extends BaseActivity{
 
 
 
-    /* private void sheetDialog() {
-         BottomSheetAdapter adapter = new BottomSheetAdapter(this);
-         RecyclerView recyclerView = (RecyclerView) LayoutInflater.from(this).inflate(R.layout.food_store_bottom_fragment, null);
-         RecyclerView.LayoutParams params = new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.MATCH_PARENT);
-         recyclerView.setLayoutParams(params);
-         recyclerView.setItemAnimator(new DefaultItemAnimator());
-         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-         recyclerView.setAdapter(adapter);
-
-         final MyBottomSheetDialog dialog = new MyBottomSheetDialog(this, this);
-         dialog.setContentView(recyclerView);
-         dialog.show();
-     }*/
     private void init() {
         //viewpage
         viewPager = (ViewPager) findViewById(R.id.food_store_view_pager);

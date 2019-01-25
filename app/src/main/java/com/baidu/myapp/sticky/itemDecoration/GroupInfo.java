@@ -39,7 +39,9 @@ public class GroupInfo {
         }
         return false;
     }
-
+    public boolean onMaxLastItem() {
+        return position == pois.get(pois.size()-1)-1;
+    }
     public void setPosition(int position) {
         this.position = position;
     }
