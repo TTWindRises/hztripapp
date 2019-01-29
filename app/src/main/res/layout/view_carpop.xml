@@ -46,7 +46,7 @@
             android:textColor="#666666"/>
     </LinearLayout>
     <!--这个就是所谓的item组了 max应该是对高度做了个限制吧-->
-    <com.k.neleme.Views.MaxHeightRecyclerView
+    <com.baidu.myapp.view.foodview.MaxHeightRecyclerView
         android:id="@+id/car_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

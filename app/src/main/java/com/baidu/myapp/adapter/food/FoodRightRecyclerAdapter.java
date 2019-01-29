@@ -18,6 +18,7 @@ import com.baidu.myapp.util.Debbuger;
 import com.baidu.myapp.util.foodutil.Computational;
 import com.baidu.myapp.util.foodutil.FoodGlideUtil;
 import com.baidu.myapp.R;
+import com.baidu.myapp.view.foodview.AddWidget;
 
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class FoodRightRecyclerAdapter extends RecyclerView.Adapter<FoodRightRecy
     private Context context;
     private List<FoodBean> data;
     private int number = 0;
-
+    private AddWidget.OnAddClick onAddClick;
     public FoodRightRecyclerAdapter(Context context, List<FoodBean> data) {
         this.context = context;
         this.data = data;
@@ -69,6 +70,7 @@ public class FoodRightRecyclerAdapter extends RecyclerView.Adapter<FoodRightRecy
                 int i = data.get(position).getFoodNum() + 1;
                 Debbuger.LogE("对应的数据为:" + i);
                 data.get(position).setFoodNum(i);
+
                 holder.number.setText("" + data.get(position).getFoodNum());
                 if (data.get(position).getFoodNum() == 1) {
                     Debbuger.LogE("显示减按钮");

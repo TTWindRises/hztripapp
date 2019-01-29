@@ -216,10 +216,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     OverlayUtil overlayUtil = new OverlayUtil();
 
 
-    //购物车适配器
-    public static CarAdapter carAdapter;
-    public BottomSheetBehavior behavior;
-    private ShopCarView shopCarView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -298,19 +294,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
 
     }
-//购物车视图初始化
-private void initShopCar() {
-    behavior = BottomSheetBehavior.from(findViewById(R.id.car_container));
-    shopCarView = (ShopCarView) findViewById(R.id.car_mainfl);
-    View blackView = findViewById(R.id.blackview);
-    shopCarView.setBehavior(behavior, blackView);
-    RecyclerView carRecView = (RecyclerView) findViewById(R.id.car_recyclerview);
-//		carRecView.setNestedScrollingEnabled(false);
-    carRecView.setLayoutManager(new LinearLayoutManager(mContext));
-    ((DefaultItemAnimator) carRecView.getItemAnimator()).setSupportsChangeAnimations(false);
-    carAdapter = new CarAdapter(new ArrayList<FoodBean>(), this);
-    carAdapter.bindToRecyclerView(carRecView);
-}
     //蜂鸟地图控件初始化
     private void InitFSView() {
         BtnIntoMap = (Button) findViewById(R.id.btn_intomap);

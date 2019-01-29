@@ -14,11 +14,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.baidu.myapp.R;
+import com.baidu.myapp.util.Debbuger;
 import com.baidu.myapp.util.foodutil.ViewUtils;
 
 import java.math.BigDecimal;
 
-import static com.baidu.myapp.MainActivity.carAdapter;
+import static com.baidu.myapp.activity.FoodStoreActivity.carAdapter;
 
 /**
  * Created by Administrator on 2019/1/16.
@@ -46,12 +47,14 @@ public class ShopCarView extends FrameLayout {
                 sheetScrolling = false;
                 if (newState == BottomSheetBehavior.STATE_COLLAPSED || newState == BottomSheetBehavior.STATE_HIDDEN) {
                     blackView.setVisibility(View.GONE);
+                    Debbuger.LogE("去掉视图");//这里的逻辑是购物车被清空的时候去掉加载出来的条目栏
                 }
             }
 
             @Override
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {
                 sheetScrolling = true;
+                //显示结算条目栏
                 blackView.setVisibility(View.VISIBLE);
                 ViewCompat.setAlpha(blackView, slideOffset);
             }
@@ -59,6 +62,7 @@ public class ShopCarView extends FrameLayout {
         blackView.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
+                //不被覆盖的部分被触摸就会执行，这里执行的是让弹出来的结算栏收回去
                 behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 return true;
             }

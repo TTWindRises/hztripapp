@@ -50,12 +50,16 @@ import com.baidu.myapp.util.GlideRoundTransform;
 import com.baidu.myapp.util.foodutil.IndicatorLineUtil;
 import com.baidu.myapp.util.foodutil.MyBottomSheetDialog;
 import com.baidu.myapp.util.foodutil.SpaceItemDecoration;
+import com.baidu.myapp.util.foodutil.ViewUtils;
 import com.baidu.myapp.view.HorizontalRecycleView;
+import com.baidu.myapp.view.foodview.AddWidget;
 import com.bumptech.glide.Glide;
 
 import org.litepal.crud.DataSupport;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import static com.baidu.location.g.j.F;
@@ -64,7 +68,7 @@ import static com.baidu.location.g.j.F;
  * Created by Administrator on 2018/11/7.
  */
 
-public class FoodStoreActivity extends BaseActivity{
+public class FoodStoreActivity extends BaseActivity implements AddWidget.OnAddClick {
     HorizontalRecycleView mListView;
     //HorizontalRecycleView leftListView;
     FoodStore foodStore;
@@ -85,6 +89,7 @@ public class FoodStoreActivity extends BaseActivity{
     public static CarAdapter carAdapter;
     private ShopCarView shopCarView;
     private CoordinatorLayout rootview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,10 +97,11 @@ public class FoodStoreActivity extends BaseActivity{
         init();
         setCollsapsing();
         setViewPager();
+        initShopCar();
     }
 
 
-
+    //头
     private void init() {
         //viewpage
         viewPager = (ViewPager) findViewById(R.id.food_store_view_pager);
@@ -169,7 +175,7 @@ public class FoodStoreActivity extends BaseActivity{
         mTitles.add("商品");
         mTitles.add("评价");
 
-        adapter = new TabFragmentAdapter(getSupportFragmentManager(),mFragments, mTitles);
+        adapter = new TabFragmentAdapter(getSupportFragmentManager(), mFragments, mTitles);
 
 
         viewPager.setAdapter(adapter);
@@ -178,15 +184,89 @@ public class FoodStoreActivity extends BaseActivity{
         slidingTabLayout.post(new Runnable() {
             @Override
             public void run() {
-                IndicatorLineUtil.setIndicator(slidingTabLayout,60,60);
+                IndicatorLineUtil.setIndicator(slidingTabLayout, 60, 60);
             }
         });
 
     }
+
     private void setCollsapsing() {
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing);
         collapsingToolbarLayout.setStatusBarScrimColor(getResources().getColor(R.color.touming));
 
+    }
+    //购物车
+
+    private void initShopCar() {
+        behavior = BottomSheetBehavior.from(findViewById(R.id.car_container));//底部弹出结算栏的行为
+        shopCarView = (ShopCarView) findViewById(R.id.car_mainfl);
+        View blackView = findViewById(R.id.blackview);//blackView是一个暗屏
+        shopCarView.setBehavior(behavior, blackView);
+        RecyclerView carRecView = (RecyclerView) findViewById(R.id.car_recyclerview);
+//		carRecView.setNestedScrollingEnabled(false);
+        carRecView.setLayoutManager(new LinearLayoutManager(mContext));
+        ((DefaultItemAnimator) carRecView.getItemAnimator()).setSupportsChangeAnimations(false);
+        carAdapter = new CarAdapter(new ArrayList<FoodBean>(), this);
+        carAdapter.bindToRecyclerView(carRecView);
+    }
+
+    @Override
+    public void onAddClick(View view, FoodBean fb) {
+        dealCar(fb);
+
+    }
+
+
+    @Override
+    public void onSubClick(FoodBean fb) {
+        dealCar(fb);
+    } //这里就是消除购物车item组件的视图，和bottomsheetview的逻辑了。
+
+    private void dealCar(FoodBean foodBean) {
+        HashMap<String, Long> typeSelect = new HashMap<>();//更新左侧类别badge用
+        BigDecimal amount = new BigDecimal(0.0);
+        int total = 0;
+        boolean hasFood = false;
+       /* if (behavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
+            firstFragment.getFoodAdapter().notifyDataSetChanged();
+        }*/
+        List<FoodBean> flist = carAdapter.getData();
+        int p = -1;//这个是标记判断什么用的，得了了解一下
+        for (int i = 0; i < flist.size(); i++) {
+            FoodBean fb = flist.get(i);
+            Debbuger.LogE("fb.getFoodID:" + fb.getFoodID() + "\nfoodBean.getFoodID:"+foodBean.getFoodID());
+            if (fb.getFoodID() == foodBean.getFoodID()) {
+                fb = foodBean;
+                hasFood = true;
+                if (foodBean.getSelectCount() == 0) {
+                    p = i;
+                } else {
+                    carAdapter.setData(i, foodBean);
+                }
+            }
+            total += fb.getSelectCount();
+         /*   if (typeSelect.containsKey(fb.getType())) {
+                typeSelect.put(fb.getType(), typeSelect.get(fb.getType()) + fb.getSelectCount());
+            } else {
+                typeSelect.put(fb.getType(), fb.getSelectCount());
+            }*/
+            amount = amount.add(fb.getPrice().multiply(BigDecimal.valueOf(fb.getSelectCount())));
+        }
+        if (p >= 0) {
+            carAdapter.remove(p);
+        } /*else if (!hasFood && foodBean.getSelectCount() > 0) {
+            carAdapter.addData(foodBean);
+            if (typeSelect.containsKey(foodBean.getType())) {
+                typeSelect.put(foodBean.getType(), typeSelect.get(foodBean.getType()) + foodBean.getSelectCount());
+            } else {
+                typeSelect.put(foodBean.getType(), foodBean.getSelectCount());
+            }
+            amount = amount.add(foodBean.getPrice().multiply(BigDecimal.valueOf(foodBean.getSelectCount())));
+            total += foodBean.getSelectCount();
+        }*/
+        shopCarView.showBadge(total);
+     /*   firstFragment.getTypeAdapter().updateBadge(typeSelect);*/
+        shopCarView.updateAmount(amount);
     }
 
 }

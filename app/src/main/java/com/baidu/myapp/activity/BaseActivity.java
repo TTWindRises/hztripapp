@@ -1,9 +1,11 @@
 package com.baidu.myapp.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 
 import com.baidu.myapp.util.Debbuger;
@@ -11,6 +13,7 @@ import com.baidu.myapp.util.Debbuger;
 import static com.baidu.location.g.j.D;
 
 public class BaseActivity extends AppCompatActivity{
+    protected Context mContext = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,8 @@ public class BaseActivity extends AppCompatActivity{
         ActivityCollector.removeActivity(this);
     }
 
+    public void goAccount(View view) {
+    }
     @Override
     public void finish() {
         super.finish();
