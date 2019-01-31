@@ -23,8 +23,8 @@ import static com.baidu.location.g.j.F;
  * Created by Administrator on 2018/11/8.
  */
 
-public class FoodBeanAdapter extends BaseAdapter {
-    private List<FoodBean> foodBeanList;//数据源
+public class FoodBeanAdapter {
+ /*   private List<FoodBean> foodBeanList;//数据源
     private LayoutInflater mInflater;//布局装载器对象
 
 
@@ -63,7 +63,7 @@ public class FoodBeanAdapter extends BaseAdapter {
             viewHolder.sales = (TextView) convertView.findViewById(R.id.food_horizontal_item_sales);
             viewHolder.present_price = (TextView) convertView.findViewById(R.id.food_present_price);
             viewHolder.original_price = (TextView) convertView.findViewById(R.id.food_original_price);
-            viewHolder.add = (ImageView) convertView.findViewById(R.id.food_horizontal_item_add);//这个是固定的添加按钮的样式，可以写死，也可以预留改变的一个设置
+       //这个是固定的添加按钮的样式，可以写死，也可以预留改变的一个设置
             //通过setTag将convertView与viewHolder关联
             convertView.setTag(viewHolder);
 
@@ -90,5 +90,5 @@ public class FoodBeanAdapter extends BaseAdapter {
         public TextView present_price;
         public TextView original_price;
         public ImageView add;
-    }
+    }*/
 }

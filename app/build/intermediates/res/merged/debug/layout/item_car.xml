@@ -22,14 +22,14 @@
             android:layout_weight="1"
             android:maxLines="1"
             android:textColor="#757575"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/car_price"
             android:layout_marginRight="16dp"
             style="@style/tv_price"/>
 
-        <com.k.neleme.Views.AddWidget
+        <com.baidu.myapp.view.foodview.ZAddWidget
             android:id="@+id/car_addwidget"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

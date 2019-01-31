@@ -19,6 +19,7 @@ import com.baidu.myapp.util.foodutil.Computational;
 import com.baidu.myapp.util.foodutil.FoodGlideUtil;
 import com.baidu.myapp.R;
 import com.baidu.myapp.view.foodview.AddWidget;
+import com.baidu.myapp.view.foodview.ZAddWidget;
 
 import java.util.List;
 
@@ -31,11 +32,11 @@ import java.util.List;
 public class FoodRightRecyclerAdapter extends RecyclerView.Adapter<FoodRightRecyclerAdapter.ViewHolder> {
     private Context context;
     private List<FoodBean> data;
-    private int number = 0;
-    private AddWidget.OnAddClick onAddClick;
-    public FoodRightRecyclerAdapter(Context context, List<FoodBean> data) {
+    private ZAddWidget.OnAddClick onAddClick;
+    public FoodRightRecyclerAdapter(Context context, List<FoodBean> data, ZAddWidget.OnAddClick onAddClick) {
         this.context = context;
         this.data = data;
+        this.onAddClick = onAddClick;
         setHasStableIds(true);
     }
 
@@ -62,15 +63,19 @@ public class FoodRightRecyclerAdapter extends RecyclerView.Adapter<FoodRightRecy
         holder.origin_price.setText("￥"+data.get(position).getFoodOriginalPrice());
         holder.origin_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
         holder.present_price.setText("￥"+data.get(position).getFoodPresentPrice());
-        holder.number.setText(data.get(position).getFoodNum() + "");
-        holder.add.setOnClickListener(new View.OnClickListener() {
+//        holder.number.setText(data.get(position).getFoodNum() + "");
+//        holder.sub.setVisibility(View.INVISIBLE);
+//        holder.number.setVisibility(View.INVISIBLE);
+        ZAddWidget zAddWidget = holder.zadd;
+        zAddWidget.setData(onAddClick,data.get(position));
+      /*  holder.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Debbuger.LogE("点击了" + data.get(position).getFoodName() + "添加按钮");
                 int i = data.get(position).getFoodNum() + 1;
                 Debbuger.LogE("对应的数据为:" + i);
                 data.get(position).setFoodNum(i);
-
+                onAddClick.onAddClick(data.get(position));
                 holder.number.setText("" + data.get(position).getFoodNum());
                 if (data.get(position).getFoodNum() == 1) {
                     Debbuger.LogE("显示减按钮");
@@ -97,6 +102,7 @@ public class FoodRightRecyclerAdapter extends RecyclerView.Adapter<FoodRightRecy
                     int i = data.get(position).getFoodNum() - 1;
                     Debbuger.LogE("对应的数据为:" + i);
                     data.get(position).setFoodNum(i);
+                    onAddClick.onSubClick(data.get(position));
                     holder.number.setText("" + data.get(position).getFoodNum());
                 }
                 if (data.get(position).getFoodNum() == 0) {
@@ -116,49 +122,13 @@ public class FoodRightRecyclerAdapter extends RecyclerView.Adapter<FoodRightRecy
             }
 
         });
-
+*/
     }
     /**
      * 显示减号的动画
      * @return
      */
-    private Animation getShowAnimation(){
-        Debbuger.LogE("显示了多少次");
-        AnimationSet set = new AnimationSet(true);
-        RotateAnimation rotate = new RotateAnimation(0,720,RotateAnimation.RELATIVE_TO_SELF,0.5f,RotateAnimation.RELATIVE_TO_SELF,0.5f);
-        set.addAnimation(rotate);
-        TranslateAnimation translate = new TranslateAnimation(
-                TranslateAnimation.RELATIVE_TO_SELF,2f
-                ,TranslateAnimation.RELATIVE_TO_SELF,0
-                ,TranslateAnimation.RELATIVE_TO_SELF,0
-                ,TranslateAnimation.RELATIVE_TO_SELF,0);
-        set.addAnimation(translate);
-        AlphaAnimation alpha = new AlphaAnimation(0,1);
-        set.addAnimation(alpha);
-        set.setDuration(500);
-        return set;
-    }
 
-
-    /**
-     * 隐藏减号的动画
-     * @return
-     */
-    private Animation getHiddenAnimation(){
-        AnimationSet set = new AnimationSet(true);
-        RotateAnimation rotate = new RotateAnimation(0,720,RotateAnimation.RELATIVE_TO_SELF,0.5f,RotateAnimation.RELATIVE_TO_SELF,0.5f);
-        set.addAnimation(rotate);
-        TranslateAnimation translate = new TranslateAnimation(
-                TranslateAnimation.RELATIVE_TO_SELF,0
-                ,TranslateAnimation.RELATIVE_TO_SELF,2f
-                ,TranslateAnimation.RELATIVE_TO_SELF,0
-                ,TranslateAnimation.RELATIVE_TO_SELF,0);
-        set.addAnimation(translate);
-        AlphaAnimation alpha = new AlphaAnimation(1,0);
-        set.addAnimation(alpha);
-        set.setDuration(500);
-        return set;
-    }
 
     //必须重写  不然item会错乱
     @Override
@@ -178,10 +148,7 @@ public class FoodRightRecyclerAdapter extends RecyclerView.Adapter<FoodRightRecy
         TextView discount;
         TextView present_price;
         TextView origin_price;
-        TextView number;
-        ImageView add;
-        ImageView sub;
-
+        ZAddWidget zadd;
         public ViewHolder(View itemView) {
             super(itemView);
             foodimg = itemView.findViewById(R.id.food_store_vertical_right_img);
@@ -191,10 +158,12 @@ public class FoodRightRecyclerAdapter extends RecyclerView.Adapter<FoodRightRecy
             discount = itemView.findViewById(R.id.food_store_vertical_right_discount);
             present_price = itemView.findViewById(R.id.food_vertical_right_present_price);
             origin_price = itemView.findViewById(R.id.food_vertical_right_original_price);
-            number = itemView.findViewById(R.id.food_vertical_right_item_number);
+           /* number = itemView.findViewById(R.id.food_vertical_right_item_number);
             add = itemView.findViewById(R.id.food_vertical_right_item_add);
-            sub = itemView.findViewById(R.id.food_vertical_righ_item_sub);
+            sub = itemView.findViewById(R.id.food_vertical_righ_item_sub);*/
+            zadd = itemView.findViewById(R.id.zaddwidget);
         }
     }
+
 
 }

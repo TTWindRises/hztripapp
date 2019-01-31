@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SimpleItemAnimator;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,17 +24,20 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.baidu.myapp.R;
+import com.baidu.myapp.activity.FoodStoreActivity;
 import com.baidu.myapp.adapter.FoodBeanRecyclerAdapter;
 import com.baidu.myapp.adapter.food.FoodLeftRecyclerAdapter;
 import com.baidu.myapp.adapter.food.FoodRightRecyclerAdapter;
 import com.baidu.myapp.bean.food.FoodBean;
 import com.baidu.myapp.bean.food.FoodCategory;
+import com.baidu.myapp.bean.food.FoodStore;
 import com.baidu.myapp.overlay.util.BezierTypeEvaluator;
 import com.baidu.myapp.sticky.itemDecoration.GroupInfo;
 import com.baidu.myapp.sticky.itemDecoration.StickySectionDecoration;
 import com.baidu.myapp.util.Debbuger;
 import com.baidu.myapp.util.foodutil.SpaceItemDecoration;
 import com.baidu.myapp.view.HorizontalRecycleView;
+import com.baidu.myapp.view.foodview.AddWidget;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -43,8 +47,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.baidu.location.g.a.i;
+import static com.baidu.location.g.j.A;
 import static com.baidu.location.g.j.D;
 import static com.baidu.location.g.j.I;
+import static com.baidu.location.g.j.j;
 import static com.baidu.location.g.j.n;
 
 /**
@@ -58,6 +64,7 @@ public class FoodGoodsFragment extends BaseFragment {
     private FoodLeftRecyclerAdapter mLeftCategoryAdapter;
     private RecyclerView right_recyclerView;
     private RecyclerView left_recyclerView;
+    private FoodBeanRecyclerAdapter hadapter;
     private String storeid;
     private RelativeLayout shopCartMain;
     //碎片的主页面
@@ -93,12 +100,25 @@ public class FoodGoodsFragment extends BaseFragment {
 
     private void initList() {
         foodlist = new ArrayList<>();
+        foodCategoryList = DataSupport.where("store_id=?", storeid).find(FoodCategory.class);
+        if (foodCategoryList != null) {
+//            Debbuger.LogE("存在category信息:" + foodCategoryList.toString());
+        }
+        int i = 0;
+        titlePois.add(0);
+        for (FoodCategory foodCategory : foodCategoryList) {
+            if (foodCategory.getFoodBeanByCategoryId() != null) {
+                foodlist.addAll(foodCategory.getFoodBeanByCategoryId());
+                i += foodCategory.getFoodBeanByCategoryId().size();
+                titlePois.add(i);
+            }
+        }
     }
 
     //TODO add category data
     private void initData() {
         mLinearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        rightadapter = new FoodRightRecyclerAdapter(getActivity(), foodlist);
+        rightadapter = new FoodRightRecyclerAdapter(getActivity(), foodlist, (FoodStoreActivity) getActivity());
         //right_recyclerView.addItemDecoration(new SpaceItemDecoration(15));
         right_recyclerView.setItemAnimator(new DefaultItemAnimator());
         right_recyclerView.setLayoutManager(mLinearLayoutManager);
@@ -169,32 +189,22 @@ public class FoodGoodsFragment extends BaseFragment {
 
     //横向列表
     private void loadHorizontalFoodView() {
-        FoodBeanRecyclerAdapter adapter = new FoodBeanRecyclerAdapter(getActivity(), foodlist);
+
+
+        hadapter = new FoodBeanRecyclerAdapter(getActivity(), foodlist, (FoodStoreActivity) getActivity());
         horizontalRecycleView.addItemDecoration(new SpaceItemDecoration(8));
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         horizontalRecycleView.setItemAnimator(new DefaultItemAnimator());
         horizontalRecycleView.setLayoutManager(linearLayoutManager);
-        horizontalRecycleView.setAdapter(adapter);
+        horizontalRecycleView.setAdapter(hadapter);
         // mListView.setAdapter(new FoodBeanAdapter(FoodStoreActivity.this,foodBeanList));
     }
 
     //纵向左边列表
     private void loadVerticalLeftView() {
 
-        foodCategoryList = DataSupport.where("store_id=?", storeid).find(FoodCategory.class);
-        if (foodCategoryList != null) {
-//            Debbuger.LogE("存在category信息:" + foodCategoryList.toString());
-        }
-        int i = 0;
-        titlePois.add(0);
-        for (FoodCategory foodCategory : foodCategoryList) {
-            if (foodCategory.getFoodBeanByCategoryId() != null) {
-                foodlist.addAll(foodCategory.getFoodBeanByCategoryId());
-                i += foodCategory.getFoodBeanByCategoryId().size();
-                titlePois.add(i);
-            }
-        }
+
 //        titlePois.remove(foodCategoryList.size());
 
         categoryAdapter = new FoodLeftRecyclerAdapter(getActivity(), foodCategoryList);
@@ -229,6 +239,19 @@ public class FoodGoodsFragment extends BaseFragment {
     public void onMessageEvent(String event) {
 
 
+    }
+//        FoodLeftRecyclerAdapter categoryAdapter;
+
+    public FoodRightRecyclerAdapter getFoodAdapter() {
+        return rightadapter;
+    }
+
+    public FoodBeanRecyclerAdapter getHAdapter() {
+        return hadapter;
+    }
+
+    public FoodLeftRecyclerAdapter getCategoryAdapter() {
+        return categoryAdapter;
     }
 /*
 

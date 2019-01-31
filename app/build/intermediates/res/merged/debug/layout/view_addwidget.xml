@@ -9,12 +9,13 @@
 
     <ImageView
         android:id="@+id/iv_sub"
-        android:layout_width="wrap_content"
-        android:layout_height="22dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
         android:layout_gravity="right"
         android:alpha="0"
-        android:padding="2dp"
-        android:src="@drawable/food_sub"/>
+        android:src="@drawable/food_store_item_sub2"/>
 
     <TextView
         android:id="@+id/tv_count"
@@ -29,7 +30,7 @@
         android:text="1"
         android:textSize="16sp"/>
 
-    <com.k.neleme.Views.AddButton
+    <com.baidu.myapp.view.foodview.AddButton
         android:id="@+id/addbutton"
         android:layout_gravity="right"
         android:layout_width="@dimen/add_width"

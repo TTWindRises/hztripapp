@@ -1,77 +1,55 @@
 package com.baidu.myapp.activity;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.graphics.PointF;
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.design.widget.BottomSheetBehavior;
-import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.AccelerateInterpolator;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.baidu.myapp.R;
 import com.baidu.myapp.adapter.CarAdapter;
-import com.baidu.myapp.adapter.FoodBeanRecyclerAdapter;
-import com.baidu.myapp.adapter.food.BottomSheetAdapter;
-import com.baidu.myapp.adapter.food.FoodLeftRecyclerAdapter;
-import com.baidu.myapp.adapter.food.FoodRightRecyclerAdapter;
 import com.baidu.myapp.adapter.food.TabFragmentAdapter;
-import com.baidu.myapp.animate.AnimationUtil;
-import com.baidu.myapp.animate.ShopCartAnimate;
 import com.baidu.myapp.bean.food.FoodBean;
-import com.baidu.myapp.bean.food.FoodCategory;
 import com.baidu.myapp.bean.food.FoodStore;
 import com.baidu.myapp.fragment.food.FoodEvaluateFragment;
 import com.baidu.myapp.fragment.food.FoodGoodsFragment;
-import com.baidu.myapp.overlay.util.BezierTypeEvaluator;
 import com.baidu.myapp.util.CircleCrop;
 import com.baidu.myapp.util.Debbuger;
 import com.baidu.myapp.util.GlideRoundTransform;
 import com.baidu.myapp.util.foodutil.IndicatorLineUtil;
-import com.baidu.myapp.util.foodutil.MyBottomSheetDialog;
-import com.baidu.myapp.util.foodutil.SpaceItemDecoration;
 import com.baidu.myapp.util.foodutil.ViewUtils;
 import com.baidu.myapp.view.HorizontalRecycleView;
 import com.baidu.myapp.view.foodview.AddWidget;
+import com.baidu.myapp.view.foodview.ShopCarView;
+import com.baidu.myapp.view.foodview.ZAddWidget;
 import com.bumptech.glide.Glide;
-
-import org.litepal.crud.DataSupport;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static com.baidu.location.g.j.F;
+import static com.baidu.location.g.j.t;
+import static com.baidu.location.g.j.v;
 
 /**
  * Created by Administrator on 2018/11/7.
  */
 
-public class FoodStoreActivity extends BaseActivity implements AddWidget.OnAddClick {
+public class FoodStoreActivity extends BaseActivity implements ZAddWidget.OnAddClick {
     HorizontalRecycleView mListView;
     //HorizontalRecycleView leftListView;
     FoodStore foodStore;
+    FoodGoodsFragment goodsFragment;
     private CoordinatorLayout main_layout;
     private CollapsingToolbarLayout collapsingToolbarLayout;
     private HorizontalRecycleView recyclerView;
@@ -167,7 +145,7 @@ public class FoodStoreActivity extends BaseActivity implements AddWidget.OnAddCl
     //两个Pager
     private void setViewPager() {
 
-        FoodGoodsFragment goodsFragment = new FoodGoodsFragment();
+        goodsFragment = new FoodGoodsFragment();
         goodsFragment.setStoreID(foodStore.getStoreID());//让碎片能够找到相应的实体类
         FoodEvaluateFragment evaluateFragment = new FoodEvaluateFragment();
         mFragments.add(goodsFragment);
@@ -211,9 +189,8 @@ public class FoodStoreActivity extends BaseActivity implements AddWidget.OnAddCl
     }
 
     @Override
-    public void onAddClick(View view, FoodBean fb) {
+    public void onAddClick(FoodBean fb) {
         dealCar(fb);
-
     }
 
 
@@ -223,50 +200,85 @@ public class FoodStoreActivity extends BaseActivity implements AddWidget.OnAddCl
     } //这里就是消除购物车item组件的视图，和bottomsheetview的逻辑了。
 
     private void dealCar(FoodBean foodBean) {
-        HashMap<String, Long> typeSelect = new HashMap<>();//更新左侧类别badge用
+        HashMap<String, Integer> typeSelect = new HashMap<>();//更新左侧类别badge用
         BigDecimal amount = new BigDecimal(0.0);
         int total = 0;
         boolean hasFood = false;
-       /* if (behavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
-            firstFragment.getFoodAdapter().notifyDataSetChanged();
+  /*    if (behavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
+            goodsFragment.getFoodAdapter().notifyDataSetChanged();
+            goodsFragment.getHAdapter().notifyDataSetChanged();
         }*/
+        goodsFragment.getFoodAdapter().notifyDataSetChanged();
+        goodsFragment.getHAdapter().notifyDataSetChanged();
+
         List<FoodBean> flist = carAdapter.getData();
         int p = -1;//这个是标记判断什么用的，得了了解一下
         for (int i = 0; i < flist.size(); i++) {
             FoodBean fb = flist.get(i);
-            Debbuger.LogE("fb.getFoodID:" + fb.getFoodID() + "\nfoodBean.getFoodID:"+foodBean.getFoodID());
             if (fb.getFoodID() == foodBean.getFoodID()) {
                 fb = foodBean;
                 hasFood = true;
-                if (foodBean.getSelectCount() == 0) {
+                if (foodBean.getFoodNum() == 0) {
                     p = i;
                 } else {
                     carAdapter.setData(i, foodBean);
                 }
             }
-            total += fb.getSelectCount();
-         /*   if (typeSelect.containsKey(fb.getType())) {
-                typeSelect.put(fb.getType(), typeSelect.get(fb.getType()) + fb.getSelectCount());
+            total += fb.getFoodNum();
+            if (typeSelect.containsKey(String.valueOf(fb.getCategory_id()))) {
+                typeSelect.put(String.valueOf(fb.getCategory_id()), typeSelect.get(String.valueOf(fb.getCategory_id())) + fb.getFoodNum());
+                Debbuger.LogE("typeSelect:"+typeSelect.get(String.valueOf(fb.getCategory_id())));
+
             } else {
-                typeSelect.put(fb.getType(), fb.getSelectCount());
-            }*/
-            amount = amount.add(fb.getPrice().multiply(BigDecimal.valueOf(fb.getSelectCount())));
+                typeSelect.put(String.valueOf(fb.getCategory_id()), fb.getFoodNum());
+            }
+            amount = amount.add(fb.getPrice().multiply(BigDecimal.valueOf(fb.getFoodNum())));
         }
         if (p >= 0) {
             carAdapter.remove(p);
-        } /*else if (!hasFood && foodBean.getSelectCount() > 0) {
+        } else if (!hasFood && foodBean.getFoodNum() > 0) {
             carAdapter.addData(foodBean);
-            if (typeSelect.containsKey(foodBean.getType())) {
-                typeSelect.put(foodBean.getType(), typeSelect.get(foodBean.getType()) + foodBean.getSelectCount());
+            if (typeSelect.containsKey(String.valueOf(foodBean.getCategory_id()))) {
+                typeSelect.put(String.valueOf(foodBean.getCategory_id()), typeSelect.get(String.valueOf(foodBean.getCategory_id())) + foodBean.getFoodNum());
             } else {
-                typeSelect.put(foodBean.getType(), foodBean.getSelectCount());
+                typeSelect.put(String.valueOf(foodBean.getCategory_id()), foodBean.getFoodNum());
             }
-            amount = amount.add(foodBean.getPrice().multiply(BigDecimal.valueOf(foodBean.getSelectCount())));
-            total += foodBean.getSelectCount();
-        }*/
+            amount = amount.add(foodBean.getPrice().multiply(BigDecimal.valueOf(foodBean.getFoodNum())));
+            total += foodBean.getFoodNum();
+        }
         shopCarView.showBadge(total);
-     /*   firstFragment.getTypeAdapter().updateBadge(typeSelect);*/
+        goodsFragment.getCategoryAdapter().updateBadge(typeSelect);
         shopCarView.updateAmount(amount);
     }
 
+    public void clearCar(View view) {
+        ViewUtils.showClearCar(mContext, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                clearCar();
+            }
+        });
+    }
+
+    private void clearCar() {
+
+        List<FoodBean> flist = carAdapter.getData();
+        for (int i = 0; i < flist.size(); i++) {
+            FoodBean fb = flist.get(i);
+
+            //这个SelectCount是被添加的数量，实际上要被记录应该是完成交易之后的
+            fb.setFoodNum(0); //这个数量只是显示上的数量，这个操作就是让所有的item重复置0嘛，但是显然是加载了很多次无意义的清楚操作
+            //ps我错了，添加了多少个就会清除多少次，没毛病的。上面那个是我的错误想法,这个的奥秘应该在适配器的getData里,因为是通过回调addData到carAdpter里的
+//            所以getData（）的大小正好是操作了的那几个。没毛病。
+        }
+        carAdapter.setNewData(new ArrayList<FoodBean>());
+
+        goodsFragment.getHAdapter().notifyDataSetChanged();
+        goodsFragment.getFoodAdapter().notifyDataSetChanged();//为什么会残留影像,因为 ：虽然说是重新绑定视图了，但是你没在哪里写有视图的默认不可见状态。
+//        所以刷新的时候，数据是刷新了，但是视图还是保留原先的状态。仅此而已、、、 - -白眼
+        goodsFragment.getCategoryAdapter().updateBadge(new HashMap<String, Integer>());
+        goodsFragment.getCategoryAdapter().notifyDataSetChanged();
+        shopCarView.showBadge(0);
+        shopCarView.updateAmount(new BigDecimal(0.0));
+    }
 }

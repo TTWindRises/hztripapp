@@ -55,9 +55,10 @@ public class FoodBean extends DataSupport {
                 "foodID=" + foodID +
                 ", foodName='" + foodName + '\'' +
                 ", category_id='" + category_id + '\'' +
-                ", food_order_id=" + food_order_id +
-                ", store_id='" + store_id + '\'' +
-                ", shelvesState='" + foodShelvesState + '\'' +
+//                ", food_order_id=" + food_order_id +
+//                ", store_id='" + store_id + '\'' +
+//                ", shelvesState='" + foodShelvesState + '\'' +
+                ", foodNum='" + foodNum + '\'' +
                 '}';
     }
 
@@ -97,17 +98,6 @@ public class FoodBean extends DataSupport {
         this.foodSales = foodSales;
         this.store_id = store_id;
     }
-
-    private long selectCount;
-
-    public long getSelectCount() {
-        return selectCount;
-    }
-
-    public void setSelectCount(long selectCount) {
-        this.selectCount = selectCount;
-    }
-
     public String getFoodPresentPrice() {
         return foodPresentPrice;
     }

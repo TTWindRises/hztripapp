@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.baidu.myapp.R;
 import com.baidu.myapp.bean.food.FoodBean;
+import com.baidu.myapp.util.Debbuger;
 import com.github.florent37.viewanimator.AnimationListener;
 import com.github.florent37.viewanimator.ViewAnimator;
 
@@ -23,14 +24,14 @@ public class AddWidget extends FrameLayout {
 
     private View sub;
     private TextView tv_count;
-    private long count;
+    private int count;
     private AddButton addbutton;
     private boolean sub_anim, circle_anim;
     private FoodBean foodBean;
 
     public interface OnAddClick {
 
-        void onAddClick(View view, FoodBean fb);
+        void onAddClick(FoodBean fb);
 
         void onSubClick(FoodBean fb);
     }
@@ -82,9 +83,9 @@ public class AddWidget extends FrameLayout {
                 }
                 count++;
                 tv_count.setText(count + "");
-                foodBean.setSelectCount(count);
+                foodBean.setFoodNum(count);
                 if (onAddClick != null) {
-                    onAddClick.onAddClick(addbutton, foodBean);
+                    onAddClick.onAddClick(foodBean);
                 }
             }
         });
@@ -95,11 +96,12 @@ public class AddWidget extends FrameLayout {
                     return;
                 }
                 if (count == 1 && sub_anim) {
+                    Debbuger.LogE("底部的控件s");
                     subAnim();
                 }
                 count--;
                 tv_count.setText(count == 0 ? "1" : count + "");
-                foodBean.setSelectCount(count);
+                foodBean.setFoodNum(count);
                 if (onAddClick != null) {
                     onAddClick.onSubClick(foodBean);
                 }
@@ -135,7 +137,7 @@ public class AddWidget extends FrameLayout {
     public void setData(OnAddClick onAddClick, FoodBean foodBean) {
         this.foodBean = foodBean;
         this.onAddClick = onAddClick;
-        count = foodBean.getSelectCount();
+        count = foodBean.getFoodNum();
         if (count == 0) {
             sub.setAlpha(0);
             tv_count.setAlpha(0);
@@ -150,7 +152,7 @@ public class AddWidget extends FrameLayout {
         addbutton.setState(count > 0);
     }
 
-    public void expendAdd(long count) {
+    public void expendAdd(int count) {
         this.count = count;
         tv_count.setText(count == 0 ? "1" : count + "");
         if (count == 0) {

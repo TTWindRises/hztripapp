@@ -10,10 +10,6 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.BottomSheetBehavior;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -80,9 +76,7 @@ import com.baidu.myapp.activity.BNaviGuideActivity;
 import com.baidu.myapp.activity.BaseActivity;
 import com.baidu.myapp.activity.FNmapActivity;
 import com.baidu.myapp.activity.FoodStoreActivity;
-import com.baidu.myapp.activity.ShopCarView;
 import com.baidu.myapp.activity.WNaviGuideActivity;
-import com.baidu.myapp.adapter.CarAdapter;
 import com.baidu.myapp.bean.food.FoodBean;
 import com.baidu.myapp.bean.food.FoodCategory;
 import com.baidu.myapp.bean.food.FoodStore;
@@ -110,14 +104,13 @@ import com.fengmap.android.map.event.OnFMMapInitListener;
 
 import org.litepal.crud.DataSupport;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
 public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickListener,
-        OnGetRoutePlanResultListener, OnFMMapInitListener, AddWidget.OnAddClick {
+        OnGetRoutePlanResultListener, OnFMMapInitListener {
     //
     private List<SpotBean> spotBeans = DataSupport.findAll(SpotBean.class);
     private MapView mMapView;
@@ -746,15 +739,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         return false;
     }
 
-    @Override
-    public void onAddClick(View view, FoodBean fb) {
-
-    }
-
-    @Override
-    public void onSubClick(FoodBean fb) {
-
-    }
 
     private class MyWalkingRouteOverlay extends WalkingRouteOverlay {
 

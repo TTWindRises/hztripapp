@@ -10,11 +10,13 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.TextView;
 
+import com.baidu.mapapi.map.Text;
 import com.baidu.myapp.R;
 import com.baidu.myapp.bean.food.FoodCategory;
 import com.baidu.myapp.interfaces.ifood.IFoodBuy;
 import com.baidu.myapp.util.Debbuger;
 
+import java.util.HashMap;
 import java.util.List;
 
 import static com.baidu.location.g.j.D;
@@ -29,8 +31,7 @@ public class FoodLeftRecyclerAdapter extends RecyclerView.Adapter<FoodLeftRecycl
     private List<FoodCategory> categoryList;
     private Context context;
     private List<FoodCategory> data;
-    private int number = 0;
-    private int lastTitlePoi;
+    private HashMap<String, Integer> badges = new HashMap<>();
     public FoodLeftRecyclerAdapter(Context context, List<FoodCategory> data) {
         this.context = context;
         this.data = data;
@@ -45,11 +46,15 @@ public class FoodLeftRecyclerAdapter extends RecyclerView.Adapter<FoodLeftRecycl
         return new ViewHolder(view);
 
     }
-
+    public void updateBadge(HashMap<String, Integer> badges) {
+        this.badges = badges;
+        notifyDataSetChanged();
+    }
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         Debbuger.LogE("vertical load");
         holder.category.setText(data.get(position).getCategoryName());
+        holder.category_badge.setVisibility(View.INVISIBLE);
         if (selectPosition != -1) {
             if (selectPosition == position) {
 
@@ -60,6 +65,7 @@ public class FoodLeftRecyclerAdapter extends RecyclerView.Adapter<FoodLeftRecycl
         } else {
             holder.itemView.setBackgroundResource(R.drawable.goods_category_list_bg_normal);
         }
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,7 +74,12 @@ public class FoodLeftRecyclerAdapter extends RecyclerView.Adapter<FoodLeftRecycl
                 }
             }
         });
-
+        if (badges.containsKey(String.valueOf(data.get(position).getCategoryID())) && badges.get(String.valueOf(data.get(position).getCategoryID())) > 0) {//其实人家是个键值对，老想成数组干什么
+            holder.category_badge.setVisibility(View.VISIBLE);
+            holder.category_badge.setText(String.valueOf(badges.get(String.valueOf(data.get(position).getCategoryID()))));
+        } else {
+            holder.category_badge.setVisibility(View.INVISIBLE);
+        }
 
 
     }
@@ -100,11 +111,12 @@ public class FoodLeftRecyclerAdapter extends RecyclerView.Adapter<FoodLeftRecycl
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-      TextView category;
-
+        TextView category;
+        TextView category_badge;
         public ViewHolder(View itemView) {
             super(itemView);
             category = itemView.findViewById(R.id.food_store_vertical_left_category_name);
+            category_badge =  itemView.findViewById(R.id.item_badge);
         }
     }
 

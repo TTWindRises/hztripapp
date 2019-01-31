@@ -54,39 +54,12 @@
             android:layout_marginLeft="5dp"
             android:textColor="#424c50"
             android:textSize="10dp" />
-        <!--添加按钮-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right">
+      <com.baidu.myapp.view.foodview.ZAddWidget
+          android:id="@+id/horizontal_addwidget"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/food_horizontal_item_sub"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:background="@drawable/food_store_item_sub2"
-                android:visibility="invisible"
-                />
-            <TextView
-                android:id="@+id/food_horizontal_item_number"
-                android:layout_width="18dp"
-                android:layout_height="24dp"
-                android:gravity="center"
-                android:textColor="#000000"
-                android:visibility="invisible"
-                />
-
-            <ImageView
-                android:id="@+id/food_horizontal_item_add"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginRight="2dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/food_item_add"
-                android:scaleType="fitXY" />
-        </LinearLayout>
+      </com.baidu.myapp.view.foodview.ZAddWidget>
 
     </LinearLayout>
 

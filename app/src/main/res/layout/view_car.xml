@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.baidu.myapp.activity.ShopCarView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.baidu.myapp.view.foodview.ShopCarView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/car_mainfl"
     android:layout_width="match_parent"
     android:layout_height="@dimen/shopcar_height"
@@ -69,17 +69,18 @@
 
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/car_badge"
-        style="@style/badge_style"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="5dp" />
+
 
     <ImageView
         android:id="@+id/iv_shop_car"
         android:layout_width="62dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_height="80dp"
+        android:paddingBottom="30dp"
         android:layout_marginLeft="10dp"
         android:src="@drawable/food_store_bottom_icon_default3" />
-</com.baidu.myapp.activity.ShopCarView>
+    <TextView
+        android:id="@+id/car_badge"
+        style="@style/badge_style"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="5dp" />
+</com.baidu.myapp.view.foodview.ShopCarView>
