@@ -52,7 +52,6 @@ public class FoodLeftRecyclerAdapter extends RecyclerView.Adapter<FoodLeftRecycl
     }
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-        Debbuger.LogE("vertical load");
         holder.category.setText(data.get(position).getCategoryName());
         holder.category_badge.setVisibility(View.INVISIBLE);
         if (selectPosition != -1) {
@@ -89,7 +88,6 @@ public class FoodLeftRecyclerAdapter extends RecyclerView.Adapter<FoodLeftRecycl
      */
     public void setCheckPosition(int position) {
         this.selectPosition = position;
-        Debbuger.LogE("selectPosition:" + position);
         notifyDataSetChanged();
 
     }

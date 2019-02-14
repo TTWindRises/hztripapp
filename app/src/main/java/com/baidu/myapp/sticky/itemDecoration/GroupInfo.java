@@ -51,7 +51,7 @@ public class GroupInfo {
             return "热销";
         } else if (position >= 2 && position < 8) {
             return "推荐";
-        } else if (position >= 8 && position < 10) {
+        } else if (position >= 8 && position < 12) {
             return "甜品";
         } else
             return "";
@@ -62,7 +62,7 @@ public class GroupInfo {
             return "又香又脆又美味";
         } else if (position >= 2 && position < 8) {
             return "秀色可餐";
-        } else if (position >= 8 && position < 10) {
+        } else if (position >= 8 && position < 12) {
             return "清凉可口夏日必备";
         } else
             return "";

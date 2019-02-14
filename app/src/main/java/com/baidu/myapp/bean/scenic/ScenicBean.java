@@ -1,14 +1,22 @@
 package com.baidu.myapp.bean.scenic;
+
+import com.baidu.myapp.util.Debbuger;
+
+import org.litepal.annotation.Column;
 import org.litepal.crud.DataSupport;
 
 import java.io.Serializable;
 import java.util.List;
 
+import static com.baidu.location.g.j.D;
+
 /**
  * Created by 曾志荣年 on 2018/5/17.
  */
 
-public class ScenicBean extends DataSupport implements Serializable{
+public class ScenicBean extends DataSupport implements Serializable {
+    @Column(unique = true)
+    private int scenicId;
     private double scenicLatitude;//景区位置的经度
     private double scenicLongtitude;//景区位置的纬度
     private String scenicImg;//封面+介绍六宫格图片
@@ -16,6 +24,7 @@ public class ScenicBean extends DataSupport implements Serializable{
     private String scenicName;//景区名
     private String scenicDistance;//到景区的距离
     private int scenicPraise;//景区的点赞数
+    private String scenicTime;//游玩时长
     private double scenicPrice;//景区的门票价
     private String scenicDescribe;//景区的文字描述
     private String voiceSrc;//景点介绍的音频路径---可以用路径来区分于那个~比如说景区+景点的名称缩写字母排列等
@@ -23,7 +32,6 @@ public class ScenicBean extends DataSupport implements Serializable{
     private List<SpotBean> spotBeanList;//景区里面的所有景点
     private String scenicLine;//景区的景点线路区阵——存放所有导游游览的线路
     private static final long serialVersionUID = -1010711755;
-
 
 
     public double getScenicLatitude() {
@@ -40,6 +48,24 @@ public class ScenicBean extends DataSupport implements Serializable{
 
     public void setScenicLongtitude(double scenicLongtitude) {
         this.scenicLongtitude = scenicLongtitude;
+    }
+    public int getScenicId() {
+        return scenicId;
+    }
+
+    public void setScenicId(int scenicId) {
+        this.scenicId = scenicId;
+    }
+
+    public String getScenicTime() {
+        return scenicTime;
+    }
+
+    public void setScenicTime(String scenicTime) {
+        this.scenicTime = scenicTime;
+    }
+    public List<SpotBean> getAllSpot() {
+        return DataSupport.where("scenic_id=?", String.valueOf(scenicId)).find(SpotBean.class);
     }
 
     public String getScenicImg() {
@@ -129,6 +155,7 @@ public class ScenicBean extends DataSupport implements Serializable{
     public void setScenicLine(String scenicLine) {
         this.scenicLine = scenicLine;
     }
+
     @Override
     public String toString() {
         return "ScenicBean{" +
@@ -146,6 +173,15 @@ public class ScenicBean extends DataSupport implements Serializable{
                 ", spotBeanList=" + spotBeanList +
                 ", scenicLine='" + scenicLine + '\'' +
                 '}';
+    }
+    public void saveScenicBean(List<ScenicBean> scenicBeans) {
+        for (ScenicBean scenicBean : scenicBeans) {
+            if (scenicBean.save()) {
+            } else {
+                Debbuger.LogE("保存失败");
+            }
+        }
+
     }
     public static long getSerialVersionUID() {
         return serialVersionUID;

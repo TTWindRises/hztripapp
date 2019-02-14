@@ -10,6 +10,7 @@ import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.myapp.R;
 import com.baidu.myapp.bean.food.FoodStore;
+import com.baidu.myapp.bean.scenic.ScenicBean;
 
 import java.util.List;
 
@@ -36,6 +37,18 @@ public class OverlayUtil {
             Marker marker = (Marker) map.addOverlay(options);
             Bundle arg0 = new Bundle();
             arg0.putSerializable("FoodStore", foodStore);
+            marker.setExtraInfo(arg0);//因为每次存放的marker对象都是不一样的，所以不用担心会存放的是一个数组在里面，或者拿到的只是最后一个存放的数据这种问题
+
+        }
+    }
+    public void addScenicAllOverly(BaiduMap map, List<ScenicBean> scenicBeens) {
+        map.clear();
+        for (ScenicBean scenicBean : scenicBeens) {
+            LatLng latLng = new LatLng(scenicBean.getScenicLatitude(), scenicBean.getScenicLongtitude());
+            MarkerOptions options = new MarkerOptions().position(latLng).icon(BitmapDescriptorFactory.fromResource(scenicBean.getScenicOverlayImg())).zIndex(5);
+            Marker marker = (Marker) map.addOverlay(options);
+            Bundle arg0 = new Bundle();
+            arg0.putSerializable("ScenicBean", scenicBean);
             marker.setExtraInfo(arg0);//因为每次存放的marker对象都是不一样的，所以不用担心会存放的是一个数组在里面，或者拿到的只是最后一个存放的数据这种问题
 
         }

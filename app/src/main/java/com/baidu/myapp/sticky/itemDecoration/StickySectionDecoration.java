@@ -147,14 +147,14 @@ public class StickySectionDecoration extends RecyclerView.ItemDecoration {
 
        TextPaint kk = new TextPaint();
         kk.setColor(Color.parseColor("#999999"));
-        kk.setTextSize(16);
+        kk.setTextSize(24);
         kk.setAntiAlias(true);
         int defualt= 20;
         float width = kk.measureText(groupinfo.getPoisTitle());
         if (width > 38) {
-            defualt = 28;
+            defualt = 60;
         } else {
-            defualt=20;
+            defualt=80;
         }
         c.drawText(groupinfo.getPoisDecriation(),titleX+defualt+width,titleY,kk);
     }

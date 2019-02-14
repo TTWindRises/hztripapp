@@ -80,6 +80,7 @@ import com.baidu.myapp.activity.WNaviGuideActivity;
 import com.baidu.myapp.bean.food.FoodBean;
 import com.baidu.myapp.bean.food.FoodCategory;
 import com.baidu.myapp.bean.food.FoodStore;
+import com.baidu.myapp.bean.scenic.ScenicBean;
 import com.baidu.myapp.bean.scenic.SpotBean;
 import com.baidu.myapp.impl.foodimpl.FoodBeanIMPL;
 import com.baidu.myapp.impl.foodimpl.FoodCategoryIMPL;
@@ -104,10 +105,15 @@ import com.fengmap.android.map.event.OnFMMapInitListener;
 
 import org.litepal.crud.DataSupport;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
+import static com.baidu.location.g.j.D;
 
 public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickListener,
         OnGetRoutePlanResultListener, OnFMMapInitListener {
@@ -161,9 +167,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     MassTransitRouteResult nowResultmass = null;
 
     int nowSearchType = -1; // 当前进行的检索，供判断浏览节点时结果使用。
-
-    String startNodeStr = "姑婆山旅游区";
-    String endNodeStr = "十八水原生态公园";
     boolean hasShownDialogue = false;
     //蜂鸟地图
     private FMMap mMap;
@@ -212,7 +215,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setMapCustomFile(this, "custom_map_config.json");
         setContentView(R.layout.activity_main);
         mMapView = (MapView) findViewById(R.id.mmap);
         mBaiduMap = mMapView.getMap();
@@ -221,6 +224,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         this.mContext = this;
         //数据初始化
         initView();
+        initLocationOption();
         initLocation();
         initMaker();
         initSpotData();
@@ -285,8 +289,112 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
 //输出所有线路的节点按照添加顺序
 
+//        个性化地图使用
+
+        //获取地图控件引用
+
+        //开启个性化地图
+        mMapView.setMapCustomEnable(true);
+
+//        主界面
+        initScenic();
 
     }
+
+//    初始化定位配置
+    /**
+     * 初始化定位参数配置
+     */
+
+    private void initLocationOption() {
+//定位服务的客户端。宿主程序在客户端声明此类，并调用，目前只支持在主线程中启动
+        LocationClient locationClient = new LocationClient(getApplicationContext());
+//声明LocationClient类实例并配置定位参数
+        LocationClientOption locationOption = new LocationClientOption();
+        MyLocationListener myLocationListener = new MyLocationListener();
+//注册监听函数
+        locationClient.registerLocationListener(myLocationListener);
+//可选，默认高精度，设置定位模式，高精度，低功耗，仅设备
+//        locationOption.setLocationMode(LocationMode.Hight_Accuracy);
+//可选，默认gcj02，设置返回的定位结果坐标系，如果配合百度地图使用，建议设置为bd09ll;
+        locationOption.setCoorType("gcj02");
+//可选，默认0，即仅定位一次，设置发起连续定位请求的间隔需要大于等于1000ms才是有效的
+        locationOption.setScanSpan(1000);
+//可选，设置是否需要地址信息，默认不需要
+        locationOption.setIsNeedAddress(true);
+//可选，设置是否需要地址描述
+        locationOption.setIsNeedLocationDescribe(true);
+//可选，设置是否需要设备方向结果
+        locationOption.setNeedDeviceDirect(false);
+//可选，默认false，设置是否当gps有效时按照1S1次频率输出GPS结果
+        locationOption.setLocationNotify(true);
+//可选，默认true，定位SDK内部是一个SERVICE，并放到了独立进程，设置是否在stop的时候杀死这个进程，默认不杀死
+        locationOption.setIgnoreKillProcess(true);
+//可选，默认false，设置是否需要位置语义化结果，可以在BDLocation.getLocationDescribe里得到，结果类似于“在北京天安门附近”
+        locationOption.setIsNeedLocationDescribe(true);
+//可选，默认false，设置是否需要POI结果，可以在BDLocation.getPoiList里得到
+        locationOption.setIsNeedLocationPoiList(true);
+//可选，默认false，设置是否收集CRASH信息，默认收集
+        locationOption.SetIgnoreCacheException(false);
+//可选，默认false，设置是否开启Gps定位
+        locationOption.setOpenGps(true);
+//可选，默认false，设置定位时是否需要海拔信息，默认不需要，除基础定位版本都可用
+        locationOption.setIsNeedAltitude(false);
+//设置打开自动回调位置模式，该开关打开后，期间只要定位SDK检测到位置变化就会主动回调给开发者，该模式下开发者无需再关心定位间隔是多少，定位SDK本身发现位置变化就会及时回调给开发者
+        locationOption.setOpenAutoNotifyMode();
+//设置打开自动回调位置模式，该开关打开后，期间只要定位SDK检测到位置变化就会主动回调给开发者
+        locationOption.setOpenAutoNotifyMode(3000,1, LocationClientOption.LOC_SENSITIVITY_HIGHT);
+//开始定位
+        locationClient.start();
+    }
+//   个性化地图加载
+    /**
+     * 将个性化文件写入本地后调用MapView.setCustomMapStylePath加载
+     * @param context
+     * @param fileName assets目录下自定义样式文件的文件名
+     */
+    private void setMapCustomFile(Context context, String fileName) {
+        InputStream inputStream = null;
+        FileOutputStream fileOutputStream = null;
+        String moduleName = null;
+        try {
+            inputStream = context.getAssets().open("customConfigDir/" + fileName);
+            byte[] b = new byte[inputStream.available()];
+            inputStream.read(b);
+            moduleName = context.getFilesDir().getAbsolutePath();
+            File file = new File(moduleName + "/" + fileName);
+            if (file.exists()) file.delete();
+            file.createNewFile();
+            fileOutputStream = new FileOutputStream(file);
+            //将自定义样式文件写入本地
+            fileOutputStream.write(b);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+                if (fileOutputStream != null) {
+                    fileOutputStream.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+//设置自定义样式文件
+        mMapView.setCustomMapStylePath(moduleName + "/" + fileName);
+    }
+
+
+
+
+//   主界面物件初始化
+    private void initMainViewAndData() {
+
+    }
+
+
     //蜂鸟地图控件初始化
     private void InitFSView() {
         BtnIntoMap = (Button) findViewById(R.id.btn_intomap);
@@ -326,12 +434,90 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
      * 景区内景点数据初始化
      */
     public void initSpotData() {
-        for (int i = 0; i < spotBeans.size(); i++) {
-
-//            spotLatLngs.add(new LatLng(spotBeans.get(i).getLatitude(), spotBeans.get(i).getLongtitude()));
-        }
     }
-
+// 景区初始化
+    private void initScenic() {
+        List<ScenicBean> scenicBeenList = new ArrayList<>();
+        //
+        ScenicBean scenicBean1 = new ScenicBean();
+        scenicBean1.setScenicName("姑婆山森林酒店");
+        scenicBean1.setScenicDescribe("66666");
+        scenicBean1.setScenicId(6);
+        scenicBean1.setScenicImg("2222");
+        scenicBean1.setScenicPrice(100);
+        scenicBean1.setScenicOverlayImg(R.drawable.scenic_guposhan);
+        scenicBean1.setScenicLongtitude(111.573763);
+        scenicBean1.setScenicLatitude(24.598501);
+        //
+        ScenicBean scenicBean = new ScenicBean();
+        scenicBean.setScenicName("姑婆山");
+        scenicBean.setScenicDescribe("66666");
+        scenicBean.setScenicId(5);
+        scenicBean.setScenicImg("2222");
+        scenicBean.setScenicPrice(100);
+        scenicBean.setScenicOverlayImg(R.drawable.scenic_guposhan);
+        scenicBean.setScenicLongtitude(111.566872);
+        scenicBean.setScenicLatitude(24.641907);
+        //
+        ScenicBean scenicBean2 = new ScenicBean();
+        scenicBean2.setScenicName("十八水");
+        scenicBean2.setScenicDescribe("66666");
+        scenicBean2.setScenicId(4);
+        scenicBean2.setScenicImg("2222");
+        scenicBean2.setScenicPrice(37);
+        scenicBean2.setScenicOverlayImg(R.drawable.scenic_guposhan);
+        scenicBean2.setScenicLongtitude(111.559137);
+        scenicBean2.setScenicLatitude(24.582693);
+        //
+        ScenicBean scenicBean3 = new ScenicBean();
+        scenicBean3.setScenicName("玉石林");
+        scenicBean3.setScenicDescribe("66666");
+        scenicBean3.setScenicId(3);
+        scenicBean3.setScenicImg("2222");
+        scenicBean3.setScenicPrice(100);
+        scenicBean3.setScenicOverlayImg(R.drawable.scenic_guposhan);
+        scenicBean3.setScenicLongtitude(111.622378);
+        scenicBean3.setScenicLatitude(24.529364);
+        //
+        ScenicBean scenicBean4 = new ScenicBean();
+        scenicBean4.setScenicName("贺州学院");
+        scenicBean4.setScenicDescribe("66666");
+        scenicBean4.setScenicId(2);
+        scenicBean4.setScenicImg("2222");
+        scenicBean4.setScenicPrice(100);
+        scenicBean4.setScenicOverlayImg(R.drawable.scenic_guposhan);
+        scenicBean4.setScenicLongtitude(111.519692);
+        scenicBean4.setScenicLatitude(24.416049);
+        //
+        ScenicBean scenicBean5 = new ScenicBean();
+        scenicBean5.setScenicName("正菱大酒店");
+        scenicBean5.setScenicDescribe("66666");
+        scenicBean5.setScenicId(1);
+        scenicBean5.setScenicImg("2222");
+        scenicBean5.setScenicPrice(100);
+        scenicBean5.setScenicOverlayImg(R.drawable.scenic_guposhan);
+        scenicBean5.setScenicLongtitude(111.52293);
+        scenicBean5.setScenicLatitude(24.419844);
+        //
+        ScenicBean scenicBean6 = new ScenicBean();
+        scenicBean6.setScenicName("鑫海国际假日酒店");
+        scenicBean6.setScenicDescribe("66666");
+        scenicBean6.setScenicId(0);
+        scenicBean6.setScenicImg("2222");
+        scenicBean6.setScenicPrice(100);
+        scenicBean6.setScenicOverlayImg(R.drawable.scenic_guposhan);
+        scenicBean6.setScenicLongtitude(111.540754);
+        scenicBean6.setScenicLatitude(24.423434);
+        scenicBeenList.add(scenicBean);
+        scenicBeenList.add(scenicBean1);
+        scenicBeenList.add(scenicBean2);
+        scenicBeenList.add(scenicBean3);
+        scenicBeenList.add(scenicBean4);
+        scenicBeenList.add(scenicBean5);
+        scenicBeenList.add(scenicBean6);
+        scenicBean.saveScenicBean(scenicBeenList);
+        overlayUtil.addScenicAllOverly(mBaiduMap,scenicBeenList);
+    }
 
     public void nodeClick(View v) {
         //某条线路上的所有节点
@@ -793,7 +979,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     public void addSpotOverly() {
 
         mBaiduMap.clear();
-        Guideutil guideutil = new Guideutil();
 
 
         LatLng latLng = null;
@@ -1060,54 +1245,11 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
     }
 
-    private void addOverlays() {
-
-
-
-
-
-
-
-
-
-
-       /* mBaiduMap.clear();
-        LatLng latLng = null;
-
-        Marker marker = null;
-
-        OverlayOptions options;
-        List<ScenicBean> scenicBeans = DataSupport.findAll(ScenicBean.class);
-
-
-        for (ScenicBean ScenicBean : scenicBeans) {
-            //经纬度
-           *//* latLng = new LatLng(ScenicBean.getLatitude(), ScenicBean.getLongtitude());*//*
-            //图标
-            options = new MarkerOptions().position(latLng).icon(mMarker).zIndex(5);
-            marker = (Marker) mBaiduMap.addOverlay(options);
-            Bundle arg0 = new Bundle();
-//            arg0.putSerializable("ScenicBean", ScenicBean);
-            marker.setExtraInfo(arg0);
-        }
-
-*/
-        //扩展按钮
-        final TextView textView = (TextView) findViewById(R.id.sp_more);
-        textView.setVisibility(View.VISIBLE);
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MapStatusSize(11.0f);
-                textView.setVisibility(View.GONE);
-            }
-        });
-
-    }
 
     /**
      * 覆盖物点击事件处理
      */
+    //TODO 点击闪退
     private void CoverClick() {
         mBaiduMap.setOnMarkerClickListener(new BaiduMap.OnMarkerClickListener() {
             @Override
@@ -1194,17 +1336,15 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
             }
         });
     }
-
+//    点击景点后界面拉倒中心位置
     public void spotClick(View view) {
-
-        addOverlays();
         MapStatusSize(13.0f);
         LatLng spcenter = new LatLng(24.558307, 111.558717);//城市景区中心点111.558717,24.558307
         MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(spcenter);//
         mBaiduMap.setMapStatus(msu);
 //        Toast.makeText(this, "a", Toast.LENGTH_SHORT).show();
     }
-
+//   美食点击后
     public void cateClick(View view) {
 
         MapStatusSize(18.0f);
@@ -1359,12 +1499,15 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     @Override
     protected void onResume() {
         super.onResume();
+        Debbuger.LogE("zzzonResume");
         mMapView.onResume();
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+        Debbuger.LogE("zzzonStart");
         mBaiduMap.setMyLocationEnabled(true);
         if (!mLocationClient.isStarted()) {
             mLocationClient.start();
@@ -1375,6 +1518,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     @Override
     protected void onStop() {
         super.onStop();
+        Debbuger.LogE("zzzStop");
         mBaiduMap.setMyLocationEnabled(false);
         mLocationClient.stop();
         mMyOrientationListener.stop();
@@ -1382,14 +1526,17 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
     @Override
     protected void onPause() {
+
         super.onPause();
+        Debbuger.LogE("zzzonPause");
         mMapView.onPause();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mMapView.onDestroy();
+        Debbuger.LogE("zzzDestroy");
+       // mMapView.onDestroy();
         if (mSearch != null) {
             mSearch.destroy();
         }
@@ -1558,9 +1705,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
         @Override
         public void onReceiveLocation(BDLocation location) {
-        /*   myLocation = new LatLng(location.getLatitude(),location.getLongitude());*/
-
-
+           myLocation = new LatLng(location.getLatitude(),location.getLongitude());
             MyLocationData data = new MyLocationData.Builder()
                     .direction(mCurrentX)//builder模式初始化数据
                     .accuracy(location.getRadius())//
@@ -1583,8 +1728,22 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                 MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(latLng);
                 mBaiduMap.animateMapStatus(msu);
                 isFirstIn = false;
-                Toast.makeText(mContext, "贺州学院西校区", Toast.LENGTH_LONG).show();
+
+                Toast.makeText(mContext, "您目前正在贺州市", Toast.LENGTH_LONG).show();
             }
+
+
+
+          /*  //mapView 销毁后不在处理新接收的位置
+            if (location == null || mMapView == null){
+                return;
+            }
+            MyLocationData locData = new MyLocationData.Builder()
+                    .accuracy(location.getRadius())
+                    // 此处设置开发者获取到的方向信息，顺时针0-360
+                    .direction(location.getDirection()).latitude(location.getLatitude())
+                    .longitude(location.getLongitude()).build();
+            mBaiduMap.setMyLocationData(locData);*/
         }
     }
 
@@ -1645,4 +1804,9 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         }
 
     }
+
+
+
+
+
 }
