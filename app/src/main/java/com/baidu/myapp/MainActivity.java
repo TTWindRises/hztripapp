@@ -439,57 +439,57 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     private void initScenic() {
         List<ScenicBean> scenicBeenList = new ArrayList<>();
         //
-        ScenicBean scenicBean1 = new ScenicBean();
+      /*  ScenicBean scenicBean1 = new ScenicBean();
         scenicBean1.setScenicName("姑婆山森林酒店");
         scenicBean1.setScenicDescribe("66666");
-        scenicBean1.setScenicId(6);
+        scenicBean1.setScenicId(5);
         scenicBean1.setScenicImg("2222");
         scenicBean1.setScenicPrice(100);
         scenicBean1.setScenicOverlayImg(R.drawable.scenic_guposhan);
         scenicBean1.setScenicLongtitude(111.573763);
-        scenicBean1.setScenicLatitude(24.598501);
+        scenicBean1.setScenicLatitude(24.598501);*/
         //
         ScenicBean scenicBean = new ScenicBean();
-        scenicBean.setScenicName("姑婆山");
+        scenicBean.setScenicName("姑婆山(推荐)");
         scenicBean.setScenicDescribe("66666");
-        scenicBean.setScenicId(5);
+        scenicBean.setScenicId(4);
         scenicBean.setScenicImg("2222");
         scenicBean.setScenicPrice(100);
-        scenicBean.setScenicOverlayImg(R.drawable.scenic_guposhan);
+        scenicBean.setScenicOverlayImg(R.drawable.scenic_guposhanicon2);
         scenicBean.setScenicLongtitude(111.566872);
         scenicBean.setScenicLatitude(24.641907);
         //
         ScenicBean scenicBean2 = new ScenicBean();
         scenicBean2.setScenicName("十八水");
         scenicBean2.setScenicDescribe("66666");
-        scenicBean2.setScenicId(4);
+        scenicBean2.setScenicId(3);
         scenicBean2.setScenicImg("2222");
         scenicBean2.setScenicPrice(37);
-        scenicBean2.setScenicOverlayImg(R.drawable.scenic_guposhan);
-        scenicBean2.setScenicLongtitude(111.559137);
+        scenicBean2.setScenicOverlayImg(R.drawable.scenic_shibashui);
+        scenicBean2.setScenicLongtitude(111.539137);
         scenicBean2.setScenicLatitude(24.582693);
         //
         ScenicBean scenicBean3 = new ScenicBean();
         scenicBean3.setScenicName("玉石林");
         scenicBean3.setScenicDescribe("66666");
-        scenicBean3.setScenicId(3);
+        scenicBean3.setScenicId(2);
         scenicBean3.setScenicImg("2222");
         scenicBean3.setScenicPrice(100);
-        scenicBean3.setScenicOverlayImg(R.drawable.scenic_guposhan);
+        scenicBean3.setScenicOverlayImg(R.drawable.scenic_yushilinicon);
         scenicBean3.setScenicLongtitude(111.622378);
         scenicBean3.setScenicLatitude(24.529364);
         //
         ScenicBean scenicBean4 = new ScenicBean();
         scenicBean4.setScenicName("贺州学院");
         scenicBean4.setScenicDescribe("66666");
-        scenicBean4.setScenicId(2);
+        scenicBean4.setScenicId(1);
         scenicBean4.setScenicImg("2222");
         scenicBean4.setScenicPrice(100);
-        scenicBean4.setScenicOverlayImg(R.drawable.scenic_guposhan);
+        scenicBean4.setScenicOverlayImg(R.drawable.scenic_hezhouxueyuan);
         scenicBean4.setScenicLongtitude(111.519692);
         scenicBean4.setScenicLatitude(24.416049);
         //
-        ScenicBean scenicBean5 = new ScenicBean();
+ /*       ScenicBean scenicBean5 = new ScenicBean();
         scenicBean5.setScenicName("正菱大酒店");
         scenicBean5.setScenicDescribe("66666");
         scenicBean5.setScenicId(1);
@@ -497,23 +497,23 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         scenicBean5.setScenicPrice(100);
         scenicBean5.setScenicOverlayImg(R.drawable.scenic_guposhan);
         scenicBean5.setScenicLongtitude(111.52293);
-        scenicBean5.setScenicLatitude(24.419844);
+        scenicBean5.setScenicLatitude(24.419844);*/
         //
         ScenicBean scenicBean6 = new ScenicBean();
-        scenicBean6.setScenicName("鑫海国际假日酒店");
+        scenicBean6.setScenicName("黄姚古镇(热门)");
         scenicBean6.setScenicDescribe("66666");
         scenicBean6.setScenicId(0);
         scenicBean6.setScenicImg("2222");
-        scenicBean6.setScenicPrice(100);
-        scenicBean6.setScenicOverlayImg(R.drawable.scenic_guposhan);
-        scenicBean6.setScenicLongtitude(111.540754);
-        scenicBean6.setScenicLatitude(24.423434);
+        scenicBean6.setScenicPrice(80);
+        scenicBean6.setScenicOverlayImg(R.drawable.scenic_huangyaoicon);
+        scenicBean6.setScenicLongtitude(111.223985);
+        scenicBean6.setScenicLatitude(24.260686);
         scenicBeenList.add(scenicBean);
-        scenicBeenList.add(scenicBean1);
+//        scenicBeenList.add(scenicBean1);
         scenicBeenList.add(scenicBean2);
         scenicBeenList.add(scenicBean3);
         scenicBeenList.add(scenicBean4);
-        scenicBeenList.add(scenicBean5);
+//        scenicBeenList.add(scenicBean5);
         scenicBeenList.add(scenicBean6);
         scenicBean.saveScenicBean(scenicBeenList);
         overlayUtil.addScenicAllOverly(mBaiduMap,scenicBeenList);
@@ -1258,16 +1258,22 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                 Debbuger.LogE("点击了Marker");
                 Bundle extraInfo = marker.getExtraInfo();
                 final FoodStore info = (FoodStore) extraInfo.getSerializable("FoodStore");
+                final ScenicBean scenicinfo = (ScenicBean) extraInfo.getSerializable("ScenicBean");
                 if ((FoodStore) extraInfo.getSerializable("FoodStore") != null) {
                     final FoodStore foodStoreBean = (FoodStore) extraInfo.getSerializable("FoodStore");
+                    Intent intent = new Intent(MainActivity.this, FoodStoreActivity.class);
+                    intent.putExtra("FoodStore", info);
+                    startActivity(intent);
                     Toast.makeText(MainActivity.this, foodStoreBean.getStoreName(), Toast.LENGTH_SHORT).show();
+                }else if (scenicinfo != null) {
+                    Toast.makeText(mContext, scenicinfo.getScenicName(), Toast.LENGTH_SHORT).show();
                 } else {
-                    Debbuger.LogE("获取商店信息失败");
-//                  Toast.makeText(MainActivity.this, spotBean.getSpotName() + "", Toast.LENGTH_SHORT).show();
+                    Debbuger.LogE("获取信息失败");
                 }
-                Intent intent = new Intent(MainActivity.this, FoodStoreActivity.class);
-                intent.putExtra("FoodStore", info);
-                startActivity(intent);
+
+
+
+
 
           /*     final FoodStore foodStore = (FoodStore) extraInfo.getSerializable("foodstore");
                 Toast.makeText(MainActivity.this, foodStore.getStoreName(), Toast.LENGTH_SHORT).show();
@@ -1286,8 +1292,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                         name.setText(info.getSpname());
                         zan.setText(info.getZan() + "");
                         mMarkerLy.setVisibility(View.VISIBLE);*/
-
-
                 return true;
             }
         });
@@ -1691,16 +1695,15 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
 
 
-    /*    *
-     *定位到我的位置*/
-    private void centerMylocation() {
-        LatLng latLng = new LatLng(mLaditude, mLongditude);
 
+//     定位到我的位置 高铁站
+    private void centerMylocation() {
+        LatLng latLng = new LatLng(24.461298, 111.542766);
         MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(latLng);
         mBaiduMap.animateMapStatus(msu);
     }
 
-
+    //位置监听包括第一次初始化的位置 TODO 位置监听
     private class MyLocationListener implements BDLocationListener {
 
         @Override
@@ -1723,10 +1726,11 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                     true, mIconLocation);
             mBaiduMap.setMyLocationConfiguration(config);
             if (isFirstIn) {
-
-                LatLng latLng = new LatLng(mLaditude, mLongditude);
+//111.547078,24.461035
+                LatLng latLng = new LatLng(24.420853, 111.422715);
                 MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(latLng);
                 mBaiduMap.animateMapStatus(msu);
+                MapStatusSize(11.7f);
                 isFirstIn = false;
 
                 Toast.makeText(mContext, "您目前正在贺州市", Toast.LENGTH_LONG).show();

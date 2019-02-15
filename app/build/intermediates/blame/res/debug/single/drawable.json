@@ -12,16 +12,20 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\button_down.png"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scenic_area1.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\scenic_area1.png"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\nav_settings_middle_selector.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\nav_settings_middle_selector.xml"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable\\abc_btn_borderless_material.xml"
-    },
-    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\food_horizontal_item_doujiang_img.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\food_horizontal_item_doujiang_img.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\goods_category_list_bg_select.xml",
@@ -44,12 +48,12 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\cate.png"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\food_store_bottom_icon_pick3.png",
-        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\food_store_bottom_icon_pick3.png"
-    },
-    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_movie_detail_text.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\selector_movie_detail_text.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\food_store_bottom_icon_pick3.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\food_store_bottom_icon_pick3.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
@@ -76,16 +80,16 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\food_store_backgroud_defualt_2.png"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\food_animate_ball2.png",
-        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\food_animate_ball2.png"
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\gl_01.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\gl_01.png"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable\\abc_edit_text_material.xml"
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\food_animate_ball2.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\food_animate_ball2.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
@@ -114,6 +118,10 @@
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ripple_bg.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\ripple_bg.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scenic_huangyaoicon.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\scenic_huangyaoicon.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\food_store_item_sub.png",
@@ -150,6 +158,10 @@
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\food_horizontal_item_mianbao.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\food_horizontal_item_mianbao.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scenic_guposhanicon2.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\scenic_guposhanicon2.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\store_head_img.png",
@@ -190,6 +202,10 @@
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scenic_eat.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\scenic_eat.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
@@ -292,12 +308,20 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\icon_markj.png"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scenic_xueyueicon.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\scenic_xueyueicon.png"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ratingbar_style.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\ratingbar_style.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scenic_yushilinicon.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\scenic_yushilinicon.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
@@ -362,6 +386,10 @@
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_bottom_navigation_item_background.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\1d4f5febe29b3c86d03906875e0d86fbdc91356d\\output\\res\\drawable\\design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scenic_hezhouxueyuan.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\scenic_hezhouxueyuan.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
@@ -492,12 +520,12 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\food_horizontal_icecreen2_img.png"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\food_horizontal_item_chaofen.png",
-        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\food_horizontal_item_chaofen.png"
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scenic_shibashui.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\scenic_shibashui.png"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scenic_guposhan.png",
-        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\scenic_guposhan.png"
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\food_horizontal_item_chaofen.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\food_horizontal_item_chaofen.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\food_store_bottom_icon_default3.png",
