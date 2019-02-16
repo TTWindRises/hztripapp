@@ -114,6 +114,7 @@ import java.util.List;
 
 import static android.content.ContentValues.TAG;
 import static com.baidu.location.g.j.D;
+import static com.baidu.location.g.j.h;
 
 public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickListener,
         OnGetRoutePlanResultListener, OnFMMapInitListener {
@@ -209,7 +210,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
      */
     List<LatLng> spotLatLngs = new ArrayList<LatLng>();
     //工具类
-    OverlayUtil overlayUtil = new OverlayUtil();
+    OverlayUtil overlayUtil;
 
 
     @Override
@@ -219,6 +220,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         setContentView(R.layout.activity_main);
         mMapView = (MapView) findViewById(R.id.mmap);
         mBaiduMap = mMapView.getMap();
+        overlayUtil = new OverlayUtil(mBaiduMap);
         //TEST
         requestPermission();
         this.mContext = this;
@@ -302,6 +304,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     }
 
 //    初始化定位配置
+
     /**
      * 初始化定位参数配置
      */
@@ -343,13 +346,15 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 //设置打开自动回调位置模式，该开关打开后，期间只要定位SDK检测到位置变化就会主动回调给开发者，该模式下开发者无需再关心定位间隔是多少，定位SDK本身发现位置变化就会及时回调给开发者
         locationOption.setOpenAutoNotifyMode();
 //设置打开自动回调位置模式，该开关打开后，期间只要定位SDK检测到位置变化就会主动回调给开发者
-        locationOption.setOpenAutoNotifyMode(3000,1, LocationClientOption.LOC_SENSITIVITY_HIGHT);
+        locationOption.setOpenAutoNotifyMode(3000, 1, LocationClientOption.LOC_SENSITIVITY_HIGHT);
 //开始定位
         locationClient.start();
     }
 //   个性化地图加载
+
     /**
      * 将个性化文件写入本地后调用MapView.setCustomMapStylePath加载
+     *
      * @param context
      * @param fileName assets目录下自定义样式文件的文件名
      */
@@ -387,9 +392,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     }
 
 
-
-
-//   主界面物件初始化
+    //   主界面物件初始化
     private void initMainViewAndData() {
 
     }
@@ -435,7 +438,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
      */
     public void initSpotData() {
     }
-// 景区初始化
+
+    // 景区初始化
     private void initScenic() {
         List<ScenicBean> scenicBeenList = new ArrayList<>();
         //
@@ -484,7 +488,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         scenicBean4.setScenicDescribe("66666");
         scenicBean4.setScenicId(1);
         scenicBean4.setScenicImg("2222");
-        scenicBean4.setScenicPrice(100);
+        scenicBean4.setScenicPrice(0);
         scenicBean4.setScenicOverlayImg(R.drawable.scenic_hezhouxueyuan);
         scenicBean4.setScenicLongtitude(111.519692);
         scenicBean4.setScenicLatitude(24.416049);
@@ -506,8 +510,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         scenicBean6.setScenicImg("2222");
         scenicBean6.setScenicPrice(80);
         scenicBean6.setScenicOverlayImg(R.drawable.scenic_huangyaoicon);
-        scenicBean6.setScenicLongtitude(111.223985);
-        scenicBean6.setScenicLatitude(24.260686);
+        scenicBean6.setScenicLongtitude(111.230985);
+        scenicBean6.setScenicLatitude(24.262686);
         scenicBeenList.add(scenicBean);
 //        scenicBeenList.add(scenicBean1);
         scenicBeenList.add(scenicBean2);
@@ -516,7 +520,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 //        scenicBeenList.add(scenicBean5);
         scenicBeenList.add(scenicBean6);
         scenicBean.saveScenicBean(scenicBeenList);
-        overlayUtil.addScenicAllOverly(mBaiduMap,scenicBeenList);
+        overlayUtil.addScenicAllOverly(scenicBeenList);
     }
 
     public void nodeClick(View v) {
@@ -1059,7 +1063,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodStores.add(foodStore);
         foodStores.add(foodStore2);
         FoodStoreIMPL.Get().addFoodStore(foodStores);
-        overlayUtil.addFoodStoreAllOverly(mBaiduMap, foodStores);
+        overlayUtil.addFoodStoreAllOverly(foodStores);
         List<FoodBean> foodBeanList = new ArrayList<>();
         FoodBean foodBean = new FoodBean();
         foodBean.setFoodName("单人汉堡套餐");
@@ -1195,7 +1199,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         foodBean13.setStore_id(7 + "");
 
 
-
         foodBeanList.add(foodBean);
         foodBeanList.add(foodBean2);
         foodBeanList.add(foodBean3);
@@ -1265,7 +1268,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                     intent.putExtra("FoodStore", info);
                     startActivity(intent);
                     Toast.makeText(MainActivity.this, foodStoreBean.getStoreName(), Toast.LENGTH_SHORT).show();
-                }else if (scenicinfo != null) {
+                } else if (scenicinfo != null) {
                     Toast.makeText(mContext, scenicinfo.getScenicName(), Toast.LENGTH_SHORT).show();
                 } else {
                     Debbuger.LogE("获取信息失败");
@@ -1340,7 +1343,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
             }
         });
     }
-//    点击景点后界面拉倒中心位置
+
+    //    点击景点后界面拉倒中心位置
     public void spotClick(View view) {
         MapStatusSize(13.0f);
         LatLng spcenter = new LatLng(24.558307, 111.558717);//城市景区中心点111.558717,24.558307
@@ -1348,7 +1352,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         mBaiduMap.setMapStatus(msu);
 //        Toast.makeText(this, "a", Toast.LENGTH_SHORT).show();
     }
-//   美食点击后
+
+    //   美食点击后
     public void cateClick(View view) {
 
         MapStatusSize(18.0f);
@@ -1361,17 +1366,57 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     }
 
     public void hotClick(View view) {
-        h = 1;
+        if (h != 0) {
+            return;
+        }
+        h++;
+
         LatLng lng = new LatLng(24.582693, 111.559137);//111.559137,24.582693 十八水
-        PlanNode myPlanNode = PlanNode.withLocation(myLocation);
+        LatLng hezhouxueyuan = new LatLng(24.416049, 111.519692);//111.559137,24.582693 贺州学院
+        LatLng busStation = new LatLng(24.420826, 111.585593);//111.559137,24.582693 八步中山站
+        LatLng yushilin = new LatLng(24.529364, 111.622378);//111.559137,24.582693 八步中山站
+        LatLng guposhans = new LatLng(24.641907, 111.566872);//111.559137,24.582693 八步中山站
+        PlanNode myPlanNode = PlanNode.withLocation(hezhouxueyuan);
+        PlanNode bus = PlanNode.withLocation(busStation);
         PlanNode shibashui = PlanNode.withLocation(lng);
-        PlanNode guposhan = PlanNode.withLocation(new LatLng(24.641907, 111.566872));//111.566872,24.641907 姑婆山
-        mSearch.walkingSearch(new WalkingRoutePlanOption().from(myPlanNode).to(shibashui));
-        mSearch.walkingSearch(new WalkingRoutePlanOption().from(shibashui).to(guposhan));
-        MapStatusSize(12.0f);//111.558199,24.51445
-        LatLng spcenter = new LatLng(24.51445, 111.558199);//城市景区中心点111.558717,24.558307
+        PlanNode yushi = PlanNode.withLocation(yushilin);
+        PlanNode guposhan = PlanNode.withLocation(guposhans);//111.566872,24.641907 姑婆山
+        mSearch.walkingSearch(new WalkingRoutePlanOption().from(myPlanNode).to(bus));
+        mSearch.walkingSearch(new WalkingRoutePlanOption().from(bus).to(guposhan));
+        mSearch.walkingSearch(new WalkingRoutePlanOption().from(guposhan).to(shibashui));
+        mSearch.walkingSearch(new WalkingRoutePlanOption().from(shibashui).to(yushi));
+        overlayUtil.addOverlyByLatLng(busStation, R.drawable.scenic_bus2, "八步三中站");
+        overlayUtil.addTextByLatLng(SubLatLng(busStation), "坐22路通往姑婆山");
+        overlayUtil.addTextByLatLng(UpLatLng(UpLatLng(hezhouxueyuan)), "首日9点出发");
+        overlayUtil.addTextByLatLng(SubLatLng(UpLatLng(UpLatLng(hezhouxueyuan))), "学院东门到三中站（约23分钟）");
+        overlayUtil.addTextByLatLng(SubLatLng(SubLatLng(UpLatLng(UpLatLng(hezhouxueyuan)))), "坐6路公交:￥2/人");
+        overlayUtil.addTextByLatLng(SubLatLng(SubLatLng(busStation)), "费用:￥20/人");
+        overlayUtil.addTextByLatLng(SubLatLng(SubLatLng(SubLatLng(busStation))), "时长:约2小时");
+
+
+
+        overlayUtil.addTextByLatLng(LeftLatLng(lng),"次日(10点）到达十八水");
+        overlayUtil.addTextByLatLng(SubLatLng(LeftLatLng(lng)),"10点-12点智能导游");
+        overlayUtil.addTextByLatLng(SubLatLng(SubLatLng(LeftLatLng(lng))),"12点-13点就餐");
+        overlayUtil.addTextByLatLng(SubLatLng(SubLatLng(SubLatLng(LeftLatLng(lng)))),"自助餐:￥50/人");
+        overlayUtil.addTextByLatLng(SubLatLng(SubLatLng(SubLatLng(SubLatLng(LeftLatLng(lng))))),"13点-15点自由活动");
+
+
+        overlayUtil.addTextByLatLng(RightLatLng(guposhans),"首日(12点）到达姑婆山");
+        overlayUtil.addTextByLatLng(SubLatLng(RightLatLng(guposhans)),"12点-14点山脚智能导游");
+        overlayUtil.addTextByLatLng(SubLatLng(SubLatLng(RightLatLng(guposhans))),"14点-19点登山搭帐篷");
+        overlayUtil.addTextByLatLng(SubLatLng(SubLatLng(SubLatLng(RightLatLng(guposhans)))),"烧烤:￥58/人");
+        overlayUtil.addTextByLatLng(SubLatLng(SubLatLng(SubLatLng(SubLatLng(RightLatLng(guposhans))))),"观看日落日出");
+
+        overlayUtil.addTextByLatLng(SubLatLng(yushilin),"次日(16点)到达玉石林");
+        overlayUtil.addTextByLatLng(SubLatLng(SubLatLng(yushilin)),"观看玉石");
+        overlayUtil.addTextByLatLng(SubLatLng(SubLatLng(SubLatLng(yushilin))),"旅行结束返程");
+        LatLng spcenter = new LatLng(24.528307, 111.558717);///城市景区中心点111.558717,24.558307
         MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(spcenter);//
         mBaiduMap.setMapStatus(msu);
+        MapStatusSize(12.8f);//111.558199,24.51445
+
+
 //        Toast.makeText(mContext, "d", Toast.LENGTH_SHORT).show();
     }
 
@@ -1384,9 +1429,9 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         mSearch.walkingSearch(new WalkingRoutePlanOption().from(myPlanNode).to(shibashui));
         mSearch.walkingSearch(new WalkingRoutePlanOption().from(shibashui).to(yushilin));
         MapStatusSize(12.0f);//111.558199,24.51445
-        LatLng spcenter = new LatLng(24.51445, 111.558199);//城市景区中心点111.558717,24.558307
-        MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(spcenter);//
-        mBaiduMap.setMapStatus(msu);
+//        LatLng spcenter = new LatLng(24.546137, 111.576111);//城市景区中心点111.558717,24.558307
+//        MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(spcenter);//
+//        mBaiduMap.setMapStatus(msu);
 
         Toast.makeText(mContext, "e", Toast.LENGTH_SHORT).show();
     }
@@ -1540,7 +1585,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     protected void onDestroy() {
         super.onDestroy();
         Debbuger.LogE("zzzDestroy");
-       // mMapView.onDestroy();
+        // mMapView.onDestroy();
         if (mSearch != null) {
             mSearch.destroy();
         }
@@ -1693,9 +1738,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
      */
 
 
-
-
-
 //     定位到我的位置 高铁站
     private void centerMylocation() {
         LatLng latLng = new LatLng(24.461298, 111.542766);
@@ -1708,7 +1750,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
         @Override
         public void onReceiveLocation(BDLocation location) {
-           myLocation = new LatLng(location.getLatitude(),location.getLongitude());
+            myLocation = new LatLng(location.getLatitude(), location.getLongitude());
             MyLocationData data = new MyLocationData.Builder()
                     .direction(mCurrentX)//builder模式初始化数据
                     .accuracy(location.getRadius())//
@@ -1726,13 +1768,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                     true, mIconLocation);
             mBaiduMap.setMyLocationConfiguration(config);
             if (isFirstIn) {
-//111.547078,24.461035
-                LatLng latLng = new LatLng(24.420853, 111.422715);
-                MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(latLng);
-                mBaiduMap.animateMapStatus(msu);
-                MapStatusSize(11.7f);
+                GoBackCenterScenic();
                 isFirstIn = false;
-
                 Toast.makeText(mContext, "您目前正在贺州市", Toast.LENGTH_LONG).show();
             }
 
@@ -1810,7 +1847,39 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     }
 
 
+    //返回景区中心点
+    public void GoBackCenterScenic() {
+        LatLng latLng = new LatLng(24.420853, 111.422715);
+        MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(latLng);
+        mBaiduMap.animateMapStatus(msu);
+        MapStatusSize(11.7f);
+    }
 
+    //控制文本间距,应该根据地图的缩放比例的监听来控制这个，牵连太多，暂时还没时间弄
+    public LatLng UpLatLng(LatLng latLng) {
+        double latitude = latLng.latitude + 0.02;
+        double longtitude = latLng.longitude;
+        LatLng latLng1 = new LatLng(latitude, longtitude);
+        return latLng1;
+    }
 
+    public LatLng SubLatLng(LatLng latLng) {
+        double latitude = latLng.latitude - 0.007;
+        double longtitude = latLng.longitude;
+        LatLng latLng1 = new LatLng(latitude, longtitude);
+        return latLng1;
+    }
 
+    public LatLng LeftLatLng(LatLng latLng) {
+        double latitude = latLng.latitude + 0.021;
+        double longtitude = latLng.longitude - 0.06;
+        LatLng latLng1 = new LatLng(latitude, longtitude);
+        return latLng1;
+    }
+    public LatLng RightLatLng(LatLng latLng) {
+        double latitude = latLng.latitude + 0.021;
+        double longtitude = latLng.longitude + 0.05;
+        LatLng latLng1 = new LatLng(latitude, longtitude);
+        return latLng1;
+    }
 }

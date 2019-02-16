@@ -53,7 +53,7 @@ public class TransitRouteOverlay extends OverlayManager {
                 if (step.getEntrance() != null) {
                     overlayOptionses.add((new MarkerOptions())
                             .position(step.getEntrance().getLocation())
-                                    .anchor(0.5f, 0.5f).zIndex(10).extraInfo(b)
+                                    .anchor(0.1f, 0.1f).zIndex(10).extraInfo(b)
                                             .icon(getIconForStep(step)));
                 }
                 // 最后路段绘制出口点
@@ -100,7 +100,7 @@ public class TransitRouteOverlay extends OverlayManager {
                     color = getLineColor() != 0 ? getLineColor() : Color.argb(178, 88, 208, 0);
                 }
                 overlayOptionses.add(new PolylineOptions()
-                        .points(step.getWayPoints()).width(10).color(color)
+                        .points(step.getWayPoints()).width(5).color(color)
                         .zIndex(0));
             }
         }
