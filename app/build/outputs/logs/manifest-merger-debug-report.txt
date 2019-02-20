@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:2:1-77:12
+ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:2:1-78:12
 	package
 		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:2:11-36
 	android:versionName
@@ -62,7 +62,7 @@ ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:26:5-78
 	android:required
 		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:26:52-75
 application
-ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:28:5-74:19
+ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:28:5-75:19
 MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\1d4f5febe29b3c86d03906875e0d86fbdc91356d\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:transition:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\37a70b6fd63c7b456a495cf4d1410f62c68ef2c0\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.android\build-cache\c570018339269e81102dcab8e28de6b432b53782\output\AndroidManifest.xml:9:5-20
@@ -151,22 +151,26 @@ activity#com.baidu.myapp.search.RoutePlanDemo
 ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:66:9-57
 	android:name
 		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:66:19-55
+activity#com.baidu.myapp.activity.scenic.ScenicActivity
+ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:67:9-67
+	android:name
+		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:67:19-65
 activity#com.baidu.myapp.activity.FoodStoreActivity
-ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:67:9-70:15
+ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:68:9-71:15
 	android:screenOrientation
-		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:69:13-56
+		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:70:13-56
 	android:configChanges
-		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:68:13-170
+		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:69:13-170
 	android:name
-		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:67:19-76
+		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:68:19-76
 service#com.baidu.location.f
-ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:71:9-72:19
+ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:72:9-73:19
 	android:enabled
-		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:71:54-76
+		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:72:54-76
 	android:process
-		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:71:77-102
+		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:72:77-102
 	android:name
-		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:71:18-53
+		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:72:18-53
 uses-sdk
 INJECTED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\1d4f5febe29b3c86d03906875e0d86fbdc91356d\output\AndroidManifest.xml:21:5-23:62

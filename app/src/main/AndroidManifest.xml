@@ -64,6 +64,7 @@
         <activity android:name=".search.BusLineSearchDemo"></activity>
         <activity android:name=".activity.FNmapActivity" />
         <activity android:name=".search.RoutePlanDemo"/>
+        <activity android:name=".activity.scenic.ScenicActivity"/>
         <activity android:name="com.baidu.myapp.activity.FoodStoreActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
             android:screenOrientation ="sensorPortrait"

@@ -73,6 +73,7 @@
         <activity android:name="com.baidu.myapp.search.BusLineSearchDemo" />
         <activity android:name="com.baidu.myapp.activity.FNmapActivity" />
         <activity android:name="com.baidu.myapp.search.RoutePlanDemo" />
+        <activity android:name="com.baidu.myapp.activity.scenic.ScenicActivity" />
         <activity
             android:name="com.baidu.myapp.activity.FoodStoreActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"

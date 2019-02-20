@@ -1,27 +1,16 @@
 package com.baidu.myapp.fragment.food;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.graphics.PointF;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SimpleItemAnimator;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AccelerateInterpolator;
 import android.widget.AbsListView;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.baidu.myapp.R;
 import com.baidu.myapp.activity.FoodStoreActivity;
@@ -30,14 +19,12 @@ import com.baidu.myapp.adapter.food.FoodLeftRecyclerAdapter;
 import com.baidu.myapp.adapter.food.FoodRightRecyclerAdapter;
 import com.baidu.myapp.bean.food.FoodBean;
 import com.baidu.myapp.bean.food.FoodCategory;
-import com.baidu.myapp.bean.food.FoodStore;
-import com.baidu.myapp.overlay.util.BezierTypeEvaluator;
+import com.baidu.myapp.fragment.BaseFragment;
 import com.baidu.myapp.sticky.itemDecoration.GroupInfo;
 import com.baidu.myapp.sticky.itemDecoration.StickySectionDecoration;
 import com.baidu.myapp.util.Debbuger;
 import com.baidu.myapp.util.foodutil.SpaceItemDecoration;
 import com.baidu.myapp.view.HorizontalRecycleView;
-import com.baidu.myapp.view.foodview.AddWidget;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -45,13 +32,6 @@ import org.litepal.crud.DataSupport;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.baidu.location.g.a.i;
-import static com.baidu.location.g.j.A;
-import static com.baidu.location.g.j.D;
-import static com.baidu.location.g.j.I;
-import static com.baidu.location.g.j.j;
-import static com.baidu.location.g.j.n;
 
 /**
  * Created by Administrator on 2018/12/15.

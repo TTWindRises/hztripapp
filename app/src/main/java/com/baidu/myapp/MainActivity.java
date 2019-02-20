@@ -56,7 +56,6 @@ import com.baidu.mapapi.search.route.DrivingRouteLine;
 import com.baidu.mapapi.search.route.DrivingRouteResult;
 import com.baidu.mapapi.search.route.IndoorRouteResult;
 import com.baidu.mapapi.search.route.MassTransitRouteLine;
-import com.baidu.mapapi.search.route.MassTransitRoutePlanOption;
 import com.baidu.mapapi.search.route.MassTransitRouteResult;
 import com.baidu.mapapi.search.route.OnGetRoutePlanResultListener;
 import com.baidu.mapapi.search.route.PlanNode;
@@ -74,14 +73,14 @@ import com.baidu.mapapi.walknavi.model.WalkRoutePlanError;
 import com.baidu.mapapi.walknavi.params.WalkNaviLaunchParam;
 import com.baidu.myapp.activity.BNaviGuideActivity;
 import com.baidu.myapp.activity.BaseActivity;
-import com.baidu.myapp.activity.FNmapActivity;
 import com.baidu.myapp.activity.FoodStoreActivity;
 import com.baidu.myapp.activity.WNaviGuideActivity;
+import com.baidu.myapp.activity.scenic.ScenicActivity;
 import com.baidu.myapp.bean.food.FoodBean;
 import com.baidu.myapp.bean.food.FoodCategory;
 import com.baidu.myapp.bean.food.FoodStore;
 import com.baidu.myapp.bean.scenic.ScenicBean;
-import com.baidu.myapp.bean.scenic.SpotBean;
+import com.baidu.myapp.bean.scenic.spot.SpotBean;
 import com.baidu.myapp.impl.foodimpl.FoodBeanIMPL;
 import com.baidu.myapp.impl.foodimpl.FoodCategoryIMPL;
 import com.baidu.myapp.impl.foodimpl.FoodStoreIMPL;
@@ -96,7 +95,6 @@ import com.baidu.myapp.util.FileUtils;
 import com.baidu.myapp.util.Guideutil;
 import com.baidu.myapp.util.MyOrientationListener;
 import com.baidu.myapp.view.HeadView;
-import com.baidu.myapp.view.foodview.AddWidget;
 import com.bumptech.glide.Glide;
 import com.fengmap.android.map.FMMap;
 import com.fengmap.android.map.FMMapUpgradeInfo;
@@ -113,7 +111,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
-import static com.baidu.location.g.j.D;
 import static com.baidu.location.g.j.h;
 
 public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickListener,
@@ -219,7 +216,9 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         setMapCustomFile(this, "custom_map_config.json");
         setContentView(R.layout.activity_main);
         mMapView = (MapView) findViewById(R.id.mmap);
+        mMapView.showZoomControls(false);
         mBaiduMap = mMapView.getMap();
+        mBaiduMap.setMaxAndMinZoomLevel(11.7f, 11.7f);
         overlayUtil = new OverlayUtil(mBaiduMap);
         //TEST
         requestPermission();
@@ -237,7 +236,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         InitFSView();
 
 
-        //导航点击事件处理
+     /*   //导航点击事件处理
         mBaiduMap.setOnMapLongClickListener(new BaiduMap.OnMapLongClickListener() {
             @Override
             public void onMapLongClick(LatLng lng) {
@@ -247,16 +246,16 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
             }
 
 
-        });
+        });*/
         //覆盖物点击事件
         CoverClick();
         //步行骑行
 
         //步行规划
-        mBtnPre = (Button) findViewById(R.id.pre);
+   /*     mBtnPre = (Button) findViewById(R.id.pre);
         mBtnNext = (Button) findViewById(R.id.next);
         mBtnPre.setVisibility(View.INVISIBLE);
-        mBtnNext.setVisibility(View.INVISIBLE);
+        mBtnNext.setVisibility(View.INVISIBLE);*/
         // 地图点击事件处理
         mBaiduMap.setOnMapClickListener(this);
         // 初始化搜索模块，注册事件监听
@@ -407,8 +406,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                 BtnIntoMap.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(MainActivity.this, FNmapActivity.class);
-                        startActivity(intent);
+                      /*  Intent intent = new Intent(MainActivity.this, FNmapActivity.class);
+                        startActivity(intent);*/
 
                     }
                 });
@@ -455,9 +454,9 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         //
         ScenicBean scenicBean = new ScenicBean();
         scenicBean.setScenicName("姑婆山(推荐)");
-        scenicBean.setScenicDescribe("66666");
+        scenicBean.setScenicDescribe("4A景区，靓丽的山间云朵~");
         scenicBean.setScenicId(4);
-        scenicBean.setScenicImg("2222");
+        scenicBean.setScenicImg(String.valueOf(R.drawable.guposhan_head_bg));
         scenicBean.setScenicPrice(100);
         scenicBean.setScenicOverlayImg(R.drawable.scenic_guposhanicon2);
         scenicBean.setScenicLongtitude(111.566872);
@@ -465,9 +464,9 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         //
         ScenicBean scenicBean2 = new ScenicBean();
         scenicBean2.setScenicName("十八水");
-        scenicBean2.setScenicDescribe("66666");
+        scenicBean2.setScenicDescribe("飞流直下三千尺，清风迎面徐徐来~");
         scenicBean2.setScenicId(3);
-        scenicBean2.setScenicImg("2222");
+        scenicBean2.setScenicImg(String.valueOf(R.drawable.shibashui_head_bg));
         scenicBean2.setScenicPrice(37);
         scenicBean2.setScenicOverlayImg(R.drawable.scenic_shibashui);
         scenicBean2.setScenicLongtitude(111.539137);
@@ -475,19 +474,19 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         //
         ScenicBean scenicBean3 = new ScenicBean();
         scenicBean3.setScenicName("玉石林");
-        scenicBean3.setScenicDescribe("66666");
+        scenicBean3.setScenicDescribe("愿君耳如玉，相逢石林间~");
         scenicBean3.setScenicId(2);
-        scenicBean3.setScenicImg("2222");
-        scenicBean3.setScenicPrice(100);
+        scenicBean3.setScenicImg(String.valueOf(R.drawable.yushilin_head_bg));
+        scenicBean3.setScenicPrice(56);
         scenicBean3.setScenicOverlayImg(R.drawable.scenic_yushilinicon);
         scenicBean3.setScenicLongtitude(111.622378);
         scenicBean3.setScenicLatitude(24.529364);
         //
         ScenicBean scenicBean4 = new ScenicBean();
         scenicBean4.setScenicName("贺州学院");
-        scenicBean4.setScenicDescribe("66666");
+        scenicBean4.setScenicDescribe("二本院校，3A级景区");
         scenicBean4.setScenicId(1);
-        scenicBean4.setScenicImg("2222");
+        scenicBean4.setScenicImg(String.valueOf(R.drawable.scenic_hezhouxueyuan_head));
         scenicBean4.setScenicPrice(0);
         scenicBean4.setScenicOverlayImg(R.drawable.scenic_hezhouxueyuan);
         scenicBean4.setScenicLongtitude(111.519692);
@@ -505,9 +504,9 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         //
         ScenicBean scenicBean6 = new ScenicBean();
         scenicBean6.setScenicName("黄姚古镇(热门)");
-        scenicBean6.setScenicDescribe("66666");
+        scenicBean6.setScenicDescribe("4A景区，历史悠久环境优美~");
         scenicBean6.setScenicId(0);
-        scenicBean6.setScenicImg("2222");
+        scenicBean6.setScenicImg(String.valueOf(R.drawable.huangyaoguzhen_head_bg));
         scenicBean6.setScenicPrice(80);
         scenicBean6.setScenicOverlayImg(R.drawable.scenic_huangyaoicon);
         scenicBean6.setScenicLongtitude(111.230985);
@@ -652,13 +651,13 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
      *
      * @param v
      */
-    public void searchProcess(View v) {
+/*    public void searchProcess(View v) {
         // 重置浏览节点的路线数据
 
 
         route = null;
-        mBtnPre.setVisibility(View.INVISIBLE);
-        mBtnNext.setVisibility(View.INVISIBLE);
+      *//*  mBtnPre.setVisibility(View.INVISIBLE);
+        mBtnNext.setVisibility(View.INVISIBLE);*//*
         mBaiduMap.clear();
         // 处理搜索按钮响应
         // 设置起终点信息，对于tranist search 来说，城市名无意义
@@ -700,7 +699,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
             nowSearchType = 4;
         }
 
-    }
+    }*/
 
     /**
      * 步行线路规划
@@ -770,8 +769,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
 
             nodeIndex = -1;
-            mBtnPre.setVisibility(View.VISIBLE);
-            mBtnNext.setVisibility(View.VISIBLE);
+      /*      mBtnPre.setVisibility(View.VISIBLE);
+            mBtnNext.setVisibility(View.VISIBLE);*/
 
             if (result.getRouteLines().size() > 1) {
                 nowResultwalk = result;
@@ -795,7 +794,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                             overlay.setData(nowResultwalk.getRouteLines().get(position));
                             //         Log.i(TAG, "onItemClick: a" +nowResultwalk.getRouteLines().get(position));
                             overlay.addToMap();
-                            overlay.zoomToSpan();
+//                            overlay.zoomToSpan();
                         }
 
                     });
@@ -814,7 +813,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                 overlay.setData(result.getRouteLines().get(0));
 
                 overlay.addToMap();
-                overlay.zoomToSpan();
+//                overlay.zoomToSpan();
 
             } else {
                 Log.d("route result", "结果数<0");
@@ -883,9 +882,9 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                 mBaiduMap.setOnMarkerClickListener(overlay);
                 overlay.setData(result.getRouteLines().get(0));
                 overlay.addToMap();
-                overlay.zoomToSpan();
-                mBtnPre.setVisibility(View.VISIBLE);
-                mBtnNext.setVisibility(View.VISIBLE);
+//                overlay.zoomToSpan();
+         /*       mBtnPre.setVisibility(View.VISIBLE);
+                mBtnNext.setVisibility(View.VISIBLE);*/
             } else {
                 Log.d("route result", "结果数<0");
                 return;
@@ -1260,6 +1259,9 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
                 Debbuger.LogE("点击了Marker");
                 Bundle extraInfo = marker.getExtraInfo();
+                if (extraInfo == null) {//避免点击非主要标记物闪退
+                    return false;
+                }
                 final FoodStore info = (FoodStore) extraInfo.getSerializable("FoodStore");
                 final ScenicBean scenicinfo = (ScenicBean) extraInfo.getSerializable("ScenicBean");
                 if ((FoodStore) extraInfo.getSerializable("FoodStore") != null) {
@@ -1269,6 +1271,9 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                     startActivity(intent);
                     Toast.makeText(MainActivity.this, foodStoreBean.getStoreName(), Toast.LENGTH_SHORT).show();
                 } else if (scenicinfo != null) {
+                    Intent intent = new Intent(MainActivity.this, ScenicActivity.class);
+                    intent.putExtra("Scenic", scenicinfo);
+                    startActivity(intent);
                     Toast.makeText(mContext, scenicinfo.getScenicName(), Toast.LENGTH_SHORT).show();
                 } else {
                     Debbuger.LogE("获取信息失败");
@@ -1371,6 +1376,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         }
         h++;
 
+        mBaiduMap.setMaxAndMinZoomLevel(12.8f, 12.8f);
         LatLng lng = new LatLng(24.582693, 111.559137);//111.559137,24.582693 十八水
         LatLng hezhouxueyuan = new LatLng(24.416049, 111.519692);//111.559137,24.582693 贺州学院
         LatLng busStation = new LatLng(24.420826, 111.585593);//111.559137,24.582693 八步中山站
@@ -1653,6 +1659,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         //实现地图和卫星地图的切换
         //添加图片
 
+        mBtnNext = (Button) findViewById(R.id.next);
+        mBtnPre = (Button) findViewById(R.id.pre);
         hp = (ImageView) findViewById(R.id.head_portrait); //给头像替换图片
         hp.setOnCreateContextMenuListener(this);
         hp.setOnClickListener(new View.OnClickListener() {
@@ -1832,8 +1840,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     onItemInDlgClickListener.onItemClick(position);
-                    mBtnPre.setVisibility(View.VISIBLE);
-                    mBtnNext.setVisibility(View.VISIBLE);
+           /*         mBtnPre.setVisibility(View.VISIBLE);
+                    mBtnNext.setVisibility(View.VISIBLE);*/
                     dismiss();
                     hasShownDialogue = false;
                 }

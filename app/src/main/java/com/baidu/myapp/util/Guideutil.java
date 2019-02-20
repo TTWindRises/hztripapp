@@ -2,7 +2,7 @@ package com.baidu.myapp.util;
 
 import android.util.Log;
 
-import com.baidu.myapp.bean.scenic.SpotBean;
+import com.baidu.myapp.bean.scenic.spot.SpotBean;
 import com.baidu.mapapi.search.core.RouteLine;
 
 import java.util.List;

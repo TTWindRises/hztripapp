@@ -1,5 +1,6 @@
 package com.baidu.myapp.bean.scenic;
 
+import com.baidu.myapp.bean.scenic.spot.SpotBean;
 import com.baidu.myapp.util.Debbuger;
 
 import org.litepal.annotation.Column;
@@ -7,8 +8,6 @@ import org.litepal.crud.DataSupport;
 
 import java.io.Serializable;
 import java.util.List;
-
-import static com.baidu.location.g.j.D;
 
 /**
  * Created by 曾志荣年 on 2018/5/17.
@@ -64,8 +63,8 @@ public class ScenicBean extends DataSupport implements Serializable {
     public void setScenicTime(String scenicTime) {
         this.scenicTime = scenicTime;
     }
-    public List<SpotBean> getAllSpot() {
-        return DataSupport.where("scenic_id=?", String.valueOf(scenicId)).find(SpotBean.class);
+    public List<SpotBean> getAllSpotById(String scenicid) {
+        return DataSupport.where("scenic_id=?", scenicid).find(SpotBean.class);
     }
 
     public String getScenicImg() {

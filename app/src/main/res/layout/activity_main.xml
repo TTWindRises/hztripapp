@@ -236,35 +236,22 @@
             android:id="@+id/pre"
             android:layout_width="40dp"
             android:layout_height="30dp"
+            android:visibility="invisible"
             android:layout_marginLeft="2dip"
             android:layout_marginRight="2dip"
-            android:background="@drawable/pre_"
-            android:onClick="nodeClick" />
+            android:text="确认"
+            />
 
         <Button
             android:id="@+id/next"
-            android:layout_width="35dp"
-            android:layout_height="20dp"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:visibility="invisible"
             android:layout_marginLeft="60dp"
             android:layout_marginRight="2dip"
-
-            android:background="@drawable/next_"
-            android:onClick="nodeClick" />
+            android:text="取消"
+            />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/main_btn"
-        android:layout_width="50dp"
-        android:layout_height="25dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/go"
-        android:gravity="center"
-        android:onClick="searchProcess"
-        android:text=""
-        android:textColor="#FFFFFF"
-        android:textSize="10dp" />
 
     <Button
         android:id="@+id/btn_intomap"
@@ -275,10 +262,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="50dp"
-        android:background="@drawable/go"
         android:gravity="center"
         android:onClick="searchProcess"
         android:text=""
+        android:visibility="gone"
         android:textColor="#FFFFFF"
         android:textSize="10dp" />
 

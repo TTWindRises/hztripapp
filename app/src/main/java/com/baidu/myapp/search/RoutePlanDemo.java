@@ -346,6 +346,7 @@ public class RoutePlanDemo extends BaseActivity implements BaiduMap.OnMapClickLi
             mBtnNext.setVisibility(View.VISIBLE);
 
             if (result.getRouteLines().size() > 1) {
+                Toast.makeText(mContext, "规划", Toast.LENGTH_SHORT).show();
                 nowResultwalk = result;
                 if (!hasShownDialogue) {
                     MyTransitDlg myTransitDlg = new MyTransitDlg(RoutePlanDemo.this,
@@ -366,7 +367,7 @@ public class RoutePlanDemo extends BaseActivity implements BaiduMap.OnMapClickLi
                             routeOverlay = overlay;
                             overlay.setData(nowResultwalk.getRouteLines().get(position));
                             overlay.addToMap();
-                            overlay.zoomToSpan();
+//                            overlay.zoomToSpan();
                         }
 
                     });
@@ -374,6 +375,7 @@ public class RoutePlanDemo extends BaseActivity implements BaiduMap.OnMapClickLi
                     hasShownDialogue = true;
                 }
             } else if (result.getRouteLines().size() == 1) {
+
                 // 直接显示
                 route = result.getRouteLines().get(0);
                 WalkingRouteOverlay overlay = new MyWalkingRouteOverlay(mBaidumap);
@@ -381,7 +383,7 @@ public class RoutePlanDemo extends BaseActivity implements BaiduMap.OnMapClickLi
                 routeOverlay = overlay;
                 overlay.setData(result.getRouteLines().get(0));
                 overlay.addToMap();
-                overlay.zoomToSpan();
+//                overlay.zoomToSpan();
 
             } else {
                 Log.d("route result", "结果数<0");

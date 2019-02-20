@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scenic_show_main_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!--商家推荐-->
+    <TextView
+        android:id="@+id/scenic_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="景点展示"
+        android:textColor="#000000"
+        android:textSize="16dp" />
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <!--横向食品展示栏-->
+        <com.baidu.myapp.view.HorizontalRecycleView
+            android:id="@+id/scenic_horizontal_list"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:gravity="center"
+            ></com.baidu.myapp.view.HorizontalRecycleView>
+
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="5dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="5dp">
+    <!--食品展示图-->
+    <ImageView
+        android:id="@+id/scenic_horizontal_item_img"
+        android:layout_width="140dp"
+        android:layout_height="120dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY" />
+    <!--食品单项标题-->
+    <TextView
+        android:id="@+id/scenic_horizontal_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxEms="6"
+        android:maxLines="1"
+        android:textColor="#000000" />
+    <!--销售量-->
+    <TextView
+        android:id="@+id/scenic_horizontal_item_describe"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="6dp"
+        android:elevation="5dp"
+        android:ellipsize="end"
+        android:maxEms="10"
+        android:maxLines="3"
+        android:textColor="#424c50"
+        android:textSize="10dp" />
+    <!--价格组-->
+    <!--<LinearLayout-->
+    <!--android:id="@+id/food_price_item"-->
+    <!--android:layout_width="112dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:gravity="center"-->
+    <!--android:layout_marginLeft="1dp"-->
+    <!--android:orientation="horizontal">-->
+    <!--&lt;!&ndash;现价&ndash;&gt;-->
+    <!--<TextView-->
+    <!--android:id="@+id/food_present_price"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textColor="#CC3333" />-->
+    <!--&lt;!&ndash;原价&ndash;&gt;-->
+    <!--<TextView-->
+    <!--android:id="@+id/food_original_price"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="5dp"-->
+    <!--android:textColor="#424c50"-->
+    <!--android:textSize="10dp" />-->
+    <!--<com.baidu.myapp.view.foodview.ZAddWidget-->
+    <!--android:id="@+id/horizontal_addwidget"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content">-->
+
+    <!--</com.baidu.myapp.view.foodview.ZAddWidget>-->
+
+    <!--</LinearLayout>-->
+
+
+</LinearLayout>

@@ -5,10 +5,10 @@
     <dbname value="myapp"/>
 
 
-    <version value="22"/>
+    <version value="23"/>
 
     <list>
-        <mapping class="com.baidu.myapp.bean.scenic.SpotBean"></mapping>
+        <mapping class="com.baidu.myapp.bean.scenic.spot.SpotBean"></mapping>
         <mapping class="com.baidu.myapp.bean.food.FoodStore"></mapping>
         <mapping class="com.baidu.myapp.bean.food.FoodBean"></mapping>
         <mapping class="com.baidu.myapp.bean.food.FoodOrder"></mapping>

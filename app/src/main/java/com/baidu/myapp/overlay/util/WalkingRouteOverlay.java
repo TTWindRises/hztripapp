@@ -110,8 +110,8 @@ public class WalkingRouteOverlay extends OverlayManager {
                         points.add(lastStepLastPoint);
                     }
                     points.addAll(watPoints);
-                    overlayList.add(new PolylineOptions().points(points).width(4)
-                            .color(getLineColor() != 0 ? getLineColor() : Color.argb(178, 0, 78, 255)).zIndex(0));
+                    overlayList.add(new PolylineOptions().points(points).width(2)
+                            .color(getLineColor() != 0 ? getLineColor() : Color.argb(178, 0, 78, 255)).zIndex(14));
                     lastStepLastPoint = watPoints.get(watPoints.size() - 1);
                 }
             }
