@@ -1,11 +1,11 @@
 [
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png"
-    },
-    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\design_ic_visibility.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\1d4f5febe29b3c86d03906875e0d86fbdc91356d\\output\\res\\drawable-xxxhdpi-v4\\design_ic_visibility.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png",

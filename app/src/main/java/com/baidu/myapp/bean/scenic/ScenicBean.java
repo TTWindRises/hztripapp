@@ -21,6 +21,7 @@ public class ScenicBean extends DataSupport implements Serializable {
     private String scenicImg;//封面+介绍六宫格图片
     private int scenicOverlayImg;//景区覆盖物图标
     private String scenicName;//景区名
+    private int isTickets; // 默认0（未购票),1（已购票)
     private String scenicDistance;//到景区的距离
     private int scenicPraise;//景区的点赞数
     private String scenicTime;//游玩时长
@@ -32,6 +33,13 @@ public class ScenicBean extends DataSupport implements Serializable {
     private String scenicLine;//景区的景点线路区阵——存放所有导游游览的线路
     private static final long serialVersionUID = -1010711755;
 
+    public int getTickets() {
+        return isTickets;
+    }
+
+    public void setTickets(int tickets) {
+        isTickets = tickets;
+    }
 
     public double getScenicLatitude() {
         return scenicLatitude;
@@ -66,7 +74,9 @@ public class ScenicBean extends DataSupport implements Serializable {
     public List<SpotBean> getAllSpotById(String scenicid) {
         return DataSupport.where("scenic_id=?", scenicid).find(SpotBean.class);
     }
-
+    public int isTickets() {
+        return isTickets;
+    }
     public String getScenicImg() {
         return scenicImg;
     }

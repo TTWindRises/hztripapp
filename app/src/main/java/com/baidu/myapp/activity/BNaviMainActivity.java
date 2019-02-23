@@ -93,7 +93,7 @@ public class BNaviMainActivity extends BaseActivity {
         walkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startWalkNavi();
+
             }
         });
     }

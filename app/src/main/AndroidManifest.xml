@@ -39,7 +39,9 @@
         <meta-data
             android:name="com.fengmap.mapapi.appkey"
             android:value="08bb072fa609c0c65cbab0705fb5392f"/>
-        <activity android:name="com.baidu.myapp.activity.BNaviGuideActivity">
+        <activity android:name="com.baidu.myapp.activity.BNaviGuideActivity"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
+            >
 
         </activity>
         <activity android:name=".MainActivity"  android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
@@ -62,12 +64,21 @@
         <activity android:name=".test.Markein"></activity>
         <activity android:name=".test.OverlayDemo"></activity>
         <activity android:name=".search.BusLineSearchDemo"></activity>
-        <activity android:name=".activity.FNmapActivity" />
+        <activity android:name=".activity.FNmapActivity"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
+            android:screenOrientation ="sensorPortrait"
+            />
         <activity android:name=".search.RoutePlanDemo"/>
-        <activity android:name=".activity.scenic.ScenicActivity"/>
+        <activity android:name=".activity.scenic.ScenicActivity"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
+            android:screenOrientation ="sensorPortrait"
+            />
         <activity android:name="com.baidu.myapp.activity.FoodStoreActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
             android:screenOrientation ="sensorPortrait"
+            />
+        <activity android:name=".detail.DetailActivity"
+            android:theme="@style/NoTitleTranslucentTheme"
             />
         <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
         </service>

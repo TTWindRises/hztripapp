@@ -96,7 +96,6 @@ public class AddWidget extends FrameLayout {
                     return;
                 }
                 if (count == 1 && sub_anim) {
-                    Debbuger.LogE("底部的控件s");
                     subAnim();
                 }
                 count--;

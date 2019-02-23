@@ -1,6 +1,5 @@
 package com.baidu.myapp.fragment.food;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -35,9 +34,9 @@ public class FoodEvaluateFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.food_evaluate_fragment, null);
+        View view = inflater.inflate(R.layout.food_main_fragment, null);
 
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.food_evaluate_recyclerview);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.food_main_recyclerview);
 
         init(recyclerView);
 

@@ -3,21 +3,21 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_c64325f78a24c085b700c554244dc03fa6bc6a89.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="E:\myProgramma\hztripapp\app\libs\fengmap-2.1.3.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="0734a5df36eda06fb7f00b0417beb0c0238acdc9">
         <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\fengmap-2.1.3_50e8449087f0ff0c0a1fdfb22ff718ae4253bc29.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_c64325f78a24c085b700c554244dc03fa6bc6a89.jar" />
     </item>
     <item
         is-multidex="false"
@@ -36,6 +36,15 @@
         revision="25.0.0"
         sha1="bd6e69c3e0dfba6f7a60ea5487f7351a8fd383ba">
         <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\classes_fa5e2e2488facac00747f85e675865edb5b3b452.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\8cbe926f880b60c5f06386ac6895f88d906ba55f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d2da7d7e5bc0eea97917d03111f4e15b90223a5e">
+        <dex dex="E:\myProgramma\hztripapp\app\build\intermediates\pre-dexed\debug\classes_d88c40950603e9737c6238ca37b276038b05e4a7.jar" />
     </item>
     <item
         is-multidex="false"

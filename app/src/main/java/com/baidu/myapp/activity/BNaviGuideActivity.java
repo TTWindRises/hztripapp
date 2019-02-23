@@ -24,6 +24,7 @@ public class BNaviGuideActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        BNaviGuideActivity.this.finish();
         mNaviHelper.quit();
     }
 
@@ -38,7 +39,6 @@ public class BNaviGuideActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         mNaviHelper = BikeNavigateHelper.getInstance();
-
         View view = mNaviHelper.onCreate(BNaviGuideActivity.this);
         if (view != null) {
             setContentView(view);

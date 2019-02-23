@@ -12,7 +12,7 @@ import com.baidu.myapp.util.Debbuger;
 
 import static com.baidu.location.g.j.D;
 
-public class BaseActivity extends AppCompatActivity{
+public abstract class BaseActivity extends AppCompatActivity{
     protected Context mContext = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,19 @@ public class BaseActivity extends AppCompatActivity{
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        Debbuger.LogE("onDestroy");
         ActivityCollector.removeActivity(this);
+    }
+
+    public void close(View view) {
+        finish();
+    }
+
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     public void goAccount(View view) {

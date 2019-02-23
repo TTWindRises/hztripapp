@@ -5,14 +5,18 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.AbsoluteSizeSpan;
 
+import com.baidu.myapp.bean.scenic.ScenicBean;
+import com.baidu.myapp.util.Debbuger;
 import com.baidu.myapp.util.foodutil.ViewUtils;
 
 import org.litepal.annotation.Column;
 import org.litepal.crud.DataSupport;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 
-public class FoodBean extends DataSupport {
+public class FoodBean extends DataSupport implements Serializable{
     @Column(unique = true)
     private int foodID;//食品的编号
     private String foodName;//食品的名称
@@ -182,5 +186,15 @@ public class FoodBean extends DataSupport {
         AbsoluteSizeSpan span = new AbsoluteSizeSpan(ViewUtils.sp2px(context, 11));
         spanString.setSpan(span, 0, 1, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         return spanString;
+    }
+
+    public void saveFoodBean(List<FoodBean> scenicBeans) {
+        for (FoodBean scenicBean : scenicBeans) {
+            if (scenicBean.save()) {
+            } else {
+                Debbuger.LogE("保存失败");
+            }
+        }
+
     }
 }

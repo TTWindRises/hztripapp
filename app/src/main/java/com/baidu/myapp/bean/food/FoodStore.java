@@ -23,15 +23,33 @@ public class FoodStore extends DataSupport implements Serializable {
     private String storeDistance;//距离要经过两点的直线距离计算，还是路程计算，还是线路路程的平均路程计算，这个数据要显示暂时写死.
     private String storeCategory;//销售食品的类别
     private String storeAddress;//商家地址
+    private String storePraise;
     private String storePhone; //商家电话
     private String storeHours; //营业时间
     private String storeNotice;//商家的公告
+    private int scenic_id;
     private String store_heard_img;//商家的头像
     private String storeImg;//商家的头部的背景图片
     private String storeDescribe;//商家信息描述
     private int TotalSales;//食品的总销售量
     private static final long serialVersionUID = 1L;
     private List<FoodBean> foodBeanList = new ArrayList<FoodBean>();
+
+    public String getStorePraise() {
+        return storePraise;
+    }
+
+    public void setStorePraise(String storePraise) {
+        this.storePraise = storePraise;
+    }
+
+    public int getScenic_id() {
+        return scenic_id;
+    }
+
+    public void setScenic_id(int scenic_id) {
+        this.scenic_id = scenic_id;
+    }
 
     public String getStoreID() {
         return storeID;
@@ -165,6 +183,14 @@ public class FoodStore extends DataSupport implements Serializable {
         TotalSales = totalSales;
     }
 
+    public void saveAllFoodStore(List<FoodStore> foodStores) {
+        for (FoodStore foodStore : foodStores)
+            if (foodStore.save()) {
+
+            } else {
+                Debbuger.LogE("保存失败");
+            }
+    }
     @Override
     public String toString() {
         return "FoodStore{" +

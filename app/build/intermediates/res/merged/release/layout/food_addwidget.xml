@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--按钮组-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="right">
+    <!--减按钮-->
+    <ImageView
+        android:id="@+id/food_vertical_righ_item_sub"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/food_store_item_sub2"
+        android:scaleType="fitXY"
+        />
+    <!--商品的数量-->
+    <TextView
+        android:id="@+id/food_vertical_right_item_number"
+        android:layout_width="20dp"
+        android:layout_height="24dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        />
+    <!--添加按钮-->
+    <ImageView
+        android:id="@+id/food_vertical_right_item_add"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginRight="2dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/food_item_add"
+        android:scaleType="fitXY" />
+</LinearLayout>

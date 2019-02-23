@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+    <android.support.design.widget.AppBarLayout
+        android:fitsSystemWindows="true"
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical">
+                <!--商家头像背景图片-->
+
+                <!--布局头部-->
+                <RelativeLayout
+                    android:id="@+id/scenic_store_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/scenic_store_head_bg"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY" />
+                    <!--返回键-->
+                    <ImageView
+                        android:id="@+id/scenic_store_back_img"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" />
+                    <!--商家头像-->
+                    <ImageView
+                        android:id="@+id/scenic_store_head_img"
+                        android:layout_width="70dp"
+                        android:layout_height="75dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="42dp"
+                        android:adjustViewBounds="true" />
+                    <!--点赞-->
+                    <ImageView
+                        android:id="@+id/scenic_store_prise"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="105dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY" />
+                </RelativeLayout>
+
+                <!--商家名称-->
+                <TextView
+                    android:id="@+id/scenic_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="22dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:adjustViewBounds="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:background="@color/white"
+                    android:scaleType="fitXY">
+
+                    <TextView
+                        android:id="@+id/scenic_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#696969"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/scenic_bar_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#D3D3D3"
+                        android:textSize="6dp" />
+                    <!--店铺的总销售量-->
+                    <TextView
+                        android:id="@+id/scenic_sentiment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#696969"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/scenic_bar_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#D3D3D3"
+                        android:textSize="6dp" />
+
+                    <TextView
+                        android:id="@+id/scenic_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#696969"
+                        android:textSize="10dp" />
+                </LinearLayout>
+                <!--门票-->
+                <LinearLayout
+                    android:id="@+id/scenic_tickets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="#ef7a82"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/scenic_tickets_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:ems="4"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        android:typeface="monospace" />
+
+              <!--      <TextView
+                        android:id="@+id/scenic_tickets_describe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="19dp"
+                        android:layout_gravity="center"
+                        android:ems="4"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10dp"
+
+                        />-->
+
+                    <TextView
+                        android:id="@+id/scenic_tickets_buy"
+                        android:layout_width="50dp"
+                        android:layout_height="19dp"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:ems="5"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10dp" />
+                </LinearLayout>
+                <!--公告-->
+
+                <TextView
+                    android:id="@+id/scenic_describe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxEms="24"
+                    android:maxLines="1"
+                    android:textColor="#999999"
+                    android:textSize="10dp" />
+
+                <LinearLayout
+                    android:id="@+id/scenic_recommend"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content" />
+                        <!--轮播图-->
+                 <!--       <ImageView
+                            android:id="@+id/scenic_shuffling"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:background="@drawable/store_head_bg"
+                            android:scaleType="fitXY" />-->
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/slidinglayout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom"
+            android:background="@android:color/white"
+            app:tabIndicatorColor="#b3ee80"
+            app:tabIndicatorHeight="2dp"
+            app:tabSelectedTextColor="@color/tabTextColor"
+            app:tabTextAppearance="@style/TabLayoutTextStyle"
+
+            app:tabTextColor="@color/tabTextColor" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/top_divider" />
+    </android.support.design.widget.AppBarLayout>
+
+    <!--占位 防止最后的item滑不出底部的结算栏-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp" />
+
+    <!--底部弹出的界面-->
+
+
+    <!--scollerView只能包含一个子控件-->
+
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/scenic_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    <!--暗影效果 view black-->
+
+
+</android.support.design.widget.CoordinatorLayout>

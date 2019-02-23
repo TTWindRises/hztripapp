@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\nav_settings_divider_line.9.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-hdpi\\nav_settings_divider_line.9.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\nav_settings_multiline_middle_normal.9.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-hdpi\\nav_settings_multiline_middle_normal.9.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\nav_settings_multiline_middle_pressed.9.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-hdpi\\nav_settings_multiline_middle_pressed.9.png"
+    }
+]

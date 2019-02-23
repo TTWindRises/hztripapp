@@ -184,6 +184,8 @@ public class ZAddWidget extends FrameLayout {
         }
     }
 
+    public void setState(long count) {
+    }
 
 
     public void expendAdd(int count) {

@@ -76,14 +76,10 @@ import com.baidu.myapp.activity.BaseActivity;
 import com.baidu.myapp.activity.FoodStoreActivity;
 import com.baidu.myapp.activity.WNaviGuideActivity;
 import com.baidu.myapp.activity.scenic.ScenicActivity;
-import com.baidu.myapp.bean.food.FoodBean;
-import com.baidu.myapp.bean.food.FoodCategory;
+import com.baidu.myapp.adapter.CarAdapter;
 import com.baidu.myapp.bean.food.FoodStore;
 import com.baidu.myapp.bean.scenic.ScenicBean;
 import com.baidu.myapp.bean.scenic.spot.SpotBean;
-import com.baidu.myapp.impl.foodimpl.FoodBeanIMPL;
-import com.baidu.myapp.impl.foodimpl.FoodCategoryIMPL;
-import com.baidu.myapp.impl.foodimpl.FoodStoreIMPL;
 import com.baidu.myapp.map.OverlayUtil;
 import com.baidu.myapp.overlay.util.DrivingRouteOverlay;
 import com.baidu.myapp.overlay.util.OverlayManager;
@@ -92,8 +88,10 @@ import com.baidu.myapp.search.RouteLineAdapter;
 import com.baidu.myapp.util.CircleCrop;
 import com.baidu.myapp.util.Debbuger;
 import com.baidu.myapp.util.FileUtils;
+import com.baidu.myapp.util.GlideRoundTransform;
 import com.baidu.myapp.util.Guideutil;
 import com.baidu.myapp.util.MyOrientationListener;
+import com.baidu.myapp.util.scenicutil.ClearViewManger;
 import com.baidu.myapp.view.HeadView;
 import com.bumptech.glide.Glide;
 import com.fengmap.android.map.FMMap;
@@ -107,38 +105,31 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.DatagramPacket;
 import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
-import static com.baidu.location.g.j.h;
-
 public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickListener,
         OnGetRoutePlanResultListener, OnFMMapInitListener {
     //
     private List<SpotBean> spotBeans = DataSupport.findAll(SpotBean.class);
     private MapView mMapView;
     private BaiduMap mBaiduMap;
-    private LatLng msLocation = new LatLng(24.416049, 111.519692);
-    private LatLng meLocation = new LatLng(24.418206, 111.521324);
     //定位相关
     private LocationClient mLocationClient;
     private MyLocationListener mLocationListener;
     private boolean isFirstIn = true;
     private Context mContext;
-    private double mLaditude;
-    private double mLongditude;
-    private LatLng myLocation = new LatLng(24.416049, 111.519692);
     private BitmapDescriptor mIconLocation;
     private MyOrientationListener mMyOrientationListener;
     private float mCurrentX;
-    private ImageView Img_htl01;
     //线路规划相关
 // 浏览路线节点相关
 
 
-    Button mBtnPre = null; // 上一个节点
-    Button mBtnNext = null; // 下一个节
+    ImageView mBtnPre = null; // 上一个节点
+    ImageView mBtnNext = null; // 下一个节
     int nodeIndex = -1; // 节点索引,供浏览节点时使用
     RouteLine route = null;
     List<RouteLine> routes = new ArrayList<RouteLine>();
@@ -159,8 +150,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     RoutePlanSearch mSearch = null;    // 搜索模块，也可去掉地图模块独立使用
 
     WalkingRouteResult nowResultwalk = null;
-    BikingRouteResult nowResultbike = null;
-    TransitRouteResult nowResultransit = null;
     DrivingRouteResult nowResultdrive = null;
     MassTransitRouteResult nowResultmass = null;
 
@@ -179,10 +168,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     //头像
     private ImageView hp;
     //导航相关
-
-
-    private Marker mMarkerA;
-    private Marker mMarkerB;
 
     private LatLng startPt, endPt;
 
@@ -208,17 +193,17 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     List<LatLng> spotLatLngs = new ArrayList<LatLng>();
     //工具类
     OverlayUtil overlayUtil;
-
+    List<ScenicBean> scenicBeenList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setMapCustomFile(this, "custom_map_config.json");
         setContentView(R.layout.activity_main);
+        requestPermission();
         mMapView = (MapView) findViewById(R.id.mmap);
         mMapView.showZoomControls(false);
         mBaiduMap = mMapView.getMap();
-        mBaiduMap.setMaxAndMinZoomLevel(11.7f, 11.7f);
         overlayUtil = new OverlayUtil(mBaiduMap);
         //TEST
         requestPermission();
@@ -229,10 +214,10 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         initLocation();
         initMaker();
         initSpotData();
-        MyLocation();
-        //导航按钮
-        NavGuideButtonClick();
         InitNav();
+        //导航按钮
+//        NavGuideButtonClick();
+
         InitFSView();
 
 
@@ -390,13 +375,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         mMapView.setCustomMapStylePath(moduleName + "/" + fileName);
     }
 
-
-    //   主界面物件初始化
-    private void initMainViewAndData() {
-
-    }
-
-
     //蜂鸟地图控件初始化
     private void InitFSView() {
         BtnIntoMap = (Button) findViewById(R.id.btn_intomap);
@@ -440,8 +418,13 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
     // 景区初始化
     private void initScenic() {
-        List<ScenicBean> scenicBeenList = new ArrayList<>();
-        //
+
+        scenicBeenList = new ArrayList<>();
+        scenicBeenList = DataSupport.findAll(ScenicBean.class);
+        if (scenicBeenList!= null&&!scenicBeenList.isEmpty()) {
+            overlayUtil.addScenicAllOverly(scenicBeenList);
+        }else {
+            //
       /*  ScenicBean scenicBean1 = new ScenicBean();
         scenicBean1.setScenicName("姑婆山森林酒店");
         scenicBean1.setScenicDescribe("66666");
@@ -451,47 +434,51 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         scenicBean1.setScenicOverlayImg(R.drawable.scenic_guposhan);
         scenicBean1.setScenicLongtitude(111.573763);
         scenicBean1.setScenicLatitude(24.598501);*/
-        //
-        ScenicBean scenicBean = new ScenicBean();
-        scenicBean.setScenicName("姑婆山(推荐)");
-        scenicBean.setScenicDescribe("4A景区，靓丽的山间云朵~");
-        scenicBean.setScenicId(4);
-        scenicBean.setScenicImg(String.valueOf(R.drawable.guposhan_head_bg));
-        scenicBean.setScenicPrice(100);
-        scenicBean.setScenicOverlayImg(R.drawable.scenic_guposhanicon2);
-        scenicBean.setScenicLongtitude(111.566872);
-        scenicBean.setScenicLatitude(24.641907);
-        //
-        ScenicBean scenicBean2 = new ScenicBean();
-        scenicBean2.setScenicName("十八水");
-        scenicBean2.setScenicDescribe("飞流直下三千尺，清风迎面徐徐来~");
-        scenicBean2.setScenicId(3);
-        scenicBean2.setScenicImg(String.valueOf(R.drawable.shibashui_head_bg));
-        scenicBean2.setScenicPrice(37);
-        scenicBean2.setScenicOverlayImg(R.drawable.scenic_shibashui);
-        scenicBean2.setScenicLongtitude(111.539137);
-        scenicBean2.setScenicLatitude(24.582693);
-        //
-        ScenicBean scenicBean3 = new ScenicBean();
-        scenicBean3.setScenicName("玉石林");
-        scenicBean3.setScenicDescribe("愿君耳如玉，相逢石林间~");
-        scenicBean3.setScenicId(2);
-        scenicBean3.setScenicImg(String.valueOf(R.drawable.yushilin_head_bg));
-        scenicBean3.setScenicPrice(56);
-        scenicBean3.setScenicOverlayImg(R.drawable.scenic_yushilinicon);
-        scenicBean3.setScenicLongtitude(111.622378);
-        scenicBean3.setScenicLatitude(24.529364);
-        //
-        ScenicBean scenicBean4 = new ScenicBean();
-        scenicBean4.setScenicName("贺州学院");
-        scenicBean4.setScenicDescribe("二本院校，3A级景区");
-        scenicBean4.setScenicId(1);
-        scenicBean4.setScenicImg(String.valueOf(R.drawable.scenic_hezhouxueyuan_head));
-        scenicBean4.setScenicPrice(0);
-        scenicBean4.setScenicOverlayImg(R.drawable.scenic_hezhouxueyuan);
-        scenicBean4.setScenicLongtitude(111.519692);
-        scenicBean4.setScenicLatitude(24.416049);
-        //
+            //
+            ScenicBean scenicBean = new ScenicBean();
+            scenicBean.setScenicName("姑婆山(推荐)");
+            scenicBean.setScenicDescribe("4A景区，靓丽的山间云朵~");
+            scenicBean.setScenicId(4);
+            scenicBean.setScenicImg(String.valueOf(R.drawable.guposhan_head_bg));
+            scenicBean.setTickets(0);
+            scenicBean.setScenicPrice(100);
+            scenicBean.setScenicOverlayImg(R.drawable.scenic_guposhanicon2);
+            scenicBean.setScenicLongtitude(111.566872);
+            scenicBean.setScenicLatitude(24.641907);
+            //
+            ScenicBean scenicBean2 = new ScenicBean();
+            scenicBean2.setScenicName("十八水");
+            scenicBean2.setScenicDescribe("飞流直下三千尺，清风迎面徐徐来~");
+            scenicBean2.setScenicId(3);
+            scenicBean2.setScenicImg(String.valueOf(R.drawable.shibashui_head_bg));
+            scenicBean2.setScenicPrice(37);
+            scenicBean2.setTickets(0);
+            scenicBean2.setScenicOverlayImg(R.drawable.scenic_shibashui);
+            scenicBean2.setScenicLongtitude(111.539137);
+            scenicBean2.setScenicLatitude(24.582693);
+            //
+            ScenicBean scenicBean3 = new ScenicBean();
+            scenicBean3.setScenicName("玉石林");
+            scenicBean3.setScenicDescribe("愿君耳如玉，相逢石林间~");
+            scenicBean3.setScenicId(2);
+            scenicBean3.setTickets(0);
+            scenicBean3.setScenicImg(String.valueOf(R.drawable.yushilin_head_bg));
+            scenicBean3.setScenicPrice(56);
+            scenicBean3.setScenicOverlayImg(R.drawable.scenic_yushilinicon);
+            scenicBean3.setScenicLongtitude(111.622378);
+            scenicBean3.setScenicLatitude(24.529364);
+            //
+            ScenicBean scenicBean4 = new ScenicBean();
+            scenicBean4.setScenicName("贺州学院");
+            scenicBean4.setScenicDescribe("二本院校，3A级景区");
+            scenicBean4.setScenicId(1);
+            scenicBean4.setScenicImg(String.valueOf(R.drawable.scenic_hezhouxueyuan_head));
+            scenicBean4.setScenicPrice(0);
+            scenicBean4.setTickets(0);
+            scenicBean4.setScenicOverlayImg(R.drawable.scenic_hezhouxueyuan);
+            scenicBean4.setScenicLongtitude(111.519692);
+            scenicBean4.setScenicLatitude(24.416049);
+            //
  /*       ScenicBean scenicBean5 = new ScenicBean();
         scenicBean5.setScenicName("正菱大酒店");
         scenicBean5.setScenicDescribe("66666");
@@ -501,25 +488,28 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         scenicBean5.setScenicOverlayImg(R.drawable.scenic_guposhan);
         scenicBean5.setScenicLongtitude(111.52293);
         scenicBean5.setScenicLatitude(24.419844);*/
-        //
-        ScenicBean scenicBean6 = new ScenicBean();
-        scenicBean6.setScenicName("黄姚古镇(热门)");
-        scenicBean6.setScenicDescribe("4A景区，历史悠久环境优美~");
-        scenicBean6.setScenicId(0);
-        scenicBean6.setScenicImg(String.valueOf(R.drawable.huangyaoguzhen_head_bg));
-        scenicBean6.setScenicPrice(80);
-        scenicBean6.setScenicOverlayImg(R.drawable.scenic_huangyaoicon);
-        scenicBean6.setScenicLongtitude(111.230985);
-        scenicBean6.setScenicLatitude(24.262686);
-        scenicBeenList.add(scenicBean);
+            //
+            ScenicBean scenicBean6 = new ScenicBean();
+            scenicBean6.setScenicName("黄姚古镇(热门)");
+            scenicBean6.setScenicDescribe("4A景区，历史悠久环境优美~");
+            scenicBean6.setScenicId(0);
+            scenicBean6.setScenicImg(String.valueOf(R.drawable.huangyaoguzhen_head_bg));
+            scenicBean6.setScenicPrice(80);
+            scenicBean6.setTickets(0);
+            scenicBean6.setScenicOverlayImg(R.drawable.scenic_huangyaoicon);
+            scenicBean6.setScenicLongtitude(111.230985);
+            scenicBean6.setScenicLatitude(24.262686);
+            scenicBeenList.add(scenicBean);
 //        scenicBeenList.add(scenicBean1);
-        scenicBeenList.add(scenicBean2);
-        scenicBeenList.add(scenicBean3);
-        scenicBeenList.add(scenicBean4);
+            scenicBeenList.add(scenicBean2);
+            scenicBeenList.add(scenicBean3);
+            scenicBeenList.add(scenicBean4);
 //        scenicBeenList.add(scenicBean5);
-        scenicBeenList.add(scenicBean6);
-        scenicBean.saveScenicBean(scenicBeenList);
-        overlayUtil.addScenicAllOverly(scenicBeenList);
+            scenicBeenList.add(scenicBean6);
+            scenicBean.saveScenicBean(scenicBeenList);
+            overlayUtil.addScenicAllOverly(scenicBeenList);
+
+        }
     }
 
     public void nodeClick(View v) {
@@ -979,273 +969,65 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     /**
      * 添加景区内景点覆盖物 //尽量取小一点的图标
      */
-    public void addSpotOverly() {
-
-        mBaiduMap.clear();
-
-
-        LatLng latLng = null;
-
-        Marker marker = null;
-
-        OverlayOptions options;
-
-        //某类的坐标集合
-
-        //   Log.i(TAG, "size:" + spotBeans.size());
-
-        /*   Log.i(TAG, "spotLaLngs:"+spotLatLngs.get(1));*/
-
-
-        // Log.i(TAG, "spotBeans: " + spotBeans.get(0).getSpotName());
-        LatLng pt1 = null;
-        LatLng pt2 = null;
-        int i = 0;
-        for (SpotBean spotBean : spotBeans) {
-            //经纬度
-
-//            latLng = new LatLng(spotBean.getLatitude(), spotBean.getLongtitude());
-
-            //计算两点之间的距离
-            ++i;
-            Log.i(TAG, "i  is : " + i);
-
-            if (i % 2 == 0) {
-                pt2 = pt1;
-
-            }
-            pt1 = latLng;
-            Log.d(TAG, "pt1:" + pt1);
-            if (pt2 != null) {
-                Double distance = DistanceUtil.getDistance(pt1, pt2);
-
-                Log.i(TAG, "pt1 is :" + pt1);
-                Log.i(TAG, "pt2 is :" + pt2);
-                if (distance > 0) {
-                    Log.i(TAG, "distance is: " + distance);
-                }
-            }
-
-            //图标
-            options = new MarkerOptions().position(latLng).icon(mDeliciousMarker).zIndex(13);
-            marker = (Marker) mBaiduMap.addOverlay(options);
-            Bundle arg0 = new Bundle();
-            arg0.putSerializable("spotbeans", spotBean);
-            marker.setExtraInfo(arg0);
-        }
-
-
-    }
-
-
-    //添加食品商店的覆盖物
-    private void addDeOverlays() {
-        //longtitude 1开头的
-        //latitude 2开头的
-        //饺子皇饺子店 111.543813,24.416317
-        //学院食府 111.520595,24.415512
-        List<FoodStore> foodStores = new ArrayList<FoodStore>();
-        FoodStore foodStore = new FoodStore();
-        foodStore.setStoreID("7");
-        foodStore.setStoreName("学院食府");
-        foodStore.setStoreImg("" + R.drawable.store_head_bg);
-        foodStore.setStore_heard_img("" + R.drawable.store_head_img);
-        foodStore.setStoreLatitude(24.415512);
-        foodStore.setStoreLongtitude(111.520595);
-        FoodStore foodStore2 = new FoodStore();
-        foodStore2.setStoreID("8");
-        foodStore2.setStoreName("大黄饺子店");
-        foodStore2.setStoreLatitude(24.416317);
-        foodStore2.setStoreLongtitude(111.543813);
-        foodStore2.setStoreImg("" + R.drawable.store_head_bg);
-        foodStore2.setStore_heard_img("" + R.drawable.food_store_head_img3);
-        foodStores.add(foodStore);
-        foodStores.add(foodStore2);
-        FoodStoreIMPL.Get().addFoodStore(foodStores);
-        overlayUtil.addFoodStoreAllOverly(foodStores);
-        List<FoodBean> foodBeanList = new ArrayList<>();
-        FoodBean foodBean = new FoodBean();
-        foodBean.setFoodName("单人汉堡套餐");
-        foodBean.setFoodID(0);
-        foodBean.setFoodSales(20);
-        foodBean.setFoodPraise("好评率100%");
-        foodBean.setFoodImg("" + R.drawable.food_horizontal_item_img);
-        foodBean.setFoodDescribe("令人怀念的味道");
-        foodBean.setFoodOriginalPrice("21");
-        foodBean.setFoodPresentPrice("15");
-        foodBean.setCategory_id(1);
-        foodBean.setStore_id(7 + "");
-        FoodBean foodBean2 = new FoodBean();
-        foodBean2.setFoodName("香芋面包");
-        foodBean2.setFoodID(1);
-        foodBean2.setCategory_id(0);
-        foodBean2.setFoodSales(200);
-        foodBean2.setFoodImg("" + R.drawable.food_horizontal_item_mianbao);
-        foodBean2.setFoodDescribe("令人怀念的味道");
-        foodBean2.setFoodOriginalPrice("1");
-        foodBean2.setFoodPresentPrice("0.5");
-        foodBean2.setStore_id(7 + "");
-        FoodBean foodBean3 = new FoodBean();
-        foodBean3.setFoodName("油条");
-        foodBean3.setCategory_id(0);
-        foodBean3.setFoodID(2);
-        foodBean3.setFoodSales(200);
-        foodBean3.setFoodImg("" + R.drawable.food_horizontal_item_youtiao_img);
-        foodBean3.setFoodDescribe("令人怀念的味道");
-        foodBean3.setFoodOriginalPrice("1");
-        foodBean3.setFoodPresentPrice("0.5");
-        foodBean3.setStore_id(7 + "");
-        FoodBean foodBean4 = new FoodBean();
-        foodBean4.setFoodName("营养豆浆");
-        foodBean4.setFoodID(3);
-        foodBean4.setFoodSales(157);
-        foodBean4.setCategory_id(1);
-        foodBean4.setFoodImg("" + R.drawable.food_horizontal_item_doujiang_img);
-        foodBean4.setFoodDescribe("油条配豆浆好像更搭哦~");
-        foodBean4.setFoodOriginalPrice("3");
-        foodBean4.setFoodPresentPrice("1.5");
-        foodBean4.setStore_id(7 + "");
-        FoodBean foodBean5 = new FoodBean();
-        foodBean5.setFoodName("大良家的金牌烧鸡");
-        foodBean5.setFoodID(4);
-        foodBean5.setFoodSales(67);
-        foodBean5.setCategory_id(1);
-        foodBean5.setFoodImg("" + R.drawable.food_horizontal_item_shaoji);
-        foodBean5.setFoodDescribe("令人怀念的味道");
-        foodBean5.setFoodOriginalPrice("39");
-        foodBean5.setFoodPresentPrice("20.9");
-        foodBean5.setStore_id(7 + "");
-
-        FoodBean foodBean6 = new FoodBean();
-        foodBean6.setFoodName("黄金酥脆炒粉");
-        foodBean6.setFoodID(5);
-        foodBean6.setFoodSales(67);
-        foodBean6.setCategory_id(1);
-        foodBean6.setFoodImg("" + R.drawable.food_horizontal_item_chaofen);
-        foodBean6.setFoodDescribe("令人怀念的味道");
-        foodBean6.setFoodOriginalPrice("12");
-        foodBean6.setFoodPresentPrice("9");
-        foodBean6.setStore_id(7 + "");
-        FoodBean foodBean7 = new FoodBean();
-        foodBean7.setFoodName("清香椰子饭");
-        foodBean7.setFoodID(6);
-        foodBean7.setFoodSales(123);
-        foodBean7.setCategory_id(1);
-        foodBean7.setFoodImg("" + R.drawable.food_horizontal_yezhifan_img);
-        foodBean7.setFoodDescribe("清香入喉饭甜可口");
-        foodBean7.setFoodOriginalPrice("29");
-        foodBean7.setFoodPresentPrice("14.5");
-        foodBean7.setStore_id(7 + "");
-        FoodBean foodBean8 = new FoodBean();
-        foodBean8.setFoodName("青青草原冰");
-        foodBean8.setFoodID(7);
-        foodBean8.setFoodSales(235);
-        foodBean8.setCategory_id(2);
-        foodBean8.setFoodImg("" + R.drawable.food_horizontal_icecreen_img);
-        foodBean8.setFoodDescribe("爱的味道");
-        foodBean8.setFoodOriginalPrice("6");
-        foodBean8.setFoodPresentPrice("3.9");
-        foodBean8.setStore_id(7 + "");
-        FoodBean foodBean9 = new FoodBean();
-        foodBean9.setFoodName("绿绿草原冰");
-        foodBean9.setFoodID(8);
-        foodBean9.setFoodSales(271);
-        foodBean9.setCategory_id(2);
-        foodBean9.setFoodImg("" + R.drawable.food_horizontal_icecreen2_img);
-        foodBean9.setFoodDescribe("小清新冰淇淋初恋般的感觉");
-        foodBean9.setFoodOriginalPrice("6");
-        foodBean9.setFoodPresentPrice("3");
-        foodBean9.setStore_id(7 + "");
-        FoodBean foodBean10 = new FoodBean();
-        foodBean10.setFoodName("大鸡排饭");
-        foodBean10.setFoodID(9);
-        foodBean10.setFoodSales(23);
-        foodBean10.setCategory_id(1);
-        foodBean10.setFoodImg("" + R.drawable.food_horizontal_jipaifan_img);
-        foodBean10.setFoodDescribe("量多吃的饱");
-        foodBean10.setFoodOriginalPrice("23");
-        foodBean10.setFoodPresentPrice("16");
-        foodBean10.setStore_id(7 + "");
-        FoodBean foodBean11 = new FoodBean();
-        foodBean11.setFoodName("冬瓜青苹果冰");
-        foodBean11.setFoodID(10);
-        foodBean11.setFoodSales(244);
-        foodBean11.setCategory_id(2);
-        foodBean11.setFoodImg("" + R.drawable.food_horizontal_icecreen3_img);
-        foodBean11.setFoodDescribe("美味冰淇淋");
-        foodBean11.setFoodOriginalPrice("5");
-        foodBean11.setFoodPresentPrice("3");
-        foodBean11.setStore_id(7 + "");
-        FoodBean foodBean12 = new FoodBean();
-        foodBean12.setFoodName("咖啡米朵冰");
-        foodBean12.setFoodID(11);
-        foodBean12.setFoodSales(342);
-        foodBean12.setCategory_id(2);
-        foodBean12.setFoodImg("" + R.drawable.food_horizontal_icecreen4_img);
-        foodBean12.setFoodDescribe("美味冰淇淋");
-        foodBean12.setFoodOriginalPrice("10");
-        foodBean12.setFoodPresentPrice("8");
-        foodBean12.setStore_id(7 + "");
-        FoodBean foodBean13 = new FoodBean();
-        foodBean13.setFoodName("核桃牛奶冰");
-        foodBean13.setFoodID(12);
-        foodBean13.setFoodSales(213);
-        foodBean13.setCategory_id(2);
-        foodBean13.setFoodImg("" + R.drawable.food_horizontal_icecreen5_img);
-        foodBean13.setFoodDescribe("美味冰淇淋");
-        foodBean13.setFoodOriginalPrice("12");
-        foodBean13.setFoodPresentPrice("5");
-        foodBean13.setStore_id(7 + "");
+//    public void addSpotOverly() {
+//
+//        mBaiduMap.clear();
+//
+//
+//        LatLng latLng = null;
+//
+//        Marker marker = null;
+//
+//        OverlayOptions options;
+//
+//        //某类的坐标集合
+//
+//        //   Log.i(TAG, "size:" + spotBeans.size());
+//
+//        /*   Log.i(TAG, "spotLaLngs:"+spotLatLngs.get(1));*/
+//
+//
+//        // Log.i(TAG, "spotBeans: " + spotBeans.get(0).getSpotName());
+//        LatLng pt1 = null;
+//        LatLng pt2 = null;
+//        int i = 0;
+//        for (SpotBean spotBean : spotBeans) {
+//            //经纬度
+//
+////            latLng = new LatLng(spotBean.getLatitude(), spotBean.getLongtitude());
+//
+//            //计算两点之间的距离
+//            ++i;
+//            Log.i(TAG, "i  is : " + i);
+//
+//            if (i % 2 == 0) {
+//                pt2 = pt1;
+//
+//            }
+//            pt1 = latLng;
+//            Log.d(TAG, "pt1:" + pt1);
+//            if (pt2 != null) {
+//                Double distance = DistanceUtil.getDistance(pt1, pt2);
+//
+//                Log.i(TAG, "pt1 is :" + pt1);
+//                Log.i(TAG, "pt2 is :" + pt2);
+//                if (distance > 0) {
+//                    Log.i(TAG, "distance is: " + distance);
+//                }
+//            }
+//
+//            //图标
+//            options = new MarkerOptions().position(latLng).icon(mDeliciousMarker).zIndex(13);
+//            marker = (Marker) mBaiduMap.addOverlay(options);
+//            Bundle arg0 = new Bundle();
+//            arg0.putSerializable("spotbeans", spotBean);
+//            marker.setExtraInfo(arg0);
+//        }
+//
+//
+//    }
 
 
-        foodBeanList.add(foodBean);
-        foodBeanList.add(foodBean2);
-        foodBeanList.add(foodBean3);
-        foodBeanList.add(foodBean4);
-        foodBeanList.add(foodBean5);
-        foodBeanList.add(foodBean6);
-        foodBeanList.add(foodBean7);
-        foodBeanList.add(foodBean8);
-        foodBeanList.add(foodBean9);
-        foodBeanList.add(foodBean10);
-        foodBeanList.add(foodBean11);
-        foodBeanList.add(foodBean12);
-        foodBeanList.add(foodBean13);
-        FoodBeanIMPL.GetFood().addAll(foodBeanList);
-        FoodCategory foodCategory = new FoodCategory();
-        foodCategory.setCategoryID(0);
-        foodCategory.setCategoryName("热销");
-        foodCategory.setStore_id("7");
-
-        FoodCategory foodCategory2 = new FoodCategory();
-        foodCategory2.setCategoryID(1);
-        foodCategory2.setCategoryName("推荐");
-        foodCategory2.setStore_id("7");
-
-        FoodCategory foodCategory3 = new FoodCategory();
-        foodCategory3.setCategoryID(2);
-        foodCategory3.setCategoryName("甜品");
-        foodCategory3.setStore_id("7");
-/*
-        FoodCategory foodCategory4 = new FoodCategory();
-        foodCategory4.setCategoryID(4);
-        foodCategory4.setCategoryName("午餐");
-        foodCategory4.setStore_id("7");
-
-        FoodCategory foodCategory5 = new FoodCategory();
-        foodCategory5.setCategoryID(5);
-        foodCategory5.setCategoryName("晚餐");
-        foodCategory5.setStore_id("7");*/
-
-        List<FoodCategory> categoryList = new ArrayList<FoodCategory>();
-        categoryList.add(foodCategory);
-        categoryList.add(foodCategory2);
-        categoryList.add(foodCategory3);
-//        categoryList.add(foodCategory4);
-//        categoryList.add(foodCategory5);
-        FoodCategoryIMPL.getInstance().addAllCategory(categoryList);
-
-    }
 
 
     /**
@@ -1324,14 +1106,14 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
             e.printStackTrace();
         }
 
-        startPt = msLocation;
-        endPt = meLocation;
+        startPt =  new LatLng(24.461166, 111.545928);
+        endPt = new LatLng(24.416049, 111.519692);
 
         param = new BikeNaviLaunchParam().stPt(startPt).endPt(endPt);
         walkParam = new WalkNaviLaunchParam().stPt(startPt).endPt(endPt);
     }
 
-    private void NavGuideButtonClick() {
+/*    private void NavGuideButtonClick() {
         ImageView bikeclick = (ImageView) findViewById(R.id.img_click_bike);
         bikeclick.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1347,7 +1129,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                 startWalkNavi();
             }
         });
-    }
+    }*/
 
     //    点击景点后界面拉倒中心位置
     public void spotClick(View view) {
@@ -1361,8 +1143,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     //   美食点击后
     public void cateClick(View view) {
 
-        MapStatusSize(18.0f);
-        addDeOverlays();
+       Debbuger.LogE("未预定有餐饮");
 //        Toast.makeText(this, "b", Toast.LENGTH_SHORT).show();
     }
 
@@ -1370,12 +1151,53 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         Toast.makeText(this, "c", Toast.LENGTH_SHORT).show();
     }
 
+    public void ChangeOnClick(View view) {
+        if (h == 1) {
+            ClearViewManger.getInstance().HideAllView();
+            Toast.makeText(mContext, "退出攻略", Toast.LENGTH_SHORT).show();
+            GoBackCenterScenic();
+            h = 0;
+        } else {
+            Toast.makeText(mContext, "你还未选择攻略", Toast.LENGTH_SHORT).show();
+        } 
+    
+    }
     public void hotClick(View view) {
         if (h != 0) {
             return;
         }
-        h++;
 
+        mBtnPre.setVisibility(View.VISIBLE);
+        mBtnNext.setVisibility(View.VISIBLE);
+        Glide.with(MainActivity.this).load(R.drawable.dui)
+                .centerCrop().transform(new GlideRoundTransform(this))
+                .dontAnimate()
+                .into(mBtnPre);
+        Glide.with(MainActivity.this).load(R.drawable.cuo)
+                .centerCrop().transform(new GlideRoundTransform(this))
+                .dontAnimate()
+                .into(mBtnNext);
+
+        ClearViewManger.getInstance().addView(mBtnPre);
+        ClearViewManger.getInstance().addView(mBtnNext);
+        mBtnPre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClearViewManger.getInstance().HideAllView();
+                Toast.makeText(mContext, "开始前往首个目的地", Toast.LENGTH_SHORT).show();
+                startBikeNavi();
+                h = 1;
+            }
+        });
+        mBtnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClearViewManger.getInstance().HideAllView();
+                Toast.makeText(mContext, "已取消", Toast.LENGTH_SHORT).show();
+                GoBackCenterScenic();
+                h = 0;
+            }
+        });
         mBaiduMap.setMaxAndMinZoomLevel(12.8f, 12.8f);
         LatLng lng = new LatLng(24.582693, 111.559137);//111.559137,24.582693 十八水
         LatLng hezhouxueyuan = new LatLng(24.416049, 111.519692);//111.559137,24.582693 贺州学院
@@ -1427,7 +1249,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     }
 
     public void downClick(View view) {
-        LatLng lng = new LatLng(24.582693, 111.559137);//111.559137,24.582693 十八水
+     /*   LatLng lng = new LatLng(24.582693, 111.559137);//111.559137,24.582693 十八水
         PlanNode myPlanNode = PlanNode.withLocation(myLocation);
         PlanNode shibashui = PlanNode.withLocation(lng);
         PlanNode yushilin = PlanNode.withLocation(new LatLng(24.529364, 111.622378));//
@@ -1437,9 +1259,9 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         MapStatusSize(12.0f);//111.558199,24.51445
 //        LatLng spcenter = new LatLng(24.546137, 111.576111);//城市景区中心点111.558717,24.558307
 //        MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(spcenter);//
-//        mBaiduMap.setMapStatus(msu);
+//        mBaiduMap.setMapStatus(msu);*/
 
-        Toast.makeText(mContext, "e", Toast.LENGTH_SHORT).show();
+        Toast.makeText(mContext, "暂不支持", Toast.LENGTH_SHORT).show();
     }
 
     //百度引入的导航功能
@@ -1562,7 +1384,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     @Override
     protected void onStart() {
         super.onStart();
-        Debbuger.LogE("zzzonStart");
         mBaiduMap.setMyLocationEnabled(true);
         if (!mLocationClient.isStarted()) {
             mLocationClient.start();
@@ -1598,21 +1419,19 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         bdA.recycle();
         bdB.recycle();
     }
+    /*   //增加终点覆盖物
 
-
-    //增加终点覆盖物
-
-    private void addDestInfoOverlay(LatLng destInfo) {
-        mBaiduMap.clear();
-        OverlayOptions options = new MarkerOptions().position(destInfo)//
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_en)).zIndex(5);
-        param.stPt(startPt).endPt(destInfo);
-        walkParam.stPt(startPt).endPt(destInfo);
-        LinearLayout typeoftraffc = (LinearLayout) findViewById(R.id.type_of_traffc);
-        typeoftraffc.setVisibility(View.VISIBLE);
-        mBaiduMap.addOverlay(options);
-    }
-
+       private void addDestInfoOverlay(LatLng destInfo) {
+           mBaiduMap.clear();
+           OverlayOptions options = new MarkerOptions().position(destInfo)//
+                   .icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_en)).zIndex(5);
+           param.stPt(startPt).endPt(destInfo);
+           walkParam.stPt(startPt).endPt(destInfo);
+           LinearLayout typeoftraffc = (LinearLayout) findViewById(R.id.type_of_traffc);
+           typeoftraffc.setVisibility(View.VISIBLE);
+           mBaiduMap.addOverlay(options);
+       }
+   */
     //设置地图比例
     private void MapStatusSize(float size) {
         MapStatusUpdate msu = MapStatusUpdateFactory.zoomTo(size);//设置初始化大小
@@ -1659,8 +1478,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         //实现地图和卫星地图的切换
         //添加图片
 
-        mBtnNext = (Button) findViewById(R.id.next);
-        mBtnPre = (Button) findViewById(R.id.pre);
+        mBtnNext = (ImageView) findViewById(R.id.next);
+        mBtnPre = (ImageView) findViewById(R.id.pre);
         hp = (ImageView) findViewById(R.id.head_portrait); //给头像替换图片
         hp.setOnCreateContextMenuListener(this);
         hp.setOnClickListener(new View.OnClickListener() {
@@ -1725,8 +1544,6 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                 break;
             case R.id.id_map_overlays:
                 //覆盖物点击事件处理
-
-                addSpotOverly();
                 MapStatusSize(11.8f);
 
 
@@ -1753,21 +1570,20 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         mBaiduMap.animateMapStatus(msu);
     }
 
-    //位置监听包括第一次初始化的位置 TODO 位置监听
+    //位置监听包括第一次初始化的位置 TODO 位置监听,MyLocationDate就是定位图标的位置设置
     private class MyLocationListener implements BDLocationListener {
 
         @Override
         public void onReceiveLocation(BDLocation location) {
-            myLocation = new LatLng(location.getLatitude(), location.getLongitude());
             MyLocationData data = new MyLocationData.Builder()
                     .direction(mCurrentX)//builder模式初始化数据
                     .accuracy(location.getRadius())//
-                    .latitude(24.416049)//
-                    .longitude(111.519692)//
+                    .latitude(24.461166)//实际是以接收到的location为参数值
+                    .longitude(111.545928)//实际是以接收到的location为参数值，这样就会图标根据位置的移动而在地图上移动。
                     .build();
             mBaiduMap.setMyLocationData(data);
-            mLaditude = 24.416049;
-            mLongditude = 111.519692;
+//            mLaditude = 24.416049;
+//            mLongditude = 111.519692;
 
 
             MyLocationConfiguration config = new MyLocationConfiguration(//
@@ -1857,7 +1673,10 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
     //返回景区中心点
     public void GoBackCenterScenic() {
+        mBaiduMap.clear();
+        overlayUtil.addScenicAllOverly(scenicBeenList);
         LatLng latLng = new LatLng(24.420853, 111.422715);
+        mBaiduMap.setMaxAndMinZoomLevel(11.7f, 11.7f);
         MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(latLng);
         mBaiduMap.animateMapStatus(msu);
         MapStatusSize(11.7f);

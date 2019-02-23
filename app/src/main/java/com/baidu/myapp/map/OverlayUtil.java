@@ -31,16 +31,6 @@ public class OverlayUtil {
     public OverlayUtil(BaiduMap baiduMap) {
         this.map = baiduMap;
     }
-
-    public void addFoodStoreOverly(BaiduMap map, FoodStore foodStore) {
-        map.clear();
-        LatLng latLng = new LatLng(foodStore.getStoreLatitude(), foodStore.getStoreLongtitude());
-        MarkerOptions options = new MarkerOptions().position(latLng).icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_marka)).zIndex(11);
-        Marker marker = (Marker) map.addOverlay(options);
-        Bundle arg0 = new Bundle();
-        arg0.putSerializable("FoodStore", foodStore);
-        marker.setExtraInfo(arg0);
-    }
     public void addOverlyByLatLng(LatLng latLng,int img,String text) {
 
         MarkerOptions options = new MarkerOptions().position(latLng).

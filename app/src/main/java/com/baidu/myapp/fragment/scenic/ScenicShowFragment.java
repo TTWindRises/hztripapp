@@ -13,7 +13,6 @@ import android.widget.Toast;
 import com.baidu.myapp.R;
 import com.baidu.myapp.adapter.scenic.SpotShowAdapter;
 import com.baidu.myapp.bean.scenic.ScenicBean;
-import com.baidu.myapp.bean.scenic.spot.GetSpotBean;
 import com.baidu.myapp.bean.scenic.spot.SpotBean;
 import com.baidu.myapp.fragment.BaseFragment;
 import com.baidu.myapp.util.Debbuger;

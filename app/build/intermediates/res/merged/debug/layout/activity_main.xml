@@ -215,12 +215,14 @@
             android:textSize="14dp" />
 
         <TextView
-            android:id="@+id/zidingyi_click"
+            android:id="@+id/change_click"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_label_pink_200_18dp"
             android:paddingBottom="10dp"
-            android:text="自制"
+            android:text="更改"
+            android:clickable="true"
+            android:onClick="ChangeOnClick"
             android:textColor="#000000"
             android:textSize="14dp" />
     </LinearLayout>
@@ -232,24 +234,23 @@
         android:layout_centerInParent="true"
         android:layout_marginBottom="40dp">
 
-        <Button
+        <ImageView
             android:id="@+id/pre"
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:visibility="invisible"
             android:layout_marginLeft="2dip"
             android:layout_marginRight="2dip"
-            android:text="确认"
+
             />
 
-        <Button
+        <ImageView
             android:id="@+id/next"
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:visibility="invisible"
             android:layout_marginLeft="60dp"
             android:layout_marginRight="2dip"
-            android:text="取消"
             />
     </LinearLayout>
 

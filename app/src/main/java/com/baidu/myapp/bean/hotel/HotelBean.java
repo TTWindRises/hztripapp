@@ -1,11 +1,19 @@
 package com.baidu.myapp.bean.hotel;
 
-import java.util.List;
+import com.baidu.myapp.util.Debbuger;
 
-public class HotelBean {
+import org.litepal.annotation.Column;
+import org.litepal.crud.DataSupport;
+
+import java.io.Serializable;
+import java.util.List;
+public class HotelBean extends DataSupport implements Serializable{
+    @Column(unique = true)
     private int hotelID;//酒店的唯一识别号
     private String hotelName;//酒店的名称
     private double hotelLatitude;//酒店坐标的经度
+    private String hotelImg;
+    private int scenic_id;
     private double hotelLongtitude;//酒店坐标的纬度
     private String hotelShowImg;//预计是一个数组，里面包含酒店的封面和一个数组图表、最大不可以超过6张~突然觉得C+里面的结构体机制挺方便的啊
     private String hotelDescribe;//酒店简介描述
@@ -28,6 +36,22 @@ public class HotelBean {
                 ", hotelSecurityCode='" + hotelSecurityCode + '\'' +
                 ", hotelDistance='" + hotelDistance + '\'' +
                 '}';
+    }
+
+    public int getScenic_id() {
+        return scenic_id;
+    }
+
+    public void setScenic_id(int scenic_id) {
+        this.scenic_id = scenic_id;
+    }
+
+    public String getHotelImg() {
+        return hotelImg;
+    }
+
+    public void setHotelImg(String hotelImg) {
+        this.hotelImg = hotelImg;
     }
 
     public int getHotelID() {
@@ -108,5 +132,15 @@ public class HotelBean {
 
     public void setHotelDistance(String hotelDistance) {
         this.hotelDistance = hotelDistance;
+    }
+
+    public void saveAllHotel(List<HotelBean> hotels) {
+        for (HotelBean hotel : hotels) {
+            if (hotel.save()) {
+
+            } else {
+                Debbuger.LogE("保存酒店信息失败");
+            }
+        }
     }
 }

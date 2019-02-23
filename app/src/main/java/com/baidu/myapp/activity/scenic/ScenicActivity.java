@@ -2,15 +2,19 @@ package com.baidu.myapp.activity.scenic;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,21 +24,30 @@ import com.baidu.myapp.activity.BaseActivity;
 import com.baidu.myapp.activity.FNmapActivity;
 import com.baidu.myapp.adapter.CarAdapter;
 import com.baidu.myapp.adapter.food.TabFragmentAdapter;
+import com.baidu.myapp.bean.food.FoodStore;
+import com.baidu.myapp.bean.hotel.HotelBean;
 import com.baidu.myapp.bean.scenic.ScenicBean;
-import com.baidu.myapp.bean.scenic.spot.GetSpotBean;
+import com.baidu.myapp.bean.scenic.ScenicProject;
+import com.baidu.myapp.bean.scenic.spot.GetDataBean;
 import com.baidu.myapp.fragment.food.FoodEvaluateFragment;
 import com.baidu.myapp.fragment.food.FoodMainFragment;
 import com.baidu.myapp.fragment.hotel.HotelMainFragment;
+import com.baidu.myapp.fragment.scenic.ScenicProjectFragment;
 import com.baidu.myapp.fragment.scenic.ScenicShowFragment;
 import com.baidu.myapp.util.CircleCrop;
+import com.baidu.myapp.util.Debbuger;
 import com.baidu.myapp.util.GlideRoundTransform;
 import com.baidu.myapp.util.foodutil.IndicatorLineUtil;
 import com.baidu.myapp.view.HorizontalRecycleView;
 import com.baidu.myapp.view.foodview.ShopCarView;
 import com.bumptech.glide.Glide;
 
+import org.litepal.crud.DataSupport;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.baidu.location.g.j.D;
 
 /**
  * Created by Administrator on 2019/2/18.
@@ -79,8 +92,11 @@ public class ScenicActivity extends BaseActivity {
         Bundle extras = getIntent().getExtras();
         scenic = (ScenicBean) extras.get("Scenic");
         //模拟数据从网络加载
-        GetSpotBean getSpotBean = new GetSpotBean();
-        getSpotBean.LoadLoacalSpotBean();
+        GetDataBean getDataBean = new GetDataBean();
+        getDataBean.LoadLoacalSpotBean();
+        getDataBean.LoadFoodData();
+        getDataBean.LoadProjectBean();
+        getDataBean.LoadHotelBean();
         scenicShowFragment.setScenicId(String.valueOf(scenic.getScenicId()));
 
         //viewpage
@@ -110,8 +126,9 @@ public class ScenicActivity extends BaseActivity {
 
         //优惠券
         TextView price = (TextView) findViewById(R.id.scenic_tickets_price);
+        final LinearLayout tickets = (LinearLayout) findViewById(R.id.scenic_tickets);
 //        TextView full = (TextView) findViewById(R.id.scenic_tickets_describe);
-        TextView get = (TextView) findViewById(R.id.scenic_tickets_buy);
+        final TextView get = (TextView) findViewById(R.id.scenic_tickets_buy);
         if (scenic.getScenicPrice() == 0) {
             price.setText("免费游玩");
 //        full.setText("门票");
@@ -122,6 +139,22 @@ public class ScenicActivity extends BaseActivity {
             price.setText("￥"+(int)scenic.getScenicPrice());
 //        full.setText("门票");
             get.setText("购买门票");
+            get.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (scenic.isTickets()==0) {
+                        tickets.setBackgroundColor(ContextCompat.getColor(ScenicActivity.this, R.color.gray));
+                        scenic.setTickets(1);
+                        get.setText("已购买");
+//                        scenic.update(Long.valueOf(scenic.getScenicId()));
+                    } else {
+                        tickets.setBackgroundColor(Color.parseColor("#ef7a82"));
+                        get.setText("购买门票");
+                        scenic.setTickets(0);
+//                        scenic.update(Long.valueOf(scenic.getScenicId()));
+                    }
+                }
+            });
         }
 
 
@@ -186,13 +219,17 @@ public class ScenicActivity extends BaseActivity {
 
 
 //        goodsFragment.setStoreID(foodStore.getStoreID());//让碎片能够找到相应的实体类
-        FoodEvaluateFragment evaluateFragment = new FoodEvaluateFragment();
+        ScenicProjectFragment scenicProjectFragment = new ScenicProjectFragment();
+        scenicProjectFragment.setData(DataSupport.where("scenic_id=?", String.valueOf(scenic.getScenicId())).find(ScenicProject.class));
         FoodMainFragment foodMainFragment = new FoodMainFragment();
+        foodMainFragment.setData(DataSupport.where("scenic_id=?", String.valueOf(scenic.getScenicId())).find(FoodStore.class));
         HotelMainFragment hotelMainFragment = new HotelMainFragment();
+        hotelMainFragment.setData(DataSupport.where("scenic_id=?", String.valueOf(scenic.getScenicId())).find(HotelBean.class));
+
         mFragments.add(scenicShowFragment);
-        mFragments.add(evaluateFragment);
-        mFragments.add(foodMainFragment);
+        mFragments.add(scenicProjectFragment);
         mFragments.add(hotelMainFragment);
+        mFragments.add(foodMainFragment);
         mTitles.add("景点");
         mTitles.add("项目");
         mTitles.add("酒店");
@@ -217,7 +254,47 @@ public class ScenicActivity extends BaseActivity {
         collapsingToolbarLayout.setStatusBarScrimColor(getResources().getColor(R.color.touming));
 
     }
-    //购物车
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Debbuger.LogE(getLocalClassName()+"onStart()");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Debbuger.LogE(getLocalClassName()+"onStop()");
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Debbuger.LogE(getLocalClassName()+"onDestroy()");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Debbuger.LogE(getLocalClassName()+"onPause()");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Debbuger.LogE(getLocalClassName()+"onPause()");
+    }
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        //保存销毁之前的数据
+        Debbuger.LogE(getLocalClassName()+"onSaveInstanceState()");
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Debbuger.LogE(getLocalClassName()+"onRestoreInstanceState()");
+    }
 
 }

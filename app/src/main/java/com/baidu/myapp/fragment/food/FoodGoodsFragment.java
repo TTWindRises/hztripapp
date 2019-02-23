@@ -1,5 +1,7 @@
 package com.baidu.myapp.fragment.food;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -19,17 +21,20 @@ import com.baidu.myapp.adapter.food.FoodLeftRecyclerAdapter;
 import com.baidu.myapp.adapter.food.FoodRightRecyclerAdapter;
 import com.baidu.myapp.bean.food.FoodBean;
 import com.baidu.myapp.bean.food.FoodCategory;
+import com.baidu.myapp.detail.DetailActivity;
 import com.baidu.myapp.fragment.BaseFragment;
 import com.baidu.myapp.sticky.itemDecoration.GroupInfo;
 import com.baidu.myapp.sticky.itemDecoration.StickySectionDecoration;
 import com.baidu.myapp.util.Debbuger;
 import com.baidu.myapp.util.foodutil.SpaceItemDecoration;
 import com.baidu.myapp.view.HorizontalRecycleView;
-
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 import org.litepal.crud.DataSupport;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,7 +76,7 @@ public class FoodGoodsFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.food_goods_fragment, container, false);
         initView(view);
         initList();
-        loadHorizontalFoodView();
+//        loadHorizontalFoodView();
         loadVerticalLeftView();
         loadVerticalRightView();
         initData();
@@ -98,7 +103,7 @@ public class FoodGoodsFragment extends BaseFragment {
     //TODO add category data
     private void initData() {
         mLinearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        rightadapter = new FoodRightRecyclerAdapter(getActivity(), foodlist, (FoodStoreActivity) getActivity());
+        rightadapter = new FoodRightRecyclerAdapter(foodlist, (FoodStoreActivity) getActivity());
         //right_recyclerView.addItemDecoration(new SpaceItemDecoration(15));
         right_recyclerView.setItemAnimator(new DefaultItemAnimator());
         right_recyclerView.setLayoutManager(mLinearLayoutManager);
@@ -127,6 +132,25 @@ public class FoodGoodsFragment extends BaseFragment {
         });
         right_recyclerView.addItemDecoration(new StickySectionDecoration(getActivity(), callback));
         right_recyclerView.setAdapter(rightadapter);
+
+        right_recyclerView.addOnItemTouchListener(new OnItemClickListener() {
+                                                 @Override
+                                                 public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                                                     super.onItemChildClick(adapter, view, position);
+                                                     if (view.getId() == R.id.food_main2) {
+                                                         Intent intent = new Intent(getActivity(), DetailActivity.class);
+                                                         intent.putExtra("food", (FoodBean)adapter.getData().get(position));
+                                                         intent.putExtra("position", position);
+                                                         getActivity().startActivity(intent);
+                                                         ( getActivity()).overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                                                     }
+                                                 }
+            @Override
+            public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
+
+            }
+        });
+
         right_recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -204,7 +228,7 @@ public class FoodGoodsFragment extends BaseFragment {
 
     private void initView(View view) {
         main_layout = view.findViewById(R.id.food_goods_main_layout);
-        horizontalRecycleView = view.findViewById(R.id.food_horizontal_list);
+//        horizontalRecycleView = view.findViewById(R.id.food_horizontal_list);
         left_recyclerView = view.findViewById(R.id.food_vertical_left_category_list);
         right_recyclerView = view.findViewById(R.id.food_store_vertical_right_list);
 //        shopCartMain = view.findViewById(R.id.food_store_shop_cart_main);
