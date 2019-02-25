@@ -4590,6 +4590,8 @@ containing a value of this type.
         public static final int Base_Widget_AppCompat_Toolbar_Button_Navigation=0x7f0a0085;
         public static final int Base_Widget_Design_AppBarLayout=0x7f0a00d3;
         public static final int Base_Widget_Design_TabLayout=0x7f0a00d4;
+        /**  设置该属性边距为0dp
+         */
         public static final int CustomToolbar=0x7f0a00d5;
         public static final int NoTitleTranslucentTheme=0x7f0a00d6;
         public static final int Platform_AppCompat=0x7f0a001f;

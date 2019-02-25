@@ -128,12 +128,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi-v4\\ic_directions_bike_indigo_200_18dp.png",
-        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_directions_bike_indigo_200_18dp.png"
-    },
-    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi-v4\\ic_directions_bike_indigo_200_18dp.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_directions_bike_indigo_200_18dp.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi-v4\\abc_ic_star_black_36dp.png",

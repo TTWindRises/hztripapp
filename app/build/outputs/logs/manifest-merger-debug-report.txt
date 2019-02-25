@@ -75,7 +75,7 @@ MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Admi
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\220ca4e58c90bd1d9284be9d4ce98bbb7f554116\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\88bacd0dc62d2c6e90ed348ebf47c50a55589537\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\c82aa63cde0b0538ddb283b9c9be85e94ce74d23\output\AndroidManifest.xml:29:5-20
-MERGED from [:viewpagerindicator:] C:\Users\Administrator\.android\build-cache\8cbe926f880b60c5f06386ac6895f88d906ba55f\output\AndroidManifest.xml:11:5-14:19
+MERGED from [:viewpagerindicator:] C:\Users\Administrator\.android\build-cache\938194b7e0d6d9850a6f3a2a698d5236e8ae278c\output\AndroidManifest.xml:11:5-14:19
 	android:label
 		ADDED from E:\myProgramma\hztripapp\app\src\main\AndroidManifest.xml:32:9-41
 	android:supportsRtl
@@ -211,7 +211,7 @@ MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Admi
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\220ca4e58c90bd1d9284be9d4ce98bbb7f554116\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\88bacd0dc62d2c6e90ed348ebf47c50a55589537\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\c82aa63cde0b0538ddb283b9c9be85e94ce74d23\output\AndroidManifest.xml:21:5-23:58
-MERGED from [:viewpagerindicator:] C:\Users\Administrator\.android\build-cache\8cbe926f880b60c5f06386ac6895f88d906ba55f\output\AndroidManifest.xml:7:5-9:41
+MERGED from [:viewpagerindicator:] C:\Users\Administrator\.android\build-cache\938194b7e0d6d9850a6f3a2a698d5236e8ae278c\output\AndroidManifest.xml:7:5-9:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\1d4f5febe29b3c86d03906875e0d86fbdc91356d\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion

@@ -8,12 +8,12 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\view_addwidget.xml"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\1d4f5febe29b3c86d03906875e0d86fbdc91356d\\output\\res\\layout\\design_navigation_item_header.xml"
-    },
-    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scenic_project_fragment.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\scenic_project_fragment.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\1d4f5febe29b3c86d03906875e0d86fbdc91356d\\output\\res\\layout\\design_navigation_item_header.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\hotel_item.xml",
@@ -96,12 +96,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\1d4f5febe29b3c86d03906875e0d86fbdc91356d\\output\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
-    },
-    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_load_more.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\view_load_more.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
@@ -120,12 +120,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\1d4f5febe29b3c86d03906875e0d86fbdc91356d\\output\\res\\layout\\design_bottom_navigation_item.xml"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
-    },
-    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scenic_show_fragment.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\scenic_show_fragment.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_detail_header.xml",
@@ -172,12 +172,12 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\food_store_bottom_fragment_item.xml"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\abc_screen_simple.xml"
-    },
-    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_car.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\view_car.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\abc_screen_simple.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
@@ -208,12 +208,12 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\activity_routeplan.xml"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\abc_action_bar_title_item.xml"
-    },
-    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\1d4f5febe29b3c86d03906875e0d86fbdc91356d\\output\\res\\layout\\design_navigation_item.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\project_item.xml",
@@ -348,12 +348,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
-    },
-    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\food_main_item.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\food_main_item.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",

@@ -32,12 +32,12 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\myshape.xml"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable\\img_border.xml",
-        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\img_border.xml"
-    },
-    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable\\shibashui_head_bg.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\shibashui_head_bg.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable\\img_border.xml",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\img_border.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable\\design_fab_background.xml",
@@ -468,12 +468,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable\\back.png",
-        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\back.png"
-    },
-    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable\\shibashui_shenlongpubu_img.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\shibashui_shenlongpubu_img.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable\\back.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable\\back.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable\\icon_markj.png",
