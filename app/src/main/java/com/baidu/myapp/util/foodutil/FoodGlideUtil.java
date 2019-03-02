@@ -20,7 +20,7 @@ public class FoodGlideUtil {
         return glideUtil;
     }
 
-    public static void setSquareGlide(Context context,Integer integer, ImageView imageView) {
+    public void setSquareGlide(Context context,Integer integer, ImageView imageView) {
         Glide.with(context)
                 .load(integer)
                 .dontAnimate()

@@ -79,6 +79,7 @@ import com.baidu.myapp.activity.scenic.ScenicActivity;
 import com.baidu.myapp.adapter.CarAdapter;
 import com.baidu.myapp.bean.food.FoodStore;
 import com.baidu.myapp.bean.scenic.ScenicBean;
+import com.baidu.myapp.bean.scenic.spot.GetDataBean;
 import com.baidu.myapp.bean.scenic.spot.SpotBean;
 import com.baidu.myapp.map.OverlayUtil;
 import com.baidu.myapp.overlay.util.DrivingRouteOverlay;
@@ -92,6 +93,7 @@ import com.baidu.myapp.util.GlideRoundTransform;
 import com.baidu.myapp.util.Guideutil;
 import com.baidu.myapp.util.MyOrientationListener;
 import com.baidu.myapp.util.scenicutil.ClearViewManger;
+import com.baidu.myapp.util.scenicutil.PointMove;
 import com.baidu.myapp.view.HeadView;
 import com.bumptech.glide.Glide;
 import com.fengmap.android.map.FMMap;
@@ -110,6 +112,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
+import static com.baidu.location.g.a.f;
+import static com.baidu.location.g.j.P;
+
 public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickListener,
         OnGetRoutePlanResultListener, OnFMMapInitListener {
     //
@@ -185,6 +190,10 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     int k = 0;
     int l = 0;
     int h = 0;
+
+    //贺州学院坐标
+    LatLng gaotiezhan = new LatLng(24.506549,111.491311);
+
     /**
      * 贺州学院景区内景点坐标集合
      *
@@ -1133,10 +1142,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
 
     //    点击景点后界面拉倒中心位置
     public void spotClick(View view) {
-        MapStatusSize(13.0f);
-        LatLng spcenter = new LatLng(24.558307, 111.558717);//城市景区中心点111.558717,24.558307
-        MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(spcenter);//
-        mBaiduMap.setMapStatus(msu);
+        Toast.makeText(mContext, "查看攻略景点", Toast.LENGTH_SHORT).show();
 //        Toast.makeText(this, "a", Toast.LENGTH_SHORT).show();
     }
 
@@ -1185,8 +1191,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
             public void onClick(View v) {
                 ClearViewManger.getInstance().HideAllView();
                 Toast.makeText(mContext, "开始前往首个目的地", Toast.LENGTH_SHORT).show();
-                startBikeNavi();
                 h = 1;
+                l=0;
             }
         });
         mBtnNext.setOnClickListener(new View.OnClickListener() {
@@ -1241,7 +1247,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         overlayUtil.addTextByLatLng(SubLatLng(SubLatLng(SubLatLng(yushilin))),"旅行结束返程");
         LatLng spcenter = new LatLng(24.528307, 111.558717);///城市景区中心点111.558717,24.558307
         MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(spcenter);//
-        mBaiduMap.setMapStatus(msu);
+        mBaiduMap.animateMapStatus(msu,500);
         MapStatusSize(12.8f);//111.558199,24.51445
 
 
@@ -1570,18 +1576,27 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         mBaiduMap.animateMapStatus(msu);
     }
 
+    private double lati = gaotiezhan.latitude;
+    private double longi = gaotiezhan.longitude;
     //位置监听包括第一次初始化的位置 TODO 位置监听,MyLocationDate就是定位图标的位置设置
     private class MyLocationListener implements BDLocationListener {
 
         @Override
         public void onReceiveLocation(BDLocation location) {
+            if (h == 1) {
+
+
+            }
+
             MyLocationData data = new MyLocationData.Builder()
                     .direction(mCurrentX)//builder模式初始化数据
                     .accuracy(location.getRadius())//
-                    .latitude(24.461166)//实际是以接收到的location为参数值
-                    .longitude(111.545928)//实际是以接收到的location为参数值，这样就会图标根据位置的移动而在地图上移动。
+                    .latitude(lati)//实际是以接收到的location为参数值
+                    .longitude(longi)//实际是以接收到的location为参数值，这样就会图标根据位置的移动而在地图上移动。
                     .build();
             mBaiduMap.setMyLocationData(data);
+
+
 //            mLaditude = 24.416049;
 //            mLongditude = 111.519692;
 
@@ -1597,7 +1612,25 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                 Toast.makeText(mContext, "您目前正在贺州市", Toast.LENGTH_LONG).show();
             }
 
-
+            PointMove p = new PointMove(new LatLng(24.418836,111.522042), new LatLng(lati,longi));
+            if (p.Move() != null&&h==1) {
+                lati = p.Move().latitude;
+                longi = p.Move().longitude;
+                Debbuger.LogE("Moving lati:" + lati);
+                Debbuger.LogE("Moving longi:"+longi);
+            } else if (l == 0&&h==1) {
+                l=1;
+                mBaiduMap.clear();
+                mBaiduMap.setMaxAndMinZoomLevel(17.8f, 17.0f);
+                MapStatusSize(18.0f);
+                MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(new LatLng(24.416049,111.519692));
+                mBaiduMap.animateMapStatus(msu,600);
+                GetDataBean getDataBean = new GetDataBean();
+                getDataBean.LoadLoacalSpotBean();
+                overlayUtil.addSpotOverlay(DataSupport.where("scenic_id=?","1").find(SpotBean.class));
+                Toast.makeText(mContext, "你已到达贺州学院", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
           /*  //mapView 销毁后不在处理新接收的位置
             if (location == null || mMapView == null){
@@ -1678,7 +1711,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         LatLng latLng = new LatLng(24.420853, 111.422715);
         mBaiduMap.setMaxAndMinZoomLevel(11.7f, 11.7f);
         MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(latLng);
-        mBaiduMap.animateMapStatus(msu);
+        mBaiduMap.animateMapStatus(msu,500);
         MapStatusSize(11.7f);
     }
 

@@ -103,7 +103,7 @@ public class FoodGoodsFragment extends BaseFragment {
     //TODO add category data
     private void initData() {
         mLinearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        rightadapter = new FoodRightRecyclerAdapter(foodlist, (FoodStoreActivity) getActivity());
+        rightadapter = new FoodRightRecyclerAdapter(getActivity(),foodlist, (FoodStoreActivity) getActivity());
         //right_recyclerView.addItemDecoration(new SpaceItemDecoration(15));
         right_recyclerView.setItemAnimator(new DefaultItemAnimator());
         right_recyclerView.setLayoutManager(mLinearLayoutManager);

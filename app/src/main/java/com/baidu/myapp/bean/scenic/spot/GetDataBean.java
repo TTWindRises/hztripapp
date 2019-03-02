@@ -31,9 +31,10 @@ public class GetDataBean {
             SpotBean sp = new SpotBean();
             sp.setSpotId(0);
             sp.setSpotName("第三图书馆");
-            sp.setSpotLatitude(24.418365);
+            sp.setSpotLatitude(24.418104);
+            sp.setSpotOverlayImg(String.valueOf(R.drawable.spot_tushuguan));
             sp.setScenic_id(1);
-            sp.setSpotLongtitude(111.52151);
+            sp.setSpotLongtitude(111.520515);
             //播报
             sp.setSpotDescribe("图书馆建立于1949年，共有2万3千多本书籍，其中有2000多本古代书籍，是每个热爱学习的同学的圣地，各项buff加成，学习事半功倍");
             sp.setNextVoiceSrc("穿过小树林，前往逸夫楼");
@@ -41,20 +42,22 @@ public class GetDataBean {
             //2
             SpotBean sp2 = new SpotBean();
             sp2.setSpotId(1);
-            sp2.setSpotName("图书馆人像");
-            sp2.setSpotLatitude(24.417987);
+            sp2.setSpotName("小桃林");
+            sp2.setSpotLatitude(24.417182);
             sp2.setScenic_id(1);
-            sp2.setSpotLongtitude(111.521413);
+            sp2.setSpotLongtitude(111.521755);
             //播报
-            sp2.setSpotDescribe("状元郎");
+            sp2.setSpotDescribe("桃林满天下");
             sp2.setNextVoiceSrc("继续前进，前方图书馆");
-            sp2.setSpotImg(String.valueOf(R.drawable.shixiang_img2));
+            sp2.setSpotOverlayImg(String.valueOf(R.drawable.spot_taohualin));
+            sp2.setSpotImg(String.valueOf(R.drawable.taolin_img));
             //3
             SpotBean sp3 = new SpotBean();
             sp3.setSpotId(2);
             sp3.setSpotName("逸夫楼");
             sp3.setSpotLatitude(24.4175);
             sp3.setScenic_id(1);
+            sp3.setSpotOverlayImg(String.valueOf(R.drawable.spot_yishulou));
             sp3.setSpotLongtitude(111.51793);
             //播报
             sp3.setSpotDescribe("逸夫基金会捐赠建造");
@@ -67,6 +70,7 @@ public class GetDataBean {
             sp4.setSpotLatitude(24.415065);
             sp4.setScenic_id(1);
             sp4.setSpotLongtitude(111.519837);
+            sp4.setSpotOverlayImg(String.valueOf(R.drawable.spot_chuangyiyuan));
             //播报
             sp4.setSpotDescribe("2008年建设，每年都会由学生自主设计主题");
             sp4.setNextVoiceSrc("导游结束~");

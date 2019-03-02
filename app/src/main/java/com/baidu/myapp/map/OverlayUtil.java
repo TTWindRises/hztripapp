@@ -14,6 +14,7 @@ import com.baidu.mapapi.model.LatLng;
 import com.baidu.myapp.R;
 import com.baidu.myapp.bean.food.FoodStore;
 import com.baidu.myapp.bean.scenic.ScenicBean;
+import com.baidu.myapp.bean.scenic.spot.SpotBean;
 
 import java.util.List;
 
@@ -116,6 +117,44 @@ public class OverlayUtil {
 //            map.addOverlay(mTextOptions2);
             Bundle arg0 = new Bundle();
             arg0.putSerializable("ScenicBean", scenicBean);
+            marker.setExtraInfo(arg0);//因为每次存放的marker对象都是不一样的，所以不用担心会存放的是一个数组在里面，或者拿到的只是最后一个存放的数据这种问题
+
+        }
+    }
+
+    public void addSpotOverlay(List<SpotBean> spots) {
+        map.clear();
+        for (SpotBean spot : spots) {
+            LatLng latLng = new LatLng(spot.getSpotLatitude(), spot.getSpotLongtitude());
+           LatLng latLng2 = new LatLng(spot.getSpotLatitude() - 0.00007f, spot.getSpotLongtitude());
+            MarkerOptions options = new MarkerOptions().position(latLng).
+                    icon(BitmapDescriptorFactory.fromResource(Integer.parseInt(spot.getSpotOverlayImg())))
+                    .zIndex(14).scaleX(0.3f).scaleY(0.3f);
+            Marker marker = (Marker) map.addOverlay(options);
+            //构建TextOptions对象
+            OverlayOptions mTextOptions = new TextOptions()
+                    .text(spot.getSpotName()) //文字内容
+//                    .bgColor(0xAAFFFF00) //背景色
+                    .fontSize(34) //字号
+                    .fontColor(0xFFFF00FF) //文字颜色
+                    .rotate(0) //旋转角度
+                    .position(latLng2);
+
+
+//            OverlayOptions mTextOptions2 = new TextOptions()
+//                    .text("门票:￥"+scenicBean.getScenicPrice()) //文字内容
+////                    .bgColor(0xAAFFFF00) //背景色
+//                    .fontSize(28) //字号
+//                    .fontColor(0xFFFF00FF) //文字颜色
+//                    .rotate(0) //旋转角度
+//                    .position(latLng1);
+//            "门票:￥"+scenicBean.getScenicPrice()
+
+//在地图上显示文字覆盖物
+            map.addOverlay(mTextOptions);
+//            map.addOverlay(mTextOptions2);
+            Bundle arg0 = new Bundle();
+            arg0.putSerializable("spot", spot);
             marker.setExtraInfo(arg0);//因为每次存放的marker对象都是不一样的，所以不用担心会存放的是一个数组在里面，或者拿到的只是最后一个存放的数据这种问题
 
         }
