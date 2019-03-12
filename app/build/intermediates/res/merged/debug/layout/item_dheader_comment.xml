@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
-        android:text="2017-08-01"
+        android:text="2019-03-01"
         android:textColor="@color/detail_hint"
         android:textSize="13sp"
         app:layout_constraintLeft_toRightOf="@+id/textView2"

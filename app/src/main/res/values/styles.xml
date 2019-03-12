@@ -42,11 +42,11 @@
     </style>
 
     <style name="cut_style">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">11sp</item>
         <item name="android:text">没什么可送的了就是来凑行数的</item>
-        <item name="android:textColor">@color/gray_hint</item>
+        <item name="android:textColor">#999999</item>
     </style>
 
     <style name="badge_style">

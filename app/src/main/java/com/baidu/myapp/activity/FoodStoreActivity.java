@@ -26,6 +26,7 @@ import com.baidu.myapp.adapter.CarAdapter;
 import com.baidu.myapp.adapter.food.TabFragmentAdapter;
 import com.baidu.myapp.bean.food.FoodBean;
 import com.baidu.myapp.bean.food.FoodStore;
+import com.baidu.myapp.behaviors.AppBarBehavior;
 import com.baidu.myapp.fragment.comment.SecondFragment;
 import com.baidu.myapp.fragment.food.FoodEvaluateFragment;
 import com.baidu.myapp.fragment.food.FoodGoodsFragment;
@@ -39,6 +40,7 @@ import com.baidu.myapp.view.foodview.AddWidget;
 import com.baidu.myapp.view.foodview.ShopCarView;
 import com.baidu.myapp.view.foodview.ZAddWidget;
 import com.bumptech.glide.Glide;
+import com.github.florent37.viewanimator.ViewAnimator;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -48,6 +50,7 @@ import java.util.List;
 import static com.baidu.location.g.j.am;
 import static com.baidu.location.g.j.t;
 import static com.baidu.location.g.j.v;
+import static com.baidu.myapp.R.id.scroll_container;
 
 /**
  * Created by Administrator on 2018/11/7.
@@ -60,6 +63,7 @@ public class FoodStoreActivity extends BaseActivity implements ZAddWidget.OnAddC
     public static final String CLEARCAR_ACTION = "clearCar";
     FoodStore foodStore;
     FoodGoodsFragment goodsFragment;
+    public View scroll_container;
     BigDecimal amount=new BigDecimal(0.0);
     private CoordinatorLayout main_layout;
     private CollapsingToolbarLayout collapsingToolbarLayout;
@@ -91,11 +95,21 @@ public class FoodStoreActivity extends BaseActivity implements ZAddWidget.OnAddC
         intentFilter.addAction(CLEARCAR_ACTION);
         registerReceiver(broadcastReceiver, intentFilter);
     }
-
+    public void expendCut(View view) {
+        float cty = scroll_container.getTranslationY();
+        if (!ViewUtils.isFastClick()) {
+            ViewAnimator.animate(scroll_container)
+                    .translationY(cty, cty == 0 ? AppBarBehavior.cutExpHeight : 0)
+                    .decelerate()
+                    .duration(100)
+                    .start();
+        }
+    }
 
     //头
     private void init() {
         //viewpage
+        scroll_container = findViewById(R.id.scroll_container);
         viewPager = (ViewPager) findViewById(R.id.food_store_view_pager);
 
         //全局
@@ -188,7 +202,7 @@ public class FoodStoreActivity extends BaseActivity implements ZAddWidget.OnAddC
 
 
         viewPager.setAdapter(adapter);
-        slidingTabLayout = (TabLayout) findViewById(R.id.slidinglayout);
+        slidingTabLayout = (TabLayout) findViewById(R.id.indicator);
         slidingTabLayout.setupWithViewPager(viewPager);
         slidingTabLayout.post(new Runnable() {
             @Override
@@ -200,7 +214,7 @@ public class FoodStoreActivity extends BaseActivity implements ZAddWidget.OnAddC
     }
 
     private void setCollsapsing() {
-        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing);
+        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setStatusBarScrimColor(getResources().getColor(R.color.touming));
 
     }

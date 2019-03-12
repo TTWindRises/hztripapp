@@ -52,16 +52,16 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\food_vertical_right_item.xml"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\scenic_project_item.xml",
-        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\scenic_project_item.xml"
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\1d4f5febe29b3c86d03906875e0d86fbdc91356d\\output\\res\\layout\\design_layout_snackbar.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\item_detail_header.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\item_detail_header.xml"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_layout_snackbar.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\1d4f5febe29b3c86d03906875e0d86fbdc91356d\\output\\res\\layout\\design_layout_snackbar.xml"
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\scenic_project_item.xml",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\scenic_project_item.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_lines_media.xml",
@@ -76,28 +76,28 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\food_evaluate_item.xml",
-        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\food_evaluate_item.xml"
-    },
-    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\activity_overlay.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\activity_overlay.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\food_evaluate_item.xml",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\food_evaluate_item.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\support_simple_spinner_dropdown_item.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_black.xml",
-        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\view_black.xml"
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\select_dialog_item_material.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\item_dheader_comment.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\item_dheader_comment.xml"
     },
     {
-        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_item_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\layout\\select_dialog_item_material.xml"
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\view_black.xml",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\view_black.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_layout_tab_text.xml",

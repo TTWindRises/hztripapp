@@ -56,7 +56,6 @@ public class HeadView extends RelativeLayout {
         if (headview == null) {
             Debbuger.LogE("head找不到");
         } else {
-            Debbuger.LogE("有head");
             Glide.with(context).load(R.drawable.hp_01).transform(new CircleCrop(context)).into(headview);
         }
         headview.setOnClickListener(new View.OnClickListener() {

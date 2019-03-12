@@ -34,7 +34,7 @@ public final class R {
         public static final int tv_prompt = 0x7f0e0158;
     }
     public static final class layout {
-        public static final int quick_view_load_more = 0x7f04005f;
+        public static final int quick_view_load_more = 0x7f040061;
     }
     public static final class string {
         public static final int app_name = 0x7f080024;

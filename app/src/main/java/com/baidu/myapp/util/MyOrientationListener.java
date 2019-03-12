@@ -26,7 +26,7 @@ public class MyOrientationListener implements SensorEventListener {
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
         if (mSensorManager != null) {
             //获得方向传感器
-            mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
+            mSensor=mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
         }
         if (mSensor != null) {
             mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_UI);
@@ -46,7 +46,7 @@ public class MyOrientationListener implements SensorEventListener {
 
             if (Math.abs(x - lastX) > 1.0) {
                 if (mOnOrientationListener != null) {
-                    mOnOrientationListener.onOrientationChanged(lastX);
+                    mOnOrientationListener.onOrientationChanged(x);
                 }
             }
             lastX = x;

@@ -47,6 +47,8 @@ import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.map.OverlayOptions;
+import com.baidu.mapapi.map.Polyline;
+import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.search.core.RouteLine;
 import com.baidu.mapapi.search.core.SearchResult;
@@ -92,6 +94,7 @@ import com.baidu.myapp.util.FileUtils;
 import com.baidu.myapp.util.GlideRoundTransform;
 import com.baidu.myapp.util.Guideutil;
 import com.baidu.myapp.util.MyOrientationListener;
+import com.baidu.myapp.util.scenicguide.GuideScenic;
 import com.baidu.myapp.util.scenicutil.ClearViewManger;
 import com.baidu.myapp.util.scenicutil.PointMove;
 import com.baidu.myapp.view.HeadView;
@@ -114,6 +117,7 @@ import java.util.List;
 import static android.content.ContentValues.TAG;
 import static com.baidu.location.g.a.f;
 import static com.baidu.location.g.j.P;
+import static com.baidu.mapapi.map.BitmapDescriptorFactory.fromResource;
 
 public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickListener,
         OnGetRoutePlanResultListener, OnFMMapInitListener {
@@ -181,10 +185,10 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     BikeNaviLaunchParam param;
     WalkNaviLaunchParam walkParam;
     private static boolean isPermissionRequested = false;
-    BitmapDescriptor bdA = BitmapDescriptorFactory
-            .fromResource(R.drawable.icon_marka);
-    BitmapDescriptor bdB = BitmapDescriptorFactory
-            .fromResource(R.drawable.icon_markb);
+    BitmapDescriptor bdA =
+            fromResource(R.drawable.icon_marka);
+    BitmapDescriptor bdB =
+            fromResource(R.drawable.icon_markb);
     int iii = 5;
     //导游相关
     int k = 0;
@@ -937,7 +941,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         @Override
         public BitmapDescriptor getStartMarker() {
             if (useDefaultIcon) {
-                return BitmapDescriptorFactory.fromResource(R.drawable.icon_st);
+                return fromResource(R.drawable.icon_st);
             }
             return null;
         }
@@ -945,7 +949,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         @Override
         public BitmapDescriptor getTerminalMarker() {
             if (useDefaultIcon) {
-                return BitmapDescriptorFactory.fromResource(R.drawable.icon_en);
+                return fromResource(R.drawable.icon_en);
             }
             return null;
         }
@@ -961,7 +965,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         @Override
         public BitmapDescriptor getStartMarker() {
             if (useDefaultIcon) {
-                return BitmapDescriptorFactory.fromResource(R.drawable.icon_st);
+                return fromResource(R.drawable.icon_st);
             }
             return null;
         }
@@ -969,7 +973,7 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
         @Override
         public BitmapDescriptor getTerminalMarker() {
             if (useDefaultIcon) {
-                return BitmapDescriptorFactory.fromResource(R.drawable.icon_en);
+                return fromResource(R.drawable.icon_en);
             }
             return null;
         }
@@ -1446,8 +1450,8 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
     }
 
     private void initMaker() {
-        mDeliciousMarker = BitmapDescriptorFactory.fromResource(R.drawable.ic_cate_red);
-        mMarker = BitmapDescriptorFactory.fromResource(R.drawable.icon_marka);
+        mDeliciousMarker = fromResource(R.drawable.ic_cate_red);
+        mMarker = fromResource(R.drawable.icon_marka);
         mMarkerLy = (RelativeLayout) findViewById(R.id.id_map_ly);
     }
 
@@ -1627,8 +1631,16 @@ public class MainActivity extends BaseActivity implements BaiduMap.OnMapClickLis
                 mBaiduMap.animateMapStatus(msu,600);
                 GetDataBean getDataBean = new GetDataBean();
                 getDataBean.LoadLoacalSpotBean();
-                overlayUtil.addSpotOverlay(DataSupport.where("scenic_id=?","1").find(SpotBean.class));
+                List<SpotBean> spots = DataSupport.where("scenic_id=?", "1").find(SpotBean.class);
+                overlayUtil.addSpotOverlay(spots);
                 Toast.makeText(mContext, "你已到达贺州学院", Toast.LENGTH_SHORT).show();
+                LatLng p1 = new LatLng(lati, longi);
+                LatLng p2 = new LatLng(spots.get(0).getSpotLatitude(), spots.get(0).getSpotLongtitude());
+                LatLng p3 = new LatLng(spots.get(1).getSpotLatitude(), spots.get(1).getSpotLongtitude());
+                PlanNode first = PlanNode.withLocation(p1);
+                PlanNode second = PlanNode.withLocation(p3);
+
+                mSearch.walkingSearch(new WalkingRoutePlanOption().from(first).to(second));
                 return;
             }
 

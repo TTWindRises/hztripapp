@@ -41,9 +41,14 @@ public class PointMove {
 
         DetermineLacation();
         if (Math.abs(lat.latitude - locationData.latitude) > 0.0015
-                ||Math.abs(lat.longitude - locationData.longitude)>0.00125) {
+                &&Math.abs(lat.longitude - locationData.longitude)>0.00125) {
             Debbuger.LogE("Moving");
             return new LatLng(locationData.latitude + latd, locationData.longitude + longd);
+        } else if(Math.abs(lat.latitude - locationData.latitude) > 0.0015) {
+            return new LatLng(locationData.latitude + latd, locationData.longitude);
+
+        } else if (Math.abs(lat.longitude - locationData.longitude)>0.00125) {
+            return new LatLng(locationData.latitude, locationData.longitude + longd);
         } else {
             Debbuger.LogE("Moving null");
             return null;

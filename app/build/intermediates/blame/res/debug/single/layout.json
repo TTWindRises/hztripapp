@@ -4,6 +4,10 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\activity_guide_main.xml"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\contration_bar.xml",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\contration_bar.xml"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_addwidget.xml",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\view_addwidget.xml"
     },
@@ -290,6 +294,10 @@
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\1d4f5febe29b3c86d03906875e0d86fbdc91356d\\output\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\header_info.xml",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\layout\\header_info.xml"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\food_header_list.xml",

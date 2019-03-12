@@ -48,6 +48,14 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable-xxhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\spot_tiyuguan_min.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\spot_tiyuguan_min.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\spot_tushuguan_min.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\spot_tushuguan_min.png"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\rating_on.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\rating_on.png"
     },
@@ -156,6 +164,18 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable-xxhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\spot_tiyuguan.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\spot_tiyuguan.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\spot_taohualin_min.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\spot_taohualin_min.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\spot_tushuguan.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\spot_tushuguan.png"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\icon_clear.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\icon_clear.png"
     },
@@ -224,8 +244,20 @@
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\ic_directions_bike_indigo_200_18dp.png"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\spot_chuangyiyuan_min.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\spot_chuangyiyuan_min.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\spot_yishulou.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\spot_yishulou.png"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\icon_arrow.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\icon_arrow.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\spot_wc.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\spot_wc.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_ic_star_black_36dp.png",
@@ -292,6 +324,10 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable-xxhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\spot_chuangyiyuan.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\spot_chuangyiyuan.png"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_list_pressed_holo_dark.9.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
@@ -324,8 +360,16 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f2c8330fdb9a2987c8a5033d27a6c70d2ab106f5\\output\\res\\drawable-xxhdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\spot_taohualin.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\spot_taohualin.png"
+    },
+    {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_room_red_300_18dp.png",
         "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\ic_room_red_300_18dp.png"
+    },
+    {
+        "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\spot_wc_min.png",
+        "source": "E:\\myProgramma\\hztripapp\\app\\src\\main\\res\\drawable-xxhdpi\\spot_wc_min.png"
     },
     {
         "merged": "E:\\myProgramma\\hztripapp\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\yn.png",

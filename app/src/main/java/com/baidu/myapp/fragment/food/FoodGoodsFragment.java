@@ -160,7 +160,6 @@ public class FoodGoodsFragment extends BaseFragment {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                Debbuger.LogE("findFirstVisibleItemPosition:" + mLinearLayoutManager.findFirstVisibleItemPosition());
                 for (int i = 0; i < titlePois.size() - 1; i++) {//这一段之前是没有执行的
                     if (mLinearLayoutManager.findFirstVisibleItemPosition() >= titlePois.get(i)) {
                         categoryAdapter.setCheckPosition(i);
