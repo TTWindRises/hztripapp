@@ -4,7 +4,7 @@
 可以长按景区图标显示攻略，也可以点击热门或者穷游选择攻略    
 ![image](https://github.com/TTWindRises/hztripapp/blob/master/strategy.png)    
 ![image](https://github.com/TTWindRises/hztripapp/blob/master/strategy2.png)    
-当用户进入到景区范围内时会自动展开景区内界面，并执行导游。    
+当用户进入到景区范围内时会自动展开景区内界面，并执行导游。当到达景点景物观察范围时会进行语音讲解景点。结束后前往下一地点。      
 ![image](https://github.com/TTWindRises/hztripapp/blob/master/spot_gride.png)    
 
 点击景区图标后了解景区信息  
